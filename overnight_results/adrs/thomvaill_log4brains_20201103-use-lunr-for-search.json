@@ -1,0 +1,9 @@
+{
+  "id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+  "source_repo": "thomvaill/log4brains",
+  "filename": "20201103-use-lunr-for-search.md",
+  "url": "https://github.com/thomvaill/log4brains/blob/develop/docs/adr/20201103-use-lunr-for-search.md",
+  "word_count": 164,
+  "text": "# Use Lunr for search\n\n- Status: accepted\n- Date: 2020-11-03\n\n## Context and Problem Statement\n\nWe have to provide a search bar to perform full-text search on ADRs.\n\n## Decision Drivers <!-- optional -->\n\n- Works in preview mode AND in the statically built version\n- Provides good fuzzy search and stemming capabilities\n- Is fast enough to be able to show results while typing\n- Does not consume too much CPU and RAM on the client-side, especially for the statically built version\n\n## Considered Options\n\n- Option 1: Fuse.js\n- Option 2: Lunr.js\n\n## Decision Outcome\n\nChosen option: \"Option 2: Lunr.js\".\n\n## Pros and Cons of the Options <!-- optional -->\n\n### Option 1: Fuse.js\n\n<https://fusejs.io/>\n\n- Fast indexing\n- Slow searching\n- Only fuzzy search, no stemming\n\n### Option 2: Lunr.js\n\n<https://lunrjs.com/>\n\n- Slow indexing, but supports index serialization to pre-build them\n- Fast searching\n- Stemming, multi-language support\n- Retrieves the position of the matched tokens\n\n## Links\n\n- <https://wiki.gpii.net/w/Technology_Evaluation_-_Static_Site_Search>\n",
+  "fetched_at": "2026-04-12T10:19:56.953991"
+}

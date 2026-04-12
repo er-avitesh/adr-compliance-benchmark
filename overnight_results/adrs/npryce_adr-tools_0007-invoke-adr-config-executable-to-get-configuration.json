@@ -1,0 +1,9 @@
+{
+  "id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+  "source_repo": "npryce/adr-tools",
+  "filename": "0007-invoke-adr-config-executable-to-get-configuration.md",
+  "url": "https://github.com/npryce/adr-tools/blob/master/doc/adr/0007-invoke-adr-config-executable-to-get-configuration.md",
+  "word_count": 167,
+  "text": "# 7. Invoke adr-config executable to get configuration\n\nDate: 2016-12-17\n\n## Status\n\nAccepted\n\n## Context\n\nPackagers (e.g. Homebrew developers) want to configure adr-tools to match the conventions of their installation. \n\nCurrently, this is done by sourcing a file `config.sh`, which should sit beside the `adr` executable.\n\nThis name is too common.\n\nThe `config.sh` file is not executable, and so doesn't belong in a bin directory.\n\n## Decision\n\nReplace `config.sh` with an executable, named `adr-config` that outputs configuration.\n\nEach script in ADR Tools will eval the output of `adr-config` to configure itself.\n\n## Consequences\n\nConfiguration within ADR Tools is a little more complicated.\n\nPackagers can write their own implementation of `adr-config` that outputs configuration that matches the platform's installation conventions, and deploy it next to the `adr` script.\n\nTo make development easier, the implementation of `adr-config` in the project's src/ directory will output configuration that lets the tool to run from the src/ directory without any installation step. (Packagers should not include this script in a deployable package.)\n",
+  "fetched_at": "2026-04-12T10:19:49.994022"
+}

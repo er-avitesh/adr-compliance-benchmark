@@ -1,0 +1,9 @@
+{
+  "id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+  "source_repo": "npryce/adr-tools",
+  "filename": "0006-packaging-and-distribution-in-other-version-control-repositories.md",
+  "url": "https://github.com/npryce/adr-tools/blob/master/doc/adr/0006-packaging-and-distribution-in-other-version-control-repositories.md",
+  "word_count": 178,
+  "text": "# 6. Packaging and distribution in other version control repositories\n\nDate: 2016-02-16\n\n## Status\n\nAccepted\n\n## Context\n\nUsers want to install adr-tools with their preferred package\nmanager.  For example, Ubuntu users use `apt`, RedHat users use\n`yum` and Mac OS X users use [Homebrew](http://brew.sh).\n\nThe developers of `adr-tools` don't know how, nor have permissions,\nto use all these packaging and distribution systems. Therefore packaging\nand distribution must be done by \"downstream\" parties.\n\nThe developers of the tool should not favour any one particular\npackaging and distribution solution.\n\n## Decision\n\nThe `adr-tools` project will not contain any packaging or\ndistribution scripts and config.\n\nPackaging and distribution will be managed by other projects in\nseparate version control repositories.\n\n## Consequences\n\nThe git repo of this project will be simpler.\n\nEventually, users will not have to use Git to get the software.\n\nWe will have to tag releases in the `adr-tools` repository so that\npackaging projects know what can be published and how it should be\nidentified.\n\nWe will document how users can install the software in this\nproject's README file.\n",
+  "fetched_at": "2026-04-12T10:19:49.373172"
+}

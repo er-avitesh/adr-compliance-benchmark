@@ -1,0 +1,9 @@
+{
+  "id": "alphagov_govuk-aws_0002-hosting-platforms",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0002-hosting-platforms.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/main/docs/architecture/decisions/0002-hosting-platforms.md",
+  "word_count": 176,
+  "text": "# 2. Hosting Platforms\n \nDate: 2017-06-30\n \n## Status\n \nAccepted\n \n## Context\n \nWe need to decide upon a platform to host the future GOV.UK infrastructure. Long term, this will be primarily the GOV.UK PaaS but in the interim, we need to converge with that plan and also upgrade and modernise the current infrastructure.\n \nGDS policy for hosting of GDS internal services is PaaS first and AWS for anything that can not be run on the PaaS.\n \n## Decision\n \nWe are using Amazon Web Services as our hosting provider of choice. This conforms to the [GDS Tech Forum Hosting Guide](https://github.com/alphagov/gds-tech/pull/7).\n \nWe will initially be using the `eu-west-1` region, Ireland. This region has 3 availability zones and also contains the GDS PaaS which will allow easier sharing and peering.\n \n## Consequences\n \nWe will have to migrate our infrastructure from our current hosting provider to Amazon in the near-term \"as-is\" and then iterate on that infrastructure in the medium term to deliver improvements to the platform. This will also make a subsequent migration of applications to the PaaS more straightforward.\n",
+  "fetched_at": "2026-04-12T17:06:43.711370"
+}

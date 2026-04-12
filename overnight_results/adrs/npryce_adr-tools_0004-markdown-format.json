@@ -1,0 +1,9 @@
+{
+  "id": "npryce_adr-tools_0004-markdown-format",
+  "source_repo": "npryce/adr-tools",
+  "filename": "0004-markdown-format.md",
+  "url": "https://github.com/npryce/adr-tools/blob/master/doc/adr/0004-markdown-format.md",
+  "word_count": 146,
+  "text": "# 4. Markdown format\n\nDate: 2016-02-12\n\n## Status\n\nAccepted\n\n## Context\n\nThe decision records must be stored in a plain text format:\n\n* This works well with version control systems.\n\n* It allows the tool to modify the status of records and insert\n  hyperlinks when one decision supercedes another.\n\n* Decisions can be read in the terminal, IDE, version control\n  browser, etc.\n\nPeople will want to use some formatting: lists, code examples,\nand so on.\n\nPeople will want to view the decision records in a more readable\nformat than plain text, and maybe print them out.\n\n\n## Decision\n\nRecord architecture decisions in [Markdown format](https://daringfireball.net/projects/markdown/).\n\n## Consequences\n\nDecisions can be read in the terminal.\n\nDecisions will be formatted nicely and hyperlinked by the\nbrowsers of project hosting sites like GitHub and Bitbucket.\n\nTools like [Pandoc](http://pandoc.org/) can be used to convert\nthe decision records into HTML or PDF.\n",
+  "fetched_at": "2026-04-12T10:19:48.118169"
+}

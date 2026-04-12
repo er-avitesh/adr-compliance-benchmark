@@ -1,0 +1,9 @@
+{
+  "id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+  "source_repo": "adr/madr",
+  "filename": "0001-use-CC0-or-MIT-as-license.md",
+  "url": "https://github.com/adr/madr/blob/develop/docs/decisions/0001-use-CC0-or-MIT-as-license.md",
+  "word_count": 233,
+  "text": "---\nparent: Decisions\nnav_order: 1\n---\n# Dual License the Work\n\n## Context and Problem Statement\n\nEverything needs to be licensed, otherwise the default copyright laws apply.\nFor instance, in Germany that means users may not alter anything without explicitly asking for permission.\nFor more information see <https://help.github.com/articles/licensing-a-repository/>.\n\nWe want to have MADR used without any hassle and that users can just go ahead and write MADRs.\n\n## Considered Options\n\n* [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)\n* BSD3\n* MIT\n* Dual license with MIT and CC0\n* No license\n* Other open source licenses\n\n## Decision Outcome\n\nChosen option: \"Dual license with MIT and CC0\", because this lets users choose whether CC0 or MIT fits better on their work.\n\n## Pros and Cons of the Options\n\n### CC0\n\n* Good, because this license donates the content to \"public domain\" and does so as legally as possible.\n* Bad, because it does not contain attribution - and [attribution is important](https://opensource.stackexchange.com/a/9126/5671).\n\n### BSD3\n\n* Bad, because it [is unclear whether it can be used for documentation](https://opensource.stackexchange.com/a/9545/5671)\n\n### MIT\n\n* Good, because it [explicitly may be used for documentation](https://opensource.stackexchange.com/a/9545/5671)\n* Good, because it is lean.\n\n### Dual license with MIT and CC0\n\nWith the SPDX identifier `MIT OR CC0-1.0`, the receiver of the documents can decide which license thay want to use.\n\n* Good, because offers freedom at the receiver\n* Bad, because dual licensing is not widely known\n",
+  "fetched_at": "2026-04-12T17:40:55.229481"
+}

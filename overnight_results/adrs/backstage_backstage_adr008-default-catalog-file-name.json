@@ -1,0 +1,9 @@
+{
+  "id": "backstage_backstage_adr008-default-catalog-file-name",
+  "source_repo": "backstage/backstage",
+  "filename": "adr008-default-catalog-file-name.md",
+  "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr008-default-catalog-file-name.md",
+  "word_count": 87,
+  "text": "---\nid: adrs-adr008\ntitle: 'ADR008: Default Catalog File Name'\ndescription: Architecture Decision Record (ADR) log on Default Catalog File Name\n---\n\n## Background\n\nWhile the spec for the catalog file format is well described in\n[ADR002](./adr002-default-catalog-file-format.md), guidance was not provided as\nto the name of the catalog file.\n\nFollowing discussion in\n[Issue 1822](https://github.com/backstage/backstage/pull/1822#pullrequestreview-461253670),\na decision was made.\n\n## Name\n\nThe catalog file should be named\n\n```shell\ncatalog-info.yaml\n```\n\nThis name is a default, **not a requirement**. The catalog file will work with\nBackstage regardless of its name.\n",
+  "fetched_at": "2026-04-12T10:19:45.298491"
+}

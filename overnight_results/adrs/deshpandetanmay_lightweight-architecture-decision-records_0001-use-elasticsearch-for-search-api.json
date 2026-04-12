@@ -1,0 +1,9 @@
+{
+  "id": "deshpandetanmay_lightweight-architecture-decision-records_0001-use-elasticsearch-for-search-api",
+  "source_repo": "deshpandetanmay/lightweight-architecture-decision-records",
+  "filename": "0001-use-elasticsearch-for-search-api.md",
+  "url": "https://github.com/deshpandetanmay/lightweight-architecture-decision-records/blob/master/doc/adr/0001-use-elasticsearch-for-search-api.md",
+  "word_count": 117,
+  "text": "# 1. Use Elastic Search for exposing enterprise wide search API.\r\n\r\nDate: 2018-05-20\r\n\r\n## Status\r\n\r\nAccepted\r\n\r\n## Context\r\n\r\nThere is a need of having an API exposed which can be used to search enterprise wide common data model.\r\n\r\nThe data currently resides in a RDBMS database, it is difficult to expose micro-services directly querying out of RDBMS databases since the application runs out the same environment. \r\n\r\nThere are options like ElasticSearch or Solr where data can be replicated.  \r\n\r\n## Decision\r\n\r\nUse ElasticSearch for data indexing\r\n\r\n## Consequences\r\n\r\nData needs to be replicated across the ElasticSearch cluster. This separate cluster needs proper maintenance. \r\n\r\n * Near-real time data replication is required.\r\n * Additional cost of maintaining the ElasticSearch environments\r\n\r\n",
+  "fetched_at": "2026-04-12T10:19:52.183016"
+}

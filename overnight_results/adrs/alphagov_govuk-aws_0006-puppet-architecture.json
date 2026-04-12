@@ -1,0 +1,9 @@
+{
+  "id": "alphagov_govuk-aws_0006-puppet-architecture",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0006-puppet-architecture.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/main/docs/architecture/decisions/0006-puppet-architecture.md",
+  "word_count": 254,
+  "text": "# 6. Puppet architecture\n\nDate: 2017-07-04\n\n## Status\n\nPending\n\n## Context\n\nFor our initial iteration we should discuss whether we use a Puppetmaster architecture,\nor use a masterless Puppet approach.\n\nUsing the former approach, we would have to take the following into account:\n\n - We would set up a Puppetmaster for the rest of the provisioned instances to connect to\n - We would deploy new Puppet code to this machine only\n - It matches our current architecture and approach\n - We would need to take into account certificate management\n - Each machine would \"check in\" to the Puppetmaster every 30 minutes, ensuring\n a consistent state\n\nIf we used a masterless approach:\n\n - We would need to deploy Puppet code and secrets to each instance that we provision\n - We would run Puppet only when we deploy new code\n - It differs from our current approach\n - We would not have to manage a Puppetmaster which means no single point of failure\n\n## Decision\n\nUse a Puppetmaster to not diverge from current architecture in the initial iteration.\n\n## Consequences\n\nWe may suffer from having to manage two Puppetmasters while we run in\ntwo environments.\n\nThere is additional work around the management of a Puppetmaster.\n\nHowever, this matches our current working architecture so it means that we're more\nin line of doing a straight \"lift and shift\". In theory deployments would be more\nstraight forward to manage as we would not have to create a new deployment process,\ninstead we could amend the current deployment process.\n",
+  "fetched_at": "2026-04-12T17:06:22.939403"
+}

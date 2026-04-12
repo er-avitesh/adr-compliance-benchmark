@@ -1,0 +1,9 @@
+{
+  "id": "adr_madr_0002-do-not-use-numbers-in-headings",
+  "source_repo": "adr/madr",
+  "filename": "0002-do-not-use-numbers-in-headings.md",
+  "url": "https://github.com/adr/madr/blob/develop/docs/decisions/0002-do-not-use-numbers-in-headings.md",
+  "word_count": 126,
+  "text": "---\nparent: Decisions\nnav_order: 2\n---\n# Do Not Use Numbers in Headings\n\n## Context and Problem Statement\n\nHow to render the first line in an ADR?\nADRs have to take a unique identifier.\n\n## Considered Options\n\n* Use the title only\n* Add the ADR number in front of the title (e.g., \"# 2. Do not use numbers in headings\")\n\n## Decision Outcome\n\nChosen option: \"Use the title only\", because\n\n* This is common in other markdown files, too.\n  One does not add numbering manually at the markdown files, but tries to get the numbers injected by the rendering framework or CSS.\n* Enables renaming of ADRs (before publication) easily\n* Allows copy'n'paste of ADRs from other repositories without having to worry about the numbers.\n",
+  "fetched_at": "2026-04-12T17:08:37.194248"
+}

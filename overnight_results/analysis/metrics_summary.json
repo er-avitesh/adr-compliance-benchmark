@@ -1,0 +1,64 @@
+{
+  "claude-sonnet-4-6": {
+    "few_shot": {
+      "f1_mean": 0.544,
+      "f1_std": 0.0,
+      "kappa_mean": 0.612,
+      "kappa_std": 0.0,
+      "prec_mean": 0.531,
+      "rec_mean": 0.57
+    }
+  },
+  "gpt-4o": {
+    "chain_of_thought": {
+      "f1_mean": 0.566,
+      "f1_std": 0.053,
+      "kappa_mean": 0.416,
+      "kappa_std": 0.102,
+      "prec_mean": 0.615,
+      "rec_mean": 0.614
+    },
+    "few_shot": {
+      "f1_mean": 0.518,
+      "f1_std": 0.007,
+      "kappa_mean": 0.295,
+      "kappa_std": 0.01,
+      "prec_mean": 0.608,
+      "rec_mean": 0.7
+    },
+    "zero_shot": {
+      "f1_mean": 0.546,
+      "f1_std": 0.01,
+      "kappa_mean": 0.369,
+      "kappa_std": 0.019,
+      "prec_mean": 0.628,
+      "rec_mean": 0.594
+    }
+  },
+  "mistral-7b": {
+    "chain_of_thought": {
+      "f1_mean": 0.424,
+      "f1_std": 0.018,
+      "kappa_mean": 0.176,
+      "kappa_std": 0.034,
+      "prec_mean": 0.519,
+      "rec_mean": 0.58
+    },
+    "few_shot": {
+      "f1_mean": 0.383,
+      "f1_std": 0.019,
+      "kappa_mean": 0.122,
+      "kappa_std": 0.026,
+      "prec_mean": 0.531,
+      "rec_mean": 0.583
+    },
+    "zero_shot": {
+      "f1_mean": 0.42,
+      "f1_std": 0.009,
+      "kappa_mean": 0.167,
+      "kappa_std": 0.01,
+      "prec_mean": 0.548,
+      "rec_mean": 0.616
+    }
+  }
+}

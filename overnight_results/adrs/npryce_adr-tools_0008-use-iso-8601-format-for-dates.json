@@ -1,0 +1,9 @@
+{
+  "id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+  "source_repo": "npryce/adr-tools",
+  "filename": "0008-use-iso-8601-format-for-dates.md",
+  "url": "https://github.com/npryce/adr-tools/blob/master/doc/adr/0008-use-iso-8601-format-for-dates.md",
+  "word_count": 217,
+  "text": "# 8. Use ISO 8601 Format for Dates\n\nDate: 2017-02-21\n\n## Status\n\nAccepted\n\n## Context\n\n`adr-tools` seeks to communicate the history of architectural decisions of a\nproject.  An important component of the history is the time at which a decision\nwas made.\n\nTo communicate effectively, `adr-tools` should present information as\nunambiguously as possible.  That means that culture-neutral data formats should\nbe preferred over culture-specific formats.\n\nExisting `adr-tools` deployments format  dates as `dd/mm/yyyy` by default.  That\nformatting is common formatting in the United Kingdom (where the `adr-tools`\nproject was originally written), but is easily confused with the `mm/dd/yyyy`\nformat preferred in the United States.\n\nThe default date format may be overridden by setting `ADR_DATE` in `config.sh`.\n\n## Decision\n\n`adr-tools` will use the ISO 8601 format for dates:  `yyyy-mm-dd`\n\n## Consequences\n\nDates are displayed in a standard, culture-neutral format.\n\nThe UK-style and ISO 8601 formats can be distinguished by their separator\ncharacter.  The UK-style dates used a slash (`/`), while the ISO dates use a\nhyphen (`-`).\n\nPrior to this decision, `adr-tools` was deployed using the UK format for dates.\nAfter adopting the ISO 8601 format, existing deployments of `adr-tools` must do\none of the following:\n\n * Accept mixed formatting of dates within their documentation library.\n * Update existing documents to use ISO 8601 dates by running `adr upgrade-repository`\n",
+  "fetched_at": "2026-04-12T10:19:50.617569"
+}

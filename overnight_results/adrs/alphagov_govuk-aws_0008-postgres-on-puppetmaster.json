@@ -1,0 +1,9 @@
+{
+  "id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0008-postgres-on-puppetmaster.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/main/docs/architecture/decisions/0008-postgres-on-puppetmaster.md",
+  "word_count": 170,
+  "text": "# 8. Postgres on Puppetmaster\n\nDate: 2017-07-04\n\n## Status\n\nAccepted\n\n## Context\n\nWe need to decide whether to run PostgreSQL on the Puppetmaster itself or use\nRDS from the off.\n\nCurrently our Puppetmaster uses a local PostgreSQL instance as its database. In moving to AWS we have the opportunity to replace this with an RDS instance.\n\nThis may remove a reasonable amount of puppet code used to configure the database and associated tasks (e.g. backups). It would also require an amount of Terraform work to provision the RDS instance and some updates to the Puppetmaster code to use that instance.\n\n## Decision\n\nThe Puppetmaster will continue to use a local instance of PostgreSQL.\n\n## Consequences\n\nThis should decrease the number of changes made to existing code.\n\nThis should reduce the amount of new work being done in Terraform.\n\nWe will not be able to use the Puppetmaster as a test-bed for RDS work.\n\nWe will maintain the existing puppet code.\n\nWe can continue to use existing backup & restore strategies.\n",
+  "fetched_at": "2026-04-12T17:06:24.212002"
+}

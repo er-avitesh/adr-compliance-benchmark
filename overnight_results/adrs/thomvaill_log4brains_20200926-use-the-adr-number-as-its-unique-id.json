@@ -1,0 +1,9 @@
+{
+  "id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+  "source_repo": "thomvaill/log4brains",
+  "filename": "20200926-use-the-adr-number-as-its-unique-id.md",
+  "url": "https://github.com/thomvaill/log4brains/blob/develop/docs/adr/20200926-use-the-adr-number-as-its-unique-id.md",
+  "word_count": 130,
+  "text": "# Use the ADR number as its unique ID\n\n- Status: superseded by [20201016-use-the-adr-slug-as-its-unique-id](20201016-use-the-adr-slug-as-its-unique-id.md)\n- Date: 2020-09-26\n\n## Context and Problem Statement\n\nWe need to be able to identify uniquely an ADR, especially in these contexts:\n\n- Web: to build its URL\n- CLI: to identify an ADR in a command argument (example: \"edit\", or \"preview\")\n\n## Considered Options\n\n- ADR number (ie. filename prefixed number, example: `0001-use-markdown-architectural-decision-records.md`)\n- ADR filename\n- ADR title\n\n## Decision Outcome\n\nChosen option: \"ADR number\", because\n\n- It is possible to have duplicated titles\n- The filename is too long to enter without autocompletion, but we could support it as a second possible identifier for the CLI in the future\n- Other ADR tools like [adr-tools](https://github.com/npryce/adr-tools) already use the number as a unique ID\n",
+  "fetched_at": "2026-04-12T10:19:54.909774"
+}

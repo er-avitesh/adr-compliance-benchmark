@@ -1,0 +1,9 @@
+{
+  "id": "adr_madr_0003-provide-own-madr-tools",
+  "source_repo": "adr/madr",
+  "filename": "0003-provide-own-madr-tools.md",
+  "url": "https://github.com/adr/madr/blob/develop/docs/decisions/0003-provide-own-madr-tools.md",
+  "word_count": 136,
+  "text": "---\nparent: Decisions\nnav_order: 3\nstatus: on hold\n---\n# Write Own MADR Tooling\n\n## Context and Problem Statement\n\nDevelopers seem to like tooling to create ADRs.\nThat tooling should support MADR.\nThe tooling should be easy to install.\n\n## Considered Options\n\n* Include in [adr-tools](https://github.com/npryce/adr-tools), 924 stars as of 2018-06-14\n* Include in [adr-j](https://github.com/adoble/adr-j), 2 stars as of 2018-06-14\n* Include in [adr](https://github.com/phodal/adr), 72 stars as of 2018-06-14\n* Write own MADR tooling\n* No tool support\n\n## Decision Outcome\n\nChosen option: \"Write own MADR tooling\", because\n\n* adding MADR support to `adr-tools` [was rejected](https://github.com/npryce/adr-tools/pull/43)\n* other tooling seem to a) modify MADR or b) do not keep up with changes on MADR.\n\nWe accept that this comes with maintenance cost.\n\n## More Information\n\nAn overview on current tooling of MADR is available at <https://adr.github.io/madr/tooling.html>.\n",
+  "fetched_at": "2026-04-12T17:08:37.776792"
+}

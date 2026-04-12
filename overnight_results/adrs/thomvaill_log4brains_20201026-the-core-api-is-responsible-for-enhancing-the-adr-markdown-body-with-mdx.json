@@ -1,0 +1,9 @@
+{
+  "id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+  "source_repo": "thomvaill/log4brains",
+  "filename": "20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx.md",
+  "url": "https://github.com/thomvaill/log4brains/blob/develop/docs/adr/20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx.md",
+  "word_count": 165,
+  "text": "# The core API is responsible for enhancing the ADR markdown body with MDX\n\n- Status: accepted\n- Date: 2020-10-26\n\n## Context and Problem Statement\n\nThe markdown body of ADRs cannot be used as is, because:\n\n- Links between ADRs have to be replaced with correct URLs\n- Header (status, date, deciders etc...) has to be rendered with specific components\n\n## Decision Drivers <!-- optional -->\n\n- Potential future development of a VSCode extension\n\n## Considered Options\n\n- Option 1: the UI is responsible\n- Option 2: the core API is responsible (with MDX)\n\n## Decision Outcome\n\nChosen option: \"Option 2: the core API is responsible (with MDX)\".\nBecause if we develop the VSCode extension, it is better to add more business logic into the core package, and it is better tested.\n\n### Positive Consequences <!-- optional -->\n\n- The metadata in the header is simply removed\n\n### Negative Consequences <!-- optional -->\n\n- Each UI package will have to implement its own Header component\n",
+  "fetched_at": "2026-04-12T10:19:56.323365"
+}
