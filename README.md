@@ -1,10 +1,10 @@
 # Can LLMs Check Your Architecture Decisions?
 
 ## A Multi-Model Benchmark for ADR Compliance
-
+<!--
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Paper](https://img.shields.io/badge/Paper-IEEE-blue.svg)](#citation)
-
+-->
 **Replication package** for the IEEE conference paper:
 
 > Kesharwani, A. (2026). "Can LLMs Check Your Architecture Decisions? A Multi-Model Benchmark for ADR Compliance." IEEE Conference Proceedings.
