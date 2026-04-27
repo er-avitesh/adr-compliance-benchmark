@@ -2,8 +2,9 @@
   "id": "adr_madr_0004-write-own-toc-tool",
   "source_repo": "adr/madr",
   "filename": "0004-write-own-toc-tool.md",
-  "url": "https://github.com/adr/madr/blob/develop/docs/decisions/0004-write-own-toc-tool.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0004-write-own-toc-tool.md",
   "word_count": 117,
+  "variant": "NYGARD",
   "text": "---\nparent: Decisions\nnav_order: 4\n---\n# Write Own TOC Tool\n\n## Context and Problem Statement\n\nADRs have to be indexed somehow. E.g., for offering a website showing all ADRs.\n\n## Considered Options\n\n* Write own tool `adr-log`\n* Use `adr-tools`' TOC functionality\n\n## Decision Outcome\n\nChosen option: \"Write own tool `adr-log`\", because\n\n* we want to have the format `ADR-0001 - Title` in the TOC.\n* `adr-tools` offers `title` only.\n\nWe accept that changing `adr-tools` would also be possible.\nIt is prepared to included header and footer: <https://github.com/npryce/adr-tools/blob/master/tests/generate-contents-with-header-and-footer.sh>.\n\n### Consequences\n\n* Good, because `adr-log` is installable using `npm install -g adr-log`, which is easier than installing `adr-tools`.\n* Bad, because another tool has to be maintained\n",
-  "fetched_at": "2026-04-12T17:08:38.351906"
+  "fetched_at": "2026-04-26T00:45:35.013027"
 }

@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0017-terraform-data-structure",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0017-terraform-data-structure.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0017-terraform-data-structure.md",
+  "word_count": 161,
+  "variant": "NYGARD",
+  "text": "# 17. Terraform Data Structure\n\nDate: 2017-07-14\n\n## Status\n\nAccepted\n\nAmends [10. Terraform directory structure](0010-terraform-directory-structure.md)\n\n## Context\n\nOur various Terraform projects share a significant amount of similar configuration (e.g. remote state buckets, stackname).\n\nUnder [ADR 10](0010-terraform-directory-structure.md) this is repeated for every project and every stack.\n\n## Decision\n\nThe data portion of ADR 0010 will now be:\n\n```\n\u251c\u2500\u2500 data\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 common\n\u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 <environment>\n\u2502   \u2502       \u251c\u2500\u2500 common.tfvars\n\u2502   \u2502       \u2514\u2500\u2500 <stackname>.tfvars\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 <project>\n\u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 <environment>\n\u2502   \u2502\u00a0\u00a0     \u251c\u2500\u2500 common.tfvars\n\u2502   \u2502\u00a0\u00a0     \u251c\u2500\u2500 <stackname>.tfvars\n\u2502   \u2502\u00a0\u00a0     \u2514\u2500\u2500 <stackname>_secrets.json\n```\n\nWhere:\n\n* `<environment>` is the account being deployed to (e.g. 'integration', 'staging')\n* `<stackname>` is the specific collection of projects (e.g. 'integration-green', 'foo-test')\n* `<project>` is the project describing the resources to build (e.g. 'puppetmaster', 'frontend')\n\nThe tfvar files will be applied in this order:\n\n* `common/<environment>/common.tfvars`\n* `common/<environment>/<stackname>.tfvars`\n* `<project>/<environment>/common.tfvars`\n* `<project>/<environment>/<stackname>.tfvars`\n* `<project>/<environment>/<stackname>_secrets.tfvars`\n\n## Consequences\n\n* Values only need to be defined in one place\n",
+  "fetched_at": "2026-04-26T00:45:17.510003"
+}

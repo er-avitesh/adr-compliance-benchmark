@@ -2,8 +2,9 @@
   "id": "npryce_adr-tools_0003-single-command-with-subcommands",
   "source_repo": "npryce/adr-tools",
   "filename": "0003-single-command-with-subcommands.md",
-  "url": "https://github.com/npryce/adr-tools/blob/master/doc/adr/0003-single-command-with-subcommands.md",
+  "url": "https://github.com/npryce/adr-tools/blob/HEAD/doc/adr/0003-single-command-with-subcommands.md",
   "word_count": 178,
+  "variant": "NYGARD",
   "text": "# 3. Single command with subcommands\n\nDate: 2016-02-12\n\n## Status\n\nAccepted\n\n## Context\n\nThe tool provides a number of related commands to create\nand manipulate architecture decision records.\n\nHow can the user find out about the commands that are available?\n\n## Decision\n\nThe tool defines a single command, called `adr`.\n\nThe first argument to `adr` (the subcommand) specifies the\naction to perform.  Further arguments are interpreted by the\nsubcommand.\n\nRunning `adr` without any arguments lists the available\nsubcommands.\n\nSubcommands are implemented as scripts in the same\ndirectory as the `adr` script.  E.g. the subcommand `new` is\nimplemented as the script `adr-new`, the subcommand `help`\nas the script `adr-help` and so on.\n\nHelper scripts that are part of the implementation but not\nsubcommands follow a different naming convention, so that\nsubcommands can be listed by filtering and transforming script\nfile names.\n\n## Consequences\n\nUsers can more easily explore the capabilities of the tool.\n\nUsers are already used to this style of command-line tool.  For\nexample, Git works this way.\n\nEach subcommand can be implemented in the most appropriate\nlanguage.\n",
-  "fetched_at": "2026-04-12T10:19:47.476809"
+  "fetched_at": "2026-04-26T00:45:31.472257"
 }

@@ -2,8 +2,9 @@
   "id": "backstage_backstage_adr006-avoid-react-fc",
   "source_repo": "backstage/backstage",
   "filename": "adr006-avoid-react-fc.md",
-  "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr006-avoid-react-fc.md",
+  "url": "https://github.com/backstage/backstage/blob/HEAD/docs/architecture-decisions/adr006-avoid-react-fc.md",
   "word_count": 224,
+  "variant": "NYGARD",
   "text": "---\nid: adrs-adr006\ntitle: 'ADR006: Avoid React.FC and React.SFC'\ndescription: Architecture Decision Record (ADR) log on Avoid React.FC and React.SFC\n---\n\n## Context\n\nFacebook has removed `React.FC` from their base template for a TypeScript\nproject. The reason for this was that it was found to be an unnecessary feature\nwith next to no benefits in combination with a few downsides.\n\nThe main reasons were:\n\n- **children props** were implicitly added\n- **Generic Type** was not supported on children\n\nRead more about the removal in\n[this PR](https://github.com/facebook/create-react-app/pull/8177).\n\n## Decision\n\nTo keep our codebase up to date, we have decided that `React.FC` and `React.SFC`\nshould be avoided in our codebase when adding new code.\n\nHere is an example:\n\n```typescript\n/* Avoid this: */\ntype BadProps = { text: string };\nconst BadComponent: FC<BadProps> = ({ text, children }) => (\n  <div>\n    <div>{text}</div>\n    {children}\n  </div>\n);\n\n/* Do this instead: */\ntype GoodProps = { text: string; children?: React.ReactNode };\nconst GoodComponent = ({ text, children }: GoodProps) => (\n  <div>\n    <div>{text}</div>\n    {children}\n  </div>\n);\n\n/* Or as a shorthand, if no specific child type is required */\ntype GoodProps = PropsWithChildren<{ text: string }>;\nconst GoodComponent = ({ text, children }: GoodProps) => (\n  <div>\n    <div>{text}</div>\n    {children}\n  </div>\n);\n```\n\n## Consequences\n\nWe will gradually remove the current usage of `React.FC` and `React.SFC` from\nour codebase.\n",
-  "fetched_at": "2026-04-12T10:19:44.038649"
+  "fetched_at": "2026-04-26T00:45:21.449401"
 }

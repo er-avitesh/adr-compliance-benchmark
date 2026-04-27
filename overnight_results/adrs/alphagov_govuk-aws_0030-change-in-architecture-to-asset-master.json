@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0030-change-in-architecture-to-asset-master.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0030-change-in-architecture-to-asset-master.md",
+  "word_count": 243,
+  "variant": "NYGARD",
+  "text": "# 30. Change in architecture to Asset Master\n\nDate: 2017-09-15\n\n## Status\n\nAccepted\n\n## Context\n\nTraditionally we built an \"asset-master-1\" instance with a large disk, and exported\nthat disk as an NFS share.\n\nThe \"backend\", \"whitehall-backend\" and \"asset-slave\" instances all mounted this NFS\nshare for the tasks they needed to do (uploading files for the backend machines, and\nmaking backups on the asset-slave machines).\n\nIn AWS, we have the option to use [Elastic File System (EFS)](https://aws.amazon.com/efs).\nThis is an autoscaling filesystem so we do not have to manage disk space, and is independent\nto any instance. Each instance would have to mount this filesystem in the same way as NFS,\nbut it is not managed by us.\n\n## Decision\n\nWe will create an EFS resource and expose the mount using our internal Route 53 DNS. We will allow\nthe required machines to mount the resource using Security Groups.\n\nThe backend and whitehall-backend instances will mount as usual, and the asset-master will also\nmount the disk like an external share.\n\nThe asset-master is required to mount because it moves files about the filesystem after running\nvirus scans.\n\nA decision has yet to be made on the role of the asset-slave, as we could potentially move\nthese tasks onto the asset-master (pushing backups to an S3 bucket, for example).\n\n## Consequences\n\nNo more disk management on the asset-master.\n\nArchitecture has changed so there may be further work related to how do we backups of\nattachments.\n",
+  "fetched_at": "2026-04-26T00:45:06.677244"
+}

@@ -2,8 +2,9 @@
   "id": "alphagov_govuk-aws_0007-puppet-cert-management",
   "source_repo": "alphagov/govuk-aws",
   "filename": "0007-puppet-cert-management.md",
-  "url": "https://github.com/alphagov/govuk-aws/blob/main/docs/architecture/decisions/0007-puppet-cert-management.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0007-puppet-cert-management.md",
   "word_count": 207,
+  "variant": "NYGARD",
   "text": "# 7. Puppet certificate management\n\nDate: 2017-07-04\n\n## Status\n\nAccepted\n\n## Context\n\nWhen machines connect to a Puppetmaster, they require a signed certificate to be\npresent to allow interaction.\n\nIf we lose a Puppetmaster (or it is recreated by an Auto Scaling Group) then we \nwould have to re-sign all the certificates to allow all machines in the\nenvironment to run Puppet again (ref: https://docs.puppet.com/puppet/3.8/ssl_regenerate_certificates.html).\n\nThis would involve manual intervention to allow machines to connect again\nand we would be unable to deploy new Puppet code during this period.\n\nIdeally we should back up our signed certificates, and a new machine would\nbe able to restore them when it is recreated.\n\n## Decision\n\nWe will defer this until a later date while we're testing this with Integration\nto concentrate on getting the stack up and running and accept the loss of certicates.\n\nAt a later date we will re-visit this approach and implement a suitable solution.\n\n## Consequences\n\nIf we lose our Puppetmaster while we are not backing up our certificates it\nmay delay us while we have to regenerate certificates.\n\nWe will be able to focus on bringing up the environment rather than working on a\nsolution that is not currently present in our Puppet code.\n",
-  "fetched_at": "2026-04-12T17:06:23.576869"
+  "fetched_at": "2026-04-26T00:45:14.555807"
 }

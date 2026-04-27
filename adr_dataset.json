@@ -1,0 +1,1160 @@
+[
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0011-migration-strategy.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0013-userdata-provisioning-snippets.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0014-launch-config-change-propagation-process.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0019-centralise-mysql-databases.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0022-remove-the-elasticsearch-proxy.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0023-use-separate-data-repository.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0024-ami-lookups.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0030-change-in-architecture-to-asset-master.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0008-restricted-deletion.md",
+    "score": 8
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr010-luxon-date-library.md",
+    "score": 8
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0003-bootstrapping-virtual-environment.md",
+    "score": 8
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0006-using-root-user-and-fixing-ownership-for-ci-container.md",
+    "score": 8
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20200925-use-prettier-eslint-airbnb-for-the-code-style.md",
+    "score": 8
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx.md",
+    "score": 8
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20210113-distribute-log4brains-as-a-global-npm-package.md",
+    "score": 8
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20240926-transition-to-simplified-git-flow.md",
+    "score": 8
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/template.md",
+    "score": 8
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/adr-template.md",
+    "score": 8
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0002-hosting-platforms.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0003-aws-networking-outline.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0006-puppet-architecture.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0007-puppet-cert-management.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0008-postgres-on-puppetmaster.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0009-environment-bootstrapping-process.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0012-security-groups-in-terraform.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0016-internal-dns-zones.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0017-terraform-data-structure.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0018-use-rds-instead-of-provisioned-ec2-databases.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "govuk-aws",
+    "path": "docs/architecture/decisions/0020-merge-api-postgresql-instance-into-main-postgresql-instance.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0007-minimal-model.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0013-permitted-deletion.md",
+    "score": 7
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr000-template.md",
+    "score": 7
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr006-avoid-react-fc.md",
+    "score": 7
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr007-use-msw-to-mock-service-requests.md",
+    "score": 7
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr012-use-luxon-locale-and-date-presets.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0001-record-architecture-decisions.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0002-implement-standalone-python-command.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0005-preventing-using-contributed-code-when-building-images.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0007-using-database-volumes-for-backends.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0008-fixing-group-permissions-before-build.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0009-exclude-all-files-from-dockerignore-by-default.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0010-use-pipx-to-install-breeze.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0011-unified-communication-with-the-users.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0012-asking-user-for-confirmation.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0013-get-rid-of-submodules.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0014-fix-root-ownership-after-exiting-docker-command.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0015-handling-rootless-docker.md",
+    "score": 7
+  },
+  {
+    "owner": "apache",
+    "repo": "airflow",
+    "path": "dev/breeze/doc/adr/0016-use-uv-tool-to-install-breeze.md",
+    "score": 7
+  },
+  {
+    "owner": "aws",
+    "repo": "aws-cdk",
+    "path": "packages/aws-cdk-lib/aws-dynamodb/adr/index.md",
+    "score": 7
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0003-single-command-with-subcommands.md",
+    "score": 7
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0004-markdown-format.md",
+    "score": 7
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0005-help-comments.md",
+    "score": 7
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0006-packaging-and-distribution-in-other-version-control-repositories.md",
+    "score": 7
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0007-invoke-adr-config-executable-to-get-configuration.md",
+    "score": 7
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0008-use-iso-8601-format-for-dates.md",
+    "score": 7
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0004-write-own-toc-tool.md",
+    "score": 7
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0017-use-same-format-for-outcomes-and-options.md",
+    "score": 7
+  },
+  {
+    "owner": "deshpandetanmay",
+    "repo": "lightweight-architecture-decision-records",
+    "path": "doc/adr/0001-use-elasticsearch-for-search-api.md",
+    "score": 7
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0001-record-architecture-decisions.md",
+    "score": 6
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0002-use-local-datastore.md",
+    "score": 6
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0003-initial-domain-modelling.md",
+    "score": 6
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0005-avoiding-initialisation-flickers.md",
+    "score": 6
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0006-tagging-governments.md",
+    "score": 6
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0014-political-and-government-tagging.md",
+    "score": 6
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr009-entity-references.md",
+    "score": 6
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr011-plugin-package-structure.md",
+    "score": 6
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr013-use-node-fetch.md",
+    "score": 6
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr015-jsx-loader-structure.md",
+    "score": 6
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0001-record-architecture-decisions.md",
+    "score": 6
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0002-implement-as-shell-scripts.md",
+    "score": 6
+  },
+  {
+    "owner": "npryce",
+    "repo": "adr-tools",
+    "path": "doc/adr/0009-help-scripts.md",
+    "score": 6
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20200924-use-markdown-architectural-decision-records.md",
+    "score": 6
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna.md",
+    "score": 6
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20200926-use-the-adr-number-as-its-unique-id.md",
+    "score": 6
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20201103-use-lunr-for-search.md",
+    "score": 6
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20241217-switch-back-to-github-flow.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0000-use-markdown-architectural-decision-records.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0001-use-cc0-or-mit-as-license.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0002-do-not-use-numbers-in-headings.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0003-provide-own-madr-tools.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0005-use-dashes-in-filenames.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0008-add-status-field.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0009-support-links-between-adrs-inside-an-adrs.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0010-support-categories.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0012-use-curly-braces-to-denote-placeholder.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0013-use-yaml-front-matter-for-meta-data.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0014-allow-neutral-arguments.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0015-include-consulting-informed-of-raci.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0016-outcome-before-detailed-pros-cons.md",
+    "score": 6
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0018-use-confirmation-as-heading.md",
+    "score": 6
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0009-modelling-history.md",
+    "score": 5
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0015-bulk-data-loading.md",
+    "score": 5
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr002-default-catalog-file-format.md",
+    "score": 5
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr003-avoid-default-exports.md",
+    "score": 5
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr004-module-export-structure.md",
+    "score": 5
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr005-catalog-core-entities.md",
+    "score": 5
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr014-use-fetch.md",
+    "score": 5
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/parameterized-config-management-plugins.md",
+    "score": 5
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/proxy-extensions.md",
+    "score": 5
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/distributed-query-execution.md",
+    "score": 5
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/partition-ring-multi-az-replication.md",
+    "score": 5
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/ruler-ha-new.md",
+    "score": 5
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/shuffle-sharding-on-the-read-path.md",
+    "score": 5
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/20201016-use-the-adr-slug-as-its-unique-id.md",
+    "score": 5
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0006-use-names-as-identifier.md",
+    "score": 5
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0007-do-not-emphasize-line-headings.md",
+    "score": 5
+  },
+  {
+    "owner": "adr",
+    "repo": "madr",
+    "path": "docs/decisions/0011-use-asterisk-as-list-marker.md",
+    "score": 5
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/operator-manual/applicationset/index.md",
+    "score": 5
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/operator-manual/upgrading/2.3-2.4.md",
+    "score": 5
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/operator-manual/upgrading/2.4-2.5.md",
+    "score": 5
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/operator-manual/upgrading/2.5-2.6.md",
+    "score": 5
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0004-editing-microcopy.md",
+    "score": 4
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0010-sending-email-notifications.md",
+    "score": 4
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0012-file-attachment-rendering.md",
+    "score": 4
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr001-add-adr-log.md",
+    "score": 4
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/adr008-default-catalog-file-name.md",
+    "score": 4
+  },
+  {
+    "owner": "aws",
+    "repo": "aws-cdk",
+    "path": "packages/aws-cdk-lib/aws-rds/adr/aurora-serverless-v2.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/001-proposal-template.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/004-scalability-benchmarking.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/applicationset-plugin-generator.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/argocd-cli-pluin.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/backend-support-appset.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/decouple-application-sync-user-using-impersonation.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/deletion-strategy-progressive-sync.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/headless-argocd.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/native-oci-support.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/notifications-api.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/project-repos-and-clusters.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/server-side-pagination.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/proposals/sync-timeout.md",
+    "score": 4
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/auth-gateway.md",
+    "score": 4
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/parallel-compaction.md",
+    "score": 4
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "contribute/architecture/frontend-data-requests.md",
+    "score": 4
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/acceptoauth2consentrequest.md",
+    "score": 4
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/acceptoauth2loginrequest.md",
+    "score": 4
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/oauth2consentrequest.md",
+    "score": 4
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/oauth2consentrequestopenidconnectcontext.md",
+    "score": 4
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/oauth2consentsession.md",
+    "score": 4
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/oauth2loginrequest.md",
+    "score": 4
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/oidcuserinfo.md",
+    "score": 4
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/rejectoauth2request.md",
+    "score": 4
+  },
+  {
+    "owner": "argoproj",
+    "repo": "argo-cd",
+    "path": "docs/operator-manual/app-sync-using-impersonation.md",
+    "score": 4
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/setup-grafana/set-up-grafana-monitoring.md",
+    "score": 4
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/troubleshooting/_index.md",
+    "score": 4
+  },
+  {
+    "owner": "temporalio",
+    "repo": "temporal",
+    "path": "docs/architecture/history-service.md",
+    "score": 4
+  },
+  {
+    "owner": "temporalio",
+    "repo": "temporal",
+    "path": "docs/architecture/nexus.md",
+    "score": 4
+  },
+  {
+    "owner": "temporalio",
+    "repo": "temporal",
+    "path": "docs/architecture/retry.md",
+    "score": 4
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0011-moving-business-logic-out-of-controllers.md",
+    "score": 3
+  },
+  {
+    "owner": "alphagov",
+    "repo": "content-publisher",
+    "path": "docs/adr/0016-publishing-times-and-change-history.md",
+    "score": 3
+  },
+  {
+    "owner": "backstage",
+    "repo": "backstage",
+    "path": "docs/architecture-decisions/index.md",
+    "score": 3
+  },
+  {
+    "owner": "aws",
+    "repo": "aws-cdk",
+    "path": "packages/aws-cdk-lib/core/adr/acknowledge-warnings.md",
+    "score": 3
+  },
+  {
+    "owner": "aws",
+    "repo": "aws-cdk",
+    "path": "packages/aws-cdk-lib/core/adr/cross-region-stack-references.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/block-storage-time-series-deletion.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/blocks-storage-sharding.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/parquet-storage.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/per-tenant-cardinality-api.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/receiving_metadata.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/ring-multikey.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/ruler-ha.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/scalable-alertmanager.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/shuffle-sharding-and-zone-awareness.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/tenant-deletion.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/tenant_retention.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/timeseries-partitioning-in-compactor.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/user-overrides-api.md",
+    "score": 3
+  },
+  {
+    "owner": "cortexproject",
+    "repo": "cortex",
+    "path": "docs/proposals/version-documentation.md",
+    "score": 3
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/jwkapi.md",
+    "score": 3
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/metadataapi.md",
+    "score": 3
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/oidcapi.md",
+    "score": 3
+  },
+  {
+    "owner": "ory",
+    "repo": "hydra",
+    "path": "internal/httpclient/docs/wellknownapi.md",
+    "score": 3
+  },
+  {
+    "owner": "thomvaill",
+    "repo": "log4brains",
+    "path": "docs/adr/index.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/_index.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/alerting/_index.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/breaking-changes/breaking-changes-v10-0.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/breaking-changes/breaking-changes-v10-3.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/breaking-changes/breaking-changes-v11-0.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/visualizations/_index.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v10-0.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v10-1.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v10-2.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v10-3.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v10-4.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v11-0.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v12-0.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v12-3.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v9-2.md",
+    "score": 3
+  },
+  {
+    "owner": "grafana",
+    "repo": "grafana",
+    "path": "docs/sources/whatsnew/whats-new-in-v9-5.md",
+    "score": 3
+  },
+  {
+    "owner": "temporalio",
+    "repo": "temporal",
+    "path": "docs/architecture/readme.md",
+    "score": 3
+  },
+  {
+    "owner": "temporalio",
+    "repo": "temporal",
+    "path": "docs/architecture/chasm.md",
+    "score": 3
+  },
+  {
+    "owner": "temporalio",
+    "repo": "temporal",
+    "path": "docs/architecture/effect-package.md",
+    "score": 3
+  },
+  {
+    "owner": "temporalio",
+    "repo": "temporal",
+    "path": "docs/architecture/matching-service.md",
+    "score": 3
+  },
+  {
+    "owner": "temporalio",
+    "repo": "temporal",
+    "path": "docs/architecture/workflow-update.md",
+    "score": 3
+  }
+]

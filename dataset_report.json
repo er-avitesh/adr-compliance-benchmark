@@ -1,0 +1,27 @@
+{
+  "total_adrs": 176,
+  "repo_distribution": {
+    "alphagov/govuk-aws": 20,
+    "alphagov/content-publisher": 15,
+    "backstage/backstage": 17,
+    "apache/airflow": 15,
+    "thomvaill/log4brains": 12,
+    "adr/madr": 19,
+    "aws/aws-cdk": 4,
+    "npryce/adr-tools": 8,
+    "deshpandetanmay/lightweight-architecture-decision-records": 1,
+    "argoproj/argo-cd": 19,
+    "cortexproject/cortex": 20,
+    "grafana/grafana": 19,
+    "temporalio/temporal": 7
+  },
+  "variant_distribution": {
+    "NYGARD": 79,
+    "MADR": 14,
+    "LIGHTWEIGHT": 26,
+    "OTHER": 57
+  },
+  "avg_length": 843,
+  "min_length": 87,
+  "max_length": 4295
+}

@@ -1,0 +1,10 @@
+{
+  "id": "backstage_backstage_adr010-luxon-date-library",
+  "source_repo": "backstage/backstage",
+  "filename": "adr010-luxon-date-library.md",
+  "url": "https://github.com/backstage/backstage/blob/HEAD/docs/architecture-decisions/adr010-luxon-date-library.md",
+  "word_count": 216,
+  "variant": "NYGARD",
+  "text": "---\nid: adrs-adr010\ntitle: 'ADR010: Use the Luxon Date Library'\ndescription: Architecture Decision Record (ADR) for Luxon Date Library\n---\n\n## Context\n\nDate formatting (e.g. `a day ago`) and calculations are common within Backstage.\nSome of these useful features are not supported by the standard JavaScript\n`Date` object. The popular [Moment.js](https://momentjs.com/) library has been\ncommonly used to fill this gap but is affected by large bundle sizes and mutable\nstate issues. On top of this, `momentjs` is\n[being sunset](https://momentjs.com/docs/#/-project-status/) and the project\nrecommends using one of the more modern alternative libraries.\n\nSee\n[[RFC] Standardized Date & Time Library](https://github.com/backstage/backstage/issues/3401).\n\n## Decision\n\nWe will use [Luxon](https://moment.github.io/luxon/index.html) as the standard\ndate library within Backstage.\n\n`Luxon` provides a similar feature set and API to `Moment.js`, but improves on\nits design through immutability and the usage of modern JavaScript APIs (e.g.\n`Intl`). This results in smaller bundle sizes while providing a full feature set\nand avoids the need for using additional libraries for common date & time tasks.\n\n## Consequences\n\n- All core packages and plugins within Backstage should use `Luxon` for any date\n  manipulation or formatting that cannot be easily accomplished with the native\n  JavaScript `Date` object.\n- Using a single date library avoids having to learn multiple library APIs\n- Having a single date library will reduce bundle sizes\n",
+  "fetched_at": "2026-04-26T00:45:07.808610"
+}

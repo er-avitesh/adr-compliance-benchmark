@@ -1,0 +1,10 @@
+{
+  "id": "backstage_backstage_index",
+  "source_repo": "backstage/backstage",
+  "filename": "index.md",
+  "url": "https://github.com/backstage/backstage/blob/HEAD/docs/architecture-decisions/index.md",
+  "word_count": 176,
+  "variant": "LIGHTWEIGHT",
+  "text": "---\nid: adrs-overview\ntitle: Architecture Decision Records (ADR)\nsidebar_label: Overview\ndescription: Overview of Architecture Decision Records (ADR)\n---\n\nThe substantial architecture decisions made in the Backstage project live here.\nFor more information about ADRs, when to write them, and why, please see\n[this blog post](https://engineering.atspotify.com/2020/04/when-should-i-write-an-architecture-decision-record/).\n\nRecords are never deleted but can be marked as superseded by new decisions or\ndeprecated.\n\nRecords should be stored under the `architecture-decisions` directory.\n\n## Contributing\n\n### Creating an ADR\n\n- Copy `docs/architecture-decisions/adr000-template.md` to\n  `docs/architecture-decisions/adr000-my-decision.md` (my-decision should be\n  descriptive. Do not assign an ADR number.)\n- Fill in the ADR following the guidelines in the template\n- Submit a pull request\n- Address and integrate feedback from the community\n- Eventually, assign a number\n- Add the path of the ADR to the microsite sidebar in\n  [`sidebars.ts`](https://github.com/backstage/backstage/blob/master/microsite/sidebars.ts)\n- Add the path of the ADR to the\n  [`mkdocs.yml`](https://github.com/backstage/backstage/blob/master/mkdocs.yml)\n- Merge the pull request\n\n## Superseding an ADR\n\nIf an ADR supersedes an older ADR then the status of the older ADR is changed to\n\"superseded by ADR-XXXX\", and links to the new ADR.\n",
+  "fetched_at": "2026-04-26T00:46:24.321066"
+}

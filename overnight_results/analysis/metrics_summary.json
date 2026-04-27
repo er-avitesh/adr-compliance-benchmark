@@ -1,64 +1,106 @@
 {
-  "claude-sonnet-4-6": {
+  "gpt-5.1": {
+    "zero_shot": {
+      "f1_mean": 0.438,
+      "f1_std": 0.005,
+      "kappa_mean": 0.255,
+      "kappa_std": 0.018,
+      "prec_mean": 0.471,
+      "rec_mean": 0.42
+    },
     "few_shot": {
-      "f1_mean": 0.544,
-      "f1_std": 0.0,
-      "kappa_mean": 0.612,
-      "kappa_std": 0.0,
-      "prec_mean": 0.531,
-      "rec_mean": 0.57
+      "f1_mean": 0.356,
+      "f1_std": 0.014,
+      "kappa_mean": 0.113,
+      "kappa_std": 0.034,
+      "prec_mean": 0.361,
+      "rec_mean": 0.408
+    },
+    "chain_of_thought": {
+      "f1_mean": 0.358,
+      "f1_std": 0.042,
+      "kappa_mean": 0.071,
+      "kappa_std": 0.114,
+      "prec_mean": 0.359,
+      "rec_mean": 0.359
     }
   },
-  "gpt-4o": {
-    "chain_of_thought": {
-      "f1_mean": 0.566,
-      "f1_std": 0.053,
-      "kappa_mean": 0.416,
-      "kappa_std": 0.102,
-      "prec_mean": 0.615,
-      "rec_mean": 0.614
+  "claude-sonnet-4-6": {
+    "zero_shot": {
+      "f1_mean": 0.379,
+      "f1_std": 0.006,
+      "kappa_mean": 0.095,
+      "kappa_std": 0.009,
+      "prec_mean": 0.653,
+      "rec_mean": 0.62
     },
     "few_shot": {
-      "f1_mean": 0.518,
-      "f1_std": 0.007,
-      "kappa_mean": 0.295,
-      "kappa_std": 0.01,
-      "prec_mean": 0.608,
-      "rec_mean": 0.7
+      "f1_mean": 0.388,
+      "f1_std": 0.003,
+      "kappa_mean": 0.072,
+      "kappa_std": 0.013,
+      "prec_mean": 0.641,
+      "rec_mean": 0.614
     },
-    "zero_shot": {
-      "f1_mean": 0.546,
-      "f1_std": 0.01,
-      "kappa_mean": 0.369,
-      "kappa_std": 0.019,
-      "prec_mean": 0.628,
-      "rec_mean": 0.594
+    "chain_of_thought": {
+      "f1_mean": 0.482,
+      "f1_std": 0.016,
+      "kappa_mean": 0.24,
+      "kappa_std": 0.035,
+      "prec_mean": 0.586,
+      "rec_mean": 0.599
     }
   },
   "mistral-7b": {
-    "chain_of_thought": {
-      "f1_mean": 0.424,
+    "zero_shot": {
+      "f1_mean": 0.457,
+      "f1_std": 0.011,
+      "kappa_mean": 0.118,
+      "kappa_std": 0.016,
+      "prec_mean": 0.536,
+      "rec_mean": 0.595
+    },
+    "few_shot": {
+      "f1_mean": 0.181,
       "f1_std": 0.018,
-      "kappa_mean": 0.176,
-      "kappa_std": 0.034,
-      "prec_mean": 0.519,
-      "rec_mean": 0.58
+      "kappa_mean": 0.033,
+      "kappa_std": 0.01,
+      "prec_mean": 0.341,
+      "rec_mean": 0.391
+    },
+    "chain_of_thought": {
+      "f1_mean": 0.481,
+      "f1_std": 0.01,
+      "kappa_mean": 0.124,
+      "kappa_std": 0.026,
+      "prec_mean": 0.532,
+      "rec_mean": 0.586
+    }
+  },
+  "gemini-2.5-pro": {
+    "zero_shot": {
+      "f1_mean": 0.434,
+      "f1_std": 0.015,
+      "kappa_mean": 0.214,
+      "kappa_std": 0.029,
+      "prec_mean": 0.436,
+      "rec_mean": 0.63
     },
     "few_shot": {
       "f1_mean": 0.383,
-      "f1_std": 0.019,
-      "kappa_mean": 0.122,
-      "kappa_std": 0.026,
-      "prec_mean": 0.531,
-      "rec_mean": 0.583
+      "f1_std": 0.0,
+      "kappa_mean": 0.201,
+      "kappa_std": 0.0,
+      "prec_mean": 0.402,
+      "rec_mean": 0.48
     },
-    "zero_shot": {
-      "f1_mean": 0.42,
-      "f1_std": 0.009,
-      "kappa_mean": 0.167,
-      "kappa_std": 0.01,
-      "prec_mean": 0.548,
-      "rec_mean": 0.616
+    "chain_of_thought": {
+      "f1_mean": 0.424,
+      "f1_std": 0.0,
+      "kappa_mean": 0.197,
+      "kappa_std": 0.0,
+      "prec_mean": 0.426,
+      "rec_mean": 0.597
     }
   }
 }

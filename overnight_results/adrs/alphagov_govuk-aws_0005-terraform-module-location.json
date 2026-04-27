@@ -5,5 +5,5 @@
   "url": "https://github.com/alphagov/govuk-aws/blob/main/docs/architecture/decisions/0005-terraform-module-location.md",
   "word_count": 96,
   "text": "# 5. Terraform Module Location\n\nDate: 2017-07-04\n\n## Status\n\nAccepted\n\n## Context\n\nDocument structure and deployment of Terraform [modules](https://www.terraform.io/docs/modules/index.html).\n\nTerraform can fetch modules from multiple [sources](https://www.terraform.io/docs/modules/sources.html) (e.g. Github, local files, S3).\n\n## Decision\n\nWhilst developing a module we will source it locally (within this repository). \n\nOnce we feel our modules \"ready\" we will consider moving them to separate repositories.\n\n## Consequences\n\nKeeping modules locally will make them harder for others to use but make rapid iteration easier.\n\nOnce modules are separated we will need processes to propagate changes in dependent modules to our main Terraform projects.\n",
-  "fetched_at": "2026-04-12T17:06:22.276992"
+  "fetched_at": "2026-04-25T14:20:01.225488"
 }

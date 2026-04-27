@@ -2,8 +2,9 @@
   "id": "npryce_adr-tools_0002-implement-as-shell-scripts",
   "source_repo": "npryce/adr-tools",
   "filename": "0002-implement-as-shell-scripts.md",
-  "url": "https://github.com/npryce/adr-tools/blob/master/doc/adr/0002-implement-as-shell-scripts.md",
+  "url": "https://github.com/npryce/adr-tools/blob/HEAD/doc/adr/0002-implement-as-shell-scripts.md",
   "word_count": 108,
+  "variant": "NYGARD",
   "text": "# 2. Implement as shell scripts\n\nDate: 2016-02-12\n\n## Status\n\nAccepted\n\n## Context\n\nADRs are plain text files stored in a subdirectory of the project.\n\nThe tool needs to create new files and apply small edits to\nthe Status section of existing files.\n\n## Decision\n\nThe tool is implemented as shell scripts that use standard Unix\ntools -- grep, sed, awk, etc.\n\n## Consequences\n\nThe tool won't support Windows. Being plain text files, ADRs can\nbe created by hand and edited in any text editor.  This tool just\nmakes the process more convenient.\n\nDevelopment will have to cope with differences between Unix\nvariants, particularly Linux and MacOS X.\n",
-  "fetched_at": "2026-04-12T10:19:46.858300"
+  "fetched_at": "2026-04-26T00:45:42.038339"
 }

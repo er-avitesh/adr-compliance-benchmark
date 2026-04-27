@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0016-internal-dns-zones",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0016-internal-dns-zones.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0016-internal-dns-zones.md",
+  "word_count": 151,
+  "variant": "NYGARD",
+  "text": "# 16. internal DNS zones\n\nDate: 2017-07-19\n\n## Status\n\nAccepted\n\n## Context\n\nWe have a number of internal services that need to have\ninternal only service records. This allows clients to connect\nwithin their own environment or stack without needing a fully\nqualified domain name.\n\nThese records should not be visible outside the local environment or stack.\n\n## Decision\n\nWe've bought a domain name that will not be connected to the rest of the public\nDNS system. This will be used by our internal services.\n\nThis domain will *not* have DNS records added to it.\n\n## Consequences\n\nWe have a domain that we pay for and don't use.\n\nIf the registration ever expires, and we've incorrectly defined our search paths,\nsomeone could register it and influence our services. This risk is however\npresent in all the domains we use.\n\nThis is also the approach taken by some of our sister teams.\n",
+  "fetched_at": "2026-04-26T00:45:16.922748"
+}

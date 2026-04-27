@@ -1,0 +1,127 @@
+{
+  "sampled_at": "2026-04-25T14:34:09.222595",
+  "n_requested": 200,
+  "n_actual": 13,
+  "seed": 471779877,
+  "adr_ids": [
+    "backstage_backstage_adr000-template",
+    "backstage_backstage_adr006-avoid-react-fc",
+    "backstage_backstage_adr014-use-fetch",
+    "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+    "backstage_backstage_adr013-use-node-fetch",
+    "backstage_backstage_adr010-luxon-date-library",
+    "backstage_backstage_adr009-entity-references",
+    "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+    "backstage_backstage_adr015-jsx-loader-structure",
+    "backstage_backstage_adr005-catalog-core-entities",
+    "backstage_backstage_adr003-avoid-default-exports",
+    "backstage_backstage_adr004-module-export-structure",
+    "backstage_backstage_adr011-plugin-package-structure"
+  ],
+  "adrs": [
+    {
+      "id": "backstage_backstage_adr000-template",
+      "source_repo": "backstage/backstage",
+      "filename": "adr000-template.md",
+      "word_count": 169,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr000-template.md",
+      "ground_truth": "Non_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr006-avoid-react-fc",
+      "source_repo": "backstage/backstage",
+      "filename": "adr006-avoid-react-fc.md",
+      "word_count": 224,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr006-avoid-react-fc.md",
+      "ground_truth": "Non_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr014-use-fetch",
+      "source_repo": "backstage/backstage",
+      "filename": "adr014-use-fetch.md",
+      "word_count": 393,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr014-use-fetch.md",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+      "source_repo": "backstage/backstage",
+      "filename": "adr012-use-luxon-locale-and-date-presets.md",
+      "word_count": 259,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr012-use-luxon-locale-and-date-presets.md",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr013-use-node-fetch",
+      "source_repo": "backstage/backstage",
+      "filename": "adr013-use-node-fetch.md",
+      "word_count": 290,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr013-use-node-fetch.md",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr010-luxon-date-library",
+      "source_repo": "backstage/backstage",
+      "filename": "adr010-luxon-date-library.md",
+      "word_count": 216,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr010-luxon-date-library.md",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr009-entity-references",
+      "source_repo": "backstage/backstage",
+      "filename": "adr009-entity-references.md",
+      "word_count": 362,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr009-entity-references.md",
+      "ground_truth": "Non_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+      "source_repo": "backstage/backstage",
+      "filename": "adr007-use-msw-to-mock-service-requests.md",
+      "word_count": 220,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr007-use-msw-to-mock-service-requests.md",
+      "ground_truth": "Non_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr015-jsx-loader-structure",
+      "source_repo": "backstage/backstage",
+      "filename": "adr015-jsx-loader-structure.md",
+      "word_count": 488,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr015-jsx-loader-structure.md",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr005-catalog-core-entities",
+      "source_repo": "backstage/backstage",
+      "filename": "adr005-catalog-core-entities.md",
+      "word_count": 519,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr005-catalog-core-entities.md",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr003-avoid-default-exports",
+      "source_repo": "backstage/backstage",
+      "filename": "adr003-avoid-default-exports.md",
+      "word_count": 376,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr003-avoid-default-exports.md",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr004-module-export-structure",
+      "source_repo": "backstage/backstage",
+      "filename": "adr004-module-export-structure.md",
+      "word_count": 428,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr004-module-export-structure.md",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr011-plugin-package-structure",
+      "source_repo": "backstage/backstage",
+      "filename": "adr011-plugin-package-structure.md",
+      "word_count": 509,
+      "url": "https://github.com/backstage/backstage/blob/master/docs/architecture-decisions/adr011-plugin-package-structure.md",
+      "ground_truth": "Partially_Compliant"
+    }
+  ]
+}

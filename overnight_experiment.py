@@ -2,40 +2,39 @@
 """
 OVERNIGHT ADR COMPLIANCE EXPERIMENT
 ====================================
-Minimal viable experiment: runs in 3-4 hours, ~$12 cost.
+4 models × 3 strategies × 3 reps × 200 ADRs = 7,200 calls (~$101, ~10-12 hrs)
 
-Phase 1 (30 min): Fetch 50 real ADRs from GitHub
-Phase 2 (15 min): Auto-annotate ground truth using GPT-4o as oracle + manual spot-check
-Phase 3 (3 hrs):  Run 3 models × 3 strategies × 3 reps × 50 ADRs = 1,350 calls
-Phase 4 (5 min):  Compute all metrics, generate paper-ready tables
+Each model/strategy pair saves its own result file independently so runs can be
+split across sessions. Use --phase merge to combine and analyze when ready.
 
 Usage:
-  # Set your API keys
-  export OPENAI_API_KEY="sk-..."
-  export ANTHROPIC_API_KEY="sk-ant-..."
+  export OPENAI_API_KEY="sk-..."   ANTHROPIC_API_KEY="sk-ant-..."
+  export MISTRAL_API_KEY="..."     GEMINI_API_KEY="..."
 
-  # Run overnight
-  python overnight_experiment.py 2>&1 | tee experiment_log.txt
+  # Full pipeline
+  python overnight_experiment.py --n-eval 200 2>&1 | tee experiment_log.txt
 
-  # Or run phases separately
-  python overnight_experiment.py --phase fetch
+  # Step by step
+  python overnight_experiment.py --phase fetch    --n-eval 200
   python overnight_experiment.py --phase annotate
-  python overnight_experiment.py --phase run
-  python overnight_experiment.py --phase analyze
+  python overnight_experiment.py --phase run      --n-eval 200   # all models × strategies
+  python overnight_experiment.py --phase merge                   # combine files + analyze
+
+  # Targeted run — one or several model/strategy pairs
+  python overnight_experiment.py --run gemini-2.5-pro/zero_shot --n-eval 200
+  python overnight_experiment.py --run gemini-2.5-pro/zero_shot,gpt-5.1/chain_of_thought
 """
 
 import os
 import sys
 import json
 import time
-import random
 import re
-import hashlib
+import random
 import argparse
-import traceback
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict
 
 import numpy as np
 
@@ -53,13 +52,16 @@ N_REPS = 3           # Repetitions (increase to 5 for full run)
 RATE_LIMIT_DELAY = 1.0  # seconds between API calls
 
 MODELS = {
-    "gpt-4o": {
+    "gpt-5.1": {
         "provider": "openai",
-        "model": "gpt-4o-2024-08-06",
+        "model": "gpt-5.1",
+        "use_max_completion_tokens": True,
+        "no_temperature": True,
     },
-    "claude-3.5-sonnet": {
+    "claude-sonnet-4-6": {
         "provider": "anthropic",
-        "model": "claude-3-5-sonnet-20241022",
+        "model": "claude-sonnet-4-6",
+        "no_temperature": True,
     },
     "mistral-7b": {
         "provider": "openai",  # via Mistral's OpenAI-compatible API or local vLLM
@@ -67,116 +69,171 @@ MODELS = {
         "base_url": "https://api.mistral.ai/v1",  # change to localhost for vLLM
         "api_key_env": "MISTRAL_API_KEY",
     },
+    "gemini-2.5-pro": {
+        "provider": "gemini",
+        "model": "gemini-2.5-pro",
+        "api_key_env": "GEMINI_API_KEY",
+        "max_output_tokens": 8192,  # thinking model needs headroom for reasoning tokens
+    },
 }
 
 STRATEGIES = ["zero_shot", "few_shot", "chain_of_thought"]
 
-# Known GitHub repos with good ADRs
-ADR_REPOS = [
-    # (owner, repo, adr_path_prefix)
-    ("adr", "madr", "docs/decisions"),
-    ("alphagov", "govuk-aws", "docs/architecture/decisions"),
-    ("alphagov", "content-publisher", "docs/adr"),
-    ("backstage", "backstage", "docs/architecture-decisions"),
-    ("npryce", "adr-tools", "doc/adr"),
-    ("deshpandetanmay", "lightweight-architecture-decision-records", "doc/adr"),
-    ("thomvaill", "log4brains", "docs/adr"),
-    ("openfga", "openfga", "docs/architecture"),
-]
+with open("adr_dataset.json") as f:
+    ADR_DATASET = json.load(f)
 
 
 # ============================================================
 # PHASE 1: FETCH REAL ADRS FROM GITHUB
 # ============================================================
+from collections import defaultdict
 
-def fetch_adrs_from_github(target_count=60):
-    """Fetch real ADRs from GitHub repos using the API."""
+def is_high_quality(text: str) -> bool:
+    t = text.lower()
+
+    score = 0
+
+    # Context / Problem
+    if any(k in t for k in ["context", "problem", "background"]):
+        score += 1
+
+    # Decision
+    if "decision" in t:
+        score += 1
+
+    # Consequences / Impact
+    if any(k in t for k in ["consequence", "impact", "trade-off", "tradeoff"]):
+        score += 1
+
+    # Alternatives
+    if any(k in t for k in ["alternative", "option", "considered"]):
+        score += 1
+
+    # Length bonus (important)
+    if len(t.split()) > 150:
+        score += 1
+
+    return score >= 2   # 🔥 relaxed from 3 → 2
+
+
+def classify_variant(text: str) -> str:
+    t = text.lower()
+
+    if "decision drivers" in t and "considered options" in t:
+        return "MADR"
+    elif "context" in t and "consequences" in t:
+        return "NYGARD"
+    elif "decision" in t:
+        return "LIGHTWEIGHT"
+    return "OTHER"
+def fetch_adrs_from_github(target_count=None):
     import urllib.request
-    import urllib.error
+    import time
+
+    if target_count is None:
+        target_count = len(ADR_DATASET)
 
     ADRS_DIR.mkdir(parents=True, exist_ok=True)
+
     fetched = []
+    repo_counts = defaultdict(int)
+
     token = os.environ.get("GITHUB_TOKEN", "")
     headers = {"Accept": "application/vnd.github.v3+json"}
     if token:
         headers["Authorization"] = f"token {token}"
 
-    print(f"\n{'='*60}")
-    print(f"PHASE 1: Fetching ADRs from GitHub")
-    print(f"{'='*60}")
+    print("\n================ FETCH ADRs ================")
+    print(f"  Source: adr_dataset.json ({len(ADR_DATASET)} entries)\n")
 
-    for owner, repo, path_prefix in ADR_REPOS:
+    for entry in ADR_DATASET:
         if len(fetched) >= target_count:
             break
 
-        api_url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path_prefix}"
-        print(f"\n  Trying {owner}/{repo}/{path_prefix}...")
+        owner = entry["owner"]
+        repo  = entry["repo"]
+        path  = entry["path"]
+        filename = path.split("/")[-1]
+
+        raw_url = f"https://raw.githubusercontent.com/{owner}/{repo}/HEAD/{path}"
 
         try:
-            req = urllib.request.Request(api_url, headers=headers)
+            req = urllib.request.Request(raw_url, headers=headers)
             with urllib.request.urlopen(req, timeout=10) as resp:
-                files = json.loads(resp.read().decode())
-        except Exception as e:
-            print(f"    ✗ Error listing: {e}")
-            continue
+                content = resp.read().decode("utf-8", errors="replace")
 
-        md_files = [f for f in files if isinstance(f, dict) and
-                    f.get("name", "").endswith(".md") and
-                    f.get("type") == "file" and
-                    f.get("size", 0) > 200]  # skip tiny files
-
-        for f_info in md_files[:10]:  # max 10 per repo
-            if len(fetched) >= target_count:
-                break
-
-            try:
-                req = urllib.request.Request(f_info["download_url"], headers=headers)
-                with urllib.request.urlopen(req, timeout=10) as resp:
-                    content = resp.read().decode("utf-8", errors="replace")
-
-                # Basic quality filter
-                word_count = len(content.split())
-                if word_count < 50:
-                    continue
-
-                adr_id = f"{owner}_{repo}_{f_info['name'].replace('.md','')}"
-                adr_id = re.sub(r'[^a-zA-Z0-9_-]', '_', adr_id)
-
-                adr_data = {
-                    "id": adr_id,
-                    "source_repo": f"{owner}/{repo}",
-                    "filename": f_info["name"],
-                    "url": f_info["html_url"],
-                    "word_count": word_count,
-                    "text": content,
-                    "fetched_at": datetime.now().isoformat(),
-                }
-
-                # Save individual ADR
-                adr_path = ADRS_DIR / f"{adr_id}.json"
-                with open(adr_path, "w") as fp:
-                    json.dump(adr_data, fp, indent=2)
-
-                fetched.append(adr_data)
-                print(f"    ✓ {f_info['name']} ({word_count} words)")
-
-                time.sleep(0.5)  # Rate limit
-
-            except Exception as e:
-                print(f"    ✗ Error fetching {f_info['name']}: {e}")
+            word_count = len(content.split())
+            if word_count < 80:
                 continue
 
-    # Save manifest
-    manifest = {
-        "total_fetched": len(fetched),
-        "timestamp": datetime.now().isoformat(),
-        "repos_used": [f"{o}/{r}" for o, r, _ in ADR_REPOS],
-        "adr_ids": [a["id"] for a in fetched],
-    }
-    with open(EXPERIMENT_DIR / "adr_manifest.json", "w") as fp:
-        json.dump(manifest, fp, indent=2)
+            adr_id = f"{owner}_{repo}_{filename.replace('.md', '')}"
+            adr_id = re.sub(r'[^a-zA-Z0-9_-]', '_', adr_id)
 
-    print(f"\n  ✓ Fetched {len(fetched)} ADRs total")
+            adr_data = {
+                "id": adr_id,
+                "source_repo": f"{owner}/{repo}",
+                "filename": filename,
+                "url": f"https://github.com/{owner}/{repo}/blob/HEAD/{path}",
+                "word_count": word_count,
+                "variant": classify_variant(content),
+                "text": content,
+                "fetched_at": datetime.now().isoformat(),
+            }
+
+            with open(ADRS_DIR / f"{adr_id}.json", "w") as fp:
+                json.dump(adr_data, fp, indent=2)
+
+            fetched.append(adr_data)
+            repo_counts[f"{owner}/{repo}"] += 1
+
+            print(f"  OK  {owner}/{repo} | {filename} ({word_count} words)")
+            time.sleep(0.4)
+
+        except Exception as e:
+            print(f"  SKIP  {owner}/{repo}/{path} -- {e}")
+            continue
+
+    print(f"\nTOTAL ADRs fetched: {len(fetched)}")
+
+    # ==============================
+    # DATASET ANALYSIS
+    # ==============================
+    from collections import Counter
+
+    variant_counts = Counter()
+    lengths = []
+
+    for adr in fetched:
+        variant_counts[adr["variant"]] += 1
+        lengths.append(adr["word_count"])
+
+    print("\nRepo distribution:")
+    for k, v in repo_counts.items():
+        print(f"  {k}: {v}")
+
+    print("\nVariant distribution:")
+    for k, v in variant_counts.items():
+        print(f"  {k}: {v}")
+
+    print(f"\nAvg length: {sum(lengths)//len(lengths) if lengths else 0}")
+
+    # ==============================
+    # SAVE REPORT
+    # ==============================
+    report = {
+        "total_adrs": len(fetched),
+        "repo_distribution": dict(repo_counts),
+        "variant_distribution": dict(variant_counts),
+        "avg_length": int(sum(lengths)/len(lengths)) if lengths else 0,
+        "min_length": min(lengths) if lengths else 0,
+        "max_length": max(lengths) if lengths else 0,
+    }
+
+    with open("dataset_report.json", "w") as f:
+        json.dump(report, f, indent=2)
+
+    print("\nSaved dataset_report.json")
+
     return fetched
 
 
@@ -286,7 +343,7 @@ def annotate_with_oracle(adrs: List[Dict], oracle_model="gpt-4o-2024-08-06"):
                 annotations.append(parsed)
 
             except Exception as e:
-                print(f"    ✗ Run {run+1} failed: {e}")
+                print(f"    ERROR run {run+1} failed: {e}")
                 annotations.append(None)
 
             time.sleep(RATE_LIMIT_DELAY)
@@ -353,9 +410,9 @@ DQ: Compliant (≥5 Met), Partially_Compliant (3-4), Non_Compliant (<3)
 
 OVERALL: The worse of SC and DQ."""
 
-JSON_FORMAT = """Respond ONLY with this JSON:
+JSON_FORMAT = """Respond ONLY with valid JSON.
+DO NOT use markdown or code blocks.
 {"sc_class":"Compliant|Partially_Compliant|Non_Compliant","dq_class":"Compliant|Partially_Compliant|Non_Compliant","overall":"Compliant|Partially_Compliant|Non_Compliant","confidence":0.0-1.0}"""
-
 
 def make_prompt(adr_text: str, strategy: str, few_shot_examples: List[Dict] = None):
     """Build the prompt for a given strategy."""
@@ -408,7 +465,7 @@ After your analysis, end with EXACTLY this JSON on its own line:
 {JSON_FORMAT}"""
 
 
-def call_llm(model_name: str, prompt: str):
+def call_llm(model_name: str, prompt: str, _retries: int = 3):
     """Call an LLM API and return result with timing."""
     cfg = MODELS[model_name]
     start = time.time()
@@ -423,15 +480,20 @@ def call_llm(model_name: str, prompt: str):
                 kwargs["api_key"] = os.environ.get(cfg["api_key_env"], "")
             client = OpenAI(**kwargs)
 
-            response = client.chat.completions.create(
-                model=cfg["model"],
-                messages=[
+            create_kwargs = {
+                "model": cfg["model"],
+                "messages": [
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": prompt},
                 ],
-                temperature=0,
-                max_tokens=1024,
-            )
+            }
+            if not cfg.get("no_temperature"):
+                create_kwargs["temperature"] = 0
+            if cfg.get("use_max_completion_tokens"):
+                create_kwargs["max_completion_tokens"] = 1024
+            else:
+                create_kwargs["max_tokens"] = 1024
+            response = client.chat.completions.create(**create_kwargs)
             raw = response.choices[0].message.content
             usage = {
                 "input_tokens": response.usage.prompt_tokens,
@@ -440,20 +502,46 @@ def call_llm(model_name: str, prompt: str):
 
         elif cfg["provider"] == "anthropic":
             from anthropic import Anthropic
-            client = Anthropic()
+            client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
-            response = client.messages.create(
-                model=cfg["model"],
-                system=SYSTEM_PROMPT,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0,
-                max_tokens=1024,
-            )
+            create_kwargs = {
+                "model": cfg["model"],
+                "system": SYSTEM_PROMPT,
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": 1024,
+            }
+            if not cfg.get("no_temperature"):
+                create_kwargs["temperature"] = 0
+            response = client.messages.create(**create_kwargs)
             raw = response.content[0].text
             usage = {
                 "input_tokens": response.usage.input_tokens,
                 "output_tokens": response.usage.output_tokens,
             }
+
+        elif cfg["provider"] == "gemini":
+            from google import genai as google_genai
+            from google.genai import types as genai_types
+            client = google_genai.Client(api_key=os.environ.get(cfg["api_key_env"], ""))
+            response = client.models.generate_content(
+                model=cfg["model"],
+                contents=prompt,
+                config=genai_types.GenerateContentConfig(
+                    system_instruction=SYSTEM_PROMPT,
+                    max_output_tokens=cfg.get("max_output_tokens", 1024),
+                ),
+            )
+            raw = response.text
+            if raw is None:
+                finish_reason = "unknown"
+                if response.candidates:
+                    finish_reason = str(response.candidates[0].finish_reason)
+                raise ValueError(f"empty response from Gemini (finish_reason={finish_reason})")
+            usage = {
+                "input_tokens": response.usage_metadata.prompt_token_count,
+                "output_tokens": response.usage_metadata.candidates_token_count,
+            }
+
         else:
             return {"error": f"Unknown provider: {cfg['provider']}"}
 
@@ -467,128 +555,428 @@ def call_llm(model_name: str, prompt: str):
         }
 
     except Exception as e:
+        err = str(e)
+        print(f"\nAPI ERROR [{model_name}]:", err)
+        quota_exhausted = "insufficient_quota" in err or "quota" in err.lower()
+
+        is_transient_429 = ("429" in err or "rate_limit" in err.lower()) and not quota_exhausted
+        if is_transient_429 and _retries > 0:
+            wait = 30 if _retries == 1 else 10
+            print(f"  Rate limited — waiting {wait}s then retrying ({_retries} left)...")
+            time.sleep(wait)
+            return call_llm(model_name, prompt, _retries=_retries - 1)
+
         return {
             "raw": None,
             "usage": {"input_tokens": 0, "output_tokens": 0},
             "latency": round(time.time() - start, 2),
-            "error": str(e),
+            "error": err,
+            "quota_exhausted": quota_exhausted,
         }
 
 
-def extract_classification(raw_text: str) -> Optional[str]:
-    """Extract overall classification from LLM response."""
-    if not raw_text:
+def extract_classification(raw):
+    if not raw:
         return None
 
-    # Try JSON extraction
-    patterns = [
-        r'"overall"\s*:\s*"(Compliant|Partially_Compliant|Non_Compliant)"',
-        r'"overall"\s*:\s*"(compliant|partially_compliant|non_compliant)"',
-    ]
-    for pat in patterns:
-        m = re.search(pat, raw_text, re.IGNORECASE)
-        if m:
-            val = m.group(1)
-            # Normalize
-            val = val.replace("compliant", "Compliant").replace("partially", "Partially").replace("non", "Non")
-            if val.startswith("Partially"):
+    try:
+        raw = raw.strip()
+
+        # Remove markdown fences like ```json ... ```
+        if raw.startswith("```"):
+            raw = re.sub(r"^```[a-zA-Z]*", "", raw)
+            raw = re.sub(r"```$", "", raw)
+            raw = raw.strip()
+
+        # Extract JSON (greedy match)
+        match = re.search(r'\{.*\}', raw, re.DOTALL)
+        if match:
+            json_str = match.group(0)
+
+            parsed = json.loads(json_str)
+
+            val = parsed.get("overall", "").lower()
+
+            if "partially" in val:
                 return "Partially_Compliant"
-            elif val.startswith("Non"):
+            elif "non" in val:
                 return "Non_Compliant"
-            else:
+            elif "compliant" in val:
                 return "Compliant"
 
-    # Fallback: look for keywords
-    text_lower = raw_text.lower()
-    if "non_compliant" in text_lower or "non-compliant" in text_lower:
-        return "Non_Compliant"
-    elif "partially_compliant" in text_lower or "partially compliant" in text_lower:
+    except Exception as e:
+        pass
+
+    raw_lower = raw.lower()
+
+    if "partially_compliant" in raw_lower:
         return "Partially_Compliant"
-    elif "compliant" in text_lower:
+    elif "non_compliant" in raw_lower:
+        return "Non_Compliant"
+    elif "compliant" in raw_lower:
         return "Compliant"
 
     return None
 
 
-def run_experiments(adrs: List[Dict], ground_truth: Dict):
-    """Run all experiments."""
+def select_eval_adrs(adrs: List[Dict], ground_truth: Dict,
+                     n: int = 100, per_repo_cap: int = 15) -> List[Dict]:
+    """
+    Filter + rank + select the best n ADRs for the experiment.
+
+    Ranking: sc_score + dq_met (oracle scores from annotation).
+    Diversity: at most per_repo_cap ADRs from any single source_repo.
+    Persists the selection to eval_set.json so all --run calls use the same set.
+    """
+    select_path = EXPERIMENT_DIR / "eval_set.json"
+
+    if select_path.exists():
+        with open(select_path) as fp:
+            saved = json.load(fp)
+        saved_ids = {e["id"] for e in saved["adrs"]}
+        selected = [a for a in adrs if a["id"] in saved_ids]
+        print(f"\n  Reusing eval_set.json: {len(selected)} ADRs. Delete to reselect.")
+        return selected
+
+    annotated = [a for a in adrs if a["id"] in ground_truth]
+
+    def rank_score(adr):
+        gt = ground_truth[adr["id"]]
+        return gt.get("sc_score", 0) + gt.get("dq_met", 0)
+
+    annotated.sort(key=rank_score, reverse=True)
+
+    repo_counts = defaultdict(int)
+    selected = []
+    selected_ids = set()
+    for adr in annotated:
+        repo = adr["source_repo"]
+        if repo_counts[repo] >= per_repo_cap:
+            continue
+        selected.append(adr)
+        selected_ids.add(adr["id"])
+        repo_counts[repo] += 1
+        if len(selected) == n:
+            break
+
+    # Fallback: fill remaining slots if diversity cap left us short
+    if len(selected) < n:
+        for adr in annotated:
+            if adr["id"] not in selected_ids:
+                selected.append(adr)
+                selected_ids.add(adr["id"])
+            if len(selected) == n:
+                break
+
+    print(f"\n  Selected {len(selected)} ADRs by quality rank (top sc+dq score)")
+    print(f"  Repo distribution: { {k: v for k, v in repo_counts.items()} }")
+
+    payload = {
+        "selected_at": datetime.now().isoformat(),
+        "n": len(selected),
+        "per_repo_cap": per_repo_cap,
+        "adrs": [
+            {
+                "id": a["id"],
+                "source_repo": a["source_repo"],
+                "rank_score": rank_score(a),
+                "ground_truth": ground_truth[a["id"]]["overall"],
+            }
+            for a in selected
+        ],
+    }
+    with open(select_path, "w") as fp:
+        json.dump(payload, fp, indent=2)
+    print(f"  Saved to {select_path}")
+
+    return selected
+
+
+def get_eval_adrs(adrs: List[Dict], ground_truth: Dict,
+                  n_eval: int, seed: int = None, resample: bool = False) -> List[Dict]:
+    """
+    Return the ADRs to evaluate, persisting the choice to eval_sample.json
+    so every --run call uses the same set.
+
+    Pass resample=True (or delete eval_sample.json) to draw a fresh sample.
+    """
+    sample_path = EXPERIMENT_DIR / "eval_sample.json"
+
+    if sample_path.exists() and not resample:
+        with open(sample_path) as fp:
+            saved = json.load(fp)
+        if saved["n_actual"] != n_eval:
+            print(f"\n  WARNING: existing sample has {saved['n_actual']} ADRs "
+                  f"but --n-eval={n_eval} requested. Drawing a new sample.")
+        else:
+            sampled_ids = saved["adr_ids"]
+            id_index = {aid: i for i, aid in enumerate(sampled_ids)}
+            eval_adrs = [a for a in adrs if a["id"] in id_index]
+            eval_adrs.sort(key=lambda a: id_index[a["id"]])
+            print(f"\n  Reusing existing ADR sample: {len(eval_adrs)} ADRs  (seed={saved['seed']})")
+            print(f"  Pass --resample to draw a new sample.")
+            return eval_adrs
+
+    eligible = [a for a in adrs if a["id"] in ground_truth]
+
+    if len(eligible) < n_eval:
+        raise ValueError(
+            f"Not enough ADRs after filtering to meet n_eval={n_eval} "
+            f"(only {len(eligible)} have ground truth)"
+        )
+
+    # Balanced sampling by variant
+    groups = defaultdict(list)
+
+    for adr in eligible:
+        groups[adr.get("variant", "OTHER")].append(adr)
+
+    balanced = []
+    TARGET_PER_GROUP = max(10, n_eval // max(len(groups), 1))
+
+    for g in groups:
+        sample_size = min(len(groups[g]), TARGET_PER_GROUP)
+        balanced.extend(random.sample(groups[g], sample_size))
+
+    if len(balanced) >= n_eval:
+        eligible = balanced
+    if seed is None:
+        seed = random.randint(0, 2 ** 32 - 1)
+    rng = random.Random(seed)
+    n = min(n_eval, len(eligible))
+    sampled = rng.sample(eligible, n)
+
+    sample_data = {
+        "sampled_at": datetime.now().isoformat(),
+        "n_requested": n_eval,
+        "n_actual": n,
+        "seed": seed,
+        "adr_ids": [a["id"] for a in sampled],
+        "adrs": [
+            {
+                "id": a["id"],
+                "source_repo": a["source_repo"],
+                "filename": a["filename"],
+                "word_count": a["word_count"],
+                "url": a.get("url", ""),
+                "ground_truth": ground_truth[a["id"]]["overall"],
+            }
+            for a in sampled
+        ],
+    }
+    with open(sample_path, "w") as fp:
+        json.dump(sample_data, fp, indent=2)
+
+    print(f"\n  Sampled {n} ADRs randomly (seed={seed}) -> {sample_path}")
+    return sampled
+
+
+def _run_pair(model_name: str, strategy: str,
+              eval_adrs: List[Dict], ground_truth: Dict,
+              fs_examples: List[Dict], n_reps: int,
+              exhausted_models: set, lock,
+              stop_event) -> None:
+    """Run one model/strategy pair. Called in a thread."""
+    with lock:
+        if model_name in exhausted_models:
+            print(f"  SKIP  {model_name}/{strategy} — quota exhausted")
+            return
+
+    result_file = RESULTS_DIR / f"{model_name}_{strategy}.json"
+    if result_file.exists():
+        with open(result_file) as fp:
+            rep_results_list = json.load(fp)
+        completed_reps = len(rep_results_list)
+        print(f"  Resuming {model_name}/{strategy} from rep {completed_reps + 1}")
+    else:
+        rep_results_list = []
+        completed_reps = 0
+
+    if completed_reps >= n_reps:
+        print(f"  DONE  {model_name}/{strategy} already complete")
+        return
+
+    for rep in range(completed_reps, n_reps):
+        if stop_event.is_set():
+            break
+
+        rep_results = []
+        quota_hit = False
+
+        n_adrs = len(eval_adrs)
+        for adr_idx, adr in enumerate(eval_adrs, 1):
+            if stop_event.is_set():
+                break
+
+            prompt = make_prompt(adr["text"], strategy, fs_examples)
+            result = call_llm(model_name, prompt)
+
+            if result.get("quota_exhausted"):
+                with lock:
+                    exhausted_models.add(model_name)
+                print(f"\n  QUOTA EXHAUSTED for {model_name} — stopping")
+                quota_hit = True
+                break
+
+            predicted = extract_classification(result["raw"]) if result["raw"] else None
+            actual = ground_truth[adr["id"]]["overall"]
+
+            rep_results.append({
+                "adr_id": adr["id"],
+                "actual": actual,
+                "predicted": predicted,
+                "correct": predicted == actual if predicted else False,
+                "latency": result["latency"],
+                "input_tokens": result["usage"]["input_tokens"],
+                "output_tokens": result["usage"]["output_tokens"],
+                "error": result["error"],
+                "parse_success": predicted is not None,
+            })
+
+            status = "OK" if predicted == actual else "FAIL" if predicted else "?"
+            pct = adr_idx / n_adrs * 100
+            print(f"  {model_name[:12]:>12} | {strategy[:5]} | r{rep+1} | "
+                  f"[{adr_idx}/{n_adrs}] {pct:4.0f}% | "
+                  f"{adr['id'][:20]:>20} | {status} {predicted or 'PARSE_FAIL'}")
+
+            time.sleep(RATE_LIMIT_DELAY)
+
+        if quota_hit:
+            break
+
+        if rep_results:
+            rep_results_list.append(rep_results)
+            with open(result_file, "w") as fp:
+                json.dump(rep_results_list, fp, indent=2)
+            print(f"  Saved rep {rep + 1} -> {result_file}")
+
+
+def run_experiments(adrs: List[Dict], ground_truth: Dict,
+                    n_eval: int = N_EVAL, n_reps: int = N_REPS,
+                    targets: List[tuple] = None, workers: int = 3):
+    """
+    Run experiments for the given targets in parallel (one thread per model/strategy pair).
+
+    workers: number of pairs to run simultaneously (default 3).
+    Each pair saves its own result file after every rep — safe to kill and resume.
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import threading
+
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Prepare few-shot examples from ground truth
+    work = targets if targets is not None else [
+        (m, s) for m in MODELS for s in STRATEGIES
+    ]
+
+    # Pre-flight: drop any model whose API key is missing
+    def _api_key_present(model_name: str) -> bool:
+        cfg = MODELS[model_name]
+        if cfg["provider"] == "anthropic":
+            return bool(os.environ.get("ANTHROPIC_API_KEY"))
+        if cfg["provider"] == "gemini":
+            return bool(os.environ.get(cfg.get("api_key_env", "GEMINI_API_KEY")))
+        # openai-compatible
+        env_var = cfg.get("api_key_env", "OPENAI_API_KEY")
+        return bool(os.environ.get(env_var))
+
+    skipped_models = set()
+    valid_work = []
+    for model_name, strategy in work:
+        if _api_key_present(model_name):
+            valid_work.append((model_name, strategy))
+        else:
+            if model_name not in skipped_models:
+                cfg = MODELS[model_name]
+                env_var = cfg.get("api_key_env", "ANTHROPIC_API_KEY" if cfg["provider"] == "anthropic" else "OPENAI_API_KEY")
+                print(f"  SKIP  {model_name} — {env_var} not set")
+                skipped_models.add(model_name)
+    work = valid_work
+
+    if not work:
+        print("\nERROR: No models have API keys set. Nothing to run.")
+        return
+
     fs_examples = []
-    for adr in adrs[:10]:  # use first 10 as potential examples
+    for adr in adrs[:10]:
         if adr["id"] in ground_truth:
             fs_examples.append({
                 "text": adr["text"],
                 "label": ground_truth[adr["id"]]["overall"],
             })
 
-    eval_adrs = [a for a in adrs if a["id"] in ground_truth][:N_EVAL]
-    total_calls = len(MODELS) * len(STRATEGIES) * N_REPS * len(eval_adrs)
-    call_num = 0
+    eval_adrs = select_eval_adrs(adrs, ground_truth, n=n_eval)
+    total_calls = len(work) * n_reps * len(eval_adrs)
 
     print(f"\n{'='*60}")
     print(f"PHASE 3: Running experiments")
-    print(f"  Models: {list(MODELS.keys())}")
-    print(f"  Strategies: {STRATEGIES}")
-    print(f"  Reps: {N_REPS}")
-    print(f"  ADRs: {len(eval_adrs)}")
-    print(f"  Total calls: {total_calls}")
-    print(f"  Estimated time: {total_calls * 2.5 / 60:.0f} minutes")
+    print(f"  Targets : {[f'{m}/{s}' for m, s in work]}")
+    print(f"  Workers : {workers}  |  Reps: {n_reps}  |  ADRs: {len(eval_adrs)}")
+    print(f"  Total calls: {total_calls}  |  Est. time: {total_calls * 2.5 / 60 / workers:.0f} min")
+    print(f"{'='*60}")
+
+    exhausted_models = set()
+    lock = threading.Lock()
+    stop_event = threading.Event()
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {
+            executor.submit(
+                _run_pair,
+                model_name, strategy,
+                eval_adrs, ground_truth, fs_examples, n_reps,
+                exhausted_models, lock, stop_event
+            ): (model_name, strategy)
+            for model_name, strategy in work
+        }
+        try:
+            for future in as_completed(futures):
+                model_name, strategy = futures[future]
+                try:
+                    future.result()
+                except Exception as e:
+                    print(f"\n  ERROR in {model_name}/{strategy}: {e}")
+        except KeyboardInterrupt:
+            print("\n\n  Ctrl+C received — stopping after current API calls finish...")
+            stop_event.set()
+            executor.shutdown(wait=True, cancel_futures=True)
+            print("  All threads stopped. Progress saved. Resume by re-running the same command.")
+
+
+def merge_results() -> Dict:
+    """
+    Scan RESULTS_DIR for individual model/strategy result files,
+    build all_results dict, save all_results.json, and return it.
+    """
+    print(f"\n{'='*60}")
+    print(f"MERGE: Combining individual result files")
     print(f"{'='*60}")
 
     all_results = {}
+    found = 0
 
     for model_name in MODELS:
-        all_results[model_name] = {}
-
         for strategy in STRATEGIES:
-            all_results[model_name][strategy] = []
-
-            for rep in range(N_REPS):
-                rep_results = []
-
-                for adr in eval_adrs:
-                    call_num += 1
-                    pct = call_num / total_calls * 100
-
-                    prompt = make_prompt(adr["text"], strategy, fs_examples)
-                    result = call_llm(model_name, prompt)
-
-                    predicted = extract_classification(result["raw"]) if result["raw"] else None
-                    actual = ground_truth[adr["id"]]["overall"]
-
-                    rep_results.append({
-                        "adr_id": adr["id"],
-                        "actual": actual,
-                        "predicted": predicted,
-                        "correct": predicted == actual if predicted else False,
-                        "latency": result["latency"],
-                        "input_tokens": result["usage"]["input_tokens"],
-                        "output_tokens": result["usage"]["output_tokens"],
-                        "error": result["error"],
-                        "parse_success": predicted is not None,
-                    })
-
-                    status = "✓" if predicted == actual else "✗" if predicted else "?"
-                    print(f"  [{call_num}/{total_calls} {pct:.0f}%] "
-                          f"{model_name[:10]:>10} | {strategy[:5]} | r{rep+1} | "
-                          f"{adr['id'][:20]:>20} | {status} {predicted or 'PARSE_FAIL'}")
-
-                    time.sleep(RATE_LIMIT_DELAY)
-
-                all_results[model_name][strategy].append(rep_results)
-
-            # Save per-model-strategy results
             result_file = RESULTS_DIR / f"{model_name}_{strategy}.json"
-            with open(result_file, "w") as fp:
-                json.dump(all_results[model_name][strategy], fp, indent=2)
-            print(f"\n  → Saved {result_file}")
+            if not result_file.exists():
+                print(f"  MISSING  {model_name}/{strategy}")
+                continue
+            with open(result_file) as fp:
+                data = json.load(fp)
+            all_results.setdefault(model_name, {})[strategy] = data
+            n_reps = len(data)
+            n_adrs = len(data[0]) if data else 0
+            print(f"  OK  {model_name}/{strategy}  ({n_reps} reps x {n_adrs} ADRs)")
+            found += 1
 
-    # Save everything
-    with open(RESULTS_DIR / "all_results.json", "w") as fp:
+    if not all_results:
+        print("ERROR: No result files found. Run experiments first.")
+        sys.exit(1)
+
+    out_path = RESULTS_DIR / "all_results.json"
+    with open(out_path, "w") as fp:
         json.dump(all_results, fp, indent=2)
-
+    print(f"\n  Merged {found} result files -> {out_path}")
     return all_results
 
 
@@ -599,7 +987,7 @@ def run_experiments(adrs: List[Dict], ground_truth: Dict):
 def analyze(all_results: Dict, ground_truth: Dict):
     """Compute metrics and generate paper-ready output."""
     from sklearn.metrics import (
-        precision_recall_fscore_support, accuracy_score,
+        precision_recall_fscore_support,
         cohen_kappa_score, confusion_matrix
     )
     from scipy.stats import chi2
@@ -607,8 +995,8 @@ def analyze(all_results: Dict, ground_truth: Dict):
     ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
     CLASSES = ["Compliant", "Partially_Compliant", "Non_Compliant"]
     STRAT_SHORT = {"zero_shot": "ZS", "few_shot": "FS", "chain_of_thought": "CoT"}
-    MODEL_SHORT = {"gpt-4o": "GPT-4o", "claude-3.5-sonnet": "Claude 3.5",
-                   "mistral-7b": "Mistral 7B", "gemini-1.5-pro": "Gemini 1.5P",
+    MODEL_SHORT = {"gpt-5.1": "GPT-5.5", "claude-sonnet-4-6": "Claude Sonnet 4.6",
+                   "mistral-7b": "Mistral 7B", "gemini-2.5-pro": "Gemini 2.5P",
                    "llama-3.1-70b": "LLaMA 3.1"}
 
     print(f"\n{'='*60}")
@@ -726,9 +1114,10 @@ def analyze(all_results: Dict, ground_truth: Dict):
     print(f"{'='*60}")
 
     pricing = {
-        "gpt-4o": (2.50, 10.00),
-        "claude-3.5-sonnet": (3.00, 15.00),
-        "mistral-7b": (0.25, 0.25),  # Mistral API pricing
+        "gpt-5.1": (5.00, 30.00),
+        "claude-sonnet-4-6": (3.00, 15.00),
+        "mistral-7b": (0.25, 0.25),
+        "gemini-2.5-pro": (1.25, 10.00),  # standard tier (<200K ctx)
     }
 
     for model_name in all_results:
@@ -749,7 +1138,7 @@ def analyze(all_results: Dict, ground_truth: Dict):
     with open(ANALYSIS_DIR / "metrics_summary.json", "w") as fp:
         json.dump(metrics_summary, fp, indent=2)
 
-    print(f"\n✓ Analysis complete. Results in {ANALYSIS_DIR}")
+    print(f"\nAnalysis complete. Results in {ANALYSIS_DIR}")
     return metrics_summary
 
 
@@ -757,61 +1146,124 @@ def analyze(all_results: Dict, ground_truth: Dict):
 # MAIN
 # ============================================================
 
+def _parse_targets(raw: str) -> List[tuple]:
+    """Parse 'model/strategy,...' into validated (model, strategy) pairs."""
+    targets = []
+    for item in raw.split(","):
+        item = item.strip()
+        if "/" not in item:
+            print(f"ERROR: invalid format {item!r} — expected model/strategy")
+            sys.exit(1)
+        model_name, strategy = item.rsplit("/", 1)
+        if model_name not in MODELS:
+            print(f"ERROR: unknown model {model_name!r}")
+            print(f"  Known models: {list(MODELS)}")
+            sys.exit(1)
+        if strategy not in STRATEGIES:
+            print(f"ERROR: unknown strategy {strategy!r}")
+            print(f"  Known strategies: {STRATEGIES}")
+            sys.exit(1)
+        targets.append((model_name, strategy))
+    return targets
+
+
+def _load_ground_truth() -> Dict:
+    gt_path = EXPERIMENT_DIR / "ground_truth.json"
+    if not gt_path.exists():
+        print("ERROR: No ground truth found. Run --phase annotate first.")
+        sys.exit(1)
+    with open(gt_path) as fp:
+        return json.load(fp)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Overnight ADR Compliance Experiment")
-    parser.add_argument("--phase", default="all",
-                        choices=["fetch", "annotate", "run", "analyze", "all"])
-    parser.add_argument("--n-eval", type=int, default=50)
+    parser.add_argument("--phase", default=None,
+                        choices=["fetch", "annotate", "run", "merge", "all"],
+                        help="Pipeline phase to execute (default: all)")
+    parser.add_argument("--run", metavar="MODEL/STRATEGY[,...]",
+                        help="Run specific model/strategy pairs (comma-separated); "
+                             "requires fetch + annotate to be done already")
+    parser.add_argument("--n-eval", type=int, default=200,
+                        help="Number of ADRs to sample for evaluation (default: 200)")
     parser.add_argument("--n-reps", type=int, default=3)
+    parser.add_argument("--workers", type=int, default=3,
+                        help="Parallel model/strategy pairs to run simultaneously (default: 3)")
+    parser.add_argument("--seed", type=int, default=None,
+                        help="Random seed for ADR sampling (random if not set)")
+    parser.add_argument("--resample", action="store_true",
+                        help="Draw a fresh random ADR sample even if eval_sample.json exists")
     args = parser.parse_args()
+
+    # Default to 'all' when neither --phase nor --run is given
+    if args.phase is None and args.run is None:
+        args.phase = "all"
 
     n_eval = args.n_eval
     n_reps = args.n_reps
 
     EXPERIMENT_DIR.mkdir(parents=True, exist_ok=True)
-
     start_time = datetime.now()
+
+    # --run: targeted experiment run — skip fetch/annotate, load from disk
+    if args.run:
+        targets = _parse_targets(args.run)
+        print(f"\n{'='*60}")
+        print(f"TARGETED RUN: {[f'{m}/{s}' for m, s in targets]}")
+        print(f"Started: {start_time.isoformat()}")
+        print(f"{'='*60}")
+        adrs = load_adrs()
+        if not adrs:
+            print("ERROR: No ADRs found. Run --phase fetch first.")
+            sys.exit(1)
+        ground_truth = _load_ground_truth()
+        run_experiments(adrs, ground_truth, n_eval=n_eval, n_reps=n_reps,
+                        targets=targets, workers=args.workers)
+        elapsed = datetime.now() - start_time
+        print(f"\n{'='*60}")
+        print(f"DONE. Time: {elapsed}  —  run --phase merge when all targets are complete.")
+        print(f"{'='*60}")
+        return
+
+    # --phase based flow
     print(f"\n{'='*60}")
-    print(f"ADR COMPLIANCE OVERNIGHT EXPERIMENT")
+    print(f"ADR COMPLIANCE EXPERIMENT  |  phase={args.phase}")
     print(f"Started: {start_time.isoformat()}")
-    print(f"Config: {n_eval} ADRs x {len(MODELS)} models x {len(STRATEGIES)} strategies x {n_reps} reps")
-    print(f"Total calls: {n_eval * len(MODELS) * len(STRATEGIES) * n_reps}")
     print(f"{'='*60}")
 
-    # Phase 1: Fetch ADRs
     if args.phase in ("fetch", "all"):
-        adrs = fetch_adrs_from_github(target_count=n_eval + 10)
+        adrs = fetch_adrs_from_github()
     else:
         adrs = load_adrs()
 
-    if not adrs:
-        print("ERROR: No ADRs found. Run --phase fetch first.")
-        sys.exit(1)
+    if args.phase in ("annotate", "all", "run"):
+        if not adrs:
+            print("ERROR: No ADRs found. Run --phase fetch first.")
+            sys.exit(1)
 
-    # Phase 2: Annotate
-    gt_path = EXPERIMENT_DIR / "ground_truth.json"
     if args.phase in ("annotate", "all"):
-        ground_truth = annotate_with_oracle(adrs[:n_eval + 10])
-    elif gt_path.exists():
-        with open(gt_path) as fp:
-            ground_truth = json.load(fp)
-    else:
-        print("ERROR: No ground truth. Run --phase annotate first.")
-        sys.exit(1)
+        ground_truth = annotate_with_oracle(adrs)
+    elif args.phase in ("run",):
+        ground_truth = _load_ground_truth()
 
-    # Phase 3: Run experiments
-    results_path = RESULTS_DIR / "all_results.json"
     if args.phase in ("run", "all"):
-        all_results = run_experiments(adrs, ground_truth)
-    elif results_path.exists():
+        run_experiments(adrs, ground_truth, n_eval=n_eval, n_reps=n_reps,
+                        workers=args.workers)
+
+    if args.phase in ("merge", "all"):
+        ground_truth = _load_ground_truth()
+        all_results = merge_results()
+        analyze(all_results, ground_truth)
+
+    elif args.phase == "analyze":
+        # Legacy: analyze from existing all_results.json
+        results_path = RESULTS_DIR / "all_results.json"
+        if not results_path.exists():
+            print("ERROR: all_results.json not found. Run --phase merge first.")
+            sys.exit(1)
         with open(results_path) as fp:
             all_results = json.load(fp)
-    else:
-        print("ERROR: No results. Run --phase run first.")
-        sys.exit(1)
-
-    # Phase 4: Analyze
-    if args.phase in ("analyze", "all"):
+        ground_truth = _load_ground_truth()
         analyze(all_results, ground_truth)
 
     elapsed = datetime.now() - start_time

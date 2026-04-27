@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0020-merge-api-postgresql-instance-into-main-postgresql-instance.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0020-merge-api-postgresql-instance-into-main-postgresql-instance.md",
+  "word_count": 135,
+  "variant": "NYGARD",
+  "text": "# 20. Merge API PostgreSQL instance into main PostgreSQL instance\n\nDate: 2017-08-07\n\n## Status\n\nAccepted\n\n## Context\n\nThe only database that runs on API PostgreSQL instances is Stagecraft, which is\nfor the Performance Platform.\n\nThis is able to run on the main PostgreSQL instance as we do not have the split\nof \"vDCs\" that we have in our current hosting provider.\n\nWork is ongoing to migrate the Performance Platform away from our infrastructure\nand to The Government PaaS, so the long term plan is not have this database in\nour infrastructure at all.\n\n## Decision\n\nWe should merge the API PostgreSQL instance into the main PostgreSQL instance.\n\n## Consequences\n\nThe application configuration will need to be updated to connect to the correct database.\n\nWe are able to reduce the amount of database instances we maintain.\n",
+  "fetched_at": "2026-04-26T00:45:18.593869"
+}

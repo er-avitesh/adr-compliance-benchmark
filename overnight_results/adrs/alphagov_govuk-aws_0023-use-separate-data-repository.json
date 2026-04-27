@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0023-use-separate-data-repository.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0023-use-separate-data-repository.md",
+  "word_count": 153,
+  "variant": "NYGARD",
+  "text": "# 23. Use separate data repository\n\nDate: 2017-08-18\n\n## Status\n\nAccepted\n\n## Context\n\nWe have a large amount of data which is needed to run the Terraform projects.\n\nSome of the data we need to use is sensitive (e.g. RDS passwords). It is considered best practice to keep sensitive information encrypted in private repositories. This means that access can be controlled and the that the data will remain secure, even if it is accidentally published.\n\n## Decision\n\nThe `terraform/data` directory will be split out into its own repository that will be kept private and all sensitive data within it will be encrypted using [sops](https://github.com/mozilla/sops).\n\n## Consequences\n\nSensitive data will not be publicly available. Should it leak it will still be cryptographically protected.\n\nThe terraform build tool will need to be extended to deal with an external data directory.\n\nBuilding the terraform project will require access to both the terraform and the data repositories.\n\n",
+  "fetched_at": "2026-04-26T00:45:05.605900"
+}

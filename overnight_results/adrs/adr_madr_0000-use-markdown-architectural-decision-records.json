@@ -2,8 +2,9 @@
   "id": "adr_madr_0000-use-markdown-architectural-decision-records",
   "source_repo": "adr/madr",
   "filename": "0000-use-markdown-architectural-decision-records.md",
-  "url": "https://github.com/adr/madr/blob/develop/docs/decisions/0000-use-markdown-architectural-decision-records.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0000-use-markdown-architectural-decision-records.md",
   "word_count": 172,
+  "variant": "LIGHTWEIGHT",
   "text": "---\nparent: Decisions\nnav_order: 0\n---\n# Use Markdown Architectural Decision Records\n\n## Context and Problem Statement\n\nWe want to record architectural decisions made in this project independent whether decisions concern the architecture (\"architectural decision record\"), the code, or other fields.\nWhich format and structure should these records follow?\n\n## Considered Options\n\n* [MADR](https://adr.github.io/madr/) 4.0.0 \u2013 The Markdown Architectural Decision Records\n* [Michael Nygard's template](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions) \u2013 The first incarnation of the term \"ADR\"\n* [Sustainable Architectural Decisions](https://www.infoq.com/articles/sustainable-architectural-design-decisions) \u2013 The Y-Statements\n* Other templates listed at <https://github.com/joelparkerhenderson/architecture_decision_record>\n* Formless \u2013 No conventions for file format and structure\n\n## Decision Outcome\n\nChosen option: \"MADR 4.0.0\", because\n\n* Implicit assumptions should be made explicit.\n  Design documentation is important to enable people understanding the decisions later on.\n  See also [\"A rational design process: How and why to fake it\"](https://doi.org/10.1109/TSE.1986.6312940).\n* MADR allows for structured capturing of any decision.\n* The MADR format is lean and fits our development style.\n* The MADR structure is comprehensible and facilitates usage & maintenance.\n* The MADR project is vivid.\n",
-  "fetched_at": "2026-04-12T17:40:54.490500"
+  "fetched_at": "2026-04-26T00:45:45.941918"
 }

@@ -2,8 +2,9 @@
   "id": "adr_madr_0007-do-not-emphasize-line-headings",
   "source_repo": "adr/madr",
   "filename": "0007-do-not-emphasize-line-headings.md",
-  "url": "https://github.com/adr/madr/blob/develop/docs/decisions/0007-do-not-emphasize-line-headings.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0007-do-not-emphasize-line-headings.md",
   "word_count": 113,
+  "variant": "MADR",
   "text": "---\nparent: Decisions\nnav_order: 7\n---\n# Do Not Emphasize Line Headings\n\n## Context and Problem Statement\n\nMADR contains lines such as `Chosen option: \"[option 1]\"`. Should \"Chosen option\" be emphasized?\n\n## Decision Drivers\n\n* MADR should be easy to read\n* MADR should be easy to write\n\n## Considered Options\n\n* Do not emphasize line headings\n* Emphasize line headings\n\n## Decision Outcome\n\nChosen option: \"Do not emphasize line headings\", because 1) these headings always are put at the beginning of a line and followed by a colon. Thus, they are already easy to identified as line heading. 2) Readers not familiar with Markdown might be confused by stars in the text.\n",
-  "fetched_at": "2026-04-12T17:06:41.115405"
+  "fetched_at": "2026-04-26T00:46:02.123012"
 }

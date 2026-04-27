@@ -1,0 +1,9 @@
+{
+  "id": "thomvaill_log4brains_README",
+  "source_repo": "thomvaill/log4brains",
+  "filename": "README.md",
+  "url": "https://github.com/thomvaill/log4brains/blob/develop/docs/adr/README.md",
+  "word_count": 104,
+  "text": "# Architecture Decision Records\n\nADRs are automatically published to our Log4brains architecture knowledge base:\n\n\ud83d\udd17 **<https://thomvaill.github.io/log4brains/adr/>**\n\nPlease use this link to browse them.\n\n## Development\n\nIf not already done, install Log4brains:\n\n```bash\nnpm install -g log4brains\n```\n\nTo preview the knowledge base locally, run:\n\n```bash\nlog4brains preview\n```\n\nIn preview mode, the Hot Reload feature is enabled: any change you make to a markdown file is applied live in the UI.\n\nTo create a new ADR interactively, run:\n\n```bash\nlog4brains adr new\n```\n\n## More information\n\n- [Log4brains documentation](https://github.com/thomvaill/log4brains/tree/develop#readme)\n- [What is an ADR and why should you use them](https://github.com/thomvaill/log4brains/tree/develop#-what-is-an-adr-and-why-should-you-use-them)\n- [ADR GitHub organization](https://adr.github.io/)\n",
+  "fetched_at": "2026-04-25T14:20:57.696579"
+}

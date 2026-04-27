@@ -2,8 +2,9 @@
   "id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
   "source_repo": "thomvaill/log4brains",
   "filename": "20201016-use-the-adr-slug-as-its-unique-id.md",
-  "url": "https://github.com/thomvaill/log4brains/blob/develop/docs/adr/20201016-use-the-adr-slug-as-its-unique-id.md",
+  "url": "https://github.com/thomvaill/log4brains/blob/HEAD/docs/adr/20201016-use-the-adr-slug-as-its-unique-id.md",
   "word_count": 191,
+  "variant": "LIGHTWEIGHT",
   "text": "# Use the ADR slug as its unique ID\n\n- Status: accepted\n- Date: 2020-10-16\n\n## Context and Problem Statement\n\nCurrently, ADR files follow this format: `NNNN-adr-title.md`, with NNNN being an incremental number from `0000` to `9999`.\nIt causes an issue during a `git merge` when two developers have created a new ADR on their respective branch.\nThere is a conflict because [an ADR number must be unique](20200926-use-the-adr-number-as-its-unique-id.md).\n\n## Decision\n\nFrom now on, we won't use ADR numbers anymore.\nAn ADR will be uniquely identified by its slug (ie. its filename without the extension), and its filename will have the following format: `YYYYMMDD-adr-title.md`, with `YYYYMMDD` being the date of creation of the file.\n\nAs a result, there won't have conflicts anymore and the files will still be correctly sorted in the IDE thanks to the date.\n\nFinally, the ADRs will be sorted with these rules (ordered by priority):\n\n1. By Date field, in the markdown file (if present)\n2. By Git creation date (does not follow renames)\n3. By file creation date if no versioned yet\n4. By slug\n\nThe core library is responsible for sorting.\n\n## Links\n\n- Supersedes [20200926-use-the-adr-number-as-its-unique-id](20200926-use-the-adr-number-as-its-unique-id.md)\n",
-  "fetched_at": "2026-04-12T10:19:55.652397"
+  "fetched_at": "2026-04-26T00:46:01.024158"
 }

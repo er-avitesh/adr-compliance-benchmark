@@ -2,8 +2,9 @@
   "id": "adr_madr_0005-use-dashes-in-filenames",
   "source_repo": "adr/madr",
   "filename": "0005-use-dashes-in-filenames.md",
-  "url": "https://github.com/adr/madr/blob/develop/docs/decisions/0005-use-dashes-in-filenames.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0005-use-dashes-in-filenames.md",
   "word_count": 131,
+  "variant": "LIGHTWEIGHT",
   "text": "---\nparent: Decisions\nnav_order: 5\n---\n# Use Dashes in Filenames\n\n## Context and Problem Statement\n\nWhat is the pattern of the filename where an ADR is stored?\n\n## Considered Options\n\n* `NNNN-title-with-dashes.md` - format used by [adr-tools](https://github.com/npryce/adr-tools)\n* `YYYY-MM-DD Title` - see <https://github.com/joelparkerhenderson/architecture_decision_record#adr-file-name-conventions>\n\n## Decision Outcome\n\nChosen option: \"`NNNN-title-with-dashes.md`\", because\n\n* `NNNN` provides a unique number, which can be used for referencing in the forms\n  * `ADR-0001` in plain text and\n  * by `@ADR(1)` Java code (enabled by [e-adr](https://adr.github.io/e-adr/))\n* The creation time of an ADR is of historical interest only, if it gets updated somehow.\n  The arguments are similar than the ones by [Does Git have keyword expansion?](https://git.wiki.kernel.org/index.php/GitFaq#Does_Git_have_keyword_expansion.3F)\n* Having no spaces in filenames eases working in the command line\n* This is exactly the format offered by [adr-tools](https://github.com/npryce/adr-tools)\n",
-  "fetched_at": "2026-04-12T17:08:38.933970"
+  "fetched_at": "2026-04-26T00:45:47.887272"
 }

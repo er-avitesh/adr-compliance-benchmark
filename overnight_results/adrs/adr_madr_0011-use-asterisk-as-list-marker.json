@@ -1,0 +1,10 @@
+{
+  "id": "adr_madr_0011-use-asterisk-as-list-marker",
+  "source_repo": "adr/madr",
+  "filename": "0011-use-asterisk-as-list-marker.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0011-use-asterisk-as-list-marker.md",
+  "word_count": 101,
+  "variant": "LIGHTWEIGHT",
+  "text": "---\nparent: Decisions\nnav_order: 11\n---\n# Use Asterisk as List Marker\n\n## Context and Problem Statement\n\nLists in Markdown can be indicated by `*` (asterisk) or `-` (hyphen).\n\n## Considered Options\n\n* Use an asterisk\n* Use a hyphen\n\n## Decision Outcome\n\nChosen option: \"Use an asterisk\", because an asterisk does not have a meaning of \"good\" or \"bad\", whereas a hyphen `-` could be read as indicator of something negative (in contrast to `+`, which could be more be read as \"good\").\n\nAccording to the [Markdown Style Guide](http://www.cirosantilli.com/markdown-style-guide/), an asterisk as list marker is more readable (see [readability profile](http://www.cirosantilli.com/markdown-style-guide/#readability-profile)).\n",
+  "fetched_at": "2026-04-26T00:46:02.692382"
+}

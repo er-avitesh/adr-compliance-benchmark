@@ -2,8 +2,9 @@
   "id": "npryce_adr-tools_0005-help-comments",
   "source_repo": "npryce/adr-tools",
   "filename": "0005-help-comments.md",
-  "url": "https://github.com/npryce/adr-tools/blob/master/doc/adr/0005-help-comments.md",
+  "url": "https://github.com/npryce/adr-tools/blob/HEAD/doc/adr/0005-help-comments.md",
   "word_count": 185,
+  "variant": "NYGARD",
   "text": "# 5. Help comments\n\nDate: 2016-02-13\n\n## Status\n\nAccepted\n\nAmended by [9. Help scripts](0009-help-scripts.md)\n\n## Context\n\nThe tool will have a `help` subcommand to provide documentation\nfor users.\n\nIt's nice to have usage documentation in the script files\nthemselves, in comments.  When reading the code, that's the first\nplace to look for information about how to run a script.\n\n## Decision\n\nWrite usage documentation in comments in the source file.\n\nDistinguish between documentation comments and normal comments.\nDocumentation comments have two hash characters at the start of\nthe line.\n\nThe `adr help` command can parse comments out from the script\nusing the standard Unix tools `grep` and `cut`.\n\n## Consequences\n\nNo need to maintain help text in a separate file.\n\nHelp text can easily be kept up to date as the script is edited.\n\nThere's no automated check that the help text is up to date.  The\ntests do not work well as documentation for users, and the help\ntext is not easily cross-checked against the code.\n\nThis won't work if any subcommands are not implemented as scripts\nthat use '#' as a comment character.\n",
-  "fetched_at": "2026-04-12T10:19:48.730827"
+  "fetched_at": "2026-04-26T00:45:32.755684"
 }
