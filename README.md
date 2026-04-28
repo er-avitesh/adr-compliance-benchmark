@@ -2,18 +2,12 @@
 
 ## A Multi-Model Benchmark for ADR Compliance
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paper](https://img.shields.io/badge/Paper-IEEE-blue.svg)](#citation)
-
-**Replication package** for the IEEE conference paper:
-
-> Kesharwani, A. (2026). "Can LLMs Check Your Architecture Decisions? A Multi-Model Benchmark for ADR Compliance." IEEE Conference Proceedings.
 
 ## Overview
 
 This repository contains the complete replication package for the first multi-model benchmark evaluating LLMs on Architecture Decision Record (ADR) compliance checking. We evaluate **GPT-5.1, Claude Sonnet 4.6, Mistral 7B, and Gemini 2.5 Pro** across **zero-shot, few-shot, and chain-of-thought** prompting strategies on **100 real ADRs** sampled from 13 open-source GitHub repositories.
 
-Each model × strategy pair is run **3 times** (repetitions) to measure stability. Ground truth labels are produced by a **GPT-4o oracle** (`gpt-4o-2024-08-06`) applying a 14-criterion rubric covering structural completeness and decision quality.
+Each model × strategy pair is run **3 repetitions** to measure output stability. Ground truth labels are produced by a **GPT-4o oracle** (`gpt-4o-2024-08-06`) applying a 14-criterion rubric covering structural completeness and decision quality.
 
 ## Repository Structure
 
@@ -46,13 +40,13 @@ Each model × strategy pair is run **3 times** (repetitions) to measure stabilit
 
 ### Collection
 
-ADRs were collected from GitHub using `find_adr_paths.py`, which:
-1. Queries the GitHub Contents API for known ADR directory paths
-2. Fetches a 2 KB preview of each file
-3. Scores each file on a structural heuristic (presence of decision, context, consequences, alternatives)
-4. Filters out low-quality files (score < 3) and applies a per-repo cap of 20 ADRs
+Prior ADR studies have relied on small, hand-curated sets (typically <30 ADRs) or synthetically generated documents, limiting both statistical power and ecological validity. To address this, we built a systematic collection pipeline (`find_adr_paths.py`) that queries the GitHub Contents API across 13 open-source repositories spanning diverse domains — cloud infrastructure, observability, GitOps, developer tooling, and enterprise CMS. Each candidate file is scored against a structural heuristic (presence of decision rationale, context, consequences, and alternatives); files scoring below 3 are excluded, ensuring a minimum quality floor without manual screening. A per-repository cap of 20 ADRs enforces source diversity and prevents high-volume repositories from dominating the corpus. The resulting dataset of **176 ADRs** covers four distinct ADR formats (NYGARD, MADR, LIGHTWEIGHT, and OTHER), with document lengths ranging from 87 to 4,295 characters (mean: 843). From this corpus, a stratified evaluation set of **100 ADRs** was drawn with a per-repo cap of 15, yielding a benchmark that is both larger and more format-diverse than any previously reported in the literature.
 
-**176 ADRs** were collected across 13 repositories. A stratified sample of **100 ADRs** (`eval_set.json`) was drawn for evaluation with a per-repo cap of 15.
+The collection pipeline proceeds as follows:
+1. Query the GitHub Contents API for known ADR directory paths across target repositories
+2. Fetch a 2 KB preview of each candidate file
+3. Score each file on a structural heuristic (presence of decision, context, consequences, alternatives)
+4. Filter out low-quality files (score < 3) and apply a per-repo cap of 20 ADRs
 
 ### Source Repositories (13)
 
@@ -77,21 +71,22 @@ ADRs were collected from GitHub using `find_adr_paths.py`, which:
 | Format | Count |
 |---|---|
 | NYGARD (classic) | 79 |
-| LIGHTWEIGHT | 26 |
 | OTHER | 57 |
+| LIGHTWEIGHT | 26 |
 | MADR | 14 |
 
 Average length: **843 characters** (min: 87, max: 4,295)
 
-### Ground Truth
+### Ground Truth Annotation
 
-Labels were produced by GPT-4o (`gpt-4o-2024-08-06`) run twice per ADR to estimate annotation self-consistency. The first annotation is used as ground truth; disagreements between the two runs are recorded.
+Labels were produced by GPT-4o (`gpt-4o-2024-08-06`) run twice per ADR to estimate annotation self-consistency. The first annotation is used as ground truth; disagreements between the two runs are recorded as an inter-pass agreement metric.
 
-| Class | Count (full GT) |
+| Class | Count |
 |---|---|
 | Partially_Compliant | 92 |
 | Non_Compliant | 90 |
 | Compliant | 12 |
+| **Total** | **194** |
 
 ## Compliance Rubric
 
@@ -119,14 +114,14 @@ Labels were produced by GPT-4o (`gpt-4o-2024-08-06`) run twice per ADR to estima
 | Q6 | Consequence objectivity |
 | Q7 | Actionability |
 
-**Overall label** is derived from the sc_class and dq_class scores:
+**Overall label** is derived from sc_class and dq_class scores:
 - **Compliant** — passes both structural and quality checks
 - **Partially_Compliant** — passes one dimension
 - **Non_Compliant** — fails both
 
 ## Models Evaluated
 
-| Model | Provider | Prompting API |
+| Model | Provider | API Key |
 |---|---|---|
 | GPT-5.1 | OpenAI | `OPENAI_API_KEY` |
 | Claude Sonnet 4.6 | Anthropic | `ANTHROPIC_API_KEY` |
@@ -163,10 +158,10 @@ export GEMINI_API_KEY="..."
 
 ### Pre-flight Test
 
-Before running the full experiment, verify API connectivity and response format:
+Before running the full experiment, verify API connectivity and response format for every model and strategy:
 
 ```bash
-# Test all models and strategies (makes one real API call per combination)
+# Test all models and strategies (one real API call per combination)
 python test.py --test_config
 
 # Test a specific model/strategy pair
@@ -177,29 +172,27 @@ python test.py --run gemini-2.5-pro/chain_of_thought,claude-sonnet-4-6/few_shot
 ### Full Pipeline
 
 ```bash
-# Phase 1: Fetch ADRs from GitHub (requires GITHUB_TOKEN for higher rate limits)
+# Phase 1: Fetch ADRs from GitHub (set GITHUB_TOKEN for higher rate limits)
 python overnight_experiment.py --phase fetch
 
 # Phase 2: Annotate with GPT-4o oracle (~$2, ~30 min for 100 ADRs)
 python overnight_experiment.py --phase annotate
 
-# Phase 3: Run all 4 models × 3 strategies × 3 reps (n=100 ADRs)
-# Run each model in a separate terminal to parallelise
+# Phase 3: Run all models — one terminal per model for parallel execution
 python overnight_experiment.py --run gpt-5.1/zero_shot,gpt-5.1/few_shot,gpt-5.1/chain_of_thought
 python overnight_experiment.py --run claude-sonnet-4-6/zero_shot,claude-sonnet-4-6/few_shot,claude-sonnet-4-6/chain_of_thought
 python overnight_experiment.py --run mistral-7b/zero_shot,mistral-7b/few_shot,mistral-7b/chain_of_thought
 python overnight_experiment.py --run gemini-2.5-pro/zero_shot,gemini-2.5-pro/few_shot,gemini-2.5-pro/chain_of_thought
 
-# Phase 4: Merge files and compute metrics
+# Phase 4: Merge result files and compute metrics
 python overnight_experiment.py --phase merge
 ```
 
 ### Resume After Interruption
 
-Each model/strategy pair saves progress after every completed repetition. If a run is interrupted, simply re-run the same command — it will skip completed reps automatically:
+Each model/strategy pair saves a result file after every completed repetition. If a run is interrupted (e.g. network error, quota exhaustion), simply re-run the same command — completed reps are detected and skipped automatically:
 
 ```bash
-# The script detects existing reps and resumes from where it stopped
 python overnight_experiment.py --run gemini-2.5-pro/zero_shot
 # Output: "Resuming gemini-2.5-pro/zero_shot from rep 3"
 ```
@@ -207,56 +200,39 @@ python overnight_experiment.py --run gemini-2.5-pro/zero_shot
 ### Targeted Run
 
 ```bash
-# Run a single pair
+# Single pair
 python overnight_experiment.py --run gpt-5.1/chain_of_thought
 
-# Run multiple pairs (comma-separated, no spaces)
+# Multiple pairs (comma-separated, no spaces)
 python overnight_experiment.py --run gpt-5.1/zero_shot,mistral-7b/few_shot
 ```
 
 ### Cost and Time Estimates (n=100, 3 reps)
 
-| Model | ~Cost | ~Time |
+| Model | Approx. Cost | Approx. Time |
 |---|---|---|
 | GPT-5.1 | $3–5 | 45 min |
 | Claude Sonnet 4.6 | $2–4 | 45 min |
 | Mistral 7B | $0.10 | 15 min |
-| Gemini 2.5 Pro | $1–3 | 60 min (subject to 1,000 req/day quota) |
+| Gemini 2.5 Pro | $1–3 | 60 min |
 
-> **Note:** Gemini 2.5 Pro has a 1,000 requests/day limit on the pay-as-you-go tier. With 3 strategies × 3 reps × 100 ADRs = 900 calls, a single day's quota is sufficient but leaves little margin. If you hit the daily limit, the script detects it (`QUOTA EXHAUSTED`) and stops — simply re-run after midnight when the quota resets.
+> **Gemini quota note:** Gemini 2.5 Pro has a 1,000 requests/day limit on the pay-as-you-go tier. 3 strategies × 3 reps × 100 ADRs = 900 calls, which fits within a single day but leaves little margin. If the daily limit is reached, the script prints `QUOTA EXHAUSTED` and stops cleanly — all completed reps are saved. Re-run after midnight when the quota resets and the script will resume from where it stopped.
 
 ## Results
 
-Full metrics are in `overnight_results/analysis/metrics_summary.json` after running `--phase merge`. The table below shows mean accuracy vs. oracle across 3 repetitions.
+The table below shows mean accuracy vs. the GPT-4o oracle. Full F1, precision, recall, and Cohen's κ are in `overnight_results/analysis/metrics_summary.json` after running `--phase merge`.
 
 | Model | ZS Acc | FS Acc | CoT Acc |
 |---|---|---|---|
 | GPT-5.1 | 83% | 65% | 79% |
 | Claude Sonnet 4.6 | 70% | 62% | 78% |
+| Gemini 2.5 Pro | 60% | 61% | 62% |
 | Mistral 7B | 48% | 23% | 54% |
-| Gemini 2.5 Pro | * | * | * |
 
-\* Gemini results pending quota reset — see `metrics_summary.json` for final F1 and Cohen's κ.
+**Key observations:**
+- GPT-5.1 zero-shot (83%) is the single strongest result across the benchmark
+- Claude Sonnet 4.6 responds strongly to chain-of-thought (78%), narrowing the gap with GPT-5.1
+- Gemini 2.5 Pro shows notably flat accuracy across all three prompting strategies (~60–62%), suggesting limited sensitivity to prompt structure
+- Mistral 7B's few-shot accuracy collapses to 23% — performing substantially worse with in-context examples than without, a finding not previously reported for this model class on structured compliance tasks
 
-## Citation
 
-```bibtex
-@inproceedings{kesharwani2026adrcompliance,
-  title     = {Can LLMs Check Your Architecture Decisions? A Multi-Model Benchmark for ADR Compliance},
-  author    = {Kesharwani, Avitesh},
-  booktitle = {IEEE Conference Proceedings},
-  year      = {2026},
-  note      = {IEEE Senior Member, Charlotte Region}
-}
-```
-
-## License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file.
-
-## Author
-
-**Avitesh Kesharwani**
-- Sr. Principal Consultant, Genpact America
-- M.S. Computer Science, University of North Carolina
-- IEEE Senior Member, Charlotte Region
