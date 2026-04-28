@@ -2,7 +2,6 @@
 
 ## A Multi-Model Benchmark for ADR Compliance
 
-
 ## Overview
 
 This repository contains the complete replication package for the first multi-model benchmark evaluating LLMs on Architecture Decision Record (ADR) compliance checking. We evaluate **GPT-5.1, Claude Sonnet 4.6, Mistral 7B, and Gemini 2.5 Pro** across **zero-shot, few-shot, and chain-of-thought** prompting strategies on **100 real ADRs** sampled from 13 open-source GitHub repositories.
