@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-OVERNIGHT ADR COMPLIANCE EXPERIMENT
-====================================
+ADR COMPLIANCE BENCHMARK — Experiment Runner
+=============================================
 4 models × 3 strategies × 3 reps × 200 ADRs = 7,200 calls (~$101, ~10-12 hrs)
 
 Each model/strategy pair saves its own result file independently so runs can be
@@ -12,17 +12,17 @@ Usage:
   export MISTRAL_API_KEY="..."     GEMINI_API_KEY="..."
 
   # Full pipeline
-  python overnight_experiment.py --n-eval 200 2>&1 | tee experiment_log.txt
+  python adr_benchmark.py --n-eval 200 2>&1 | tee experiment_log.txt
 
   # Step by step
-  python overnight_experiment.py --phase fetch    --n-eval 200
-  python overnight_experiment.py --phase annotate
-  python overnight_experiment.py --phase run      --n-eval 200   # all models × strategies
-  python overnight_experiment.py --phase merge                   # combine files + analyze
+  python adr_benchmark.py --phase fetch    --n-eval 200
+  python adr_benchmark.py --phase annotate
+  python adr_benchmark.py --phase run      --n-eval 200   # all models × strategies
+  python adr_benchmark.py --phase merge                   # combine files + analyze
 
   # Targeted run — one or several model/strategy pairs
-  python overnight_experiment.py --run gemini-2.5-pro/zero_shot --n-eval 200
-  python overnight_experiment.py --run gemini-2.5-pro/zero_shot,gpt-5.1/chain_of_thought
+  python adr_benchmark.py --run gemini-2.5-pro/zero_shot --n-eval 200
+  python adr_benchmark.py --run gemini-2.5-pro/zero_shot,gpt-5.1/chain_of_thought
 """
 
 import os
@@ -42,7 +42,7 @@ import numpy as np
 # CONFIG
 # ============================================================
 
-EXPERIMENT_DIR = Path("overnight_results")
+EXPERIMENT_DIR = Path("results")
 ADRS_DIR = EXPERIMENT_DIR / "adrs"
 RESULTS_DIR = EXPERIMENT_DIR / "raw_results"
 ANALYSIS_DIR = EXPERIMENT_DIR / "analysis"
@@ -1177,7 +1177,7 @@ def _load_ground_truth() -> Dict:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Overnight ADR Compliance Experiment")
+    parser = argparse.ArgumentParser(description="ADR Compliance Benchmark")
     parser.add_argument("--phase", default=None,
                         choices=["fetch", "annotate", "run", "merge", "all"],
                         help="Pipeline phase to execute (default: all)")

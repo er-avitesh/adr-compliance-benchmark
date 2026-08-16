@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pre-flight config test for the overnight ADR experiment.
+Pre-flight config test for the ADR compliance benchmark.
 
 Usage:
   python test.py --test_config
@@ -16,7 +16,7 @@ import time
 import argparse
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from overnight_experiment import (
+from adr_benchmark import (
     MODELS, STRATEGIES,
     ANNOTATION_SYSTEM_PROMPT, ANNOTATION_PROMPT_TEMPLATE,
     make_prompt, call_llm, extract_classification,
@@ -236,15 +236,15 @@ def run_test_config() -> bool:
         for label, r in all_results:
             if r is False:
                 print(f"    • {label}")
-        print("\n  Fix the above before running the overnight experiment.")
+        print("\n  Fix the above before running the benchmark.")
         return False
 
     if skipped:
         print(f"\n  WARNING: {skipped} test(s) skipped due to missing API keys.")
-        print("  Those models will be excluded from the overnight run.")
+        print("  Those models will be excluded from the run.")
 
     print("\n  All reachable models/strategies look good.")
-    print("  Safe to launch: python overnight_experiment.py")
+    print("  Safe to launch: python adr_benchmark.py")
     return True
 
 
@@ -314,7 +314,7 @@ def _parse_targets(raw: str) -> list[tuple[str, str]]:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Pre-flight config test for the overnight ADR experiment")
+        description="Pre-flight config test for the ADR compliance benchmark")
     parser.add_argument(
         "--test_config", action="store_true",
         help="Test API connectivity + response format for every model and strategy")

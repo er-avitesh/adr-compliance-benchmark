@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-RESULTS_DIR = Path("overnight_results/raw_results")
+RESULTS_DIR = Path("results/raw_results")
 
 all_results = {}
 

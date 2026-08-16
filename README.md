@@ -11,12 +11,12 @@ Each model × strategy pair is run **3 repetitions** to measure output stability
 ## Repository Structure
 
 ```
-├── overnight_experiment.py          # Main experiment runner (all phases)
+├── adr_benchmark.py                 # Main experiment runner (all phases)
 ├── test.py                          # Pre-flight API connectivity test
 ├── find_adr_paths.py                # Dataset collection script (GitHub API)
 ├── adr_dataset.json                 # Full collected ADR index (176 ADRs)
 ├── dataset_report.json              # Dataset statistics
-├── overnight_results/
+├── results/
 │   ├── eval_set.json                # 100-ADR evaluation set (fixed sample)
 │   ├── ground_truth.json            # GPT-4o oracle annotations
 │   ├── adrs/                        # Full ADR text files (JSON)
@@ -172,19 +172,19 @@ python test.py --run gemini-2.5-pro/chain_of_thought,claude-sonnet-4-6/few_shot
 
 ```bash
 # Phase 1: Fetch ADRs from GitHub (set GITHUB_TOKEN for higher rate limits)
-python overnight_experiment.py --phase fetch
+python adr_benchmark.py --phase fetch
 
 # Phase 2: Annotate with GPT-4o oracle (~$2, ~30 min for 100 ADRs)
-python overnight_experiment.py --phase annotate
+python adr_benchmark.py --phase annotate
 
 # Phase 3: Run all models — one terminal per model for parallel execution
-python overnight_experiment.py --run gpt-5.1/zero_shot,gpt-5.1/few_shot,gpt-5.1/chain_of_thought
-python overnight_experiment.py --run claude-sonnet-4-6/zero_shot,claude-sonnet-4-6/few_shot,claude-sonnet-4-6/chain_of_thought
-python overnight_experiment.py --run mistral-7b/zero_shot,mistral-7b/few_shot,mistral-7b/chain_of_thought
-python overnight_experiment.py --run gemini-2.5-pro/zero_shot,gemini-2.5-pro/few_shot,gemini-2.5-pro/chain_of_thought
+python adr_benchmark.py --run gpt-5.1/zero_shot,gpt-5.1/few_shot,gpt-5.1/chain_of_thought
+python adr_benchmark.py --run claude-sonnet-4-6/zero_shot,claude-sonnet-4-6/few_shot,claude-sonnet-4-6/chain_of_thought
+python adr_benchmark.py --run mistral-7b/zero_shot,mistral-7b/few_shot,mistral-7b/chain_of_thought
+python adr_benchmark.py --run gemini-2.5-pro/zero_shot,gemini-2.5-pro/few_shot,gemini-2.5-pro/chain_of_thought
 
 # Phase 4: Merge result files and compute metrics
-python overnight_experiment.py --phase merge
+python adr_benchmark.py --phase merge
 ```
 
 ### Resume After Interruption
@@ -192,7 +192,7 @@ python overnight_experiment.py --phase merge
 Each model/strategy pair saves a result file after every completed repetition. If a run is interrupted (e.g. network error, quota exhaustion), simply re-run the same command — completed reps are detected and skipped automatically:
 
 ```bash
-python overnight_experiment.py --run gemini-2.5-pro/zero_shot
+python adr_benchmark.py --run gemini-2.5-pro/zero_shot
 # Output: "Resuming gemini-2.5-pro/zero_shot from rep 3"
 ```
 
@@ -200,10 +200,10 @@ python overnight_experiment.py --run gemini-2.5-pro/zero_shot
 
 ```bash
 # Single pair
-python overnight_experiment.py --run gpt-5.1/chain_of_thought
+python adr_benchmark.py --run gpt-5.1/chain_of_thought
 
 # Multiple pairs (comma-separated, no spaces)
-python overnight_experiment.py --run gpt-5.1/zero_shot,mistral-7b/few_shot
+python adr_benchmark.py --run gpt-5.1/zero_shot,mistral-7b/few_shot
 ```
 
 ### Cost and Time Estimates (n=100, 3 reps)
@@ -219,7 +219,7 @@ python overnight_experiment.py --run gpt-5.1/zero_shot,mistral-7b/few_shot
 
 ## Results
 
-The table below shows mean accuracy vs. the GPT-4o oracle. Full F1, precision, recall, and Cohen's κ are in `overnight_results/analysis/metrics_summary.json` after running `--phase merge`.
+The table below shows mean accuracy vs. the GPT-4o oracle. Full F1, precision, recall, and Cohen's κ are in `results/analysis/metrics_summary.json` after running `--phase merge`.
 
 | Model | ZS Acc | FS Acc | CoT Acc |
 |---|---|---|---|
