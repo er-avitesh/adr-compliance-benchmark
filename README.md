@@ -234,4 +234,10 @@ The table below shows mean accuracy vs. the GPT-4o oracle. Full F1, precision, r
 - Gemini 2.5 Pro shows notably flat accuracy across all three prompting strategies (~60–62%), suggesting limited sensitivity to prompt structure
 - Mistral 7B's few-shot accuracy collapses to 23% — performing substantially worse with in-context examples than without, a finding not previously reported for this model class on structured compliance tasks
 
+## License
+
+The code in this repository (experiment runner, analysis scripts, prompt templates) is released under the MIT License, see `LICENSE`.
+
+This does not extend to the ADR text itself. The files under `results/adrs/` were collected from 15 third-party open-source GitHub repositories and remain under each source repository's own license and copyright. Consult the originating repository before reusing the ADR text outside of research/replication purposes.
+
 
