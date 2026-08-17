@@ -2,7 +2,11 @@
 """
 ADR COMPLIANCE BENCHMARK — Experiment Runner
 =============================================
-4 models × 3 strategies × 3 reps × 200 ADRs = 7,200 calls (~$101, ~10-12 hrs)
+4 models × 3 strategies × 3 reps × 162 ADRs = 5,832 calls.
+Eval set is drawn via stratified sampling (compliance class x template
+variant x domain) — see select_eval_adrs() — rather than ranked by the
+oracle's own compliance score, so the sample isn't skewed toward
+already-compliant ADRs.
 
 Each model/strategy pair saves its own result file independently so runs can be
 split across sessions. Use --phase merge to combine and analyze when ready.
@@ -12,16 +16,16 @@ Usage:
   export MISTRAL_API_KEY="..."     GEMINI_API_KEY="..."
 
   # Full pipeline
-  python adr_benchmark.py --n-eval 200 2>&1 | tee experiment_log.txt
+  python adr_benchmark.py --n-eval 162 2>&1 | tee experiment_log.txt
 
   # Step by step
-  python adr_benchmark.py --phase fetch    --n-eval 200
+  python adr_benchmark.py --phase fetch    --n-eval 162
   python adr_benchmark.py --phase annotate
-  python adr_benchmark.py --phase run      --n-eval 200   # all models × strategies
+  python adr_benchmark.py --phase run      --n-eval 162   # all models × strategies
   python adr_benchmark.py --phase merge                   # combine files + analyze
 
   # Targeted run — one or several model/strategy pairs
-  python adr_benchmark.py --run gemini-2.5-pro/zero_shot --n-eval 200
+  python adr_benchmark.py --run gemini-2.5-pro/zero_shot --n-eval 162
   python adr_benchmark.py --run gemini-2.5-pro/zero_shot,gpt-5.1/chain_of_thought
 """
 
@@ -47,7 +51,7 @@ ADRS_DIR = EXPERIMENT_DIR / "adrs"
 RESULTS_DIR = EXPERIMENT_DIR / "raw_results"
 ANALYSIS_DIR = EXPERIMENT_DIR / "analysis"
 
-N_EVAL = 50          # ADRs for evaluation (increase to 200 for full run)
+N_EVAL = 162         # ADRs for evaluation (matches the sample-size calculation)
 N_REPS = 3           # Repetitions (increase to 5 for full run)
 RATE_LIMIT_DELAY = 1.0  # seconds between API calls
 
@@ -55,6 +59,12 @@ MODELS = {
     "gpt-5.1": {
         "provider": "openai",
         "model": "gpt-5.1",
+        "use_max_completion_tokens": True,
+        "no_temperature": True,
+    },
+    "gpt-5.5": {
+        "provider": "openai",
+        "model": "gpt-5.5",
         "use_max_completion_tokens": True,
         "no_temperature": True,
     },
@@ -86,7 +96,7 @@ with open("adr_dataset.json") as f:
 # ============================================================
 # PHASE 1: FETCH REAL ADRS FROM GITHUB
 # ============================================================
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 def is_high_quality(text: str) -> bool:
     t = text.lower()
@@ -619,67 +629,201 @@ def extract_classification(raw):
     return None
 
 
-def select_eval_adrs(adrs: List[Dict], ground_truth: Dict,
-                     n: int = 100, per_repo_cap: int = 15) -> List[Dict]:
-    """
-    Filter + rank + select the best n ADRs for the experiment.
+# ============================================================
+# CHANGED (2026-08-17): eval-set selection, R2 review comment #6
+# ------------------------------------------------------------
+# select_eval_adrs() previously ranked the 194 annotated ADRs by
+# sc_score + dq_met (the oracle's own compliance score) and took the top
+# 100. That ranks directly on the outcome variable: the full pool is
+# 47.4% Partially Compliant / 46.4% Non-Compliant / 6.2% Compliant, but the
+# old top-100 selection came out 86% / 2% / 12% — Non-Compliant ADRs were
+# almost entirely ranked out. Replaced with proportional stratified
+# sampling (compliance class x template variant x domain) at n=162, which
+# also reconciles the eval-set size with the paper's own sample-size
+# calculation. REPO_DOMAIN/get_domain() below and the new
+# select_eval_adrs() are the fix; old eval_set.json/eval_sample.json were
+# archived to results/_archive/, not deleted.
+# ============================================================
 
-    Ranking: sc_score + dq_met (oracle scores from annotation).
-    Diversity: at most per_repo_cap ADRs from any single source_repo.
-    Persists the selection to eval_set.json so all --run calls use the same set.
+# Domain grouping for the source repositories, used as one stratification
+# axis in select_eval_adrs(). Repos not listed here (i.e. present in the
+# fetched corpus but not yet documented in the paper's repository table)
+# fall back to "Other" rather than raising, so sampling never breaks on a
+# corpus that has grown since the table was last written.
+REPO_DOMAIN = {
+    "argoproj/argo-cd": "DevOps",
+    "alphagov/govuk-aws": "Government",
+    "alphagov/content-publisher": "Government",
+    "alphagov/di-authentication-api": "Government",
+    "npryce/adr-tools": "Infrastructure",
+    "aws/aws-cdk": "Infrastructure",
+    "deshpandetanmay/lightweight-architecture-decision-records": "Infrastructure",
+    "cortexproject/cortex": "Observability",
+    "grafana/grafana": "Observability",
+    "backstage/backstage": "Platform",
+    "apache/airflow": "Platform",
+    "temporalio/temporal": "Platform",
+    "openfga/openfga": "Platform",
+    "adr/madr": "Tooling",
+    "thomvaill/log4brains": "Tooling",
+}
+
+
+def get_domain(source_repo: str) -> str:
+    return REPO_DOMAIN.get(source_repo, "Other")
+
+
+# CHANGED (2026-08-17): license audit, R1 review comment. Checked each
+# source repo's license via the GitHub API — 13 of 15 are permissively
+# licensed (MIT/Apache-2.0/CC0/CC BY), but these two have no license file
+# at all (confirmed via api.github.com, not just GitHub's UI detector),
+# meaning no reuse right is currently granted for their content. Excluded
+# from the eligible pool rather than relying on fair-use/research
+# justification for a live government repo we don't have permission from.
+UNLICENSED_REPOS = {
+    "alphagov/di-authentication-api",  # now govuk-one-login/authentication-api; still unlicensed
+    "deshpandetanmay/lightweight-architecture-decision-records",
+}
+
+
+def select_eval_adrs(adrs: List[Dict], ground_truth: Dict,
+                     n: int = 162, per_repo_cap: int = 15,
+                     seed: int = None, resample: bool = False) -> List[Dict]:
+    """
+    Stratified selection of n ADRs for evaluation, proportionally balanced
+    across compliance class and, within each class, spread across template
+    variant x domain so no single project or format dominates.
+
+    Deliberately NOT ranked by sc_score/dq_met (the oracle's own compliance
+    score) — sampling on the same rubric used to define the outcome classes
+    mechanically excludes Non-Compliant ADRs from the eval set. This
+    replaces that approach with sampling proportional to the true class
+    distribution of the annotated pool, so the eval set reflects real-world
+    ADR quality rather than a curated-toward-compliant subset.
+
+    Persists the selection to eval_set.json so all --run calls use the same
+    set. Pass resample=True (or delete eval_set.json) to draw a fresh one.
     """
     select_path = EXPERIMENT_DIR / "eval_set.json"
 
-    if select_path.exists():
+    if select_path.exists() and not resample:
         with open(select_path) as fp:
             saved = json.load(fp)
         saved_ids = {e["id"] for e in saved["adrs"]}
         selected = [a for a in adrs if a["id"] in saved_ids]
-        print(f"\n  Reusing eval_set.json: {len(selected)} ADRs. Delete to reselect.")
+        print(f"\n  Reusing eval_set.json: {len(selected)} ADRs "
+              f"(method={saved.get('method', 'unknown')}). Delete or pass --resample to reselect.")
         return selected
 
-    annotated = [a for a in adrs if a["id"] in ground_truth]
+    annotated = [a for a in adrs if a["id"] in ground_truth
+                 and a["source_repo"] not in UNLICENSED_REPOS]
+    if len(annotated) < n:
+        raise ValueError(f"Only {len(annotated)} annotated ADRs available, need n={n}")
 
-    def rank_score(adr):
-        gt = ground_truth[adr["id"]]
-        return gt.get("sc_score", 0) + gt.get("dq_met", 0)
+    if seed is None:
+        seed = random.randint(0, 2 ** 32 - 1)
+    rng = random.Random(seed)
 
-    annotated.sort(key=rank_score, reverse=True)
+    # Stratify by (compliance class, template variant, domain).
+    strata = defaultdict(list)
+    for a in annotated:
+        cls = ground_truth[a["id"]]["overall"]
+        variant = a.get("variant", "OTHER")
+        domain = get_domain(a["source_repo"])
+        strata[(cls, variant, domain)].append(a)
+    for group in strata.values():
+        rng.shuffle(group)
 
+    # Proportional allocation: each compliance class gets a share of n
+    # matching its share of the full annotated pool, so a class that's
+    # 46% of the pool (e.g. Non-Compliant) doesn't get filtered down to 2%
+    # by construction. Within a class, round-robin across (variant, domain)
+    # cells for diversity, respecting a per-repo cap.
+    class_counts = Counter(ground_truth[a["id"]]["overall"] for a in annotated)
+    total = len(annotated)
+
+    selected, selected_ids = [], set()
     repo_counts = defaultdict(int)
-    selected = []
-    selected_ids = set()
-    for adr in annotated:
-        repo = adr["source_repo"]
-        if repo_counts[repo] >= per_repo_cap:
-            continue
-        selected.append(adr)
-        selected_ids.add(adr["id"])
-        repo_counts[repo] += 1
-        if len(selected) == n:
-            break
 
-    # Fallback: fill remaining slots if diversity cap left us short
+    classes = sorted(class_counts, key=lambda c: class_counts[c], reverse=True)
+    quotas = {c: max(1, round(n * class_counts[c] / total)) for c in classes}
+    # Rounding can overshoot; trim the largest quota(s) down to hit n exactly.
+    while sum(quotas.values()) > n:
+        biggest = max(quotas, key=lambda c: quotas[c])
+        quotas[biggest] -= 1
+
+    for cls in classes:
+        quota = quotas[cls]
+        cells = [k for k in strata if k[0] == cls]
+        rng.shuffle(cells)
+        taken, idx, stalled = 0, 0, 0
+        while taken < quota and stalled < len(cells):
+            cell = cells[idx % len(cells)]
+            idx += 1
+            pool = strata[cell]
+            placed = False
+            while pool:
+                candidate = pool.pop(0)
+                if candidate["id"] in selected_ids:
+                    continue
+                if repo_counts[candidate["source_repo"]] >= per_repo_cap:
+                    continue
+                selected.append(candidate)
+                selected_ids.add(candidate["id"])
+                repo_counts[candidate["source_repo"]] += 1
+                taken += 1
+                placed = True
+                break
+            stalled = 0 if placed else stalled + 1
+
+    # Fallback: if class quotas + diversity caps left us short of n (e.g. a
+    # class ran out of eligible cells before its quota was met). Two passes:
+    # first try to fill while still respecting per_repo_cap, then only if
+    # still short, ignore the cap as an absolute last resort.
     if len(selected) < n:
-        for adr in annotated:
-            if adr["id"] not in selected_ids:
-                selected.append(adr)
-                selected_ids.add(adr["id"])
+        remaining = [a for a in annotated if a["id"] not in selected_ids]
+        rng.shuffle(remaining)
+        for a in remaining:
+            if len(selected) == n:
+                break
+            if repo_counts[a["source_repo"]] >= per_repo_cap:
+                continue
+            selected.append(a)
+            selected_ids.add(a["id"])
+            repo_counts[a["source_repo"]] += 1
+
+    if len(selected) < n:
+        remaining = [a for a in annotated if a["id"] not in selected_ids]
+        rng.shuffle(remaining)
+        for a in remaining:
+            selected.append(a)
+            selected_ids.add(a["id"])
+            repo_counts[a["source_repo"]] += 1
             if len(selected) == n:
                 break
 
-    print(f"\n  Selected {len(selected)} ADRs by quality rank (top sc+dq score)")
-    print(f"  Repo distribution: { {k: v for k, v in repo_counts.items()} }")
+    selected = selected[:n]
+
+    final_dist = Counter(ground_truth[a["id"]]["overall"] for a in selected)
+    print(f"\n  Selected {len(selected)} ADRs via stratified sampling "
+          f"(class x variant x domain), seed={seed}")
+    print(f"  Class distribution: {dict(final_dist)}  "
+          f"(full pool: {dict(class_counts)})")
 
     payload = {
         "selected_at": datetime.now().isoformat(),
         "n": len(selected),
+        "seed": seed,
+        "method": "stratified (compliance_class x template_variant x domain)",
         "per_repo_cap": per_repo_cap,
+        "class_distribution": dict(final_dist),
+        "full_pool_class_distribution": dict(class_counts),
         "adrs": [
             {
                 "id": a["id"],
                 "source_repo": a["source_repo"],
-                "rank_score": rank_score(a),
+                "variant": a.get("variant", "OTHER"),
+                "domain": get_domain(a["source_repo"]),
                 "ground_truth": ground_truth[a["id"]]["overall"],
             }
             for a in selected
@@ -853,7 +997,8 @@ def _run_pair(model_name: str, strategy: str,
 
 def run_experiments(adrs: List[Dict], ground_truth: Dict,
                     n_eval: int = N_EVAL, n_reps: int = N_REPS,
-                    targets: List[tuple] = None, workers: int = 3):
+                    targets: List[tuple] = None, workers: int = 3,
+                    seed: int = None, resample: bool = False):
     """
     Run experiments for the given targets in parallel (one thread per model/strategy pair).
 
@@ -905,7 +1050,7 @@ def run_experiments(adrs: List[Dict], ground_truth: Dict,
                 "label": ground_truth[adr["id"]]["overall"],
             })
 
-    eval_adrs = select_eval_adrs(adrs, ground_truth, n=n_eval)
+    eval_adrs = select_eval_adrs(adrs, ground_truth, n=n_eval, seed=seed, resample=resample)
     total_calls = len(work) * n_reps * len(eval_adrs)
 
     print(f"\n{'='*60}")
@@ -1184,8 +1329,9 @@ def main():
     parser.add_argument("--run", metavar="MODEL/STRATEGY[,...]",
                         help="Run specific model/strategy pairs (comma-separated); "
                              "requires fetch + annotate to be done already")
-    parser.add_argument("--n-eval", type=int, default=200,
-                        help="Number of ADRs to sample for evaluation (default: 200)")
+    parser.add_argument("--n-eval", type=int, default=162,
+                        help="Number of ADRs to sample for evaluation "
+                             "(default: 162, per the paper's sample-size calculation)")
     parser.add_argument("--n-reps", type=int, default=3)
     parser.add_argument("--workers", type=int, default=3,
                         help="Parallel model/strategy pairs to run simultaneously (default: 3)")
@@ -1218,7 +1364,8 @@ def main():
             sys.exit(1)
         ground_truth = _load_ground_truth()
         run_experiments(adrs, ground_truth, n_eval=n_eval, n_reps=n_reps,
-                        targets=targets, workers=args.workers)
+                        targets=targets, workers=args.workers,
+                        seed=args.seed, resample=args.resample)
         elapsed = datetime.now() - start_time
         print(f"\n{'='*60}")
         print(f"DONE. Time: {elapsed}  —  run --phase merge when all targets are complete.")
@@ -1248,7 +1395,8 @@ def main():
 
     if args.phase in ("run", "all"):
         run_experiments(adrs, ground_truth, n_eval=n_eval, n_reps=n_reps,
-                        workers=args.workers)
+                        workers=args.workers,
+                        seed=args.seed, resample=args.resample)
 
     if args.phase in ("merge", "all"):
         ground_truth = _load_ground_truth()
