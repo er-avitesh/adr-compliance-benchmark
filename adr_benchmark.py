@@ -339,9 +339,16 @@ ANNOTATION_PROMPT_TEMPLATE = """Evaluate this ADR:
 Respond with ONLY this JSON (no markdown, no explanation):
 {{"C1":true/false,"C2":true/false,"C3":true/false,"C4":true/false,"C5":true/false,"C6":true/false,"C7":true/false,"sc_score":N,"sc_class":"Compliant|Partially_Compliant|Non_Compliant","Q1":"Met|Partially_Met|Not_Met","Q2":"Met|Partially_Met|Not_Met","Q3":"Met|Partially_Met|Not_Met","Q4":"Met|Partially_Met|Not_Met","Q5":"Met|Partially_Met|Not_Met","Q6":"Met|Partially_Met|Not_Met","Q7":"Met|Partially_Met|Not_Met","dq_met":N,"dq_class":"Compliant|Partially_Compliant|Non_Compliant","overall":"Compliant|Partially_Compliant|Non_Compliant"}}"""
 
+GPT4O_PRELABEL_TEMPERATURES = (0.3, 0.5)
+
 
 def generate_gpt4o_prelabels(adrs: List[Dict], prelabel_model="gpt-4o-2024-08-06"):
-    """Use GPT-4o for preliminary pre-labeling and self-consistency checks."""
+    """Use GPT-4o for preliminary pre-labeling and self-consistency checks.
+
+    The two runs intentionally use mild temperature variation to flag unstable
+    prelabels for human review. They are not independent annotators, and their
+    outputs are never used as final benchmark ground truth.
+    """
     from openai import OpenAI
     client = OpenAI()
 
@@ -367,9 +374,10 @@ def generate_gpt4o_prelabels(adrs: List[Dict], prelabel_model="gpt-4o-2024-08-06
         # Truncate very long ADRs to avoid token limits
         adr_text = adr["text"][:4000]
 
-        # Run GPT-4o twice to estimate self-consistency, not inter-rater reliability.
+        # Run GPT-4o twice to estimate same-model prelabel stability.
+        # This is workflow support only, not inter-rater reliability.
         annotations = []
-        for run in range(2):
+        for run, temperature in enumerate(GPT4O_PRELABEL_TEMPERATURES):
             try:
                 response = client.chat.completions.create(
                     model=prelabel_model,
@@ -377,7 +385,7 @@ def generate_gpt4o_prelabels(adrs: List[Dict], prelabel_model="gpt-4o-2024-08-06
                         {"role": "system", "content": ANNOTATION_SYSTEM_PROMPT},
                         {"role": "user", "content": ANNOTATION_PROMPT_TEMPLATE.format(adr_text=adr_text)},
                     ],
-                    temperature=0.3 if run == 0 else 0.5,
+                    temperature=temperature,
                     max_tokens=500,
                 )
                 raw = response.choices[0].message.content.strip()
@@ -409,6 +417,7 @@ def generate_gpt4o_prelabels(adrs: List[Dict], prelabel_model="gpt-4o-2024-08-06
                 "dq_met": gt.get("dq_met", 3),
                 "details": gt,
                 "prelabel_model": prelabel_model,
+                "prelabel_temperatures": list(GPT4O_PRELABEL_TEMPERATURES),
                 "gpt4o_self_consistency": consistency,
                 "prelabeled_at": datetime.now().isoformat(),
             }

@@ -87,7 +87,7 @@ Average length: **843 characters** (min: 87, max: 4,295)
 
 Final benchmark labels are human-adjudicated. Two qualified software-architecture reviewers independently annotate each ADR in the 162-ADR evaluation set using the frozen C1-C7 and Q1-Q7 rubric. Disagreements are resolved through adjudication, and the adjudicated labels are stored in `results/human_ground_truth.json`. Model performance is computed only against this human reference standard.
 
-GPT-4o (`gpt-4o-2024-08-06`) may be run twice per ADR to produce preliminary prelabels in `results/prelabels_gpt4o.json` and estimate same-model self-consistency. These prelabels are not treated as ground truth and are not used to score GPT-5.5 or any other evaluated model.
+GPT-4o (`gpt-4o-2024-08-06`) may be run twice per ADR to produce preliminary prelabels in `results/prelabels_gpt4o.json` and estimate same-model self-consistency. The two prelabel runs use mild temperature variation (`0.3` and `0.5`) only to flag unstable preliminary labels before human review. They are not independent annotators, are not reported as inter-rater agreement, and are not used to score GPT-5.5 or any other evaluated model.
 
 | Class | Count |
 |---|---|
@@ -136,7 +136,7 @@ GPT-4o (`gpt-4o-2024-08-06`) may be run twice per ADR to produce preliminary pre
 | Mistral 7B (`mistralai/Mistral-7B-Instruct-v0.3` via local/vLLM) | Mistral AI | `MISTRAL_API_KEY` |
 | Gemini 2.5 Pro | Google AI Studio | `GEMINI_API_KEY` |
 
-**Pre-annotation model:** GPT-4o (`gpt-4o-2024-08-06`) via OpenAI API. GPT-4o prelabels are preliminary workflow aids only; final benchmark labels come from human adjudication.
+**Pre-annotation model:** GPT-4o (`gpt-4o-2024-08-06`) via OpenAI API. GPT-4o prelabels are preliminary workflow aids only; final benchmark labels come from human adjudication. The prelabel self-consistency check uses temperatures `0.3` and `0.5` to probe label stability; this check is separate from the final model-evaluation runs.
 
 ### Model-Family Bias
 
