@@ -672,17 +672,12 @@ def extract_classification(raw):
 # ============================================================
 # CHANGED (2026-08-17): eval-set selection, R2 review comment #6
 # ------------------------------------------------------------
-# select_eval_adrs() previously ranked the 194 annotated ADRs by
-# sc_score + dq_met (the GPT-4o preliminary prelabel score) and took the top
-# 100. That ranks directly on the outcome variable: the full pool is
-# 47.4% Partially Compliant / 46.4% Non-Compliant / 6.2% Compliant, but the
-# old top-100 selection came out 86% / 2% / 12% — Non-Compliant ADRs were
-# almost entirely ranked out. Replaced with proportional stratified
-# sampling (compliance class x template variant x domain) at n=162, which
-# also reconciles the eval-set size with the paper's own sample-size
-# calculation. REPO_DOMAIN/get_domain() below and the new
-# select_eval_adrs() are the fix; old eval_set.json/eval_sample.json were
-# archived to results/_archive/, not deleted.
+# The evaluation set is now selected through proportional stratified sampling
+# instead of ranking ADRs by structural/decision-quality scores. Ranking by
+# rubric-derived scores conditions on the target label and can remove weak or
+# Non-Compliant ADRs from the benchmark. The current n=162 sample is drawn
+# across compliance class x template variant x domain, with a per-repository
+# cap, and is documented by results/analysis/sampling_audit.json.
 # ============================================================
 
 # Domain grouping for the source repositories, used as one stratification
@@ -713,6 +708,85 @@ def get_domain(source_repo: str) -> str:
     return REPO_DOMAIN.get(source_repo, "Other")
 
 
+def _count_by(items, key_fn):
+    counts = Counter(key_fn(item) for item in items)
+    return dict(sorted(counts.items(), key=lambda kv: str(kv[0])))
+
+
+def write_sampling_audit(adrs: List[Dict], labels: Dict, selected: List[Dict],
+                         n: int, per_repo_cap: int) -> None:
+    """Write a reviewer-facing audit of corpus filtering and eval-set sampling."""
+    ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
+
+    dataset_report_path = Path("dataset_report.json")
+    dataset_report = {}
+    if dataset_report_path.exists():
+        with open(dataset_report_path) as fp:
+            dataset_report = json.load(fp)
+
+    labeled = [a for a in adrs if a["id"] in labels]
+    eligible = [a for a in labeled if a["source_repo"] not in UNLICENSED_REPOS]
+    selected_ids = {a["id"] for a in selected}
+    selected_labeled = [a for a in selected if a["id"] in labels]
+
+    audit = {
+        "written_at": datetime.now().isoformat(),
+        "sample_size_target": n,
+        "sample_size_actual": len(selected),
+        "sample_size_rationale": "n=162 matches the manuscript sample-size calculation.",
+        "sampling_method": "proportional stratified sampling",
+        "stratification_axes": [
+            "compliance_class",
+            "template_variant",
+            "application_domain",
+        ],
+        "per_repo_cap": per_repo_cap,
+        "initial_corpus": {
+            "reported_total_adrs": dataset_report.get("total_adrs"),
+            "repo_distribution": dataset_report.get("repo_distribution", {}),
+            "variant_distribution": dataset_report.get("variant_distribution", {}),
+            "filtering_heuristic": (
+                "Candidate screening excludes non-substantive files such as indexes, "
+                "placeholders, and templates without project-specific decisions. It is "
+                "not used to choose only well-formed or compliant ADRs for evaluation."
+            ),
+            "filtering_threshold": "structural heuristic score >= 3 during corpus construction",
+        },
+        "label_pool": {
+            "labeled_count": len(labeled),
+            "eligible_count_after_license_exclusion": len(eligible),
+            "excluded_unlicensed_repositories": sorted(UNLICENSED_REPOS),
+            "class_distribution": _count_by(
+                eligible, lambda a: labels[a["id"]].get("overall", "Unknown")
+            ),
+        },
+        "evaluation_set": {
+            "selected_count": len(selected),
+            "class_distribution": _count_by(
+                selected_labeled, lambda a: labels[a["id"]].get("overall", "Unknown")
+            ),
+            "variant_distribution": _count_by(selected, lambda a: a.get("variant", "OTHER")),
+            "domain_distribution": _count_by(selected, lambda a: get_domain(a["source_repo"])),
+            "repo_distribution": _count_by(selected, lambda a: a["source_repo"]),
+            "selected_ids": sorted(selected_ids),
+        },
+        "bias_control": {
+            "quality_ranked_selection_removed": True,
+            "target_label_conditioning_avoided": True,
+            "note": (
+                "The evaluation set is not selected by highest structural or decision-quality "
+                "score. Class distribution is controlled explicitly so Non-Compliant ADRs are "
+                "not filtered out before model evaluation."
+            ),
+        },
+    }
+
+    out_path = ANALYSIS_DIR / "sampling_audit.json"
+    with open(out_path, "w") as fp:
+        json.dump(audit, fp, indent=2)
+    print(f"  Sampling audit written to {out_path}")
+
+
 # CHANGED (2026-08-17): license audit, R1 review comment. Checked each
 # source repo's license via the GitHub API — 13 of 15 are permissively
 # licensed (MIT/Apache-2.0/CC0/CC BY), but these two have no license file
@@ -727,19 +801,18 @@ UNLICENSED_REPOS = {
 
 
 def select_eval_adrs(adrs: List[Dict], ground_truth: Dict,
-                     n: int = 162, per_repo_cap: int = 15,
+                     n: int = 162, per_repo_cap: int = 20,
                      seed: int = None, resample: bool = False) -> List[Dict]:
     """
     Stratified selection of n ADRs for evaluation, proportionally balanced
     across compliance class and, within each class, spread across template
     variant x domain so no single project or format dominates.
 
-    Deliberately NOT ranked by sc_score/dq_met (the GPT-4o preliminary prelabel
-    score) — sampling on the same rubric used to define the outcome classes
-    mechanically excludes Non-Compliant ADRs from the eval set. This
-    replaces that approach with sampling proportional to the true class
-    distribution of the annotated pool, so the eval set reflects real-world
-    ADR quality rather than a curated-toward-compliant subset.
+    Deliberately NOT ranked by sc_score/dq_met. Sampling on rubric-derived
+    scores conditions on the target label and can mechanically exclude
+    Non-Compliant ADRs from the eval set. This method samples across the
+    labeled pool so the eval set reflects real-world ADR quality rather than
+    a curated-toward-compliant subset.
 
     Persists the selection to eval_set.json so all --run calls use the same
     set. Pass resample=True (or delete eval_set.json) to draw a fresh one.
@@ -753,6 +826,7 @@ def select_eval_adrs(adrs: List[Dict], ground_truth: Dict,
         selected = [a for a in adrs if a["id"] in saved_ids]
         print(f"\n  Reusing eval_set.json: {len(selected)} ADRs "
               f"(method={saved.get('method', 'unknown')}). Delete or pass --resample to reselect.")
+        write_sampling_audit(adrs, ground_truth, selected, n, per_repo_cap)
         return selected
 
     annotated = [a for a in adrs if a["id"] in ground_truth
@@ -872,6 +946,7 @@ def select_eval_adrs(adrs: List[Dict], ground_truth: Dict,
     with open(select_path, "w") as fp:
         json.dump(payload, fp, indent=2)
     print(f"  Saved to {select_path}")
+    write_sampling_audit(adrs, ground_truth, selected, n, per_repo_cap)
 
     return selected
 
