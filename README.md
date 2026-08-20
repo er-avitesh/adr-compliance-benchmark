@@ -4,7 +4,7 @@
 
 ## Overview
 
-This repository contains the complete replication package for the first multi-model benchmark evaluating LLMs on Architecture Decision Record (ADR) compliance checking. We evaluate **GPT-5.1, Claude Sonnet 4.6, Mistral 7B, and Gemini 2.5 Pro** across **zero-shot, few-shot, and chain-of-thought** prompting strategies on **100 real ADRs** sampled from 13 open-source GitHub repositories.
+This repository contains the complete replication package for the first multi-model benchmark evaluating LLMs on Architecture Decision Record (ADR) compliance checking. We evaluate **GPT-5.5, Claude Sonnet 4.6, Mistral 7B (`mistralai/Mistral-7B-Instruct-v0.3` via local/vLLM), and Gemini 2.5 Pro** across **zero-shot, few-shot, and chain-of-thought** prompting strategies on **162 real ADRs** sampled from 13 open-source GitHub repositories.
 
 Each model × strategy pair is run **3 repetitions** to measure output stability. Ground truth labels are produced by a **GPT-4o oracle** (`gpt-4o-2024-08-06`) applying a 14-criterion rubric covering structural completeness and decision quality.
 
@@ -17,14 +17,14 @@ Each model × strategy pair is run **3 repetitions** to measure output stability
 ├── adr_dataset.json                 # Full collected ADR index (176 ADRs)
 ├── dataset_report.json              # Dataset statistics
 ├── results/
-│   ├── eval_set.json                # 100-ADR evaluation set (fixed sample)
+│   ├── eval_set.json                # 162-ADR evaluation set (fixed sample)
 │   ├── ground_truth.json            # GPT-4o oracle annotations
 │   ├── adrs/                        # Full ADR text files (JSON)
 │   ├── adr_manifest.json            # ADR source metadata
 │   ├── raw_results/                 # Per-model/strategy result files
-│   │   ├── gpt-5.1_zero_shot.json
-│   │   ├── gpt-5.1_few_shot.json
-│   │   ├── gpt-5.1_chain_of_thought.json
+│   │   ├── gpt-5.5_zero_shot.json
+│   │   ├── gpt-5.5_few_shot.json
+│   │   ├── gpt-5.5_chain_of_thought.json
 │   │   ├── claude-sonnet-4-6_*.json
 │   │   ├── mistral-7b_*.json
 │   │   ├── gemini-2.5-pro_*.json
@@ -39,13 +39,13 @@ Each model × strategy pair is run **3 repetitions** to measure output stability
 
 ### Collection
 
-Prior ADR studies have relied on small, hand-curated sets (typically <30 ADRs) or synthetically generated documents, limiting both statistical power and ecological validity. To address this, we built a systematic collection pipeline (`find_adr_paths.py`) that queries the GitHub Contents API across 13 open-source repositories spanning diverse domains — cloud infrastructure, observability, GitOps, developer tooling, and enterprise CMS. Each candidate file is scored against a structural heuristic (presence of decision rationale, context, consequences, and alternatives); files scoring below 3 are excluded, ensuring a minimum quality floor without manual screening. A per-repository cap of 20 ADRs enforces source diversity and prevents high-volume repositories from dominating the corpus. The resulting dataset of **176 ADRs** covers four distinct ADR formats (NYGARD, MADR, LIGHTWEIGHT, and OTHER), with document lengths ranging from 87 to 4,295 characters (mean: 843). From this corpus, a stratified evaluation set of **100 ADRs** was drawn with a per-repo cap of 15, yielding a benchmark that is both larger and more format-diverse than any previously reported in the literature.
+Prior ADR studies have relied on small, hand-curated sets (typically <30 ADRs) or synthetically generated documents, limiting both statistical power and ecological validity. To address this, we built a systematic collection pipeline (`find_adr_paths.py`) that queries the GitHub Contents API across 13 open-source repositories spanning diverse domains — cloud infrastructure, observability, GitOps, developer tooling, and enterprise CMS. Each candidate file is scored against a structural heuristic (presence of decision rationale, context, consequences, and alternatives); files scoring below 3 are excluded to remove non-substantive files such as indexes, placeholders, or templates without project-specific decisions. A per-repository cap of 20 ADRs enforces source diversity and prevents high-volume repositories from dominating the corpus. The resulting dataset of **176 ADRs** covers four distinct ADR formats (NYGARD, MADR, LIGHTWEIGHT, and OTHER), with document lengths ranging from 87 to 4,295 characters (mean: 843). From this corpus, a **162-ADR stratified evaluation set** was drawn with a per-repo cap of 15, yielding a benchmark that is both larger and more format-diverse than any previously reported in the literature.
 
 The collection pipeline proceeds as follows:
 1. Query the GitHub Contents API for known ADR directory paths across target repositories
 2. Fetch a 2 KB preview of each candidate file
 3. Score each file on a structural heuristic (presence of decision, context, consequences, alternatives)
-4. Filter out low-quality files (score < 3) and apply a per-repo cap of 20 ADRs
+4. Filter out non-substantive ADR candidates (score < 3) and apply a per-repo cap of 20 ADRs
 
 ### Source Repositories (13)
 
@@ -122,9 +122,9 @@ Labels were produced by GPT-4o (`gpt-4o-2024-08-06`) run twice per ADR to estima
 
 | Model | Provider | API Key |
 |---|---|---|
-| GPT-5.1 | OpenAI | `OPENAI_API_KEY` |
+| GPT-5.5 | OpenAI | `OPENAI_API_KEY` |
 | Claude Sonnet 4.6 | Anthropic | `ANTHROPIC_API_KEY` |
-| Mistral 7B (`mistral-small-latest`) | Mistral AI | `MISTRAL_API_KEY` |
+| Mistral 7B (`mistralai/Mistral-7B-Instruct-v0.3` via local/vLLM) | Mistral AI | `MISTRAL_API_KEY` |
 | Gemini 2.5 Pro | Google AI Studio | `GEMINI_API_KEY` |
 
 **Oracle (ground truth annotation):** GPT-4o (`gpt-4o-2024-08-06`) via OpenAI API.
@@ -164,7 +164,7 @@ Before running the full experiment, verify API connectivity and response format 
 python test.py --test_config
 
 # Test a specific model/strategy pair
-python test.py --run gpt-5.1/zero_shot
+python test.py --run gpt-5.5/zero_shot
 python test.py --run gemini-2.5-pro/chain_of_thought,claude-sonnet-4-6/few_shot
 ```
 
@@ -174,14 +174,14 @@ python test.py --run gemini-2.5-pro/chain_of_thought,claude-sonnet-4-6/few_shot
 # Phase 1: Fetch ADRs from GitHub (set GITHUB_TOKEN for higher rate limits)
 python adr_benchmark.py --phase fetch
 
-# Phase 2: Annotate with GPT-4o oracle (~$2, ~30 min for 100 ADRs)
+# Phase 2: Annotate with GPT-4o oracle
 python adr_benchmark.py --phase annotate
 
 # Phase 3: Run all models — one terminal per model for parallel execution
-python adr_benchmark.py --run gpt-5.1/zero_shot,gpt-5.1/few_shot,gpt-5.1/chain_of_thought
-python adr_benchmark.py --run claude-sonnet-4-6/zero_shot,claude-sonnet-4-6/few_shot,claude-sonnet-4-6/chain_of_thought
-python adr_benchmark.py --run mistral-7b/zero_shot,mistral-7b/few_shot,mistral-7b/chain_of_thought
-python adr_benchmark.py --run gemini-2.5-pro/zero_shot,gemini-2.5-pro/few_shot,gemini-2.5-pro/chain_of_thought
+python adr_benchmark.py --run gpt-5.5/zero_shot,gpt-5.5/few_shot,gpt-5.5/chain_of_thought --n-eval 162
+python adr_benchmark.py --run claude-sonnet-4-6/zero_shot,claude-sonnet-4-6/few_shot,claude-sonnet-4-6/chain_of_thought --n-eval 162
+python adr_benchmark.py --run mistral-7b/zero_shot,mistral-7b/few_shot,mistral-7b/chain_of_thought --n-eval 162
+python adr_benchmark.py --run gemini-2.5-pro/zero_shot,gemini-2.5-pro/few_shot,gemini-2.5-pro/chain_of_thought --n-eval 162
 
 # Phase 4: Merge result files and compute metrics
 python adr_benchmark.py --phase merge
@@ -200,22 +200,22 @@ python adr_benchmark.py --run gemini-2.5-pro/zero_shot
 
 ```bash
 # Single pair
-python adr_benchmark.py --run gpt-5.1/chain_of_thought
+python adr_benchmark.py --run gpt-5.5/chain_of_thought
 
 # Multiple pairs (comma-separated, no spaces)
-python adr_benchmark.py --run gpt-5.1/zero_shot,mistral-7b/few_shot
+python adr_benchmark.py --run gpt-5.5/zero_shot,mistral-7b/few_shot
 ```
 
-### Cost and Time Estimates (n=100, 3 reps)
+### Cost and Time Estimates (n=162, 3 reps)
 
 | Model | Approx. Cost | Approx. Time |
 |---|---|---|
-| GPT-5.1 | $3–5 | 45 min |
+| GPT-5.5 | $3–5 | 45 min |
 | Claude Sonnet 4.6 | $2–4 | 45 min |
 | Mistral 7B | $0.10 | 15 min |
 | Gemini 2.5 Pro | $1–3 | 60 min |
 
-> **Gemini quota note:** Gemini 2.5 Pro has a 1,000 requests/day limit on the pay-as-you-go tier. 3 strategies × 3 reps × 100 ADRs = 900 calls, which fits within a single day but leaves little margin. If the daily limit is reached, the script prints `QUOTA EXHAUSTED` and stops cleanly — all completed reps are saved. Re-run after midnight when the quota resets and the script will resume from where it stopped.
+> **Gemini quota note:** Gemini 2.5 Pro quotas vary by account and tier. 3 strategies × 3 reps × 162 ADRs = 1,458 Gemini calls, so the run may need to resume across quota windows. If the daily limit is reached, the script prints `QUOTA EXHAUSTED` and stops cleanly — all completed reps are saved. Re-run after the quota resets and the script will resume from where it stopped.
 
 ## Results
 
@@ -223,14 +223,14 @@ The table below shows mean accuracy vs. the GPT-4o oracle. Full F1, precision, r
 
 | Model | ZS Acc | FS Acc | CoT Acc |
 |---|---|---|---|
-| GPT-5.1 | 83% | 65% | 79% |
+| GPT-5.5 | 83% | 65% | 79% |
 | Claude Sonnet 4.6 | 70% | 62% | 78% |
 | Gemini 2.5 Pro | 60% | 61% | 62% |
 | Mistral 7B | 48% | 23% | 54% |
 
 **Key observations:**
-- GPT-5.1 zero-shot (83%) is the single strongest result across the benchmark
-- Claude Sonnet 4.6 responds strongly to chain-of-thought (78%), narrowing the gap with GPT-5.1
+- GPT-5.5 zero-shot (83%) is the single strongest result across the benchmark
+- Claude Sonnet 4.6 responds strongly to chain-of-thought (78%), narrowing the gap with GPT-5.5
 - Gemini 2.5 Pro shows notably flat accuracy across all three prompting strategies (~60–62%), suggesting limited sensitivity to prompt structure
 - Mistral 7B's few-shot accuracy collapses to 23% — performing substantially worse with in-context examples than without, a finding not previously reported for this model class on structured compliance tasks
 

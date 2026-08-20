@@ -102,7 +102,7 @@ def test_env_vars() -> dict[str, bool]:
     print("-" * 50)
     env_map = {
         "ANTHROPIC_API_KEY": "claude-sonnet-4-6",
-        "OPENAI_API_KEY":    "gpt-5.1",
+        "OPENAI_API_KEY":    "gpt-5.5",
         "MISTRAL_API_KEY":   "mistral-7b",
         "GEMINI_API_KEY":    "gemini-2.5-pro",
     }

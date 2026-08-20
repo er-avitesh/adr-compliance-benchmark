@@ -26,7 +26,7 @@ Usage:
 
   # Targeted run — one or several model/strategy pairs
   python adr_benchmark.py --run gemini-2.5-pro/zero_shot --n-eval 162
-  python adr_benchmark.py --run gemini-2.5-pro/zero_shot,gpt-5.1/chain_of_thought
+  python adr_benchmark.py --run gemini-2.5-pro/zero_shot,gpt-5.5/chain_of_thought
 """
 
 import os
@@ -36,6 +36,7 @@ import time
 import re
 import random
 import argparse
+import shutil
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict
@@ -56,12 +57,6 @@ N_REPS = 3           # Repetitions (increase to 5 for full run)
 RATE_LIMIT_DELAY = 1.0  # seconds between API calls
 
 MODELS = {
-    "gpt-5.1": {
-        "provider": "openai",
-        "model": "gpt-5.1",
-        "use_max_completion_tokens": True,
-        "no_temperature": True,
-    },
     "gpt-5.5": {
         "provider": "openai",
         "model": "gpt-5.5",
@@ -74,10 +69,11 @@ MODELS = {
         "no_temperature": True,
     },
     "mistral-7b": {
-        "provider": "openai",  # via Mistral's OpenAI-compatible API or local vLLM
-        "model": "mistral-small-latest",  # or "mistralai/Mistral-7B-Instruct-v0.3" for vLLM
-        "base_url": "https://api.mistral.ai/v1",  # change to localhost for vLLM
+        "provider": "openai",  # OpenAI-compatible local/vLLM endpoint
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "base_url": os.environ.get("MISTRAL_BASE_URL", "http://localhost:8000/v1"),
         "api_key_env": "MISTRAL_API_KEY",
+        "api_key_default": "EMPTY",
     },
     "gemini-2.5-pro": {
         "provider": "gemini",
@@ -91,6 +87,44 @@ STRATEGIES = ["zero_shot", "few_shot", "chain_of_thought"]
 
 with open("adr_dataset.json") as f:
     ADR_DATASET = json.load(f)
+
+
+def _archive_stale_result(result_file: Path, reason: str) -> None:
+    """Move stale/incompatible raw results out of the active results directory."""
+    archive_dir = EXPERIMENT_DIR / "_archive" / f"stale_raw_results_{datetime.now():%Y%m%d_%H%M%S}"
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    target = archive_dir / result_file.name
+    shutil.move(str(result_file), str(target))
+    print(f"  STALE {result_file.name} — {reason}. Archived to {target}")
+
+
+def _validate_result_reps(rep_results_list, expected_ids: List[str], n_reps: int,
+                          require_complete: bool = False):
+    """
+    Validate resumable raw result files against the active eval_set.
+
+    A valid partial file may have fewer than n_reps repetitions, but every
+    stored repetition must contain exactly the active eval_set ADR IDs in order.
+    This prevents old 3 x 100 files from being treated as complete for the
+    current 162-ADR evaluation.
+    """
+    if not isinstance(rep_results_list, list):
+        return False, "top-level JSON is not a list"
+    if require_complete and len(rep_results_list) != n_reps:
+        return False, f"has {len(rep_results_list)} reps but expected {n_reps}"
+    if len(rep_results_list) > n_reps:
+        return False, f"has {len(rep_results_list)} reps but expected at most {n_reps}"
+
+    for rep_idx, rep in enumerate(rep_results_list, 1):
+        if not isinstance(rep, list):
+            return False, f"rep {rep_idx} is not a list"
+        if len(rep) != len(expected_ids):
+            return False, f"rep {rep_idx} has {len(rep)} ADRs but expected {len(expected_ids)}"
+        rep_ids = [row.get("adr_id") if isinstance(row, dict) else None for row in rep]
+        if rep_ids != expected_ids:
+            return False, f"rep {rep_idx} ADR IDs do not match active eval_set.json"
+
+    return True, "ok"
 
 
 # ============================================================
@@ -487,7 +521,10 @@ def call_llm(model_name: str, prompt: str, _retries: int = 3):
             if "base_url" in cfg:
                 kwargs["base_url"] = cfg["base_url"]
             if "api_key_env" in cfg:
-                kwargs["api_key"] = os.environ.get(cfg["api_key_env"], "")
+                kwargs["api_key"] = os.environ.get(
+                    cfg["api_key_env"],
+                    cfg.get("api_key_default", "")
+                )
             client = OpenAI(**kwargs)
 
             create_kwargs = {
@@ -927,11 +964,17 @@ def _run_pair(model_name: str, strategy: str,
             return
 
     result_file = RESULTS_DIR / f"{model_name}_{strategy}.json"
+    expected_ids = [adr["id"] for adr in eval_adrs]
     if result_file.exists():
         with open(result_file) as fp:
             rep_results_list = json.load(fp)
+        valid, reason = _validate_result_reps(rep_results_list, expected_ids, n_reps)
+        if not valid:
+            _archive_stale_result(result_file, reason)
+            rep_results_list = []
         completed_reps = len(rep_results_list)
-        print(f"  Resuming {model_name}/{strategy} from rep {completed_reps + 1}")
+        if completed_reps:
+            print(f"  Resuming {model_name}/{strategy} from rep {completed_reps + 1}")
     else:
         rep_results_list = []
         completed_reps = 0
@@ -1023,7 +1066,7 @@ def run_experiments(adrs: List[Dict], ground_truth: Dict,
             return bool(os.environ.get(cfg.get("api_key_env", "GEMINI_API_KEY")))
         # openai-compatible
         env_var = cfg.get("api_key_env", "OPENAI_API_KEY")
-        return bool(os.environ.get(env_var))
+        return bool(os.environ.get(env_var) or cfg.get("api_key_default"))
 
     skipped_models = set()
     valid_work = []
@@ -1099,6 +1142,12 @@ def merge_results() -> Dict:
 
     all_results = {}
     found = 0
+    eval_set_path = EXPERIMENT_DIR / "eval_set.json"
+    expected_ids = None
+    if eval_set_path.exists():
+        with open(eval_set_path) as fp:
+            eval_set = json.load(fp)
+        expected_ids = [a["id"] for a in eval_set.get("adrs", [])]
 
     for model_name in MODELS:
         for strategy in STRATEGIES:
@@ -1108,6 +1157,13 @@ def merge_results() -> Dict:
                 continue
             with open(result_file) as fp:
                 data = json.load(fp)
+            if expected_ids is not None:
+                valid, reason = _validate_result_reps(
+                    data, expected_ids, N_REPS, require_complete=True
+                )
+                if not valid:
+                    print(f"  SKIP  {model_name}/{strategy} — stale result file: {reason}")
+                    continue
             all_results.setdefault(model_name, {})[strategy] = data
             n_reps = len(data)
             n_adrs = len(data[0]) if data else 0
@@ -1140,7 +1196,7 @@ def analyze(all_results: Dict, ground_truth: Dict):
     ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
     CLASSES = ["Compliant", "Partially_Compliant", "Non_Compliant"]
     STRAT_SHORT = {"zero_shot": "ZS", "few_shot": "FS", "chain_of_thought": "CoT"}
-    MODEL_SHORT = {"gpt-5.1": "GPT-5.5", "claude-sonnet-4-6": "Claude Sonnet 4.6",
+    MODEL_SHORT = {"gpt-5.5": "GPT-5.5", "claude-sonnet-4-6": "Claude Sonnet 4.6",
                    "mistral-7b": "Mistral 7B", "gemini-2.5-pro": "Gemini 2.5P",
                    "llama-3.1-70b": "LLaMA 3.1"}
 
@@ -1259,9 +1315,9 @@ def analyze(all_results: Dict, ground_truth: Dict):
     print(f"{'='*60}")
 
     pricing = {
-        "gpt-5.1": (5.00, 30.00),
+        "gpt-5.5": (5.00, 30.00),
         "claude-sonnet-4-6": (3.00, 15.00),
-        "mistral-7b": (0.25, 0.25),
+        "mistral-7b": (0.00, 0.00),
         "gemini-2.5-pro": (1.25, 10.00),  # standard tier (<200K ctx)
     }
 
