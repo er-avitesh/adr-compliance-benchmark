@@ -70,8 +70,8 @@ def _mask(val: str) -> str:
     return val[:8] + "..." + val[-4:] if len(val) > 12 else "***"
 
 
-def _parse_oracle_json(raw: str):
-    """Return (ok, detail) for oracle annotation output."""
+def _parse_prelabel_json(raw: str):
+    """Return (ok, detail) for GPT-4o prelabel output."""
     if not raw:
         return False, "empty response"
     try:
@@ -118,8 +118,8 @@ def test_env_vars() -> dict[str, bool]:
     return results
 
 
-def test_oracle(env_ok: bool) -> tuple[bool, str]:
-    """Test GPT-4o oracle annotation — different prompt & format from the experiment calls."""
+def test_prelabeler(env_ok: bool) -> tuple[bool, str]:
+    """Test GPT-4o prelabel generation — different prompt & format from experiment calls."""
     if not env_ok:
         return None, "OPENAI_API_KEY not set"
     try:
@@ -136,7 +136,7 @@ def test_oracle(env_ok: bool) -> tuple[bool, str]:
             max_tokens=500,
         )
         raw = resp.choices[0].message.content
-        return _parse_oracle_json(raw)
+        return _parse_prelabel_json(raw)
     except Exception as e:
         return False, f"API error: {e}"
 
@@ -173,17 +173,17 @@ def run_test_config() -> bool:
 
     env = test_env_vars()
 
-    # ---- Oracle test -------------------------------------------------------
-    print("\n[2/3] ORACLE ANNOTATION FORMAT (gpt-4o)")
+    # ---- GPT-4o prelabel test ---------------------------------------------
+    print("\n[2/3] GPT-4o PRELABEL FORMAT")
     print("-" * 50)
-    ok, detail = test_oracle(env.get("OPENAI_API_KEY"))
+    ok, detail = test_prelabeler(env.get("OPENAI_API_KEY"))
     if ok is None:
-        print(f"  SKIP  oracle/annotation — {detail}")
-        oracle_result = ("oracle/annotation", None)
+        print(f"  SKIP  gpt4o/prelabel — {detail}")
+        prelabel_result = ("gpt4o/prelabel", None)
     else:
         status = "PASS" if ok else "FAIL"
-        print(f"  {status}  oracle/annotation — {detail}")
-        oracle_result = ("oracle/annotation", ok)
+        print(f"  {status}  gpt4o/prelabel — {detail}")
+        prelabel_result = ("gpt4o/prelabel", ok)
     time.sleep(0.5)
 
     # ---- Experiment model × strategy tests ---------------------------------
@@ -210,7 +210,7 @@ def run_test_config() -> bool:
             time.sleep(0.5)
 
     # ---- Summary -----------------------------------------------------------
-    all_results = [oracle_result] + experiment_results
+    all_results = [prelabel_result] + experiment_results
     passed  = sum(1 for _, r in all_results if r is True)
     failed  = sum(1 for _, r in all_results if r is False)
     skipped = sum(1 for _, r in all_results if r is None)

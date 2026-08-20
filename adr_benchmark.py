@@ -5,7 +5,7 @@ ADR COMPLIANCE BENCHMARK — Experiment Runner
 4 models × 3 strategies × 3 reps × 162 ADRs = 5,832 calls.
 Eval set is drawn via stratified sampling (compliance class x template
 variant x domain) — see select_eval_adrs() — rather than ranked by the
-oracle's own compliance score, so the sample isn't skewed toward
+GPT-4o preliminary prelabel score, so the sample isn't skewed toward
 already-compliant ADRs.
 
 Each model/strategy pair saves its own result file independently so runs can be
@@ -37,6 +37,7 @@ import re
 import random
 import argparse
 import shutil
+import csv
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict
@@ -293,11 +294,12 @@ def load_adrs():
 
 
 # ============================================================
-# PHASE 2: AUTO-ANNOTATE GROUND TRUTH
+# PHASE 2: GPT-4o PRE-ANNOTATION
 # ============================================================
 
-ANNOTATION_SYSTEM_PROMPT = """You are an expert software architect performing ground-truth annotation 
-for a research study. You must be extremely precise and consistent.
+ANNOTATION_SYSTEM_PROMPT = """You are an expert software architect performing preliminary ADR pre-annotation
+for a research workflow. These labels are not final benchmark ground truth.
+You must be extremely precise and consistent.
 
 You are evaluating Architecture Decision Records (ADRs) against two dimensions:
 
@@ -338,44 +340,44 @@ Respond with ONLY this JSON (no markdown, no explanation):
 {{"C1":true/false,"C2":true/false,"C3":true/false,"C4":true/false,"C5":true/false,"C6":true/false,"C7":true/false,"sc_score":N,"sc_class":"Compliant|Partially_Compliant|Non_Compliant","Q1":"Met|Partially_Met|Not_Met","Q2":"Met|Partially_Met|Not_Met","Q3":"Met|Partially_Met|Not_Met","Q4":"Met|Partially_Met|Not_Met","Q5":"Met|Partially_Met|Not_Met","Q6":"Met|Partially_Met|Not_Met","Q7":"Met|Partially_Met|Not_Met","dq_met":N,"dq_class":"Compliant|Partially_Compliant|Non_Compliant","overall":"Compliant|Partially_Compliant|Non_Compliant"}}"""
 
 
-def annotate_with_oracle(adrs: List[Dict], oracle_model="gpt-4o-2024-08-06"):
-    """Use GPT-4o as oracle annotator (run twice for inter-rater agreement)."""
+def generate_gpt4o_prelabels(adrs: List[Dict], prelabel_model="gpt-4o-2024-08-06"):
+    """Use GPT-4o for preliminary pre-labeling and self-consistency checks."""
     from openai import OpenAI
     client = OpenAI()
 
     print(f"\n{'='*60}")
-    print(f"PHASE 2: Annotating {len(adrs)} ADRs with oracle ({oracle_model})")
+    print(f"PHASE 2: Generating GPT-4o prelabels for {len(adrs)} ADRs ({prelabel_model})")
     print(f"{'='*60}")
 
-    gt_path = EXPERIMENT_DIR / "ground_truth.json"
-    ground_truth = {}
+    prelabel_path = EXPERIMENT_DIR / "prelabels_gpt4o.json"
+    prelabels = {}
 
     # Load existing if resuming
-    if gt_path.exists():
-        with open(gt_path) as fp:
-            ground_truth = json.load(fp)
-        print(f"  Loaded {len(ground_truth)} existing annotations")
+    if prelabel_path.exists():
+        with open(prelabel_path) as fp:
+            prelabels = json.load(fp)
+        print(f"  Loaded {len(prelabels)} existing GPT-4o prelabels")
 
     for i, adr in enumerate(adrs):
-        if adr["id"] in ground_truth:
+        if adr["id"] in prelabels:
             continue
 
-        print(f"  [{i+1}/{len(adrs)}] Annotating {adr['id']}...")
+        print(f"  [{i+1}/{len(adrs)}] Pre-labeling {adr['id']}...")
 
         # Truncate very long ADRs to avoid token limits
         adr_text = adr["text"][:4000]
 
-        # Run oracle TWICE for inter-rater simulation
+        # Run GPT-4o twice to estimate self-consistency, not inter-rater reliability.
         annotations = []
         for run in range(2):
             try:
                 response = client.chat.completions.create(
-                    model=oracle_model,
+                    model=prelabel_model,
                     messages=[
                         {"role": "system", "content": ANNOTATION_SYSTEM_PROMPT},
                         {"role": "user", "content": ANNOTATION_PROMPT_TEMPLATE.format(adr_text=adr_text)},
                     ],
-                    temperature=0.3 if run == 0 else 0.5,  # slight variation for inter-rater
+                    temperature=0.3 if run == 0 else 0.5,
                     max_tokens=500,
                 )
                 raw = response.choices[0].message.content.strip()
@@ -392,40 +394,41 @@ def annotate_with_oracle(adrs: List[Dict], oracle_model="gpt-4o-2024-08-06"):
 
             time.sleep(RATE_LIMIT_DELAY)
 
-        # Use first annotation as ground truth, record agreement
+        # Store first prelabel and record same-model self-consistency.
         if annotations[0]:
             gt = annotations[0]
-            agreement = "agree"
+            consistency = "agree"
             if annotations[1] and annotations[0].get("overall") != annotations[1].get("overall"):
-                agreement = "disagree"
+                consistency = "disagree"
 
-            ground_truth[adr["id"]] = {
+            prelabels[adr["id"]] = {
                 "overall": gt.get("overall", "Partially_Compliant"),
                 "sc_class": gt.get("sc_class", "Partially_Compliant"),
                 "dq_class": gt.get("dq_class", "Partially_Compliant"),
                 "sc_score": gt.get("sc_score", 4),
                 "dq_met": gt.get("dq_met", 3),
                 "details": gt,
-                "inter_rater": agreement,
-                "annotated_at": datetime.now().isoformat(),
+                "prelabel_model": prelabel_model,
+                "gpt4o_self_consistency": consistency,
+                "prelabeled_at": datetime.now().isoformat(),
             }
 
         # Save incrementally
-        with open(gt_path, "w") as fp:
-            json.dump(ground_truth, fp, indent=2)
+        with open(prelabel_path, "w") as fp:
+            json.dump(prelabels, fp, indent=2)
 
     # Report distribution
-    classes = [v["overall"] for v in ground_truth.values()]
-    print(f"\n  Ground Truth Distribution:")
+    classes = [v["overall"] for v in prelabels.values()]
+    print(f"\n  GPT-4o Prelabel Distribution:")
     for cls in ["Compliant", "Partially_Compliant", "Non_Compliant"]:
         n = classes.count(cls)
         print(f"    {cls}: {n} ({n/len(classes)*100:.0f}%)")
 
-    agreements = [v["inter_rater"] for v in ground_truth.values()]
+    agreements = [v["gpt4o_self_consistency"] for v in prelabels.values()]
     agree_rate = agreements.count("agree") / len(agreements)
-    print(f"  Inter-rater agreement: {agree_rate:.1%}")
+    print(f"  GPT-4o self-consistency: {agree_rate:.1%}")
 
-    return ground_truth
+    return prelabels
 
 
 # ============================================================
@@ -670,7 +673,7 @@ def extract_classification(raw):
 # CHANGED (2026-08-17): eval-set selection, R2 review comment #6
 # ------------------------------------------------------------
 # select_eval_adrs() previously ranked the 194 annotated ADRs by
-# sc_score + dq_met (the oracle's own compliance score) and took the top
+# sc_score + dq_met (the GPT-4o preliminary prelabel score) and took the top
 # 100. That ranks directly on the outcome variable: the full pool is
 # 47.4% Partially Compliant / 46.4% Non-Compliant / 6.2% Compliant, but the
 # old top-100 selection came out 86% / 2% / 12% — Non-Compliant ADRs were
@@ -731,7 +734,7 @@ def select_eval_adrs(adrs: List[Dict], ground_truth: Dict,
     across compliance class and, within each class, spread across template
     variant x domain so no single project or format dominates.
 
-    Deliberately NOT ranked by sc_score/dq_met (the oracle's own compliance
+    Deliberately NOT ranked by sc_score/dq_met (the GPT-4o preliminary prelabel
     score) — sampling on the same rubric used to define the outcome classes
     mechanically excludes Non-Compliant ADRs from the eval set. This
     replaces that approach with sampling proportional to the true class
@@ -1343,6 +1346,44 @@ def analyze(all_results: Dict, ground_truth: Dict):
     return metrics_summary
 
 
+def export_human_annotation_template(adrs: List[Dict], ground_truth: Dict,
+                                     n_eval: int = N_EVAL, seed: int = None,
+                                     resample: bool = False) -> None:
+    """Export CSV/JSON templates for independent human ADR annotation."""
+    eval_adrs = select_eval_adrs(adrs, ground_truth, n=n_eval, seed=seed, resample=resample)
+    template_dir = EXPERIMENT_DIR / "human_annotation"
+    template_dir.mkdir(parents=True, exist_ok=True)
+
+    fields = [
+        "adr_id", "reviewer_id",
+        "C1", "C2", "C3", "C4", "C5", "C6", "C7",
+        "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7",
+        "sc_score", "dq_score", "sc_class", "dq_class", "overall", "notes",
+    ]
+    rows = []
+    for adr in eval_adrs:
+        rows.append({
+            "adr_id": adr["id"],
+            "reviewer_id": "",
+            "C1": "", "C2": "", "C3": "", "C4": "", "C5": "", "C6": "", "C7": "",
+            "Q1": "", "Q2": "", "Q3": "", "Q4": "", "Q5": "", "Q6": "", "Q7": "",
+            "sc_score": "", "dq_score": "", "sc_class": "", "dq_class": "",
+            "overall": "", "notes": "",
+        })
+
+    csv_path = template_dir / "human_annotation_template.csv"
+    json_path = template_dir / "human_annotation_template.json"
+    with open(csv_path, "w", newline="", encoding="utf-8") as fp:
+        writer = csv.DictWriter(fp, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(rows)
+    with open(json_path, "w", encoding="utf-8") as fp:
+        json.dump(rows, fp, indent=2)
+
+    print(f"  Exported human annotation CSV:  {csv_path}")
+    print(f"  Exported human annotation JSON: {json_path}")
+
+
 # ============================================================
 # MAIN
 # ============================================================
@@ -1369,22 +1410,33 @@ def _parse_targets(raw: str) -> List[tuple]:
 
 
 def _load_ground_truth() -> Dict:
-    gt_path = EXPERIMENT_DIR / "ground_truth.json"
+    gt_path = EXPERIMENT_DIR / "human_ground_truth.json"
     if not gt_path.exists():
-        print("ERROR: No ground truth found. Run --phase annotate first.")
+        print("ERROR: human-adjudicated labels required for benchmark evaluation.")
+        print(f"Expected file: {gt_path}")
+        print("Generate reviewer templates with --phase template, then import adjudicated labels into human_ground_truth.json.")
         sys.exit(1)
     with open(gt_path) as fp:
+        return json.load(fp)
+
+
+def _load_prelabels() -> Dict:
+    prelabel_path = EXPERIMENT_DIR / "prelabels_gpt4o.json"
+    if not prelabel_path.exists():
+        print("ERROR: GPT-4o prelabels not found. Run --phase annotate first.")
+        sys.exit(1)
+    with open(prelabel_path) as fp:
         return json.load(fp)
 
 
 def main():
     parser = argparse.ArgumentParser(description="ADR Compliance Benchmark")
     parser.add_argument("--phase", default=None,
-                        choices=["fetch", "annotate", "run", "merge", "all"],
+                        choices=["fetch", "annotate", "template", "run", "merge", "analyze", "all"],
                         help="Pipeline phase to execute (default: all)")
     parser.add_argument("--run", metavar="MODEL/STRATEGY[,...]",
-                        help="Run specific model/strategy pairs (comma-separated); "
-                             "requires fetch + annotate to be done already")
+        help="Run specific model/strategy pairs (comma-separated); "
+                             "requires fetch + human_ground_truth.json to be done already")
     parser.add_argument("--n-eval", type=int, default=162,
                         help="Number of ADRs to sample for evaluation "
                              "(default: 162, per the paper's sample-size calculation)")
@@ -1439,14 +1491,21 @@ def main():
     else:
         adrs = load_adrs()
 
-    if args.phase in ("annotate", "all", "run"):
+    if args.phase in ("annotate", "template", "all", "run"):
         if not adrs:
             print("ERROR: No ADRs found. Run --phase fetch first.")
             sys.exit(1)
 
     if args.phase in ("annotate", "all"):
-        ground_truth = annotate_with_oracle(adrs)
-    elif args.phase in ("run",):
+        prelabels = generate_gpt4o_prelabels(adrs)
+    else:
+        prelabels = None
+
+    if args.phase in ("template",):
+        prelabels = _load_prelabels()
+        export_human_annotation_template(adrs, prelabels, n_eval=n_eval,
+                                         seed=args.seed, resample=args.resample)
+    elif args.phase in ("run", "all"):
         ground_truth = _load_ground_truth()
 
     if args.phase in ("run", "all"):

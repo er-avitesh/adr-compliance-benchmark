@@ -6,7 +6,7 @@
 
 This repository contains the complete replication package for the first multi-model benchmark evaluating LLMs on Architecture Decision Record (ADR) compliance checking. We evaluate **GPT-5.5, Claude Sonnet 4.6, Mistral 7B (`mistralai/Mistral-7B-Instruct-v0.3` via local/vLLM), and Gemini 2.5 Pro** across **zero-shot, few-shot, and chain-of-thought** prompting strategies on **162 real ADRs** sampled from 13 open-source GitHub repositories.
 
-Each model × strategy pair is run **3 repetitions** to measure output stability. Ground truth labels are produced by a **GPT-4o oracle** (`gpt-4o-2024-08-06`) applying a 14-criterion rubric covering structural completeness and decision quality.
+Each model × strategy pair is run **3 repetitions** to measure output stability. Final benchmark labels are produced through independent human software-architecture review and adjudication using a frozen 14-criterion rubric covering structural completeness and decision quality. GPT-4o (`gpt-4o-2024-08-06`) is used only for preliminary pre-annotation and sampling workflow support.
 
 ## Repository Structure
 
@@ -18,7 +18,9 @@ Each model × strategy pair is run **3 repetitions** to measure output stability
 ├── dataset_report.json              # Dataset statistics
 ├── results/
 │   ├── eval_set.json                # 162-ADR evaluation set (fixed sample)
-│   ├── ground_truth.json            # GPT-4o oracle annotations
+│   ├── prelabels_gpt4o.json         # GPT-4o preliminary prelabels, not final ground truth
+│   ├── human_ground_truth.json      # Human-adjudicated benchmark labels
+│   ├── human_annotation/            # CSV/JSON templates for reviewer annotation
 │   ├── adrs/                        # Full ADR text files (JSON)
 │   ├── adr_manifest.json            # ADR source metadata
 │   ├── raw_results/                 # Per-model/strategy result files
@@ -78,7 +80,9 @@ Average length: **843 characters** (min: 87, max: 4,295)
 
 ### Ground Truth Annotation
 
-Labels were produced by GPT-4o (`gpt-4o-2024-08-06`) run twice per ADR to estimate annotation self-consistency. The first annotation is used as ground truth; disagreements between the two runs are recorded as an inter-pass agreement metric.
+Final benchmark labels are human-adjudicated. Two qualified software-architecture reviewers independently annotate each ADR in the 162-ADR evaluation set using the frozen C1-C7 and Q1-Q7 rubric. Disagreements are resolved through adjudication, and the adjudicated labels are stored in `results/human_ground_truth.json`. Model performance is computed only against this human reference standard.
+
+GPT-4o (`gpt-4o-2024-08-06`) may be run twice per ADR to produce preliminary prelabels in `results/prelabels_gpt4o.json` and estimate same-model self-consistency. These prelabels are not treated as ground truth and are not used to score GPT-5.5 or any other evaluated model.
 
 | Class | Count |
 |---|---|
@@ -127,7 +131,11 @@ Labels were produced by GPT-4o (`gpt-4o-2024-08-06`) run twice per ADR to estima
 | Mistral 7B (`mistralai/Mistral-7B-Instruct-v0.3` via local/vLLM) | Mistral AI | `MISTRAL_API_KEY` |
 | Gemini 2.5 Pro | Google AI Studio | `GEMINI_API_KEY` |
 
-**Oracle (ground truth annotation):** GPT-4o (`gpt-4o-2024-08-06`) via OpenAI API.
+**Pre-annotation model:** GPT-4o (`gpt-4o-2024-08-06`) via OpenAI API. GPT-4o prelabels are preliminary workflow aids only; final benchmark labels come from human adjudication.
+
+### Model-Family Bias
+
+Because GPT-4o and GPT-5.5 are both OpenAI GPT-family models, using GPT-4o labels as final ground truth could introduce correlated-labeling or model-family bias. The benchmark therefore does not evaluate GPT-5.5 against GPT-4o labels. GPT-4o outputs are retained only as prelabels for sampling and annotation workflow preparation, while all reported model-performance results are computed against human-adjudicated labels.
 
 ## Reproducing the Experiments
 
@@ -174,16 +182,22 @@ python test.py --run gemini-2.5-pro/chain_of_thought,claude-sonnet-4-6/few_shot
 # Phase 1: Fetch ADRs from GitHub (set GITHUB_TOKEN for higher rate limits)
 python adr_benchmark.py --phase fetch
 
-# Phase 2: Annotate with GPT-4o oracle
+# Phase 2: Generate preliminary GPT-4o prelabels
 python adr_benchmark.py --phase annotate
 
-# Phase 3: Run all models — one terminal per model for parallel execution
+# Phase 3: Export the 162-ADR human annotation template
+python adr_benchmark.py --phase template --n-eval 162
+
+# After independent review and adjudication, save labels to:
+# results/human_ground_truth.json
+
+# Phase 4: Run all models — one terminal per model for parallel execution
 python adr_benchmark.py --run gpt-5.5/zero_shot,gpt-5.5/few_shot,gpt-5.5/chain_of_thought --n-eval 162
 python adr_benchmark.py --run claude-sonnet-4-6/zero_shot,claude-sonnet-4-6/few_shot,claude-sonnet-4-6/chain_of_thought --n-eval 162
 python adr_benchmark.py --run mistral-7b/zero_shot,mistral-7b/few_shot,mistral-7b/chain_of_thought --n-eval 162
 python adr_benchmark.py --run gemini-2.5-pro/zero_shot,gemini-2.5-pro/few_shot,gemini-2.5-pro/chain_of_thought --n-eval 162
 
-# Phase 4: Merge result files and compute metrics
+# Phase 5: Merge result files and compute metrics
 python adr_benchmark.py --phase merge
 ```
 
@@ -219,20 +233,7 @@ python adr_benchmark.py --run gpt-5.5/zero_shot,mistral-7b/few_shot
 
 ## Results
 
-The table below shows mean accuracy vs. the GPT-4o oracle. Full F1, precision, recall, and Cohen's κ are in `results/analysis/metrics_summary.json` after running `--phase merge`.
-
-| Model | ZS Acc | FS Acc | CoT Acc |
-|---|---|---|---|
-| GPT-5.5 | 83% | 65% | 79% |
-| Claude Sonnet 4.6 | 70% | 62% | 78% |
-| Gemini 2.5 Pro | 60% | 61% | 62% |
-| Mistral 7B | 48% | 23% | 54% |
-
-**Key observations:**
-- GPT-5.5 zero-shot (83%) is the single strongest result across the benchmark
-- Claude Sonnet 4.6 responds strongly to chain-of-thought (78%), narrowing the gap with GPT-5.5
-- Gemini 2.5 Pro shows notably flat accuracy across all three prompting strategies (~60–62%), suggesting limited sensitivity to prompt structure
-- Mistral 7B's few-shot accuracy collapses to 23% — performing substantially worse with in-context examples than without, a finding not previously reported for this model class on structured compliance tasks
+After `results/human_ground_truth.json` is populated and the 162-ADR evaluation is rerun, `python adr_benchmark.py --phase merge` computes precision, recall, F1, Cohen's κ, confusion matrices, and cost metrics against the human-adjudicated reference standard.
 
 ## License
 
