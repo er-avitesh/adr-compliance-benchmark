@@ -1,0 +1,6 @@
+Approach,Evaluation target,Configuration,Macro-F1,Kappa
+Rule-only,Structural Completeness,Deterministic C1-C7 rules,0.246,0.09
+LLM-only,Structural Completeness,GPT-5.5 FS,0.6238,0.4947
+LLM-only,Overall compliance,GPT-5.5 FS,0.5563,0.3201
+LLM-only,Overall compliance,Gemini 2.5 Pro FS,0.5457,0.3398
+Hybrid,Overall compliance,Rule SC + Ministral 3 8B FS DQ,0.4636,0.2381

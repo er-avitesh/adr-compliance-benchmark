@@ -1,0 +1,248 @@
+{
+  "written_at": "2026-09-08T18:55:16.547188",
+  "purpose": "Prompt transparency manifest for benchmark reproducibility.",
+  "run_id": "v31_fulltext_gpt_medium",
+  "run_directory": "results\\runs\\v31_fulltext_gpt_medium",
+  "protocol_version": "v31-fulltext-criterion-derived-1",
+  "result_schema_version": 4,
+  "strategies": [
+    "zero_shot",
+    "few_shot",
+    "chain_of_thought"
+  ],
+  "system_prompt": "You are a senior software architect with 15+ years of experience reviewing \nArchitecture Decision Records (ADRs). Be precise and evidence-based.",
+  "rubric": "COMPLIANCE RUBRIC:\nSTRUCTURAL COMPLETENESS (7 checks):\nC1: Title present and descriptive\nC2: Context/Problem Statement articulated\nC3: Decision Drivers listed\nC4: At least two Considered Options\nC5: Decision Outcome with justification\nC6: Consequences (positive and negative) documented\nC7: Status field present and valid\n\nDECISION QUALITY (7 criteria):\nQ1: Problem relevance  Q2: Option viability (not strawmen)\nQ3: Criteria completeness  Q4: Criteria prioritization\nQ5: Rationale soundness  Q6: Consequence objectivity  Q7: Actionability\n\nDQ SCORING ANCHORS (0-3 for each Q criterion):\n0 Absent: no document evidence supports the criterion.\n1 Weak: mentioned but generic, superficial, or unsupported.\n2 Adequate: project-specific reasoning is present, with some omissions or limited depth.\n3 Strong: clear, specific, and defensible architectural reasoning is present.\n\nStructural checks are binary but not equally weighted. Core architectural\nknowledge fields, such as context, options, decision justification, and\nconsequences, carry higher weight than title/status metadata.\n\nJudge only the evidence for C1-C7 and Q1-Q7. The benchmark pipeline applies\nthe frozen weights and ordered classification rule after parsing these\ncriterion judgments. Do not calculate or return SC, DQ, CS, dimension classes,\nor an overall compliance class.",
+  "rubric_manifest_path": "results\\runs\\v31_fulltext_gpt_medium\\analysis\\rubric_manifest.json",
+  "structural_completeness_weights": {
+    "C1": 0.1,
+    "C2": 0.15,
+    "C3": 0.15,
+    "C4": 0.15,
+    "C5": 0.2,
+    "C6": 0.15,
+    "C7": 0.1
+  },
+  "decision_quality_weights": {
+    "Q1": 0.1,
+    "Q2": 0.15,
+    "Q3": 0.15,
+    "Q4": 0.1,
+    "Q5": 0.25,
+    "Q6": 0.15,
+    "Q7": 0.1
+  },
+  "decision_quality_score_anchors": {
+    "0": {
+      "label": "Absent",
+      "meaning": "No document evidence supports the criterion."
+    },
+    "1": {
+      "label": "Weak",
+      "meaning": "The criterion is mentioned but is generic, superficial, or unsupported."
+    },
+    "2": {
+      "label": "Adequate",
+      "meaning": "The criterion is addressed with project-specific reasoning, with some omissions or limited depth."
+    },
+    "3": {
+      "label": "Strong",
+      "meaning": "The criterion is addressed clearly, specifically, and with defensible architectural reasoning."
+    }
+  },
+  "json_output_schema": "Respond ONLY with valid JSON.\nDO NOT use markdown or code blocks.\n{\"C1\":true|false,\"C2\":true|false,\"C3\":true|false,\"C4\":true|false,\"C5\":true|false,\"C6\":true|false,\"C7\":true|false,\"Q1\":0|1|2|3,\"Q2\":0|1|2|3,\"Q3\":0|1|2|3,\"Q4\":0|1|2|3,\"Q5\":0|1|2|3,\"Q6\":0|1|2|3,\"Q7\":0|1|2|3,\"confidence\":0.0-1.0}",
+  "required_output_fields": {
+    "structural_checks": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7"
+    ],
+    "decision_quality_scores": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "Q5",
+      "Q6",
+      "Q7"
+    ],
+    "optional_fields": [
+      "confidence"
+    ]
+  },
+  "adr_input_policy": "full_text",
+  "adr_text_truncation_chars": null,
+  "prompt_templates": {
+    "zero_shot": "COMPLIANCE RUBRIC:\nSTRUCTURAL COMPLETENESS (7 checks):\nC1: Title present and descriptive\nC2: Context/Problem Statement articulated\nC3: Decision Drivers listed\nC4: At least two Considered Options\nC5: Decision Outcome with justification\nC6: Consequences (positive and negative) documented\nC7: Status field present and valid\n\nDECISION QUALITY (7 criteria):\nQ1: Problem relevance  Q2: Option viability (not strawmen)\nQ3: Criteria completeness  Q4: Criteria prioritization\nQ5: Rationale soundness  Q6: Consequence objectivity  Q7: Actionability\n\nDQ SCORING ANCHORS (0-3 for each Q criterion):\n0 Absent: no document evidence supports the criterion.\n1 Weak: mentioned but generic, superficial, or unsupported.\n2 Adequate: project-specific reasoning is present, with some omissions or limited depth.\n3 Strong: clear, specific, and defensible architectural reasoning is present.\n\nStructural checks are binary but not equally weighted. Core architectural\nknowledge fields, such as context, options, decision justification, and\nconsequences, carry higher weight than title/status metadata.\n\nJudge only the evidence for C1-C7 and Q1-Q7. The benchmark pipeline applies\nthe frozen weights and ordered classification rule after parsing these\ncriterion judgments. Do not calculate or return SC, DQ, CS, dimension classes,\nor an overall compliance class.\n\nEvaluate this ADR:\n---\n{FULL_ADR_TEXT}\n---\nRespond ONLY with valid JSON.\nDO NOT use markdown or code blocks.\n{\"C1\":true|false,\"C2\":true|false,\"C3\":true|false,\"C4\":true|false,\"C5\":true|false,\"C6\":true|false,\"C7\":true|false,\"Q1\":0|1|2|3,\"Q2\":0|1|2|3,\"Q3\":0|1|2|3,\"Q4\":0|1|2|3,\"Q5\":0|1|2|3,\"Q6\":0|1|2|3,\"Q7\":0|1|2|3,\"confidence\":0.0-1.0}",
+    "few_shot": "COMPLIANCE RUBRIC:\nSTRUCTURAL COMPLETENESS (7 checks):\nC1: Title present and descriptive\nC2: Context/Problem Statement articulated\nC3: Decision Drivers listed\nC4: At least two Considered Options\nC5: Decision Outcome with justification\nC6: Consequences (positive and negative) documented\nC7: Status field present and valid\n\nDECISION QUALITY (7 criteria):\nQ1: Problem relevance  Q2: Option viability (not strawmen)\nQ3: Criteria completeness  Q4: Criteria prioritization\nQ5: Rationale soundness  Q6: Consequence objectivity  Q7: Actionability\n\nDQ SCORING ANCHORS (0-3 for each Q criterion):\n0 Absent: no document evidence supports the criterion.\n1 Weak: mentioned but generic, superficial, or unsupported.\n2 Adequate: project-specific reasoning is present, with some omissions or limited depth.\n3 Strong: clear, specific, and defensible architectural reasoning is present.\n\nStructural checks are binary but not equally weighted. Core architectural\nknowledge fields, such as context, options, decision justification, and\nconsequences, carry higher weight than title/status metadata.\n\nJudge only the evidence for C1-C7 and Q1-Q7. The benchmark pipeline applies\nthe frozen weights and ordered classification rule after parsing these\ncriterion judgments. Do not calculate or return SC, DQ, CS, dimension classes,\nor an overall compliance class.\n\nHere are annotated examples:\n{FEW_SHOT_EXAMPLES}\n\nNow evaluate this ADR:\n---\n{FULL_ADR_TEXT}\n---\nRespond ONLY with valid JSON.\nDO NOT use markdown or code blocks.\n{\"C1\":true|false,\"C2\":true|false,\"C3\":true|false,\"C4\":true|false,\"C5\":true|false,\"C6\":true|false,\"C7\":true|false,\"Q1\":0|1|2|3,\"Q2\":0|1|2|3,\"Q3\":0|1|2|3,\"Q4\":0|1|2|3,\"Q5\":0|1|2|3,\"Q6\":0|1|2|3,\"Q7\":0|1|2|3,\"confidence\":0.0-1.0}",
+    "chain_of_thought": "COMPLIANCE RUBRIC:\nSTRUCTURAL COMPLETENESS (7 checks):\nC1: Title present and descriptive\nC2: Context/Problem Statement articulated\nC3: Decision Drivers listed\nC4: At least two Considered Options\nC5: Decision Outcome with justification\nC6: Consequences (positive and negative) documented\nC7: Status field present and valid\n\nDECISION QUALITY (7 criteria):\nQ1: Problem relevance  Q2: Option viability (not strawmen)\nQ3: Criteria completeness  Q4: Criteria prioritization\nQ5: Rationale soundness  Q6: Consequence objectivity  Q7: Actionability\n\nDQ SCORING ANCHORS (0-3 for each Q criterion):\n0 Absent: no document evidence supports the criterion.\n1 Weak: mentioned but generic, superficial, or unsupported.\n2 Adequate: project-specific reasoning is present, with some omissions or limited depth.\n3 Strong: clear, specific, and defensible architectural reasoning is present.\n\nStructural checks are binary but not equally weighted. Core architectural\nknowledge fields, such as context, options, decision justification, and\nconsequences, carry higher weight than title/status metadata.\n\nJudge only the evidence for C1-C7 and Q1-Q7. The benchmark pipeline applies\nthe frozen weights and ordered classification rule after parsing these\ncriterion judgments. Do not calculate or return SC, DQ, CS, dimension classes,\nor an overall compliance class.\n\nEvaluate this ADR step by step, but keep the reasoning concise and output only\nthe final JSON object. Use the steps internally to assign C1-C7 and Q1-Q7,\nidentify ambiguities, and assign the criterion judgments.\n\nADR:\n---\n{FULL_ADR_TEXT}\n---\n\nReturn EXACTLY this JSON object and no additional prose:\nRespond ONLY with valid JSON.\nDO NOT use markdown or code blocks.\n{\"C1\":true|false,\"C2\":true|false,\"C3\":true|false,\"C4\":true|false,\"C5\":true|false,\"C6\":true|false,\"C7\":true|false,\"Q1\":0|1|2|3,\"Q2\":0|1|2|3,\"Q3\":0|1|2|3,\"Q4\":0|1|2|3,\"Q5\":0|1|2|3,\"Q6\":0|1|2|3,\"Q7\":0|1|2|3,\"confidence\":0.0-1.0}"
+  },
+  "protocol_fingerprints": {
+    "gpt-5.5/zero_shot": "2ebfdfc710ec616739a2d85335b8b945729435cc34c6152efbebb782801929df",
+    "gpt-5.5/few_shot": "0991e20b230f65d44a614bf713855d7b4869e73bdad6b5a2fa9a0f42776cc99b",
+    "gpt-5.5/chain_of_thought": "1257e011f20f4a4777e73b46d7d836e0238cb880d17601a9124ce739fb461591",
+    "claude-sonnet-4-6/zero_shot": "a38e1cc41f932faf659794d2ea4929b7994910f14a342830313b4e61ce717a4d",
+    "claude-sonnet-4-6/few_shot": "799207bf70f8a61de4066e6c657edd8ca0be92d67cc4636d5b5294c45f9427eb",
+    "claude-sonnet-4-6/chain_of_thought": "a4b8460219c5b493714d659b20f2fa187ef0f1f40b2f118bdd75af48d2a8ee37",
+    "ministral-3-8b/zero_shot": "9bd7438ef7ddd4ea08cb3361be085138f92eaf707d8c5ce3d9313adbe0d60c2c",
+    "ministral-3-8b/few_shot": "5632d210906e00d7eea3968b417ae0b58a7e1378fed0a522b10b68312fdfd601",
+    "ministral-3-8b/chain_of_thought": "75a916de43f1cab6dcab71651bd0bc76e09ca1a5d842447c9a786f820c9a244a",
+    "gemini-2.5-pro/zero_shot": "07afeb29bf3c2ff505eb9dafd3b406a70d7840601b951b75832165c5651b6bce",
+    "gemini-2.5-pro/few_shot": "4647cbc33e98be00c8d1cf90612c6b964a600ae9b561c3a19b423d99da16ccf2",
+    "gemini-2.5-pro/chain_of_thought": "ae90620eba28c56bae9673083df3563eb6cbaf26171975103d99dd2372dfce15"
+  },
+  "chain_of_thought_operationalization": {
+    "definition": "Chain-of-thought is operationalized as a reproducible prompt condition, not as access to equivalent internal reasoning processes across providers.",
+    "supplied_instruction": "The prompt instructs the model to assess structural checks C1-C7, decision-quality criteria Q1-Q7, and ambiguities before ending with the required JSON object.",
+    "provider_reasoning_modes": "Provider-native reasoning controls are not treated as equivalent across vendors. GPT reasoning effort is explicitly pinned for each run; other provider settings are documented in the run-specific model reproducibility manifest.",
+    "scoring_rule": "The model supplies C1-C7 and Q1-Q7 judgments. The runner computes SC, DQ, CS, dimension classes, and the overall label using the frozen deterministic scoring functions."
+  },
+  "few_shot": {
+    "selection_rule": "Three fixed human-labeled held-out ADRs plus one controlled synthetic negative exemplar, one per compliance class. None is part of results/eval_set.json.",
+    "exemplar_ids": [
+      "alphagov_govuk-aws_0012-security-groups-in-terraform",
+      "adr_madr_0001-use-CC0-or-MIT-as-license",
+      "argoproj_argo-cd_deep-links",
+      "synthetic_not_compliant_v1"
+    ],
+    "exemplar_count": 4,
+    "covers_all_compliance_classes": true,
+    "excluded_from_eval_set": true,
+    "eval_set_overlap": [],
+    "examples": [
+      {
+        "id": "alphagov_govuk-aws_0012-security-groups-in-terraform",
+        "label": "Fully_Compliant",
+        "label_payload": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": true,
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 2,
+          "Q5": 3,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "source_repo": "alphagov/govuk-aws",
+        "variant": "NYGARD",
+        "domain": "Government",
+        "input_chars": 1066,
+        "input_sha256": "e3843074790582b7e730a7e3165e2e8938142f5d3322d651ba2ec9b804704968",
+        "full_text_supplied": true
+      },
+      {
+        "id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "label": "Mostly_Compliant",
+        "label_payload": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": false,
+          "Q1": 2,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 2,
+          "Q6": 2,
+          "Q7": 3
+        },
+        "source_repo": "adr/madr",
+        "variant": "OTHER",
+        "domain": "Tooling",
+        "input_chars": 1604,
+        "input_sha256": "c954d5acfcef40e78ca8607db99e24b3b908a483b02a0b3499e86d57f707370f",
+        "full_text_supplied": true
+      },
+      {
+        "id": "argoproj_argo-cd_deep-links",
+        "label": "Partially_Compliant",
+        "label_payload": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": false,
+          "C5": true,
+          "C6": false,
+          "C7": false,
+          "Q1": 3,
+          "Q2": 1,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 2,
+          "Q6": 1,
+          "Q7": 2
+        },
+        "source_repo": "argoproj/argo-cd",
+        "variant": "OTHER",
+        "domain": "DevOps",
+        "input_chars": 4747,
+        "input_sha256": "7ff7fa5bf81dd573f4dbf053ac3e39587ae435486c43a88f34fd07034d056f93",
+        "full_text_supplied": true
+      },
+      {
+        "id": "synthetic_not_compliant_v1",
+        "label": "Not_Compliant",
+        "label_payload": {
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "C5": false,
+          "C6": false,
+          "C7": false,
+          "Q1": 0,
+          "Q2": 0,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 0,
+          "Q6": 0,
+          "Q7": 0
+        },
+        "source_repo": "synthetic-control",
+        "variant": "SYNTHETIC",
+        "domain": "Controlled negative exemplar",
+        "input_chars": 31,
+        "input_sha256": "670acbe6e16ffcfbf93a7a84d2a203a01690a0f92dbccc5a7922d6310d19dabb",
+        "full_text_supplied": true
+      }
+    ]
+  },
+  "parser": {
+    "function": "extract_prediction(raw)",
+    "procedure": [
+      "Strip leading and trailing whitespace.",
+      "Remove optional Markdown code fences.",
+      "Extract the first JSON object from the response.",
+      "Read C1-C7 structural checks and normalize them to true/false values.",
+      "Read Q1-Q7 decision-quality scores and normalize them to integers on the 0-3 anchor scale.",
+      "Reject incomplete criterion vectors and retry the model request.",
+      "Compute SC, DQ, CS, dimension classes, and overall class from the complete criterion vector.",
+      "Save C1-C7, Q1-Q7, derived scores and classes, input audit fields, and parse flags in each raw result row.",
+      "Return an incomplete prediction and mark parse_success=false when valid criterion JSON cannot be extracted."
+    ],
+    "allowed_labels": [
+      "Fully_Compliant",
+      "Mostly_Compliant",
+      "Partially_Compliant",
+      "Not_Compliant"
+    ],
+    "decision_quality_score_labels": {
+      "0": "Absent",
+      "1": "Weak",
+      "2": "Adequate",
+      "3": "Strong"
+    }
+  }
+}

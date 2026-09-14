@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0024-ami-lookups",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0024-ami-lookups.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0024-ami-lookups.md",
+  "word_count": 282,
+  "variant": "NYGARD",
+  "text": "# 24. AMI Lookups\n\nDate: 2017-08-29\n\n## Status\n\nAccepted\n\n## Context\n\nAll of our launch configs require that an Amazon Machine Image (AMI) be\nspecified. How the AMI ID is specified is the point of debate.\n\nCurrently we use the `aws_ami` data source to determine the newest AMI ID\npublished by Ubuntu within a major version and use that in our launch\nconfigurations. This ensures we're always using newest version of Ubuntu\nwhen we spin up a new set of machines. On the downside, as this can change\nwithout our intervention, our terraform runs sometimes want to change more than\nwe would expect:\n\n```\n  image_id: \"ami-2944as50\" => \"ami-10c9asa9\" (forces new resource)\n```\n\nIn some cases _this is fine_ but due to the legacy nature of our deployments\nit causes issues with machines that need a number of manual deployment steps\napplied to them. Examples of these include the app servers and the puppet\nmaster.\n\nThe other alternative is to specify a specific image name. This has the benefit that\nwe know exactly which version we deploy and it cannot change without our intervention.\n\n## Decision\n\nWe override the `instance_ami_filter_name` parameter of the `node_group` module in all\nthe projects. In the data directory, there is a common variable that sets the default\nvalue of the parameter for an environment. This can be customised per project in the\nproject tfvars file.\n\n## Consequences\n\nMoving away from the dynamic AMI lookup means we might deploy auto scaling groups\nwith an older version of the AMI that could have more security issues present. We'd\nwork around this in the same way we do our other environments; by using the overnight\nsecurity patching we deploy via puppet.\n",
+  "fetched_at": "2026-04-26T00:45:06.168197"
+}

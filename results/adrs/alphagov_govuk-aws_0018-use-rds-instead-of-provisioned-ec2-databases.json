@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0018-use-rds-instead-of-provisioned-ec2-databases.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0018-use-rds-instead-of-provisioned-ec2-databases.md",
+  "word_count": 226,
+  "variant": "NYGARD",
+  "text": "# 18. Use RDS instead of provisioned EC2 databases\n\nDate: 2017-08-01\n\n## Status\n\nAccepted\n\n## Context\n\nWe use both MySQL and PostgreSQL in our stack for different applications. These\nhave been traditionally provisioned as VM instances and managed with Puppet.\n\nPuppet manages every aspect of these instances:\n\n - Server configuration and tuning\n - CRUD actions on databases\n - Users and permissions\n - Replication/clustering\n - Backups\n\nAWS offers the [Relational Database Service](https://aws.amazon.com/rds/) (RDS).\n\nUsing RDS would remove the following away from being managed by Puppet:\n\n - Server configuration and tuning\n - Replication/clustering\n - Backups\n\nTerraform code would be required to ensure the above is configured correctly.\n\n## Decision\n\nWe are going to use RDS to remove a significant portion of our Puppet code that\ntraditionally managed both PostgreSQL and MySQL.\n\nTo manage databases, users, data loading and long-term offsite backups, we will\ncreate a new type of node class named \"db_admin\". This will be able to connect\nand configure each RDS instance in a stack.\n\n## Consequences\n\nNew code will need to be written to create the \"db_admin\" class, and some\nrewriting of our logic will be required in Puppet.\n\nWe will need to understand and create relevant monitoring for RDS instances.\n\nWe will eventually be able to remove the large amount of Puppet code related\nto the management and provisioning of both MySQL and PostgreSQL servers.\n",
+  "fetched_at": "2026-04-26T00:45:18.037449"
+}

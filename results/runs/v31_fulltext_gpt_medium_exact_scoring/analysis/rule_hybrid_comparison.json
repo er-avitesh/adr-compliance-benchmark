@@ -1,0 +1,546 @@
+{
+  "generated_at": "2026-09-11T12:30:34.218242+00:00",
+  "purpose": "Comparable rule-only, LLM-only, and hybrid baseline analysis.",
+  "method": {
+    "scoring_version": "exact-rational-v1",
+    "api_calls": 0,
+    "n_adrs": 162,
+    "rule_only_target": "Structural Completeness class",
+    "overall_target": "Four-class overall compliance",
+    "hybrid_definition": "Rule-derived SC score plus LLM criterion-derived DQ score, combined using CS = 0.40 * SC + 0.60 * DQ and the benchmark structural floors.",
+    "standard_deviation": "sample SD across three repetitions",
+    "important_comparability_note": "The rule-only baseline does not produce a Decision Quality score and is therefore not reported as an overall-compliance classifier."
+  },
+  "rule_only_structural_completeness": {
+    "accuracy": 0.24691358024691357,
+    "macro_precision": 0.38226351351351345,
+    "macro_recall": 0.3754736044455671,
+    "macro_f1": 0.24648721277128738,
+    "cohen_kappa": 0.08980381320806852,
+    "class_distribution_predicted": {
+      "Not_Compliant": 24,
+      "Mostly_Compliant": 45,
+      "Fully_Compliant": 19,
+      "Partially_Compliant": 74
+    },
+    "class_distribution_human_sc": {
+      "Fully_Compliant": 107,
+      "Mostly_Compliant": 37,
+      "Partially_Compliant": 8,
+      "Not_Compliant": 10
+    }
+  },
+  "best_llm_structural_macro_f1": {
+    "configuration_key": "gpt-5.5/few_shot",
+    "macro_f1": 0.6237647298650928,
+    "cohen_kappa": 0.4947325086527672
+  },
+  "best_llm_structural_kappa": {
+    "configuration_key": "gpt-5.5/few_shot",
+    "macro_f1": 0.6237647298650928,
+    "cohen_kappa": 0.4947325086527672
+  },
+  "best_llm_overall_macro_f1": {
+    "configuration_key": "gpt-5.5/few_shot",
+    "macro_f1": 0.5562943992898868,
+    "cohen_kappa": 0.3200629100089706
+  },
+  "best_llm_overall_kappa": {
+    "configuration_key": "gemini-2.5-pro/few_shot",
+    "macro_f1": 0.5456978432021768,
+    "cohen_kappa": 0.3398347770826013
+  },
+  "best_hybrid_overall_macro_f1": {
+    "configuration_key": "ministral-3-8b/few_shot",
+    "model": "ministral-3-8b",
+    "model_label": "Ministral 3 8B",
+    "strategy": "few_shot",
+    "strategy_label": "FS",
+    "macro_f1": {
+      "mean": 0.46829602624226024,
+      "sample_sd": 0.012219228205511691
+    },
+    "cohen_kappa": {
+      "mean": 0.2431572361007375,
+      "sample_sd": 0.01103468752196279
+    },
+    "repetitions": [
+      {
+        "repetition": 1,
+        "n": 162,
+        "macro_f1": 0.4555630552671051,
+        "cohen_kappa": 0.23392695442197403
+      },
+      {
+        "repetition": 2,
+        "n": 162,
+        "macro_f1": 0.4693981859849997,
+        "cohen_kappa": 0.24016542263465807
+      },
+      {
+        "repetition": 3,
+        "n": 162,
+        "macro_f1": 0.4799268374746759,
+        "cohen_kappa": 0.2553793312455804
+      }
+    ]
+  },
+  "best_hybrid_overall_kappa": {
+    "configuration_key": "gemini-2.5-pro/few_shot",
+    "model": "gemini-2.5-pro",
+    "model_label": "Gemini 2.5 Pro",
+    "strategy": "few_shot",
+    "strategy_label": "FS",
+    "macro_f1": {
+      "mean": 0.4594068067478107,
+      "sample_sd": 0.003327791614592551
+    },
+    "cohen_kappa": {
+      "mean": 0.25722531128466214,
+      "sample_sd": 0.005858577811190889
+    },
+    "repetitions": [
+      {
+        "repetition": 1,
+        "n": 162,
+        "macro_f1": 0.45853231659306426,
+        "cohen_kappa": 0.2639337641357027
+      },
+      {
+        "repetition": 2,
+        "n": 162,
+        "macro_f1": 0.4630845220467862,
+        "cohen_kappa": 0.25311581720539067
+      },
+      {
+        "repetition": 3,
+        "n": 162,
+        "macro_f1": 0.4566035816035816,
+        "cohen_kappa": 0.2546263525128931
+      }
+    ]
+  },
+  "all_hybrid_configurations": [
+    {
+      "configuration_key": "ministral-3-8b/few_shot",
+      "model": "ministral-3-8b",
+      "model_label": "Ministral 3 8B",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1": {
+        "mean": 0.46829602624226024,
+        "sample_sd": 0.012219228205511691
+      },
+      "cohen_kappa": {
+        "mean": 0.2431572361007375,
+        "sample_sd": 0.01103468752196279
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.4555630552671051,
+          "cohen_kappa": 0.23392695442197403
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.4693981859849997,
+          "cohen_kappa": 0.24016542263465807
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.4799268374746759,
+          "cohen_kappa": 0.2553793312455804
+        }
+      ]
+    },
+    {
+      "configuration_key": "gpt-5.5/few_shot",
+      "model": "gpt-5.5",
+      "model_label": "GPT-5.5",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1": {
+        "mean": 0.4606144814331492,
+        "sample_sd": 0.000989445739294905
+      },
+      "cohen_kappa": {
+        "mean": 0.22416861331166474,
+        "sample_sd": 0.0010464657162488167
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.4596530633765686,
+          "cohen_kappa": 0.22456461961503207
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.46162975510801596,
+          "cohen_kappa": 0.22298193693234003
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.4605606258148631,
+          "cohen_kappa": 0.2249592833876221
+        }
+      ]
+    },
+    {
+      "configuration_key": "gemini-2.5-pro/few_shot",
+      "model": "gemini-2.5-pro",
+      "model_label": "Gemini 2.5 Pro",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1": {
+        "mean": 0.4594068067478107,
+        "sample_sd": 0.003327791614592551
+      },
+      "cohen_kappa": {
+        "mean": 0.25722531128466214,
+        "sample_sd": 0.005858577811190889
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.45853231659306426,
+          "cohen_kappa": 0.2639337641357027
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.4630845220467862,
+          "cohen_kappa": 0.25311581720539067
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.4566035816035816,
+          "cohen_kappa": 0.2546263525128931
+        }
+      ]
+    },
+    {
+      "configuration_key": "claude-sonnet-4-6/few_shot",
+      "model": "claude-sonnet-4-6",
+      "model_label": "Claude Sonnet 4.6",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1": {
+        "mean": 0.4269526891245415,
+        "sample_sd": 0.011863766215365296
+      },
+      "cohen_kappa": {
+        "mean": 0.18179419111274314,
+        "sample_sd": 0.011878358796888328
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.41327025364962666,
+          "cohen_kappa": 0.16914883124568494
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.4343788585001172,
+          "cohen_kappa": 0.18351615772309512
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.4332089552238806,
+          "cohen_kappa": 0.19271758436944939
+        }
+      ]
+    },
+    {
+      "configuration_key": "ministral-3-8b/chain_of_thought",
+      "model": "ministral-3-8b",
+      "model_label": "Ministral 3 8B",
+      "strategy": "chain_of_thought",
+      "strategy_label": "CoT",
+      "macro_f1": {
+        "mean": 0.40682937132042774,
+        "sample_sd": 0.008634303998560825
+      },
+      "cohen_kappa": {
+        "mean": 0.19979856315313702,
+        "sample_sd": 0.005543327823589606
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.4040056082609274,
+          "cohen_kappa": 0.20189181200118236
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.4165220123067383,
+          "cohen_kappa": 0.20399047051816557
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.3999604933936175,
+          "cohen_kappa": 0.1935134069400631
+        }
+      ]
+    },
+    {
+      "configuration_key": "gemini-2.5-pro/zero_shot",
+      "model": "gemini-2.5-pro",
+      "model_label": "Gemini 2.5 Pro",
+      "strategy": "zero_shot",
+      "strategy_label": "ZS",
+      "macro_f1": {
+        "mean": 0.38576081689549924,
+        "sample_sd": 0.01355879252299607
+      },
+      "cohen_kappa": {
+        "mean": 0.19047716543005513,
+        "sample_sd": 0.017823606219518725
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3980941689899768,
+          "cohen_kappa": 0.2106506545919874
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.3879462168935853,
+          "cohen_kappa": 0.18391939944685892
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.37124206480293565,
+          "cohen_kappa": 0.1768614422513191
+        }
+      ]
+    },
+    {
+      "configuration_key": "gpt-5.5/chain_of_thought",
+      "model": "gpt-5.5",
+      "model_label": "GPT-5.5",
+      "strategy": "chain_of_thought",
+      "strategy_label": "CoT",
+      "macro_f1": {
+        "mean": 0.36941020560283366,
+        "sample_sd": 0.006366001445860977
+      },
+      "cohen_kappa": {
+        "mean": 0.17106734079590458,
+        "sample_sd": 0.004869246964772107
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.37545658065276305,
+          "cohen_kappa": 0.1738786018417665
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.3700073752391719,
+          "cohen_kappa": 0.1738786018417665
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.362766660916566,
+          "cohen_kappa": 0.16544481870418068
+        }
+      ]
+    },
+    {
+      "configuration_key": "gemini-2.5-pro/chain_of_thought",
+      "model": "gemini-2.5-pro",
+      "model_label": "Gemini 2.5 Pro",
+      "strategy": "chain_of_thought",
+      "strategy_label": "CoT",
+      "macro_f1": {
+        "mean": 0.3692443148102326,
+        "sample_sd": 0.032135147014841194
+      },
+      "cohen_kappa": {
+        "mean": 0.17461223429724052,
+        "sample_sd": 0.0465715808132453
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.33402777777777776,
+          "cohen_kappa": 0.12294517176887486
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.37672764810460513,
+          "cohen_kappa": 0.18753073065198148
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.396977518548315,
+          "cohen_kappa": 0.21336080047086523
+        }
+      ]
+    },
+    {
+      "configuration_key": "ministral-3-8b/zero_shot",
+      "model": "ministral-3-8b",
+      "model_label": "Ministral 3 8B",
+      "strategy": "zero_shot",
+      "strategy_label": "ZS",
+      "macro_f1": {
+        "mean": 0.35636696486286745,
+        "sample_sd": 0.005266182825316715
+      },
+      "cohen_kappa": {
+        "mean": 0.15340071147615456,
+        "sample_sd": 0.013160365608116509
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3622028382403356,
+          "cohen_kappa": 0.1677267834426069
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.35196929238985314,
+          "cohen_kappa": 0.14184814596821657
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.35492876395841355,
+          "cohen_kappa": 0.15062720501764015
+        }
+      ]
+    },
+    {
+      "configuration_key": "gpt-5.5/zero_shot",
+      "model": "gpt-5.5",
+      "model_label": "GPT-5.5",
+      "strategy": "zero_shot",
+      "strategy_label": "ZS",
+      "macro_f1": {
+        "mean": 0.354235462086389,
+        "sample_sd": 0.01812782464321772
+      },
+      "cohen_kappa": {
+        "mean": 0.15711284289632024,
+        "sample_sd": 0.01637327978347695
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3470928641251222,
+          "cohen_kappa": 0.149395680602338
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.3407669401446056,
+          "cohen_kappa": 0.14602423884126517
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.37484658198943915,
+          "cohen_kappa": 0.17591860924535757
+        }
+      ]
+    },
+    {
+      "configuration_key": "claude-sonnet-4-6/zero_shot",
+      "model": "claude-sonnet-4-6",
+      "model_label": "Claude Sonnet 4.6",
+      "strategy": "zero_shot",
+      "strategy_label": "ZS",
+      "macro_f1": {
+        "mean": 0.25454804109721746,
+        "sample_sd": 0.007552941065181172
+      },
+      "cohen_kappa": {
+        "mean": 0.0856201602196556,
+        "sample_sd": 0.009324036053891564
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.24582665598290598,
+          "cohen_kappa": 0.07485369076835946
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.25890873365437317,
+          "cohen_kappa": 0.09100339494530367
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.25890873365437317,
+          "cohen_kappa": 0.09100339494530367
+        }
+      ]
+    },
+    {
+      "configuration_key": "claude-sonnet-4-6/chain_of_thought",
+      "model": "claude-sonnet-4-6",
+      "model_label": "Claude Sonnet 4.6",
+      "strategy": "chain_of_thought",
+      "strategy_label": "CoT",
+      "macro_f1": {
+        "mean": 0.23642358846526376,
+        "sample_sd": 0.009048878953198372
+      },
+      "cohen_kappa": {
+        "mean": 0.06476326653562553,
+        "sample_sd": 0.008049388349658848
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.2259750939849624,
+          "cohen_kappa": 0.05548241489561781
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.2417105463980464,
+          "cohen_kappa": 0.06896551724137928
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.2415851250127825,
+          "cohen_kappa": 0.0698418674698795
+        }
+      ]
+    }
+  ],
+  "legacy_hybrid_note": "The older hybrid_rule_sc_plus_llm_dq section in rule_based_baseline.json combines dimension classes by selecting the lower class. It is retained for audit history but is not used here because it does not apply the benchmark composite formula."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+  "source_repo": "thomvaill/log4brains",
+  "filename": "20241217-switch-back-to-github-flow.md",
+  "url": "https://github.com/thomvaill/log4brains/blob/HEAD/docs/adr/20241217-switch-back-to-github-flow.md",
+  "word_count": 263,
+  "variant": "MADR",
+  "text": "# Switch back to GitHub Flow, but keeping the automated beta releases\n\n- Status: accepted\n- Date: 2024-12-17\n\n## Context and Problem Statement\n\nThe previous decision to adopt a Simplified Git Flow with a `develop` and `stable` branch aimed to provide clearer separation between development and releases while enabling automated beta releases. However, we faced tooling limitations.\n\nSpecifically, **Lerna**, which we use for managing our monorepo, does not integrate well with Git Flow processes ([Lerna issue #2023](https://github.com/lerna/lerna/issues/2023#issuecomment-480402592)), when managing both a `develop` and `stable` branches: we cannot make Lerna publish a stable release from a different branch than the main one.\n\n## Decision Drivers <!-- optional -->\n\n- Make Lerna work again for stable releases\n- Keep the benefits of the previous workflow:\n  - Need for automation in releases.\n  - Be able to merge more quickly whithout breaking the stable branch, while making it possible for beta testers to test the new features.\n  - Easier delegation to new maintainers.\n  - Simplified yet structured process for contributors.\n  - Clearer separation between ongoing development and stable releases.\n\n## Considered Options\n\n- Option 1: Patch Lerna to keep the Simplified Git Flow (as described in the link above)\n- Option 2: Switch back to Github Flow, but keeping the automated beta releases\n\n## Decision Outcome\n\nChosen option: \"Option 2: Switch back to Github Flow, but keeping the automated beta releases\", because it fullfils all the requirements.\nIn fact, we can still merge quickly pull requests without releasing a stable release, while keeping the automated beta release.\nThe stable release is a manual script executed by maintainers.\n",
+  "fetched_at": "2026-04-26T00:45:45.295993"
+}

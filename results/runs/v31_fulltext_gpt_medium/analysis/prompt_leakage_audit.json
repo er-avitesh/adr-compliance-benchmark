@@ -1,0 +1,126 @@
+{
+  "written_at": "2026-09-08T18:55:16.802392",
+  "purpose": "Prompt leakage audit for few-shot exemplars versus the 162-ADR evaluation set.",
+  "few_shot_exemplar_ids": [
+    "alphagov_govuk-aws_0012-security-groups-in-terraform",
+    "adr_madr_0001-use-CC0-or-MIT-as-license",
+    "argoproj_argo-cd_deep-links",
+    "synthetic_not_compliant_v1"
+  ],
+  "evaluation_set_size": 162,
+  "checks": {
+    "exact_adr_id_overlap_count": 0,
+    "exact_adr_id_overlap": [],
+    "source_path_overlap_count": 0,
+    "source_path_overlap": [],
+    "near_duplicate_text_overlap_count": 0,
+    "near_duplicate_similarity_threshold": 0.8,
+    "near_duplicate_text_overlap": [],
+    "closest_text_pairs": [
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+        "similarity": 0.229
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0011-use-asterisk-as-list-marker",
+        "similarity": 0.225
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0003-provide-own-madr-tools",
+        "similarity": 0.217
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+        "similarity": 0.216
+      },
+      {
+        "few_shot_id": "alphagov_govuk-aws_0012-security-groups-in-terraform",
+        "eval_id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+        "similarity": 0.207
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+        "similarity": 0.204
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0004-write-own-toc-tool",
+        "similarity": 0.203
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0008-add-status-field",
+        "similarity": 0.199
+      },
+      {
+        "few_shot_id": "argoproj_argo-cd_deep-links",
+        "eval_id": "argoproj_argo-cd_sync-timeout",
+        "similarity": 0.199
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+        "similarity": 0.198
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0006-use-names-as-identifier",
+        "similarity": 0.196
+      },
+      {
+        "few_shot_id": "alphagov_govuk-aws_0012-security-groups-in-terraform",
+        "eval_id": "npryce_adr-tools_0005-help-comments",
+        "similarity": 0.195
+      },
+      {
+        "few_shot_id": "argoproj_argo-cd_deep-links",
+        "eval_id": "argoproj_argo-cd_app-sync-using-impersonation",
+        "similarity": 0.195
+      },
+      {
+        "few_shot_id": "argoproj_argo-cd_deep-links",
+        "eval_id": "argoproj_argo-cd_project-repos-and-clusters",
+        "similarity": 0.193
+      },
+      {
+        "few_shot_id": "argoproj_argo-cd_deep-links",
+        "eval_id": "argoproj_argo-cd_server-side-pagination",
+        "similarity": 0.193
+      },
+      {
+        "few_shot_id": "adr_madr_0001-use-CC0-or-MIT-as-license",
+        "eval_id": "adr_madr_0018-use-confirmation-as-heading",
+        "similarity": 0.189
+      },
+      {
+        "few_shot_id": "argoproj_argo-cd_deep-links",
+        "eval_id": "argoproj_argo-cd_headless-argocd",
+        "similarity": 0.189
+      },
+      {
+        "few_shot_id": "argoproj_argo-cd_deep-links",
+        "eval_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+        "similarity": 0.189
+      },
+      {
+        "few_shot_id": "argoproj_argo-cd_deep-links",
+        "eval_id": "argoproj_argo-cd_002-ui-extensions",
+        "similarity": 0.184
+      },
+      {
+        "few_shot_id": "argoproj_argo-cd_deep-links",
+        "eval_id": "argoproj_argo-cd_application-name-identifier",
+        "similarity": 0.184
+      }
+    ],
+    "same_repo_overlap_count": 63,
+    "same_repo_overlap_allowed": true,
+    "same_repo_overlap_note": "Repository-level overlap is allowed because the benchmark intentionally contains multiple ADRs from the same real-world projects. Leakage control is applied at exact ADR ID, source path, and near-duplicate text levels."
+  },
+  "leakage_passed": true
+}

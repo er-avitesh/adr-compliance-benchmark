@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0012-security-groups-in-terraform",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0012-security-groups-in-terraform.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0012-security-groups-in-terraform.md",
+  "word_count": 170,
+  "variant": "NYGARD",
+  "text": "# 12. Security Groups in Terraform\n\nDate: 2017-07-05\n\n## Status\n\nAccepted\n\n## Context\n\nThere are two methods of defining security groups for AWS in Terraform and they are distinguished by how you add rules: in-line and separate. Using in-line rules keeps the definition close to the resource but when ever a rule is changed Terraform will re-generate the entire resource. Using separate rules Terraform will only make the single rule change but there is greater boilerplate and separation between the group resource and the rule resource.\n\n## Decision\n\nSecurity groups will be defined separate to their rules.\n\nAdditionally each security group will be defined, in its entirety, in a single file.\n\n## Consequences\n\nTerraform should only create the specific rules that have changed when run.\n\nThere will be a larger 'distance' between the definition of a group and its rules.\n\nSeparate files may be harder to follow if there is heavy cross-referencing of security groups.\n\nThere may be a performance impact to Terraform depending on how it treats forward references.\n\n",
+  "fetched_at": "2026-04-26T00:45:16.341832"
+}

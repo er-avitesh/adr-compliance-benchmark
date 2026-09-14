@@ -1,0 +1,7 @@
+Scenario,Changed human labels,Best macro-F1,Best kappa,Rank correlation F1 / kappa
+Baseline 40/60,0,"GPT-5.5 FS, 0.556","Gemini 2.5 Pro FS, 0.340",1.000 / 1.000
+Equal SC criteria,3,"GPT-5.5 FS, 0.551","Gemini 2.5 Pro FS, 0.324",0.951 / 0.965
+Equal DQ criteria,2,"Gemini 2.5 Pro FS, 0.548","Gemini 2.5 Pro FS, 0.332",0.958 / 0.993
+Balanced 50/50,5,"GPT-5.5 FS, 0.570","Gemini 2.5 Pro FS, 0.340",0.916 / 0.965
+No SC floor,0,"GPT-5.5 FS, 0.556","Gemini 2.5 Pro FS, 0.340",1.000 / 1.000
+SC floor 50,0,"GPT-5.5 FS, 0.571","Gemini 2.5 Pro FS, 0.341",0.965 / 1.000

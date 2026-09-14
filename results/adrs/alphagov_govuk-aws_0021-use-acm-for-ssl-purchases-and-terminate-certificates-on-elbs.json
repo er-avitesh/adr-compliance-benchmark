@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs.md",
+  "word_count": 229,
+  "variant": "NYGARD",
+  "text": "# 21. Use ACM for SSL purchases and terminate certificates on ELBs\n\nDate: 2017-08-14\n\n## Status\n\nAccepted\n\n## Context\n\nTraditionally to manage our SSL certificates, we did the following:\n\n - Purchased SSL certificates from a third party company, and did manual renewals\n - Set up monitoring so we were aware when a certificate needed to be renewed\n - Terminated SSL using nginx on the frontend_lb and backend_lb machines\n\nWe have looked into using Amazon Certificate Manager (ACM) to purchase and manage\nour SSL certificates, and using Elastic Load Balancers (ELBs) to terminate the\nSSL in front of the instances.\n\n## Decision\n\nWe have decided to use ACM to manage our SSL certificates, and terminate SSL on\nthe ELBs.\n\nThis gives us the following advantages:\n\n - Automatic renewal and notifications related to the SSL certificates we purchase\n through ACM\n - Multi-domain certificates; this helps us manage several stacks within an environment\n eg *.blue.integration.govuk.digital, *.green.integration.govuk.digital\n - Terminate SSL on ELBs means the deployment is managed through Terraform\n - We reference the certificate by an ARN ID, rather than having the SSL private key\n and certificate be present in encrypted hieradata\n\n## Consequences\n\nTechnically this may be considered vendor lock-in, but the advantages significantly\noutweigh the cost.\n\nWe can only manually create certificates in ACM so are unable to automate this process,\nbut we accept the time cost of doing this step.\n",
+  "fetched_at": "2026-04-26T00:45:04.463521"
+}

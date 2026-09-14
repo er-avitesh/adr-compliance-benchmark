@@ -1,0 +1,15 @@
+{
+  "run_id": "v31_fulltext_gpt_medium_exact_scoring",
+  "scoring_version": "exact-rational-v1",
+  "generator": "scripts/generate_publication_assets.py",
+  "generator_sha256": "7369c850bf5255c3f9f15301979c36ccbcc110dae0ec45d0919f803b650f8b44",
+  "matplotlib_version": "3.9.2",
+  "numpy_version": "1.26.4",
+  "input_sha256": {
+    "results/runs/v31_fulltext_gpt_medium_exact_scoring/analysis/performance_details.json": "ac59aa2600cbdb57b6c46dc44c3fef103f07a2eb08e4e43dab4b7712dc39b3d2",
+    "results/runs/v31_fulltext_gpt_medium_exact_scoring/analysis/criterion_level_performance.json": "c397c43701a8fa2cd333d51f107399b8d91ba71265340211f37d9c84379b97da",
+    "results/runs/v31_fulltext_gpt_medium_exact_scoring/analysis/rubric_sensitivity_performance.json": "670adaf3a83e39b8037aa07ef2f52f404afd4fa1eb8d75dbf446bd68269a77c1",
+    "results/runs/v31_fulltext_gpt_medium_exact_scoring/analysis/pairwise_statistical_tests.json": "501dbab39b377606736431cdfdfd19ce0d06af60103413bc46dbd7ec6608790e",
+    "results/runs/v31_fulltext_gpt_medium_exact_scoring/analysis/manuscript_evidence/evidence.json": "dd112418c5551effc74f0930cd794bb030675a6ca25283ccc73fb8c870873ad4"
+  }
+}

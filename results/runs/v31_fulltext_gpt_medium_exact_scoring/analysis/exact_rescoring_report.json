@@ -1,0 +1,1950 @@
+{
+  "source_run_id": "v31_fulltext_gpt_medium",
+  "analysis_run_id": "v31_fulltext_gpt_medium_exact_scoring",
+  "scoring_version": "exact-rational-v1",
+  "api_calls": 0,
+  "source_files_unchanged": true,
+  "source_sha256": {
+    "results\\adrs\\adr_madr_0002-do-not-use-numbers-in-headings.json": "a2cde4f328ec14835085c0d9d92201b8abd4793249c24357a6dc68e2a9204fda",
+    "results\\adrs\\adr_madr_0003-provide-own-madr-tools.json": "a4c931801fa93b6f9bacf7ebae7edb52c80b29a73de4e042ea07a42009031998",
+    "results\\adrs\\adr_madr_0004-write-own-toc-tool.json": "784ff83b35dca8b6551a636d31c2cdb71dedf22ad236609c5775e0aaf2a8b60b",
+    "results\\adrs\\adr_madr_0005-use-dashes-in-filenames.json": "63dbd303c2f73d93f7a8a08487494ae4510aa296d7b8d95811c4e2587ab8c20d",
+    "results\\adrs\\adr_madr_0006-use-names-as-identifier.json": "d490a046bdcdc97f4b62f989314813c2a1f1ceeb8dc2ef26325520d32caaf7d8",
+    "results\\adrs\\adr_madr_0007-do-not-emphasize-line-headings.json": "5e7e118b2ca0b6b6d9b370bf042075b844cf57c8399dae8f144d1d73949a5bb0",
+    "results\\adrs\\adr_madr_0008-add-status-field.json": "2f1061c72d2c6e94377727e67e8bc2b6494b784b5de97ac238a0e4a709dbc2a5",
+    "results\\adrs\\adr_madr_0009-support-links-between-adrs-inside-an-adrs.json": "d5438a6a129a78258102e263b1ea941442148bbf30d5e5e991bf39e5cdeaefdf",
+    "results\\adrs\\adr_madr_0010-support-categories.json": "a1cd264349fe3d5503f212102be59892625822c1794b4657b03bc068d8534091",
+    "results\\adrs\\adr_madr_0011-use-asterisk-as-list-marker.json": "d21d0d50ed28e4bdf892da89994812048de4eb26b3ae56abad9b5ded57cd4d97",
+    "results\\adrs\\adr_madr_0012-use-curly-braces-to-denote-placeholder.json": "0da91674553db6cd4568beabf1d0f499a1c98daf65e91aaef61d00609fd640d7",
+    "results\\adrs\\adr_madr_0013-use-yaml-front-matter-for-meta-data.json": "381f1c1164817f3a8a0cb322129d6d1ae692db1f086127139c7837000a3b85ac",
+    "results\\adrs\\adr_madr_0014-allow-neutral-arguments.json": "e50538bb5e18e71991bc4099be57122cd87be63b95dcc7d09b76f3f85ca86ae3",
+    "results\\adrs\\adr_madr_0015-include-consulting-informed-of-raci.json": "3bfce8a1a3b5302d9878ec6d5f9f5ce018dace44372cb7d17fd982da61b6cd96",
+    "results\\adrs\\adr_madr_0016-outcome-before-detailed-pros-cons.json": "a71b32446158428c8f39a062778dc02fb3089dfc4de7f52a93b64e1d2565aecc",
+    "results\\adrs\\adr_madr_0017-use-same-format-for-outcomes-and-options.json": "645179720043b0798d6306ee5621c6d6166d836a1ebf908b94b4e17f6319d1a0",
+    "results\\adrs\\adr_madr_0018-use-confirmation-as-heading.json": "c47ee0dbb72d762b4d74f28896273924fde524f49a64c35c828a852aac621fc4",
+    "results\\adrs\\alphagov_content-publisher_0001-record-architecture-decisions.json": "b50de225a020cec5068524a1af7e4f83cd65cbd34fc970b794ddc43c8aa569bd",
+    "results\\adrs\\alphagov_content-publisher_0002-use-local-datastore.json": "894500f45a4681309385fb1ac83f014b8041dead42a020631bbb11ffed27c9f8",
+    "results\\adrs\\alphagov_content-publisher_0003-initial-domain-modelling.json": "6457b521edc2198d6a6be601e51582672269920543227c5931b58824ff50ded9",
+    "results\\adrs\\alphagov_content-publisher_0004-editing-microcopy.json": "2fe7903f1734c08935e2a16377da0fa340e4095220623bcce29ce09e8ce6b272",
+    "results\\adrs\\alphagov_content-publisher_0005-avoiding-initialisation-flickers.json": "9c65bf4568b68700357f761d5b8ebda282b5ff1cca7c9ca06c1f84ff2b1b74de",
+    "results\\adrs\\alphagov_content-publisher_0006-tagging-governments.json": "c3619808f43fe042e757fdc41d25f43bf546cd9f9689f239d7465ab819c68997",
+    "results\\adrs\\alphagov_content-publisher_0007-minimal-model.json": "0472943a9a3d42ffd94e11d9ef4e79b6da15d11349d260294b621b7775269bdd",
+    "results\\adrs\\alphagov_content-publisher_0008-restricted-deletion.json": "62c6198b0a7d2f349dc35566977ee2e895691f38d271da3ae8a06c6a1a50dbfc",
+    "results\\adrs\\alphagov_content-publisher_0009-modelling-history.json": "cfb2d846ccf8d9b3535256a3cd52bdaf432644a5b696f2239088b51eabc39db2",
+    "results\\adrs\\alphagov_content-publisher_0010-sending-email-notifications.json": "3ae11d683a085abcc25e7406fde93a2cfa2b7d6e0c1dbc23b5923a9b63383638",
+    "results\\adrs\\alphagov_content-publisher_0011-moving-business-logic-out-of-controllers.json": "025ed4230691f01c49b877212c9a6eecb182fbcf89e699501d6680a5cef99ecd",
+    "results\\adrs\\alphagov_content-publisher_0012-file-attachment-rendering.json": "1e6a32cb6b68208bc25072f2feb8f46cfbe1f0b214da5805f375339fc6888e87",
+    "results\\adrs\\alphagov_content-publisher_0013-permitted-deletion.json": "35d54a30c25a4797c9f9e6cc2d266798ece5b0dbc4e0c44a44e8d850b63b4428",
+    "results\\adrs\\alphagov_content-publisher_0014-political-and-government-tagging.json": "02069e9405d98b8d696f025079c4bdc47e27051414f200663deb1dea4ca0e3fc",
+    "results\\adrs\\alphagov_content-publisher_0015-bulk-data-loading.json": "06a8732b2388850e9fba17b943cea56aad9f75ec9f54f941d851a6b70c986c74",
+    "results\\adrs\\alphagov_content-publisher_0016-publishing-times-and-change-history.json": "9abec099a09f8cda8427a91f9f42758fce948e98a5992f5de0a4d2dcbb5dd51a",
+    "results\\adrs\\alphagov_govuk-aws_0002-hosting-platforms.json": "16d3269b10b307498491c9bb011f30c69511f5f915952bf6fb72313792d9cf4b",
+    "results\\adrs\\alphagov_govuk-aws_0003-aws-networking-outline.json": "4ffd8e2ffa93b7d10c793155d97c355ee20bf1d2b822d0a5b71f0311921e948d",
+    "results\\adrs\\alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services.json": "08fb91089f7cd478aacf0f5f1b96d3c282cffdc05936f6d401da8b55879b69bd",
+    "results\\adrs\\alphagov_govuk-aws_0005-terraform-module-location.json": "1cfb647f4faafdcd057591628842dc0f8a75cd9be1ccb603b35d549b53dbbf14",
+    "results\\adrs\\alphagov_govuk-aws_0006-puppet-architecture.json": "5c37e0c38a6334b17dfd7f25d8ab073e0deed5b13fd418baf1ad2e2f24da23e3",
+    "results\\adrs\\alphagov_govuk-aws_0007-puppet-cert-management.json": "35ec8f167d152b63279c115fc948216b735b8087470d99a838014832d4afec0b",
+    "results\\adrs\\alphagov_govuk-aws_0008-postgres-on-puppetmaster.json": "146837da4d1ad245b433dcefb73fb64208b9beb9d4c10c9821a59c048586ed0f",
+    "results\\adrs\\alphagov_govuk-aws_0009-environment-bootstrapping-process.json": "ede9a196ba0b74bb16185fbed0328253e5febaa4ad203926f012acb1f94aee45",
+    "results\\adrs\\alphagov_govuk-aws_0010-terraform-directory-structure.json": "5293d572478dab447a3baa2dbe60e63cd453c74f723791e6cc4db3fad1f3a89f",
+    "results\\adrs\\alphagov_govuk-aws_0011-migration-strategy.json": "121ef9a9d9fc4cf91b0b474539f0407f9a1222fca8bd6fec39aa48e4da3de416",
+    "results\\adrs\\alphagov_govuk-aws_0013-userdata-provisioning-snippets.json": "6959dc62cee8a5786e570fae188d879bf6e55ef978c12ae102990515125e0bf3",
+    "results\\adrs\\alphagov_govuk-aws_0014-launch-config-change-propagation-process.json": "951950e66d49ec8c999764a1eee1b728dd8fba0babad29580b4dcb70d092601e",
+    "results\\adrs\\alphagov_govuk-aws_0015-dns-infrastructure.json": "840ff7c60977489582deee683568682f2af53991029db77f1d904b5513840121",
+    "results\\adrs\\alphagov_govuk-aws_0016-internal-dns-zones.json": "c59d49d26130ef083713b44b998c8ed9aa403df5ce57df06244146c22d304f54",
+    "results\\adrs\\alphagov_govuk-aws_0017-terraform-data-structure.json": "450db134d17bf6a7870d75a3e407789a29765e39b4d5cf91a6456ca074ae0339",
+    "results\\adrs\\alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases.json": "b96183a698e4f467d22ecdfa802aef5c82c60ef9e7a290c83d11c82ac78857e2",
+    "results\\adrs\\alphagov_govuk-aws_0019-centralise-mysql-databases.json": "f05d8e744560cd8949ebf03d86c947e0bee00464a903ca8049f069d29622e39a",
+    "results\\adrs\\alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance.json": "23c63ca29e862bb3d0b1371cfafc187125aeb00e2500e85295f62a29f066c08f",
+    "results\\adrs\\alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs.json": "1be6d8487e0c371db475112d1aba22f13e7dc7eb5a13315cbc732046b52566dc",
+    "results\\adrs\\alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy.json": "b603bca058a0233cf4e92deb3ba6b1b0b3173ded07122a5f82d028cf8c1c6de4",
+    "results\\adrs\\alphagov_govuk-aws_0023-use-separate-data-repository.json": "482db430fbaa1d06e5478692e099e20912adb347ebc97fdec5d70275a87c1d25",
+    "results\\adrs\\alphagov_govuk-aws_0024-ami-lookups.json": "e4121b3a07a1614aa3a50c0d4d5f8ff1170a1ba95f859cabfba2403a3afd4d55",
+    "results\\adrs\\alphagov_govuk-aws_0026-remove-load-balancer-tier.json": "b8cda6f4448d5a36918724d0cf0827e4bb50c7e6fa3e0207959582304ab51f56",
+    "results\\adrs\\alphagov_govuk-aws_0030-change-in-architecture-to-asset-master.json": "f93540dfa2009ddffa7b5bd5ac6c5bb32102946d49bb6c5f02b3426e6272cf43",
+    "results\\adrs\\alphagov_govuk-aws_0038-mongo_replacement_by_documentdb.json": "7b3f619e63662f24343b514721bc6c745cc0fcf697cc26e45df324f31cde6a92",
+    "results\\adrs\\apache_airflow_0001-record-architecture-decisions.json": "61ca6eec517f121f9023062860b55c7a65d415575c9857180e9c1395175acf1c",
+    "results\\adrs\\apache_airflow_0002-implement-standalone-python-command.json": "62cf3962c745bd9047bfa25ddae6def3966cbefb3cb2743dfe36656e4ec91b36",
+    "results\\adrs\\apache_airflow_0003-bootstrapping-virtual-environment.json": "2987ce36ade0a28188cf434751675b87d49605570637a5d1fca87db433cad9a8",
+    "results\\adrs\\apache_airflow_0005-preventing-using-contributed-code-when-building-images.json": "4b5371ea8069f150315bc6ee34a89f30abbbc4349f41f7bad9f600c440db8ac1",
+    "results\\adrs\\apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container.json": "343f3a70503fd9d8cf8681ef7ec202835eeb12368f145cf0080372207cf4159d",
+    "results\\adrs\\apache_airflow_0007-using-database-volumes-for-backends.json": "7bc05ea32382d010bbb51404191d738eae91e7f8b78a4adf9a920d7d1bf5536f",
+    "results\\adrs\\apache_airflow_0008-fixing-group-permissions-before-build.json": "8acd925c8994d4ffbca6eeb821f630e5beb4944be12cb7b70be8d0bbfab6c137",
+    "results\\adrs\\apache_airflow_0009-exclude-all-files-from-dockerignore-by-default.json": "ea57cc559392b0d2a2055f696c3dbc6ff93f7fca39eddf9683fc1bf17ac07a40",
+    "results\\adrs\\apache_airflow_0010-use-pipx-to-install-breeze.json": "e9e0bcecca0bdfd32064070d144dce2ea44745f3edbec945b8ab99fe66a59fec",
+    "results\\adrs\\apache_airflow_0011-unified-communication-with-the-users.json": "50cb3c4c46385cba08698272e8ef546c145c5447c17c01ecff60a37cf350cca3",
+    "results\\adrs\\apache_airflow_0012-asking-user-for-confirmation.json": "23292884f5f8ad61a806f4123ec6f170cbb82643691b7060b153576095b452bd",
+    "results\\adrs\\apache_airflow_0013-get-rid-of-submodules.json": "4cbf44c672816bef10508f2be5bc4e864e0bb720a2f1625fe0a4002ce7c73512",
+    "results\\adrs\\apache_airflow_0014-fix-root-ownership-after-exiting-docker-command.json": "f21740fa768211ae01fded53f641cd2172349b5959e5785ed526384ab0cef4dc",
+    "results\\adrs\\apache_airflow_0015-handling-rootless-docker.json": "9449ad0a891526d57c38aa37c3332abfdefeb4c1cc1ce3bda9849fa55060fd37",
+    "results\\adrs\\apache_airflow_0016-use-uv-tool-to-install-breeze.json": "b11f9478c64655e7bea67925261d1697ef6eaa81aeaddeed088374994e7761b8",
+    "results\\adrs\\argoproj_argo-cd_002-ui-extensions.json": "2f0f39490d753f5f13ed55e3163ee9a24cce638790e78e07b3177f83c7dd1cb3",
+    "results\\adrs\\argoproj_argo-cd_003-applications-outside-argocd-namespace.json": "1d235dacc12ea3b4408d1063e2a266122a6b4029c949760c0e0dd3693848eb90",
+    "results\\adrs\\argoproj_argo-cd_004-scalability-benchmarking.json": "3bda3f199978b7ae3e25a2486dbbde4e38e54c0a162f38f12d5c4d035e0babed",
+    "results\\adrs\\argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy.json": "29be082dcdc93ffdf48bb350cc36c4640469edaf14748e5073d3d57cb48b24fb",
+    "results\\adrs\\argoproj_argo-cd_2_5-2_6.json": "7c7a7f418956c822174956ba290a0d2e5a4cdc2b8aff31ec624eec65befb7880",
+    "results\\adrs\\argoproj_argo-cd_app-sync-using-impersonation.json": "463c80af0631e8d0fe5f8e9196b7c5e25d436faa4763d285780538c44ba0925b",
+    "results\\adrs\\argoproj_argo-cd_application-name-identifier.json": "0221efec443899774ac9b1029136f1e514a19ab69bbc67dbb8eed218a520e3c7",
+    "results\\adrs\\argoproj_argo-cd_applicationset-plugin-generator.json": "9d771f58a5c8ecdadf0ea52b3ec1a9736902d615e6ef20fd0476ac34c94d299e",
+    "results\\adrs\\argoproj_argo-cd_argocd-cli-pluin.json": "90d44ea3e25be055caaf3cf450f479b1011b8dcbc45e1a9b582e6937c0643806",
+    "results\\adrs\\argoproj_argo-cd_backend-support-appset.json": "35b2da7f7d978210cdc7c6eca5e08b615e588cfa4b0efba386448789eec33ead",
+    "results\\adrs\\argoproj_argo-cd_config-management-plugin-v2.json": "504da0625d74e718fb50931ede72320ca7848537bfbec647928e1bb3c00171fe",
+    "results\\adrs\\argoproj_argo-cd_decouple-application-sync-user-using-impersonation.json": "3bdaae14114e1f9c1a58256bdd71f00520f7e9365e873c510935f3bc6d352f7a",
+    "results\\adrs\\argoproj_argo-cd_deletion-strategy-progressive-sync.json": "9570ccab7a2ecc7b63e678e9d8049ec1a898a548e4cbf1ee649ef853bc79d11e",
+    "results\\adrs\\argoproj_argo-cd_feature-bounties.json": "a590a6de4f345b4270ced055e042a9a478768590f6ce18a8f88c38ce0a9dc6bb",
+    "results\\adrs\\argoproj_argo-cd_headless-argocd.json": "51c8a05fa3a66936cb0e43994c697d974f690d4a1aadc1b59ea15700bf2f8c0b",
+    "results\\adrs\\argoproj_argo-cd_native-oci-support.json": "ffdc6a43d4db39111335f8dc86181d7237a7f7a435d1cae1696c2d21d5222a07",
+    "results\\adrs\\argoproj_argo-cd_parameterized-config-management-plugins.json": "e7705d86aadffcf42f3a2ff4633b30ecd9f4051a84d665c269ced27709168e06",
+    "results\\adrs\\argoproj_argo-cd_project-repos-and-clusters.json": "c9e90f519ef6953cab9a88ef0711832e78f5320c9a24a75171379da40d64a787",
+    "results\\adrs\\argoproj_argo-cd_proxy-extensions.json": "89c66e19bdb55e052f7461291201ca91a339f1c607c818325e62fdec7a61fe52",
+    "results\\adrs\\argoproj_argo-cd_server-side-pagination.json": "a0eaedc16b88a5a239568146c872e1b61916480bf2b56b92a2013cd60dd4720d",
+    "results\\adrs\\argoproj_argo-cd_sync-timeout.json": "f42a42d8144ac937d6505b9b208546fdd1512d53f480b56ccc76a78f50889ec4",
+    "results\\adrs\\aws_aws-cdk_acknowledge-warnings.json": "007cab3ca3d155e849198fb143c1deb79238bda399545faa3fc637cc3239a3a4",
+    "results\\adrs\\aws_aws-cdk_aurora-serverless-v2.json": "822edb6b0d6a84b1534b2476982cba9622e9e7627220f6fe8302c2540a8735cc",
+    "results\\adrs\\aws_aws-cdk_cross-region-stack-references.json": "c76d2df1e7108441cf6c73cd06c6fc137a157e7d3bffb34e49fd773171c3dc1b",
+    "results\\adrs\\backstage_backstage_adr001-add-adr-log.json": "8b02ccc21f8fca9b8d66e20887ad7a2e8a0e17055a594be8af79a6c8c29a9b4d",
+    "results\\adrs\\backstage_backstage_adr002-default-catalog-file-format.json": "871632a2f21e20568408ce9cab3245c1a79deedf2a5fe75967e48c9bd01de23e",
+    "results\\adrs\\backstage_backstage_adr003-avoid-default-exports.json": "1b4b47394c301ba72f899d7b9333f164e9bd703882040e277a57c7aef8b8fb20",
+    "results\\adrs\\backstage_backstage_adr004-module-export-structure.json": "0e23398708566e42e931bad40b81ed11b2b31b05c95d842ebf4fdc32f40a8aa0",
+    "results\\adrs\\backstage_backstage_adr005-catalog-core-entities.json": "ebbe4339e4964d66fb4751ff2e83ed156b0006d617c0906ae528b16d1d93b86b",
+    "results\\adrs\\backstage_backstage_adr006-avoid-react-fc.json": "727a7e8b69c0ac183e81345d6edc373d2565c7a7ab868f9c5ef636fd2799301f",
+    "results\\adrs\\backstage_backstage_adr007-use-msw-to-mock-service-requests.json": "9254f4e3dd97e6f90769b0d599bc937ad1d6c1ab4644013da6433205302c8f38",
+    "results\\adrs\\backstage_backstage_adr008-default-catalog-file-name.json": "702f31a89c2d88d42bd7b1754dced4a8a0f9368e24ea6b6b7b2f0eb7ee74fb9c",
+    "results\\adrs\\backstage_backstage_adr009-entity-references.json": "486a115b6b959a4bdefd87fe613c136d911c5c83aadac4e4e62f4cb559add225",
+    "results\\adrs\\backstage_backstage_adr010-luxon-date-library.json": "f8f9ee0b9a0839d3dc47562611dcdae4babbeecb9fcd954b450edc43faa7657e",
+    "results\\adrs\\backstage_backstage_adr011-plugin-package-structure.json": "9ab319b31b1f22601ce10dc67fceb43432072e8ee8a791ac62c096aabab11228",
+    "results\\adrs\\backstage_backstage_adr012-use-luxon-locale-and-date-presets.json": "20790999680901e70a0a7c623780e365f5dcf136c24040d915d53b1d05754b09",
+    "results\\adrs\\backstage_backstage_adr013-use-node-fetch.json": "70a688cb9e5e15b04a735ffd242c43788961f0d2435888eccf49cb5e9590e060",
+    "results\\adrs\\backstage_backstage_adr014-use-fetch.json": "d4f6ed0964b0996d3b395059d59f916eff3ea34d56b3cfa7dc07a46457906319",
+    "results\\adrs\\backstage_backstage_adr015-jsx-loader-structure.json": "f9d9407721466e1b3735d98e1a5ec9048ce7b2cdb54d9639f415f256ffeaa29f",
+    "results\\adrs\\cortexproject_cortex_auth-gateway.json": "7f594a28813432afc28831f26cb26438a450c06e68de92f480c6f67ecad3859c",
+    "results\\adrs\\cortexproject_cortex_block-storage-time-series-deletion.json": "ba13b22a9f7900d8d19f398e283f9efb95fb7e633da94a8bb5ce2fad5d21a50a",
+    "results\\adrs\\cortexproject_cortex_blocks-storage-sharding.json": "01237194d0a568524aebfd8c62ad96ccd4ddce37e4d0c620ae5e6cd9ff4be4f0",
+    "results\\adrs\\cortexproject_cortex_distributed-query-execution.json": "dc1b3d37d0238918320f38f69fcad838c267f9e8fe8c519cb0cc747b7a26ab74",
+    "results\\adrs\\cortexproject_cortex_parallel-compaction.json": "cf60bff78053f8922dfb7149c4c5a2a00c98bead68e68182a1ded213695fb073",
+    "results\\adrs\\cortexproject_cortex_parquet-storage.json": "895399bcb9f7331e774f6ed542083688499a5ee4ed900be6f62c560bdd6127fe",
+    "results\\adrs\\cortexproject_cortex_partition-ring-multi-az-replication.json": "ee08927f1cb2f2a8bd8e2c59d153d85d91cba13a260c62773fae5d663e5e81c3",
+    "results\\adrs\\cortexproject_cortex_per-tenant-cardinality-api.json": "e08a9c800e949bb9a91cd4c00c481cd8b39f078145cf1a69d9529ab490c271df",
+    "results\\adrs\\cortexproject_cortex_receiving_metadata.json": "b68b7152558a62216d6098a84292114f290956b679478bc8894f6be446c20015",
+    "results\\adrs\\cortexproject_cortex_ring-multikey.json": "5ff760f8e3e30ca9de26a7b6ad5d49f5a3ba4b766dd397cdcdf6f1d1b81cd789",
+    "results\\adrs\\cortexproject_cortex_ruler-ha-new.json": "e306fc20ce640895c253059209358d40c96c90892a88853846111f12f3fc041b",
+    "results\\adrs\\cortexproject_cortex_ruler-ha.json": "7dd45d0eb5d90f1bbc9be70e8aea84be9a13948632e02b467864abd365d39a69",
+    "results\\adrs\\cortexproject_cortex_scalable-alertmanager.json": "7ba6a8e97a2dac6793c55cc7f52414d212e77d8682752f3489876f860f5a3fe6",
+    "results\\adrs\\cortexproject_cortex_shuffle-sharding-and-zone-awareness.json": "01f7858a8b27ab8acf58bf17a2cc0d9e8d03ae787fb2b67504cf06d5a38b5504",
+    "results\\adrs\\cortexproject_cortex_shuffle-sharding-on-the-read-path.json": "40f7108dbc7431f4103c56362702c3647d731051146d1e35a85d567f2ae21835",
+    "results\\adrs\\cortexproject_cortex_tenant-deletion.json": "1807146df37135487fa95f34b66fa926356112e805d8a69cd2bed23c36663111",
+    "results\\adrs\\cortexproject_cortex_tenant_retention.json": "24c277cbf690a3f387d2edbc1a5ac15318995e96baafa8de34bfcec237b728f6",
+    "results\\adrs\\cortexproject_cortex_timeseries-partitioning-in-compactor.json": "7048e42f574f4f95e04e660dbb3f8df22893e9cf3091c2b6349ad79a24c25eab",
+    "results\\adrs\\cortexproject_cortex_user-overrides-api.json": "dc10a226f59b180dad0d97b8db65e58b73a24ffead92c98baf14a0a85f3f7198",
+    "results\\adrs\\cortexproject_cortex_version-documentation.json": "599b92f9237bce42152c6666f279a00b06bc112c4da9d25574a96ca77be59f57",
+    "results\\adrs\\loopdive_js2_0001-hybrid-compilation-strategy.json": "0119ece98b3934769dc69f909cbaabfdffe99cad170290dbddccc17729b780a4",
+    "results\\adrs\\loopdive_js2_0004-aot.json": "9fc01433a9644ff4ac0231220dd20fffe6a441320d0aaf7ae288392cc381e002",
+    "results\\adrs\\MITLibraries_timdex-ui_0001-record-architecture-decisions.json": "e072d25d3e79875177f3e78062a6ea01c9f2850220840d365c54d917ff6947e0",
+    "results\\adrs\\MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data.json": "e3af274d9f396abd40eaa00e157dd2c2c64ea19663e41b4f36c98d496e2d61ab",
+    "results\\adrs\\npryce_adr-tools_0002-implement-as-shell-scripts.json": "3c8d2b02bafb272ba73facf9739da9b533ecd4edd94737c03ab06a2a535bd492",
+    "results\\adrs\\npryce_adr-tools_0003-single-command-with-subcommands.json": "10e483c0de66fd976ec93201769639598008f237a04e89da2745959081172cae",
+    "results\\adrs\\npryce_adr-tools_0004-markdown-format.json": "1ee0a1d98527adaa4d4d2040aa4f2c51569d476fb5ee6f52a48dff4e6b46fba2",
+    "results\\adrs\\npryce_adr-tools_0005-help-comments.json": "1aeac8855a25f5690a36e3bc1ffef77b9421b08b537a9d374cb6a29af8c55d15",
+    "results\\adrs\\npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories.json": "f7c850661f1603436b2973ed507086770f7df1752588eb42637994e92fbc05fa",
+    "results\\adrs\\npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration.json": "50545fdda6c5fdb509f065f183a6494e720a91f50392b808ce1c391d31813707",
+    "results\\adrs\\npryce_adr-tools_0008-use-iso-8601-format-for-dates.json": "379ec9c0e5279ab8bcddec7b82689910791b2a508f724c371460bc9390ba9698",
+    "results\\adrs\\npryce_adr-tools_0009-help-scripts.json": "584265cd0ee3c8e04cc95782fb3d7f1dd0d919a69df95b25015f04d8863afbdf",
+    "results\\adrs\\openfga_openfga_architecture.json": "90f6911b8dcdf281afbb6f6e642c825301f3f15bd7c385d6279b703c58d5f681",
+    "results\\adrs\\temporalio_temporal_chasm.json": "d10ece32ccb2764e6c4c060c8cecf4e64650ef11942c97b127f51e7c9de59d96",
+    "results\\adrs\\temporalio_temporal_effect-package.json": "37f0c7c732da6d9445aa20acf28a8cf5a714a653ca0785e28338bd4daacae185",
+    "results\\adrs\\temporalio_temporal_history-service.json": "37c3af1b8a98f94d36f83a0b8d579ce4272927836e8154feed857e49cd395c7d",
+    "results\\adrs\\temporalio_temporal_matching-service.json": "762bc4523201febf6aa5c4f1ee039c7722dd28f4b40f7394e89b5235dc325a26",
+    "results\\adrs\\temporalio_temporal_nexus.json": "6fea5677a586d85d559aa0eca20a59be729a8f137740d74b8da56c64d808c043",
+    "results\\adrs\\temporalio_temporal_retry.json": "6ad7fc1040685849f09a1b88b3779e81989aec4711d3091d84fdb8bddaf9fa2c",
+    "results\\adrs\\temporalio_temporal_workflow-update.json": "d79f6432a8d3b765c855989857de4a959234503e8c88a4169076c979d70cbb46",
+    "results\\adrs\\thomvaill_log4brains_20200924-use-markdown-architectural-decision-records.json": "989cfa4d5992f0a28a0ba353a10a08b51e9b59d64dae6294a0534b6e54854861",
+    "results\\adrs\\thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna.json": "04c9343399d5e6b122776ff4012aca9d7982d078bad7948deac4a28c390a19a4",
+    "results\\adrs\\thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style.json": "d6cce7366ee139b3f267542c924200697fd0124c2c01dccab07a7d5fed19ffe7",
+    "results\\adrs\\thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id.json": "2480fc9243d1a5029a1038cf93947d3a2f471dceae65a046f9a8c5ea0938bc6e",
+    "results\\adrs\\thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id.json": "06659284a548838c056745870ad1d2de5baefa32438b58628e3dbce98217001a",
+    "results\\adrs\\thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx.json": "0a58bdfc747e6601c8209a4824d5d47b7370b46560df7f049316b728f5728107",
+    "results\\adrs\\thomvaill_log4brains_20201103-use-lunr-for-search.json": "9602c688df50ceac4969be135bd6e00698b9fb454dc29f2ff6342ba0dcca1f9d",
+    "results\\adrs\\thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package.json": "cd316d01e9eaaad6b739b7406f5346cd54907a8a6bead5bf22618857f26075c4",
+    "results\\adrs\\thomvaill_log4brains_20240926-transition-to-simplified-git-flow.json": "f72993782dbc46cc2cc60ced7e4d84dd1c553459afa6025ddcca89f96c0f208f",
+    "results\\adrs\\thomvaill_log4brains_20241217-switch-back-to-github-flow.json": "43cb6351723c87bb4e95235475fadadf353a5a8c8ffaf73be46f4726cda5c72e",
+    "results\\eval_set.json": "4e9e16054c772183a4e1a0203190b12e3c710227cbd183932863af32b41cc89a",
+    "results\\human_ground_truth.json": "eaa756e2ddc499241cee96ec9158df919881c00f62fc6ff171aa0b5e5fbbe00a",
+    "results\\human_ground_truth_interrator.json": "c31c0b80bc70f039126f014f6f622a9a15488f52c0d58cea09513f3d2292d453",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\cost_analysis.json": "c2a30ae9dd43fecf052dcb0e2c3362dbc7233777c0a1a5c5d59de6a368421566",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\criterion_level_performance.json": "13b1274ef5612ba7db8b82911015ca2f9cf80282b6773340d852f0ac8480175b",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\error_analysis.json": "76472e83d1d0a3782697acfc4094e94b30487043ea8f62dd1b4f18bb50fc93ab",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\manuscript_dataset_summary.json": "3e5b2017b472aa0cf62610aa1643c96f97743e68024ae380057bc9ec90cb30ad",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\manuscript_results_summary.json": "e5ae34a60148fd05ee6e946317de5ae4ae6e17b0cefe27f6471222237cafa569",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\metrics_summary.json": "2f41fe756c488d4a268ae64c3941eba468212e495ff111b044da33ea9846ddf4",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\model_reproducibility.json": "4fe47b448fa381fdd498ca5a35a53ea3b13cde28ab451239fba4ff500b6a7fcb",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\pairwise_statistical_tests.json": "2d1de0f328fa42b49ab90abe228b211ee1f969221b67468caa1f897a5d8c5b67",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\performance_details.json": "13572786ffce7190cd6769deffffdf6a36f9abbf1d7bd9963dd16b36da0943e4",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\preflight_report.json": "9d49d52112b5650fa3c9ae07e23ad3aa946c4aa5ed940cb4421d83dc8909f1e4",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\prompt_leakage_audit.json": "1818eda722630fca7f41aa4680c08998acd880209cae7b31d3c597bce17ad9b8",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\prompt_manifest.json": "bc2ee09542dd50d57620b9ec3b74e0373803cb118311965698e361cb8aa73384",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\rubric_manifest.json": "078014301ba294cf3144d0e3743e335fa0f5b68383042c4aba5f5a179cd48032",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\rubric_sensitivity_manuscript_table.csv": "f29cdef40504aa6367d4c5ff40cfd8cc7218d6e409ce0482772ed6856723d399",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\rubric_sensitivity_performance.json": "dbcc2de7ea760f7e62dd8f4ab94b1950f042534b66cf859e671e57239f6f45c5",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\rule_based_baseline.json": "b9625c5724ec163f5179ecdb22a452ae1d546a7478784fbbc31a64cbc04d7059",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\rule_hybrid_comparison.json": "f576c078819b42e593de064bf86b570a24fc9f7fd5b3e93ff7034e9518278026",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\rule_hybrid_manuscript_table.csv": "bfda00ea890e2ca0e3fa6b68f671472b531034ee2055fd2c62b20862cbce8e6b",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\sampling_audit.json": "1067fb18bb763219d88cf21c280dfedb53aa6116d100fd60936ffa8c781fe39e",
+    "results\\runs\\v31_fulltext_gpt_medium\\analysis\\threshold_sensitivity.json": "f0c40a288340782b993f10526aa0b58afc29426237f741cc0f46f685517cf193",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\batch_manifest.json": "9ff0e27e44721291cec6db630b26706e22b97c2639b41d144842ccaf710d791b",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\claude-sonnet-4-6_chain_of_thought_a4b8460219c5.jsonl": "72984c64b5ec3b009e5dfa854db41f9a8a326209a90ba7a7e6707b21324eb27b",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\claude-sonnet-4-6_chain_of_thought_a4b8460219c5_collect_report.json": "bf97972b20082fdca5b475e8a35d4e24574bc45e33360ca59d6b4a5108b3f1ee",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\claude-sonnet-4-6_few_shot_799207bf70f8.jsonl": "35b1758f8cf2b0bc529805718cc2088f3d348cb31ccc5dbba324a0ab6c5623b4",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\claude-sonnet-4-6_few_shot_799207bf70f8_collect_report.json": "8f04ababd3ee6f9d26f5ba3240202f4c9f55863017c5f57692e31d0dfd10e351",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\claude-sonnet-4-6_zero_shot_a38e1cc41f93.jsonl": "dac1b4832c47db45cef461b9c80619f632f3e2e96166890e22ad7f243e2ced72",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\claude-sonnet-4-6_zero_shot_a38e1cc41f93_collect_report.json": "d2ca7c7d4cdbc63f94296f789622d4adbc7f9cd9e00dfd3a09629fa8d489777d",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_chain_of_thought_ae90620eba28.jsonl": "81fe4725d30bebfd105b9e9102f767410d8890090e169cd2a00564e1fd729892",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_chain_of_thought_ae90620eba28_collect_report.json": "8e2fe80d7280a75eec2339d74622e3bf8f26aa5239f43316c7b34e8b998d7df6",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_few_shot_4647cbc33e98.jsonl": "abe0a27ce911f54fe56d77d0e99d5ddf44bbf1b0c710cc5506ee26c1b1de978c",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_few_shot_4647cbc33e98_collect_report.json": "be8ad9ee8c5c309578121fce8344b6656d70a72675d92bbaf1f8d009793a5b10",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_zero_shot_07afeb29bf3c.jsonl": "fbe91204862ffb8de73510584b32069647074a7749949a4f2d0ba508c1b0a6df",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_zero_shot_07afeb29bf3c_collect_report.json": "df854d8544f042dd84076c2336f8cc29b4473957e69589a093fd7e4d3ba106b3",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gpt-5.5_chain_of_thought_1257e011f20f.jsonl": "565b9c2172d3cece73ee69fc7dc95be1070720d00b98f0e0c12159c2401ab6c0",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gpt-5.5_chain_of_thought_1257e011f20f_collect_report.json": "ef805b13d95e88190b34e4733ece36a0534e22adbc226a75e291f7aa20f90db3",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gpt-5.5_few_shot_0991e20b230f.jsonl": "be549dd86f22b4b855feeb22b8f24fe23d9ee149c26770333ad3fb0a10c15a7b",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gpt-5.5_few_shot_0991e20b230f_collect_report.json": "e259fad1bed3da44711b69e0d1cf3614a6ca8c8dba94549bcbdde6bb727064e9",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gpt-5.5_zero_shot_2ebfdfc710ec.jsonl": "bf0a704e8d31f8d1353b0eec49cee2b9700ffafc33651ad0e5fcbde308dcbc7d",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gpt-5.5_zero_shot_2ebfdfc710ec_collect_report.json": "a65176debf9aab5eb593c48e25ce1aefdf5c9bfeda8478d1ce1f1252951ec96a",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\claude-sonnet-4-6_chain_of_thought_a4b8460219c5.jsonl": "c387f894c6ac570b4ce772e86999a243b914bb895e0a792cdeba7d553e88011f",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\claude-sonnet-4-6_chain_of_thought_a4b8460219c5_map.json": "25448ef2635b33e4bcebe2d867f2eb7ffab0dcaafd64213e95a633ddce698fb7",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\claude-sonnet-4-6_few_shot_799207bf70f8.jsonl": "5bdfc93604ee3e082398caa2cacaf5b01ba96bc9aa3404148946f3786e051268",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\claude-sonnet-4-6_few_shot_799207bf70f8_map.json": "c2cefb0bb8ec9520ec55ca19cdb5b322386b72504aca1735b9bfd40c6400f3aa",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\claude-sonnet-4-6_zero_shot_a38e1cc41f93.jsonl": "8a7005ef19130319103e6cf0e22187196835ca4a2df742b4d79b93d382e86469",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\claude-sonnet-4-6_zero_shot_a38e1cc41f93_map.json": "a929c36e949d325d2b957eada8bfa494b345b149cbefe1cae8c924439e9dc802",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gemini-2.5-pro_chain_of_thought_ae90620eba28.jsonl": "4da2ed49e3cbddb00c102f332c56c6a95dceb73b3fd0351fdc113765e890ae79",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gemini-2.5-pro_chain_of_thought_ae90620eba28_map.json": "93702c9c60b82759e1d071d8adaecd423e75ba659ce1da659b0fdd83570d17cb",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gemini-2.5-pro_few_shot_4647cbc33e98.jsonl": "943b0a862107222b713d344a4a71246ec48438526379fd8668f38d6e034a3016",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gemini-2.5-pro_few_shot_4647cbc33e98_map.json": "62b2c2d53fd5f35b200fcb21f40d2b6e09473fc14f64f9c17fb18a6da3a0a655",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gemini-2.5-pro_zero_shot_07afeb29bf3c.jsonl": "9f871071e0222790bf3a40816ddd0b3a3afa9300757150bfbeb12406e01a875b",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gemini-2.5-pro_zero_shot_07afeb29bf3c_map.json": "c76f86b8710b2962cb4930145103c6e0bd379a5aa364880821ed238ff40fbef7",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gpt-5.5_chain_of_thought_1257e011f20f.jsonl": "02b5a803672f14021d93de2b5b73515f86ddaafebf5e1c026e49bec78775d333",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gpt-5.5_chain_of_thought_1257e011f20f_map.json": "9dd9cf0644f0caa2e6ad02aa9d78305b4542a671c09cfbafed376d96c476c731",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gpt-5.5_few_shot_0991e20b230f.jsonl": "caf474d0879d21b2fb13d93aeb09fcf34510b588da9af51576b0141992d15e91",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gpt-5.5_few_shot_0991e20b230f_map.json": "c928daa1a8327e64e9598038c4078eac996278e6193fb2343cdceb8bda1643d2",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gpt-5.5_zero_shot_2ebfdfc710ec.jsonl": "a68f81f846c44682311613b90f3cea0ab348a78323b7eb6fb3a5dc7a23e50c1c",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\requests\\gpt-5.5_zero_shot_2ebfdfc710ec_map.json": "ef501e9f2c3917ce5ef4e6d01f759ab0b50fbaab1b4eb145979c8ed362653039",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\all_results.json": "103874ade44306829a7433e7af9ccd434c2e55421db16602877d12d8c147ccf6",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\claude-sonnet-4-6_chain_of_thought.json": "270ebb04ce2ecb984f617a5b69dcc644905f7ae9b0e11693c5a5ceb0e6927b77",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\claude-sonnet-4-6_few_shot.json": "739749c82beacf536e23a63deafc899467ea06fbaaf2fd7d99cf74bd43911c9a",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\claude-sonnet-4-6_zero_shot.json": "3ac52fc9a08212005c10ae40911b7a8c975c983ff162a6ec89c16d92cf29d13b",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gemini-2.5-pro_chain_of_thought.json": "082dcd6d582ef8521642efa3315f744d2f970180c7192f9dbb13b4a141c75704",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gemini-2.5-pro_few_shot.json": "bd8a54984db16895aaa8e5c9764eb7825e2153d928f92a7a1cfab4295e0d8e85",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gemini-2.5-pro_zero_shot.json": "b1269acd0b1af63726d020240d23b7c53fefb492a6c31a02dde9ef86af923d50",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gpt-5.5_chain_of_thought.json": "89b197263a7178028bc4714b8f6d1577878624b378706be19022d009dbf551e0",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gpt-5.5_few_shot.json": "e90d67951f1e14d73c52c5ab1cd4ea348a86cf225bcd0abc6155836b85f3c22a",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gpt-5.5_zero_shot.json": "81871b19c7519450bd831287edbca9c453b91ce49621473aa8f17142e5c93962",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\ministral-3-8b_chain_of_thought.json": "0acfc53c16cb1d3ed4ddc4942a95d7d8adbed5b3e4bbdace4743a2d985cb3346",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\ministral-3-8b_few_shot.json": "48f3c08655c192aa08d245f925eef19a6e9934b6078dfa02d5d00e411ee7a38c",
+    "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\ministral-3-8b_zero_shot.json": "47968a0ebac2f3c766a0557bd3e2cc8108eb38654463cb805e45476ea8756291",
+    "results\\runs\\v31_fulltext_gpt_medium\\run_config.json": "4f91c4d93f3f4b05fd498f8352ad513c29b182a331729df273db139abb1b1593",
+    "results\\runs\\v31_fulltext_gpt_medium\\smoke_tests\\api_smoke_20260908_115337.json": "187b92d7a0af74c4c437a885aa8200750ac7a60292c8bf0bd0e03d4bc92fafcd",
+    "results\\runs\\v31_fulltext_gpt_medium\\smoke_tests\\api_smoke_20260908_115756.json": "2cfa47e64b684e9b6cf9471a168af4b7453fb1c7941a8b1e9576d4198a45bc30",
+    "results\\runs\\v31_fulltext_gpt_medium\\smoke_tests\\api_smoke_latest.json": "2cfa47e64b684e9b6cf9471a168af4b7453fb1c7941a8b1e9576d4198a45bc30"
+  },
+  "code_sha256": {
+    "adr_scoring.py": "3b1e69562481f706ec47bfec6e7a35a32b4cad146224ebd7fd54ad320cca8a4b",
+    "adr_benchmark.py": "342f2302b09e291de40042b91f104a74a9a0640d95e66c616e33967aa96b2862",
+    "scripts\\rescore_saved_results.py": "1a6f4e6307eb755586f1dcb5f024636af82f6e9fdca2f10f0c241af4c4a6690d"
+  },
+  "counts": {
+    "evaluations": 5832,
+    "overall_changes": 40
+  },
+  "human_submissions": {
+    "human_ground_truth.json": {
+      "submissions_unchanged": true,
+      "recorded_vs_exact_overall_discrepancies": [],
+      "exact_class_distribution": {
+        "Mostly_Compliant": 54,
+        "Partially_Compliant": 34,
+        "Not_Compliant": 24,
+        "Fully_Compliant": 65
+      }
+    },
+    "human_ground_truth_interrator.json": {
+      "submissions_unchanged": true,
+      "recorded_vs_exact_overall_discrepancies": [
+        "backstage_backstage_adr015-jsx-loader-structure",
+        "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+        "alphagov_govuk-aws_0005-terraform-module-location",
+        "argoproj_argo-cd_app-sync-using-impersonation",
+        "loopdive_js2_0001-hybrid-compilation-strategy",
+        "cortexproject_cortex_ruler-ha-new",
+        "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+        "npryce_adr-tools_0003-single-command-with-subcommands",
+        "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+        "alphagov_govuk-aws_0015-dns-infrastructure",
+        "alphagov_govuk-aws_0010-terraform-directory-structure"
+      ],
+      "exact_class_distribution": {
+        "Fully_Compliant": 10,
+        "Mostly_Compliant": 13,
+        "Partially_Compliant": 16,
+        "Not_Compliant": 2
+      }
+    }
+  },
+  "class_changes": [
+    {
+      "configuration": "gpt-5.5/zero_shot",
+      "repetition": 3,
+      "row": 145,
+      "adr_id": "temporalio_temporal_history-service",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 40.0,
+        "predicted_sc_score_from_criteria": 40.0,
+        "predicted_dq_score": 48.3,
+        "predicted_dq_score_from_criteria": 48.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "40",
+          "dq": "145/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 40.0,
+        "predicted_sc_score_from_criteria": 40.0,
+        "predicted_dq_score": 48.333333333333336,
+        "predicted_dq_score_from_criteria": 48.333333333333336,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/zero_shot",
+      "repetition": 1,
+      "row": 123,
+      "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/zero_shot",
+      "repetition": 2,
+      "row": 123,
+      "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/zero_shot",
+      "repetition": 3,
+      "row": 47,
+      "adr_id": "argoproj_argo-cd_sync-timeout",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 40.0,
+        "predicted_sc_score_from_criteria": 40.0,
+        "predicted_dq_score": 48.3,
+        "predicted_dq_score_from_criteria": 48.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "40",
+          "dq": "145/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 40.0,
+        "predicted_sc_score_from_criteria": 40.0,
+        "predicted_dq_score": 48.333333333333336,
+        "predicted_dq_score_from_criteria": 48.333333333333336,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/zero_shot",
+      "repetition": 3,
+      "row": 123,
+      "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "repetition": 1,
+      "row": 9,
+      "adr_id": "npryce_adr-tools_0004-markdown-format",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "repetition": 1,
+      "row": 123,
+      "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "repetition": 2,
+      "row": 9,
+      "adr_id": "npryce_adr-tools_0004-markdown-format",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "repetition": 2,
+      "row": 47,
+      "adr_id": "argoproj_argo-cd_sync-timeout",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 40.0,
+        "predicted_sc_score_from_criteria": 40.0,
+        "predicted_dq_score": 48.3,
+        "predicted_dq_score_from_criteria": 48.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "40",
+          "dq": "145/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 40.0,
+        "predicted_sc_score_from_criteria": 40.0,
+        "predicted_dq_score": 48.333333333333336,
+        "predicted_dq_score_from_criteria": 48.333333333333336,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "repetition": 2,
+      "row": 101,
+      "adr_id": "temporalio_temporal_workflow-update",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 40.0,
+        "predicted_sc_score_from_criteria": 40.0,
+        "predicted_dq_score": 48.3,
+        "predicted_dq_score_from_criteria": 48.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "40",
+          "dq": "145/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 40.0,
+        "predicted_sc_score_from_criteria": 40.0,
+        "predicted_dq_score": 48.333333333333336,
+        "predicted_dq_score_from_criteria": 48.333333333333336,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "repetition": 2,
+      "row": 123,
+      "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "repetition": 3,
+      "row": 9,
+      "adr_id": "npryce_adr-tools_0004-markdown-format",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "repetition": 3,
+      "row": 123,
+      "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 1,
+      "row": 9,
+      "adr_id": "npryce_adr-tools_0004-markdown-format",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 1,
+      "row": 49,
+      "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 1,
+      "row": 68,
+      "adr_id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 1,
+      "row": 96,
+      "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 2,
+      "row": 9,
+      "adr_id": "npryce_adr-tools_0004-markdown-format",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 2,
+      "row": 91,
+      "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 2,
+      "row": 96,
+      "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 3,
+      "row": 9,
+      "adr_id": "npryce_adr-tools_0004-markdown-format",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "repetition": 3,
+      "row": 49,
+      "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 1,
+      "row": 49,
+      "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 1,
+      "row": 73,
+      "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 1,
+      "row": 96,
+      "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 1,
+      "row": 153,
+      "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 2,
+      "row": 73,
+      "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 2,
+      "row": 96,
+      "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 2,
+      "row": 120,
+      "adr_id": "npryce_adr-tools_0009-help-scripts",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 2,
+      "row": 129,
+      "adr_id": "cortexproject_cortex_auth-gateway",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 80.0,
+        "predicted_sc_score_from_criteria": 80.0,
+        "predicted_dq_score": 63.3,
+        "predicted_dq_score_from_criteria": 63.3,
+        "predicted_composite_score": 69.98,
+        "predicted_composite_score_from_criteria": 69.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "80",
+          "dq": "190/3",
+          "composite": "70"
+        },
+        "predicted": "Mostly_Compliant",
+        "predicted_overall_from_criteria": "Mostly_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 80.0,
+        "predicted_sc_score_from_criteria": 80.0,
+        "predicted_dq_score": 63.333333333333336,
+        "predicted_dq_score_from_criteria": 63.333333333333336,
+        "predicted_composite_score": 70.0,
+        "predicted_composite_score_from_criteria": 70.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 2,
+      "row": 153,
+      "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 3,
+      "row": 96,
+      "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 3,
+      "row": 120,
+      "adr_id": "npryce_adr-tools_0009-help-scripts",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "repetition": 3,
+      "row": 124,
+      "adr_id": "cortexproject_cortex_user-overrides-api",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 80.0,
+        "predicted_sc_score_from_criteria": 80.0,
+        "predicted_dq_score": 63.3,
+        "predicted_dq_score_from_criteria": 63.3,
+        "predicted_composite_score": 69.98,
+        "predicted_composite_score_from_criteria": 69.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "80",
+          "dq": "190/3",
+          "composite": "70"
+        },
+        "predicted": "Mostly_Compliant",
+        "predicted_overall_from_criteria": "Mostly_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_score": 80.0,
+        "predicted_sc_score_from_criteria": 80.0,
+        "predicted_dq_score": 63.333333333333336,
+        "predicted_dq_score_from_criteria": 63.333333333333336,
+        "predicted_composite_score": 70.0,
+        "predicted_composite_score_from_criteria": 70.0
+      }
+    },
+    {
+      "configuration": "gemini-2.5-pro/zero_shot",
+      "repetition": 1,
+      "row": 92,
+      "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 55.0,
+        "predicted_sc_score_from_criteria": 55.0,
+        "predicted_dq_score": 38.3,
+        "predicted_dq_score_from_criteria": 38.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "55",
+          "dq": "115/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 55.0,
+        "predicted_sc_score_from_criteria": 55.0,
+        "predicted_dq_score": 38.333333333333336,
+        "predicted_dq_score_from_criteria": 38.333333333333336,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "gemini-2.5-pro/zero_shot",
+      "repetition": 1,
+      "row": 157,
+      "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "gemini-2.5-pro/zero_shot",
+      "repetition": 2,
+      "row": 17,
+      "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Mostly_Compliant",
+        "predicted_overall_from_criteria": "Mostly_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_score": 80.0,
+        "predicted_sc_score_from_criteria": 80.0,
+        "predicted_dq_score": 88.3,
+        "predicted_dq_score_from_criteria": 88.3,
+        "predicted_composite_score": 84.98,
+        "predicted_composite_score_from_criteria": 84.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "80",
+          "dq": "265/3",
+          "composite": "85"
+        },
+        "predicted": "Fully_Compliant",
+        "predicted_overall_from_criteria": "Fully_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_score": 80.0,
+        "predicted_sc_score_from_criteria": 80.0,
+        "predicted_dq_score": 88.33333333333333,
+        "predicted_dq_score_from_criteria": 88.33333333333333,
+        "predicted_composite_score": 85.0,
+        "predicted_composite_score_from_criteria": 85.0
+      }
+    },
+    {
+      "configuration": "gemini-2.5-pro/chain_of_thought",
+      "repetition": 3,
+      "row": 66,
+      "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Mostly_Compliant",
+        "predicted_overall_from_criteria": "Mostly_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_score": 80.0,
+        "predicted_sc_score_from_criteria": 80.0,
+        "predicted_dq_score": 88.3,
+        "predicted_dq_score_from_criteria": 88.3,
+        "predicted_composite_score": 84.98,
+        "predicted_composite_score_from_criteria": 84.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "80",
+          "dq": "265/3",
+          "composite": "85"
+        },
+        "predicted": "Fully_Compliant",
+        "predicted_overall_from_criteria": "Fully_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_score": 80.0,
+        "predicted_sc_score_from_criteria": 80.0,
+        "predicted_dq_score": 88.33333333333333,
+        "predicted_dq_score_from_criteria": 88.33333333333333,
+        "predicted_composite_score": 85.0,
+        "predicted_composite_score_from_criteria": 85.0
+      }
+    },
+    {
+      "configuration": "gemini-2.5-pro/chain_of_thought",
+      "repetition": 3,
+      "row": 116,
+      "adr_id": "cortexproject_cortex_version-documentation",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 55.0,
+        "predicted_sc_score_from_criteria": 55.0,
+        "predicted_dq_score": 38.3,
+        "predicted_dq_score_from_criteria": 38.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "55",
+          "dq": "115/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 55.0,
+        "predicted_sc_score_from_criteria": 55.0,
+        "predicted_dq_score": 38.333333333333336,
+        "predicted_dq_score_from_criteria": 38.333333333333336,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    },
+    {
+      "configuration": "gemini-2.5-pro/chain_of_thought",
+      "repetition": 3,
+      "row": 153,
+      "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+      "changed_classes": [
+        "predicted"
+      ],
+      "before": {
+        "scoring_version": null,
+        "predicted_exact_scores": null,
+        "predicted": "Not_Compliant",
+        "predicted_overall_from_criteria": "Not_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.3,
+        "predicted_dq_score_from_criteria": 28.3,
+        "predicted_composite_score": 44.98,
+        "predicted_composite_score_from_criteria": 44.98
+      },
+      "after": {
+        "scoring_version": "exact-rational-v1",
+        "predicted_exact_scores": {
+          "sc": "70",
+          "dq": "85/3",
+          "composite": "45"
+        },
+        "predicted": "Partially_Compliant",
+        "predicted_overall_from_criteria": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_score": 70.0,
+        "predicted_sc_score_from_criteria": 70.0,
+        "predicted_dq_score": 28.333333333333332,
+        "predicted_dq_score_from_criteria": 28.333333333333332,
+        "predicted_composite_score": 45.0,
+        "predicted_composite_score_from_criteria": 45.0
+      }
+    }
+  ],
+  "corrected_raw_sha256": {
+    "all_results.json": "25a88a88f7ee2c95c384f0dbe104d3ba6d0723e6f927e270b6cde95a0ef35184",
+    "claude-sonnet-4-6_chain_of_thought.json": "8433b21b8b23c06140610e4ac75b448ef1a45e2a5c6ce5d05939475de6001ebd",
+    "claude-sonnet-4-6_few_shot.json": "a31940c148e124506ce887e0d6d1556dbb978e2339606f349659a6dcc52e6822",
+    "claude-sonnet-4-6_zero_shot.json": "cf61b68e72b3fc3f22597bdb9dcfe8788da8057e991091b7c9324c2fa98367c6",
+    "gemini-2.5-pro_chain_of_thought.json": "65e2fcb790763537a2483d396a7bd44ff1e9c0a89f7044a23ecfb8ef88bfdf0a",
+    "gemini-2.5-pro_few_shot.json": "a8c619687b0010c106781c3aeb6c0854ba556f39da93656b5d178a666397ffd8",
+    "gemini-2.5-pro_zero_shot.json": "2209b5f73eb3342bcc460306bb4da831ef0f20b3da9f3d816c2e400f7753f2fa",
+    "gpt-5.5_chain_of_thought.json": "233071022cd59842479202f3cd03f8e8df14b9bd321f689beb2c96c630b6d3c1",
+    "gpt-5.5_few_shot.json": "e437fd0992d705e4e8f6873f40937a68b3290b18a4795ed0579c6b60a0ac3e4f",
+    "gpt-5.5_zero_shot.json": "70ae6d8390efea15e68076277efd119ed3e232712e1ce014c8d80e85a2c23edf",
+    "ministral-3-8b_chain_of_thought.json": "4566b2015b050a6c649a2710454462a02f90d0f42df767a6da8838686c8e251b",
+    "ministral-3-8b_few_shot.json": "db81f9dd5c05a3038950a17f38419f480f41821b13851d2a8ebfb10ee6d59172",
+    "ministral-3-8b_zero_shot.json": "392a136799ce1cad16ab056a37654cc80b501f7e67357ea54af04d31475d59e5"
+  },
+  "reference_policy": "Recorded primary overall labels retained; dimension labels derived exactly.",
+  "provenance_policy": "Row run_id, criteria, request fingerprints, human labels and API metadata retained."
+}

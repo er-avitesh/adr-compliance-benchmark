@@ -1,0 +1,5103 @@
+{
+  "written_at": "2026-09-08T19:10:04.275568",
+  "n_eval": 162,
+  "purpose": "Deterministic baseline for Structural Completeness only. Decision Quality remains evaluated by human labels and LLM outputs because it requires semantic judgement.",
+  "rule_based_structural_completeness": {
+    "accuracy": 0.247,
+    "macro_precision": 0.382,
+    "macro_recall": 0.375,
+    "macro_f1": 0.246,
+    "cohen_kappa": 0.09,
+    "class_distribution_predicted": {
+      "Not_Compliant": 24,
+      "Mostly_Compliant": 45,
+      "Fully_Compliant": 19,
+      "Partially_Compliant": 74
+    },
+    "class_distribution_human_sc": {
+      "Fully_Compliant": 107,
+      "Mostly_Compliant": 37,
+      "Partially_Compliant": 8,
+      "Not_Compliant": 10
+    }
+  },
+  "criterion_agreement": {
+    "C1": {
+      "accuracy": 0.759,
+      "rule_pass_rate": 0.759,
+      "human_pass_rate": 1.0
+    },
+    "C2": {
+      "accuracy": 1.0,
+      "rule_pass_rate": 1.0,
+      "human_pass_rate": 1.0
+    },
+    "C3": {
+      "accuracy": 0.457,
+      "rule_pass_rate": 0.302,
+      "human_pass_rate": 0.796
+    },
+    "C4": {
+      "accuracy": 0.543,
+      "rule_pass_rate": 0.346,
+      "human_pass_rate": 0.556
+    },
+    "C5": {
+      "accuracy": 0.519,
+      "rule_pass_rate": 0.469,
+      "human_pass_rate": 0.938
+    },
+    "C6": {
+      "accuracy": 0.833,
+      "rule_pass_rate": 0.938,
+      "human_pass_rate": 0.821
+    },
+    "C7": {
+      "accuracy": 0.932,
+      "rule_pass_rate": 0.593,
+      "human_pass_rate": 0.623
+    }
+  },
+  "rule_definitions": {
+    "C1": "first heading or first non-empty line has at least three alphanumeric tokens and is not a generic template/index title",
+    "C2": "context/problem/background/motivation/issue/need heading or keyword present",
+    "C3": "decision-driver, force, constraint, criterion, requirement, or consideration heading/keyword present",
+    "C4": "at least two option/alternative markers, or an options/alternatives section with repeated option terminology",
+    "C5": "decision/outcome wording plus because/therefore/so that/rationale/reason/justification wording",
+    "C6": "consequence, positive/negative consequence, pro/con, trade-off, tradeoff, or implication wording present",
+    "C7": "status field/heading with accepted/proposed/draft/deprecated/superseded/rejected/amended/decided"
+  },
+  "rows": [
+    {
+      "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+      "source_repo": "backstage/backstage",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0011-migration-strategy",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 80.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_receiving_metadata",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_parameterized-config-management-plugins",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "LIGHTWEIGHT",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 90.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_002-ui-extensions",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 90.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "npryce_adr-tools_0004-markdown-format",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "aws_aws-cdk_acknowledge-warnings",
+      "source_repo": "aws/aws-cdk",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 90.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_blocks-storage-sharding",
+      "source_repo": "cortexproject/cortex",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "NYGARD",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+      "source_repo": "backstage/backstage",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "rule_sc_score": 25.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0006-puppet-architecture",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 100.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "LIGHTWEIGHT",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 90.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 80.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0003-bootstrapping-virtual-environment",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "NYGARD",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr009-entity-references",
+      "source_repo": "backstage/backstage",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "rule_sc_score": 25.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0019-centralise-mysql-databases",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_parallel-compaction",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_native-oci-support",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0008-fixing-group-permissions-before-build",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "aws_aws-cdk_aurora-serverless-v2",
+      "source_repo": "aws/aws-cdk",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 100.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0009-modelling-history",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 100.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_tenant-deletion",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0016-publishing-times-and-change-history",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_ruler-ha",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_application-name-identifier",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr011-plugin-package-structure",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "aws_aws-cdk_cross-region-stack-references",
+      "source_repo": "aws/aws-cdk",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 100.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_timeseries-partitioning-in-compactor",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 100.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_applicationset-plugin-generator",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr010-luxon-date-library",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0003-initial-domain-modelling",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 100.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_shuffle-sharding-on-the-read-path",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_sync-timeout",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_shuffle-sharding-and-zone-awareness",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_backend-support-appset",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0011-moving-business-logic-out-of-controllers",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_config-management-plugin-v2",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0010-use-pipx-to-install-breeze",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0002-use-local-datastore",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0009-exclude-all-files-from-dockerignore-by-default",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0012-asking-user-for-confirmation",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_scalable-alertmanager",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "OTHER",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0016-use-uv-tool-to-install-breeze",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0013-userdata-provisioning-snippets",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_partition-ring-multi-az-replication",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 80.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "OTHER",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_proxy-extensions",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_distributed-query-execution",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "OTHER",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_server-side-pagination",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 80.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "npryce_adr-tools_0005-help-comments",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0003-provide-own-madr-tools",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr004-module-export-structure",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 85.0,
+      "rule_sc_class": "Fully_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_per-tenant-cardinality-api",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_app-sync-using-impersonation",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0010-support-categories",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0003-aws-networking-outline",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_ruler-ha-new",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0008-add-status-field",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr006-avoid-react-fc",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0007-puppet-cert-management",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_parquet-storage",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "temporalio_temporal_workflow-update",
+      "source_repo": "temporalio/temporal",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0002-implement-standalone-python-command",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0007-using-database-volumes-for-backends",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0015-handling-rootless-docker",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0010-sending-email-notifications",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0008-restricted-deletion",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr013-use-node-fetch",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0012-file-attachment-rendering",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr015-jsx-loader-structure",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0013-permitted-deletion",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0007-minimal-model",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_version-documentation",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0004-write-own-toc-tool",
+      "source_repo": "adr/madr",
+      "variant": "NYGARD",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "temporalio_temporal_effect-package",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "rule_sc_score": 15.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 60.0,
+      "human_sc_class": "Partially_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0011-use-asterisk-as-list-marker",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 60.0,
+      "human_sc_class": "Partially_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "npryce_adr-tools_0009-help-scripts",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_argocd-cli-pluin",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 60.0,
+      "human_sc_class": "Partially_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_user-overrides-api",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0005-use-dashes-in-filenames",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 60.0,
+      "human_sc_class": "Partially_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_headless-argocd",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 80.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0017-terraform-data-structure",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_auth-gateway",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0014-allow-neutral-arguments",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 65.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0015-bulk-data-loading",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_tenant_retention",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": false,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0002-do-not-use-numbers-in-headings",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 60.0,
+      "human_sc_class": "Partially_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_feature-bounties",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 60.0,
+      "human_sc_class": "Partially_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "adr_madr_0006-use-names-as-identifier",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 80.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 75.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "cortexproject_cortex_ring-multikey",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0014-political-and-government-tagging",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0001-record-architecture-decisions",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 35.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "temporalio_temporal_nexus",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 80.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 40.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr001-add-adr-log",
+      "source_repo": "backstage/backstage",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "rule_sc_score": 25.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 60.0,
+      "human_sc_class": "Partially_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "OTHER",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 55.0,
+      "human_sc_class": "Partially_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "temporalio_temporal_history-service",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 60.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 40.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0001-record-architecture-decisions",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "OTHER",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 35.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "temporalio_temporal_chasm",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 40.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 40.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "openfga_openfga_architecture",
+      "source_repo": "openfga/openfga",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "rule_sc_score": 25.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 25.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "temporalio_temporal_matching-service",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "rule_sc_score": 15.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 25.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "temporalio_temporal_retry",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "rule_sc_score": 15.0,
+      "rule_sc_class": "Not_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": false
+      },
+      "human_sc_score": 25.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": false,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 75.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "backstage_backstage_adr014-use-fetch",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 90.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "argoproj_argo-cd_2_5-2_6",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "human_sc_score": 40.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0002-hosting-platforms",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 100.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 70.0,
+      "human_sc_class": "Mostly_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Partially_Compliant"
+    },
+    {
+      "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+      "source_repo": "loopdive/js2",
+      "variant": "NYGARD",
+      "domain": "Compiler",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": true,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Mostly_Compliant",
+      "human_overall": "Mostly_Compliant"
+    },
+    {
+      "adr_id": "loopdive_js2_0004-aot",
+      "source_repo": "loopdive/js2",
+      "variant": "NYGARD",
+      "domain": "Compiler",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": true,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": false
+      },
+      "rule_sc_score": 55.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Fully_Compliant",
+      "human_overall": "Fully_Compliant"
+    },
+    {
+      "adr_id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+      "source_repo": "MITLibraries/timdex-ui",
+      "variant": "NYGARD",
+      "domain": "Library Discovery",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 50.0,
+      "rule_sc_class": "Partially_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": false,
+        "C6": false,
+        "C7": true
+      },
+      "human_sc_score": 35.0,
+      "human_sc_class": "Not_Compliant",
+      "human_dq_class": "Not_Compliant",
+      "human_overall": "Not_Compliant"
+    },
+    {
+      "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+      "source_repo": "MITLibraries/timdex-ui",
+      "variant": "NYGARD",
+      "domain": "Library Discovery",
+      "rule_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": false,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "rule_sc_score": 70.0,
+      "rule_sc_class": "Mostly_Compliant",
+      "human_checks": {
+        "C1": true,
+        "C2": true,
+        "C3": false,
+        "C4": true,
+        "C5": true,
+        "C6": true,
+        "C7": true
+      },
+      "human_sc_score": 85.0,
+      "human_sc_class": "Fully_Compliant",
+      "human_dq_class": "Partially_Compliant",
+      "human_overall": "Mostly_Compliant"
+    }
+  ],
+  "hybrid_rule_sc_plus_llm_dq": {
+    "status": "computed",
+    "note": "Hybrid predictions use deterministic rule_sc_class and each LLM row's predicted_dq_class. Older raw results must be rerun if they do not contain predicted_dq_class.",
+    "missing_dq_predictions": 0,
+    "by_model_strategy": {
+      "gpt-5.5": {
+        "zero_shot": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.267,
+          "macro_f1_mean": 0.261,
+          "macro_f1_std": 0.005,
+          "cohen_kappa_mean": 0.081,
+          "cohen_kappa_std": 0.011
+        },
+        "few_shot": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.368,
+          "macro_f1_mean": 0.376,
+          "macro_f1_std": 0.017,
+          "cohen_kappa_mean": 0.186,
+          "cohen_kappa_std": 0.02
+        },
+        "chain_of_thought": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.276,
+          "macro_f1_mean": 0.274,
+          "macro_f1_std": 0.01,
+          "cohen_kappa_mean": 0.092,
+          "cohen_kappa_std": 0.011
+        }
+      },
+      "claude-sonnet-4-6": {
+        "zero_shot": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.185,
+          "macro_f1_mean": 0.167,
+          "macro_f1_std": 0.005,
+          "cohen_kappa_mean": 0.02,
+          "cohen_kappa_std": 0.008
+        },
+        "few_shot": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.3,
+          "macro_f1_mean": 0.31,
+          "macro_f1_std": 0.003,
+          "cohen_kappa_mean": 0.119,
+          "cohen_kappa_std": 0.005
+        },
+        "chain_of_thought": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.167,
+          "macro_f1_mean": 0.151,
+          "macro_f1_std": 0.004,
+          "cohen_kappa_mean": 0.002,
+          "cohen_kappa_std": 0.007
+        }
+      },
+      "ministral-3-8b": {
+        "zero_shot": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.267,
+          "macro_f1_mean": 0.267,
+          "macro_f1_std": 0.005,
+          "cohen_kappa_mean": 0.092,
+          "cohen_kappa_std": 0.01
+        },
+        "few_shot": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.356,
+          "macro_f1_mean": 0.367,
+          "macro_f1_std": 0.005,
+          "cohen_kappa_mean": 0.178,
+          "cohen_kappa_std": 0.003
+        },
+        "chain_of_thought": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.288,
+          "macro_f1_mean": 0.292,
+          "macro_f1_std": 0.003,
+          "cohen_kappa_mean": 0.112,
+          "cohen_kappa_std": 0.004
+        }
+      },
+      "gemini-2.5-pro": {
+        "zero_shot": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.278,
+          "macro_f1_mean": 0.286,
+          "macro_f1_std": 0.006,
+          "cohen_kappa_mean": 0.1,
+          "cohen_kappa_std": 0.007
+        },
+        "few_shot": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.364,
+          "macro_f1_mean": 0.371,
+          "macro_f1_std": 0.014,
+          "cohen_kappa_mean": 0.185,
+          "cohen_kappa_std": 0.015
+        },
+        "chain_of_thought": {
+          "reps": 3,
+          "n_per_rep": [
+            162,
+            162,
+            162
+          ],
+          "accuracy_mean": 0.286,
+          "macro_f1_mean": 0.291,
+          "macro_f1_std": 0.026,
+          "cohen_kappa_mean": 0.109,
+          "cohen_kappa_std": 0.037
+        }
+      }
+    }
+  }
+}

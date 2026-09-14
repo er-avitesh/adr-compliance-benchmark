@@ -1,0 +1,23 @@
+{
+  "captured_on": "2026-09-11",
+  "purpose": "Reference environment for the publication replication package",
+  "operating_system": "Windows 11 10.0.26200",
+  "architecture": "64-bit",
+  "python": "3.12.6",
+  "packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.8.0",
+    "openai": "2.31.0",
+    "anthropic": "0.94.0",
+    "google-genai": "1.73.1",
+    "matplotlib": "3.9.2",
+    "python-docx": "1.2.0"
+  },
+  "notes": [
+    "The core offline verifier uses only the Python standard library.",
+    "The statistical pipeline requires NumPy, SciPy, and scikit-learn.",
+    "Provider SDKs are needed only for live API smoke tests or a new model run.",
+    "python-docx is optional and is not required to regenerate analysis tables or PNG figures."
+  ]
+}

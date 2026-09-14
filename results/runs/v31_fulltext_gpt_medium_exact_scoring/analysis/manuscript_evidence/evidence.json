@@ -1,0 +1,4034 @@
+{
+  "seed": 20260909,
+  "bootstrap_resamples": 10000,
+  "scoring_version": "exact-rational-v1",
+  "analysis_run_id": "v31_fulltext_gpt_medium_exact_scoring",
+  "inputs": {
+    "results\\eval_set.json": "4e9e16054c772183a4e1a0203190b12e3c710227cbd183932863af32b41cc89a",
+    "results\\human_ground_truth.json": "eaa756e2ddc499241cee96ec9158df919881c00f62fc6ff171aa0b5e5fbbe00a",
+    "results\\human_ground_truth_interrator.json": "c31c0b80bc70f039126f014f6f622a9a15488f52c0d58cea09513f3d2292d453",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_chain_of_thought_ae90620eba28.jsonl": "81fe4725d30bebfd105b9e9102f767410d8890090e169cd2a00564e1fd729892",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_few_shot_4647cbc33e98.jsonl": "abe0a27ce911f54fe56d77d0e99d5ddf44bbf1b0c710cc5506ee26c1b1de978c",
+    "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_zero_shot_07afeb29bf3c.jsonl": "fbe91204862ffb8de73510584b32069647074a7749949a4f2d0ba508c1b0a6df",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\claude-sonnet-4-6_chain_of_thought.json": "8433b21b8b23c06140610e4ac75b448ef1a45e2a5c6ce5d05939475de6001ebd",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\claude-sonnet-4-6_few_shot.json": "a31940c148e124506ce887e0d6d1556dbb978e2339606f349659a6dcc52e6822",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\claude-sonnet-4-6_zero_shot.json": "cf61b68e72b3fc3f22597bdb9dcfe8788da8057e991091b7c9324c2fa98367c6",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\gemini-2.5-pro_chain_of_thought.json": "65e2fcb790763537a2483d396a7bd44ff1e9c0a89f7044a23ecfb8ef88bfdf0a",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\gemini-2.5-pro_few_shot.json": "a8c619687b0010c106781c3aeb6c0854ba556f39da93656b5d178a666397ffd8",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\gemini-2.5-pro_zero_shot.json": "2209b5f73eb3342bcc460306bb4da831ef0f20b3da9f3d816c2e400f7753f2fa",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\gpt-5.5_chain_of_thought.json": "233071022cd59842479202f3cd03f8e8df14b9bd321f689beb2c96c630b6d3c1",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\gpt-5.5_few_shot.json": "e437fd0992d705e4e8f6873f40937a68b3290b18a4795ed0579c6b60a0ac3e4f",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\gpt-5.5_zero_shot.json": "70ae6d8390efea15e68076277efd119ed3e232712e1ce014c8d80e85a2c23edf",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\ministral-3-8b_chain_of_thought.json": "4566b2015b050a6c649a2710454462a02f90d0f42df767a6da8838686c8e251b",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\ministral-3-8b_few_shot.json": "db81f9dd5c05a3038950a17f38419f480f41821b13851d2a8ebfb10ee6d59172",
+    "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\ministral-3-8b_zero_shot.json": "392a136799ce1cad16ab056a37654cc80b501f7e67357ea54af04d31475d59e5"
+  },
+  "reliability": {
+    "overall": {
+      "n": 41,
+      "matches": 37,
+      "agreement": 0.9024390243902439,
+      "alpha": 0.8882744239102021,
+      "ci95": [
+        0.736254693938372,
+        0.978350642801547
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "sc_class": {
+      "n": 41,
+      "matches": 28,
+      "agreement": 0.6829268292682927,
+      "alpha": 0.6607825390064562,
+      "ci95": [
+        0.3990674901230282,
+        0.8467474540724707
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "dq_class": {
+      "n": 41,
+      "matches": 24,
+      "agreement": 0.5853658536585366,
+      "alpha": 0.6927703528611788,
+      "ci95": [
+        0.4784420898553901,
+        0.8277287435877935
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "C1": {
+      "n": 41,
+      "matches": 41,
+      "agreement": 1.0,
+      "alpha": null,
+      "ci95": null,
+      "undefined_bootstrap_samples": 10000
+    },
+    "C2": {
+      "n": 41,
+      "matches": 38,
+      "agreement": 0.926829268292683,
+      "alpha": -0.025316455696202445,
+      "ci95": [
+        -0.08000000000000007,
+        0.0
+      ],
+      "undefined_bootstrap_samples": 428
+    },
+    "C3": {
+      "n": 41,
+      "matches": 26,
+      "agreement": 0.6341463414634146,
+      "alpha": 0.10464259395725872,
+      "ci95": [
+        -0.2121014964216006,
+        0.4181034482758621
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "C4": {
+      "n": 41,
+      "matches": 34,
+      "agreement": 0.8292682926829268,
+      "alpha": 0.6618962432915921,
+      "ci95": [
+        0.4130434782608696,
+        0.855098389982111
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "C5": {
+      "n": 41,
+      "matches": 41,
+      "agreement": 1.0,
+      "alpha": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "undefined_bootstrap_samples": 1279
+    },
+    "C6": {
+      "n": 41,
+      "matches": 36,
+      "agreement": 0.8780487804878049,
+      "alpha": -0.051948051948051965,
+      "ci95": [
+        -0.1095890410958904,
+        0.0
+      ],
+      "undefined_bootstrap_samples": 50
+    },
+    "C7": {
+      "n": 41,
+      "matches": 39,
+      "agreement": 0.9512195121951219,
+      "alpha": 0.9021739130434783,
+      "ci95": [
+        0.7495361781076066,
+        1.0
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "Q1": {
+      "n": 41,
+      "matches": 27,
+      "agreement": 0.6585365853658537,
+      "alpha": 0.28658536585365857,
+      "ci95": [
+        -0.026175172006173208,
+        0.5670072907211665
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "Q2": {
+      "n": 41,
+      "matches": 13,
+      "agreement": 0.3170731707317073,
+      "alpha": 0.5025175235497479,
+      "ci95": [
+        0.266130964448562,
+        0.6572165829163804
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "Q3": {
+      "n": 41,
+      "matches": 13,
+      "agreement": 0.3170731707317073,
+      "alpha": 0.16749036835158027,
+      "ci95": [
+        -0.10597463588861913,
+        0.382242230252355
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "Q4": {
+      "n": 41,
+      "matches": 20,
+      "agreement": 0.4878048780487805,
+      "alpha": 0.41641299631487916,
+      "ci95": [
+        0.09755600572413146,
+        0.6527778286899804
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "Q5": {
+      "n": 41,
+      "matches": 28,
+      "agreement": 0.6829268292682927,
+      "alpha": 0.4862728013657369,
+      "ci95": [
+        0.17889087656529512,
+        0.7338515143393192
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "Q6": {
+      "n": 41,
+      "matches": 22,
+      "agreement": 0.5365853658536586,
+      "alpha": 0.5499641543698106,
+      "ci95": [
+        0.24794604392960995,
+        0.7614509102620857
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "Q7": {
+      "n": 41,
+      "matches": 22,
+      "agreement": 0.5365853658536586,
+      "alpha": 0.18366544009807995,
+      "ci95": [
+        -0.1257027235603868,
+        0.4623172694936741
+      ],
+      "undefined_bootstrap_samples": 0
+    },
+    "formula_overall": {
+      "n": 41,
+      "matches": 27,
+      "agreement": 0.6585365853658537,
+      "alpha": 0.667698653773568,
+      "ci95": [
+        0.3944122063065578,
+        0.8477840115384229
+      ],
+      "undefined_bootstrap_samples": 0
+    }
+  },
+  "configurations": {
+    "claude-sonnet-4-6/chain_of_thought": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.3031695755348441,
+            0.08964905524878346,
+            0.27983539094650206
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.3308733633709256,
+            0.1322549881658233,
+            0.2962962962962963
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.23049467893217893,
+            0.0059779659177249395,
+            0.25396825396825395
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.29118107715802416,
+            0.07880570618005318,
+            0.27083333333333337
+          ]
+        }
+      }
+    },
+    "claude-sonnet-4-6/few_shot": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4945880070671354,
+            0.23843776868986324,
+            0.43004115226337447
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4517110813646225,
+            0.2040102720585423,
+            0.3872053872053873
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5388507867231271,
+            0.282761564070691,
+            0.4973544973544974
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.49274234541880935,
+            0.2385140073848531,
+            0.4291666666666667
+          ]
+        }
+      }
+    },
+    "claude-sonnet-4-6/zero_shot": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.3405559974506324,
+            0.1310874449926531,
+            0.3148148148148148
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.33675573259306835,
+            0.14390210119365834,
+            0.30639730639730645
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.32044805686571287,
+            0.09360357183922137,
+            0.32804232804232797
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.3293595246011655,
+            0.1207117782076541,
+            0.30624999999999997
+          ]
+        }
+      }
+    },
+    "gemini-2.5-pro/chain_of_thought": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4943606980767295,
+            0.2974953567877535,
+            0.48148148148148145
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4839272402878067,
+            0.28664989101646293,
+            0.4713804713804714
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.48889817308541694,
+            0.30086827572054653,
+            0.4973544973544974
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.49473509666400917,
+            0.29839752095071315,
+            0.48124999999999996
+          ]
+        }
+      }
+    },
+    "gemini-2.5-pro/few_shot": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5456978432021768,
+            0.3398347770826013,
+            0.5308641975308642
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5219484850299818,
+            0.3226889205298178,
+            0.5151515151515151
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.584443914650351,
+            0.3586844579351102,
+            0.5555555555555555
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5464853674178697,
+            0.34182271931219127,
+            0.53125
+          ]
+        }
+      }
+    },
+    "gemini-2.5-pro/zero_shot": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4988225985199257,
+            0.31117921510628116,
+            0.48971193415637854
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5060050616426112,
+            0.3182179357683775,
+            0.494949494949495
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.46353702903706323,
+            0.285171953538748,
+            0.48148148148148145
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.49919201189566226,
+            0.31226507891570127,
+            0.4895833333333333
+          ]
+        }
+      }
+    },
+    "gpt-5.5/chain_of_thought": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.44964068422060227,
+            0.2062005025535885,
+            0.40329218106995884
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4772155822793787,
+            0.25598164391788153,
+            0.430976430976431
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.3859477124183006,
+            0.10193495068529496,
+            0.35978835978835977
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.447371272243311,
+            0.20584857402551127,
+            0.4020833333333333
+          ]
+        }
+      }
+    },
+    "gpt-5.5/few_shot": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5562943992898868,
+            0.3200629100089707,
+            0.5226337448559671
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5394209041771015,
+            0.30678090071427194,
+            0.5084175084175085
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5566800883077009,
+            0.32290879752892815,
+            0.544973544973545
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5567285609199171,
+            0.32205437677229687,
+            0.5229166666666667
+          ]
+        }
+      }
+    },
+    "gpt-5.5/zero_shot": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4080710989243488,
+            0.16525255886757498,
+            0.3703703703703704
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.44736518263824737,
+            0.21914204665787693,
+            0.4006734006734007
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.3133342864258725,
+            0.05407148125051692,
+            0.32275132275132273
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.403254959987893,
+            0.1614810111448477,
+            0.3666666666666667
+          ]
+        }
+      }
+    },
+    "ministral-3-8b/chain_of_thought": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.47937250071750154,
+            0.2392954605579519,
+            0.46090534979423864
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.47552676178744396,
+            0.236945340506181,
+            0.48148148148148145
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4302991280200256,
+            0.19723098541755268,
+            0.42857142857142855
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.47967621345306716,
+            0.24036670827628318,
+            0.4604166666666667
+          ]
+        }
+      }
+    },
+    "ministral-3-8b/few_shot": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.49613778809708564,
+            0.27070672342290686,
+            0.4753086419753086
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.5613171223354326,
+            0.3907462728671685,
+            0.5723905723905723
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.36342812063230817,
+            0.04759914929792847,
+            0.32275132275132273
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.49653871826380486,
+            0.2715827336669752,
+            0.47500000000000003
+          ]
+        }
+      }
+    },
+    "ministral-3-8b/zero_shot": {
+      "subgroups": {
+        "all": {
+          "n": 162,
+          "class_counts": {
+            "Fully_Compliant": 63,
+            "Mostly_Compliant": 53,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.4202630264400334,
+            0.20999743820304104,
+            0.42386831275720166
+          ]
+        },
+        "unseen_exemplar_repository": {
+          "n": 99,
+          "class_counts": {
+            "Fully_Compliant": 43,
+            "Mostly_Compliant": 30,
+            "Partially_Compliant": 16,
+            "Not_Compliant": 10
+          },
+          "macro_f1_kappa_accuracy": [
+            0.41913912074311926,
+            0.20950225254876068,
+            0.4478114478114478
+          ]
+        },
+        "same_exemplar_repository": {
+          "n": 63,
+          "class_counts": {
+            "Fully_Compliant": 20,
+            "Mostly_Compliant": 23,
+            "Partially_Compliant": 17,
+            "Not_Compliant": 3
+          },
+          "macro_f1_kappa_accuracy": [
+            0.3767136448480715,
+            0.16943801418713347,
+            0.3862433862433862
+          ]
+        },
+        "encoding_unaffected": {
+          "n": 160,
+          "class_counts": {
+            "Fully_Compliant": 62,
+            "Mostly_Compliant": 52,
+            "Partially_Compliant": 33,
+            "Not_Compliant": 13
+          },
+          "macro_f1_kappa_accuracy": [
+            0.42042797692534356,
+            0.21034063292493865,
+            0.42291666666666666
+          ]
+        }
+      }
+    }
+  },
+  "costs": {
+    "claude-sonnet-4-6/chain_of_thought": {
+      "input_tokens": 955146,
+      "billable_output_tokens": 61675,
+      "gemini_thinking_tokens": 0,
+      "batch": 486,
+      "sync": 0,
+      "output_retries": 0,
+      "estimated_usd": 1.8952815000000014,
+      "per_evaluation_usd": 0.003899756172839509
+    },
+    "claude-sonnet-4-6/few_shot": {
+      "input_tokens": 2039898,
+      "billable_output_tokens": 38880,
+      "gemini_thinking_tokens": 0,
+      "batch": 485,
+      "sync": 1,
+      "output_retries": 0,
+      "estimated_usd": 3.356563500000001,
+      "per_evaluation_usd": 0.0069065092592592615
+    },
+    "claude-sonnet-4-6/zero_shot": {
+      "input_tokens": 920640,
+      "billable_output_tokens": 38880,
+      "gemini_thinking_tokens": 0,
+      "batch": 485,
+      "sync": 1,
+      "output_retries": 0,
+      "estimated_usd": 1.6795185000000008,
+      "per_evaluation_usd": 0.003455799382716051
+    },
+    "gemini-2.5-pro/chain_of_thought": {
+      "input_tokens": 895875,
+      "billable_output_tokens": 1004173,
+      "gemini_thinking_tokens": 941308,
+      "batch": 486,
+      "sync": 0,
+      "output_retries": 0,
+      "estimated_usd": 5.580786874999998,
+      "per_evaluation_usd": 0.011483100565843616
+    },
+    "gemini-2.5-pro/few_shot": {
+      "input_tokens": 1947093,
+      "billable_output_tokens": 942697,
+      "gemini_thinking_tokens": 904352,
+      "batch": 486,
+      "sync": 0,
+      "output_retries": 0,
+      "estimated_usd": 5.9304181249999965,
+      "per_evaluation_usd": 0.012202506430041145
+    },
+    "gemini-2.5-pro/zero_shot": {
+      "input_tokens": 863799,
+      "billable_output_tokens": 933679,
+      "gemini_thinking_tokens": 882251,
+      "batch": 486,
+      "sync": 0,
+      "output_retries": 0,
+      "estimated_usd": 5.208269375000003,
+      "per_evaluation_usd": 0.01071660365226338
+    },
+    "gpt-5.5/chain_of_thought": {
+      "input_tokens": 849552,
+      "billable_output_tokens": 294966,
+      "gemini_thinking_tokens": 0,
+      "batch": 472,
+      "sync": 14,
+      "output_retries": 0,
+      "estimated_usd": 6.746207500000001,
+      "per_evaluation_usd": 0.013881085390946504
+    },
+    "gpt-5.5/few_shot": {
+      "input_tokens": 1803084,
+      "billable_output_tokens": 323332,
+      "gemini_thinking_tokens": 0,
+      "batch": 469,
+      "sync": 17,
+      "output_retries": 0,
+      "estimated_usd": 9.681665,
+      "per_evaluation_usd": 0.019921121399176955
+    },
+    "gpt-5.5/zero_shot": {
+      "input_tokens": 819906,
+      "billable_output_tokens": 274633,
+      "gemini_thinking_tokens": 0,
+      "batch": 486,
+      "sync": 0,
+      "output_retries": 0,
+      "estimated_usd": 6.169259999999996,
+      "per_evaluation_usd": 0.012693950617283942
+    },
+    "ministral-3-8b/chain_of_thought": {
+      "input_tokens": 883386,
+      "billable_output_tokens": 82551,
+      "gemini_thinking_tokens": 0,
+      "batch": 0,
+      "sync": 486,
+      "output_retries": 0,
+      "estimated_usd": 0.14489055000000015,
+      "per_evaluation_usd": 0.000298128703703704
+    },
+    "ministral-3-8b/few_shot": {
+      "input_tokens": 1900769,
+      "billable_output_tokens": 302107,
+      "gemini_thinking_tokens": 0,
+      "batch": 0,
+      "sync": 486,
+      "output_retries": 6,
+      "estimated_usd": 0.3304314000000001,
+      "per_evaluation_usd": 0.0006799000000000002
+    },
+    "ministral-3-8b/zero_shot": {
+      "input_tokens": 871217,
+      "billable_output_tokens": 295116,
+      "gemini_thinking_tokens": 0,
+      "batch": 0,
+      "sync": 486,
+      "output_retries": 12,
+      "estimated_usd": 0.17494995000000002,
+      "per_evaluation_usd": 0.0003599793209876544
+    }
+  },
+  "errors": [
+    {
+      "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        90.0,
+        96.66666666666667
+      ],
+      "model_sc_dq": [
+        45.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C3": [
+          true,
+          false
+        ],
+        "C4": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q2": [
+          3,
+          1
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        91.66666666666667
+      ],
+      "model_sc_dq": [
+        85.0,
+        70.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        95.0
+      ],
+      "model_sc_dq": [
+        100.0,
+        76.66666666666667
+      ],
+      "criterion_differences": {
+        "Q1": [
+          3,
+          2
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          3,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_parameterized-config-management-plugins",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        90.0,
+        100.0
+      ],
+      "model_sc_dq": [
+        75.0,
+        86.66666666666667
+      ],
+      "criterion_differences": {
+        "C4": [
+          true,
+          false
+        ],
+        "Q2": [
+          3,
+          1
+        ],
+        "Q4": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_002-ui-extensions",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        90.0,
+        96.66666666666667
+      ],
+      "model_sc_dq": [
+        90.0,
+        75.0
+      ],
+      "criterion_differences": {
+        "Q3": [
+          3,
+          2
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ],
+        "Q7": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        90.0,
+        96.66666666666667
+      ],
+      "model_sc_dq": [
+        60.0,
+        48.333333333333336
+      ],
+      "criterion_differences": {
+        "C4": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q1": [
+          3,
+          2
+        ],
+        "Q2": [
+          3,
+          1
+        ],
+        "Q3": [
+          3,
+          1
+        ],
+        "Q4": [
+          2,
+          0
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "npryce_adr-tools_0004-markdown-format",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        86.66666666666667
+      ],
+      "model_sc_dq": [
+        70.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        100.0,
+        75.0
+      ],
+      "model_sc_dq": [
+        85.0,
+        58.333333333333336
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          2,
+          1
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q6": [
+          2,
+          1
+        ],
+        "Q7": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Not_Compliant",
+      "human_sc_dq": [
+        90.0,
+        86.66666666666667
+      ],
+      "model_sc_dq": [
+        25.0,
+        35.0
+      ],
+      "criterion_differences": {
+        "C3": [
+          true,
+          false
+        ],
+        "C4": [
+          true,
+          false
+        ],
+        "C5": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q1": [
+          3,
+          2
+        ],
+        "Q2": [
+          2,
+          0
+        ],
+        "Q3": [
+          3,
+          1
+        ],
+        "Q4": [
+          2,
+          0
+        ],
+        "Q5": [
+          3,
+          1
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        95.0
+      ],
+      "model_sc_dq": [
+        85.0,
+        70.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          3,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        95.0
+      ],
+      "model_sc_dq": [
+        85.0,
+        61.666666666666664
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q2": [
+          3,
+          2
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          3,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ],
+        "Q7": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        100.0,
+        86.66666666666667
+      ],
+      "model_sc_dq": [
+        70.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "C4": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q2": [
+          2,
+          1
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr009-entity-references",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        90.0,
+        100.0
+      ],
+      "model_sc_dq": [
+        45.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C3": [
+          true,
+          false
+        ],
+        "C4": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q2": [
+          3,
+          1
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          3,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        83.33333333333333
+      ],
+      "model_sc_dq": [
+        85.0,
+        70.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "cortexproject_cortex_parallel-compaction",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        95.0
+      ],
+      "model_sc_dq": [
+        100.0,
+        75.0
+      ],
+      "criterion_differences": {
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          3,
+          2
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q7": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_native-oci-support",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        90.0,
+        88.33333333333333
+      ],
+      "model_sc_dq": [
+        90.0,
+        66.66666666666667
+      ],
+      "criterion_differences": {
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "apache_airflow_0008-fixing-group-permissions-before-build",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        85.0,
+        86.66666666666667
+      ],
+      "model_sc_dq": [
+        85.0,
+        81.66666666666667
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q2": [
+          1,
+          2
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        83.33333333333333
+      ],
+      "model_sc_dq": [
+        100.0,
+        75.0
+      ],
+      "criterion_differences": {
+        "Q2": [
+          2,
+          3
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        81.66666666666667
+      ],
+      "model_sc_dq": [
+        85.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr011-plugin-package-structure",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        90.0,
+        100.0
+      ],
+      "model_sc_dq": [
+        75.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "C4": [
+          true,
+          false
+        ],
+        "Q2": [
+          3,
+          1
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          3,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "aws_aws-cdk_cross-region-stack-references",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        100.0
+      ],
+      "model_sc_dq": [
+        100.0,
+        76.66666666666667
+      ],
+      "criterion_differences": {
+        "Q2": [
+          3,
+          2
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_applicationset-plugin-generator",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        90.0,
+        96.66666666666667
+      ],
+      "model_sc_dq": [
+        90.0,
+        70.0
+      ],
+      "criterion_differences": {
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr010-luxon-date-library",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        90.0,
+        86.66666666666667
+      ],
+      "model_sc_dq": [
+        60.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "C4": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_sync-timeout",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        90.0,
+        91.66666666666667
+      ],
+      "model_sc_dq": [
+        90.0,
+        70.0
+      ],
+      "criterion_differences": {
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        90.0,
+        96.66666666666667
+      ],
+      "model_sc_dq": [
+        45.0,
+        56.666666666666664
+      ],
+      "criterion_differences": {
+        "C3": [
+          true,
+          false
+        ],
+        "C4": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q1": [
+          3,
+          2
+        ],
+        "Q2": [
+          3,
+          1
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_config-management-plugin-v2",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        90.0,
+        96.66666666666667
+      ],
+      "model_sc_dq": [
+        90.0,
+        70.0
+      ],
+      "criterion_differences": {
+        "Q2": [
+          3,
+          2
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        96.66666666666667
+      ],
+      "model_sc_dq": [
+        85.0,
+        78.33333333333333
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        90.0,
+        91.66666666666667
+      ],
+      "model_sc_dq": [
+        75.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q2": [
+          3,
+          1
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        100.0
+      ],
+      "model_sc_dq": [
+        85.0,
+        81.66666666666667
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        83.33333333333333
+      ],
+      "model_sc_dq": [
+        100.0,
+        78.33333333333333
+      ],
+      "criterion_differences": {
+        "Q2": [
+          2,
+          3
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "apache_airflow_0012-asking-user-for-confirmation",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        85.0,
+        86.66666666666667
+      ],
+      "model_sc_dq": [
+        85.0,
+        76.66666666666667
+      ],
+      "criterion_differences": {
+        "Q3": [
+          3,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        100.0,
+        93.33333333333333
+      ],
+      "model_sc_dq": [
+        100.0,
+        76.66666666666667
+      ],
+      "criterion_differences": {
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "cortexproject_cortex_scalable-alertmanager",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        78.33333333333333
+      ],
+      "model_sc_dq": [
+        100.0,
+        83.33333333333333
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          3
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        81.66666666666667
+      ],
+      "model_sc_dq": [
+        70.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        75.0,
+        81.66666666666667
+      ],
+      "model_sc_dq": [
+        80.0,
+        91.66666666666667
+      ],
+      "criterion_differences": {
+        "C1": [
+          true,
+          false
+        ],
+        "C4": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          2
+        ],
+        "Q6": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_proxy-extensions",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        75.0,
+        83.33333333333333
+      ],
+      "model_sc_dq": [
+        90.0,
+        86.66666666666667
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          2
+        ],
+        "Q6": [
+          3,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        90.0,
+        58.333333333333336
+      ],
+      "model_sc_dq": [
+        90.0,
+        75.0
+      ],
+      "criterion_differences": {
+        "Q2": [
+          2,
+          3
+        ],
+        "Q4": [
+          1,
+          2
+        ],
+        "Q6": [
+          1,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        61.666666666666664
+      ],
+      "model_sc_dq": [
+        100.0,
+        86.66666666666667
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          2
+        ],
+        "Q4": [
+          1,
+          2
+        ],
+        "Q5": [
+          2,
+          3
+        ],
+        "Q6": [
+          2,
+          3
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        70.0
+      ],
+      "model_sc_dq": [
+        70.0,
+        56.666666666666664
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q6": [
+          3,
+          1
+        ],
+        "Q7": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        81.66666666666667
+      ],
+      "model_sc_dq": [
+        70.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        61.666666666666664
+      ],
+      "model_sc_dq": [
+        100.0,
+        83.33333333333333
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          2,
+          3
+        ],
+        "Q3": [
+          1,
+          2
+        ],
+        "Q4": [
+          1,
+          2
+        ],
+        "Q5": [
+          2,
+          3
+        ],
+        "Q7": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "cortexproject_cortex_per-tenant-cardinality-api",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        70.0,
+        76.66666666666667
+      ],
+      "model_sc_dq": [
+        100.0,
+        96.66666666666667
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "C6": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          3
+        ],
+        "Q6": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_app-sync-using-impersonation",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        75.0,
+        70.0
+      ],
+      "model_sc_dq": [
+        75.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "Q6": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "adr_madr_0010-support-categories",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        90.0,
+        80.0
+      ],
+      "model_sc_dq": [
+        90.0,
+        81.66666666666667
+      ],
+      "criterion_differences": {
+        "Q1": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q6": [
+          2,
+          3
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        65.0
+      ],
+      "model_sc_dq": [
+        55.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C3": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        73.33333333333333
+      ],
+      "model_sc_dq": [
+        55.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C3": [
+          true,
+          false
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        81.66666666666667
+      ],
+      "model_sc_dq": [
+        70.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0003-aws-networking-outline",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        61.666666666666664
+      ],
+      "model_sc_dq": [
+        70.0,
+        55.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q2": [
+          1,
+          0
+        ],
+        "Q6": [
+          2,
+          1
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "cortexproject_cortex_ruler-ha-new",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        61.666666666666664
+      ],
+      "model_sc_dq": [
+        70.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q6": [
+          2,
+          1
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "cortexproject_cortex_parquet-storage",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        70.0,
+        73.33333333333333
+      ],
+      "model_sc_dq": [
+        70.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "Q2": [
+          1,
+          2
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "apache_airflow_0002-implement-standalone-python-command",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        81.66666666666667
+      ],
+      "model_sc_dq": [
+        100.0,
+        86.66666666666667
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        66.66666666666667
+      ],
+      "model_sc_dq": [
+        100.0,
+        96.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          2,
+          3
+        ],
+        "Q3": [
+          2,
+          3
+        ],
+        "Q4": [
+          1,
+          2
+        ],
+        "Q5": [
+          2,
+          3
+        ],
+        "Q6": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "apache_airflow_0007-using-database-volumes-for-backends",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        65.0
+      ],
+      "model_sc_dq": [
+        70.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "apache_airflow_0015-handling-rootless-docker",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        85.0,
+        65.0
+      ],
+      "model_sc_dq": [
+        70.0,
+        68.33333333333333
+      ],
+      "criterion_differences": {
+        "C6": [
+          true,
+          false
+        ],
+        "Q5": [
+          2,
+          3
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0010-sending-email-notifications",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        70.0,
+        81.66666666666667
+      ],
+      "model_sc_dq": [
+        100.0,
+        91.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "C4": [
+          false,
+          true
+        ],
+        "Q2": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        75.0,
+        61.666666666666664
+      ],
+      "model_sc_dq": [
+        75.0,
+        73.33333333333333
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          1,
+          2
+        ],
+        "Q5": [
+          2,
+          3
+        ],
+        "Q6": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0008-restricted-deletion",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        63.333333333333336
+      ],
+      "model_sc_dq": [
+        100.0,
+        91.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          2,
+          3
+        ],
+        "Q4": [
+          1,
+          2
+        ],
+        "Q5": [
+          2,
+          3
+        ],
+        "Q6": [
+          2,
+          3
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0012-file-attachment-rendering",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        68.33333333333333
+      ],
+      "model_sc_dq": [
+        100.0,
+        96.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          2,
+          3
+        ],
+        "Q3": [
+          2,
+          3
+        ],
+        "Q4": [
+          1,
+          2
+        ],
+        "Q5": [
+          2,
+          3
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0013-permitted-deletion",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        61.666666666666664
+      ],
+      "model_sc_dq": [
+        100.0,
+        86.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          1,
+          3
+        ],
+        "Q4": [
+          1,
+          2
+        ],
+        "Q5": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "adr_madr_0004-write-own-toc-tool",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        75.0,
+        45.0
+      ],
+      "model_sc_dq": [
+        90.0,
+        71.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          3
+        ],
+        "Q3": [
+          1,
+          2
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q5": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "npryce_adr-tools_0009-help-scripts",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        85.0,
+        58.333333333333336
+      ],
+      "model_sc_dq": [
+        85.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "C6": [
+          true,
+          false
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          1,
+          2
+        ],
+        "Q6": [
+          2,
+          1
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        75.0,
+        65.0
+      ],
+      "model_sc_dq": [
+        75.0,
+        66.66666666666667
+      ],
+      "criterion_differences": {
+        "Q2": [
+          2,
+          3
+        ],
+        "Q5": [
+          3,
+          2
+        ],
+        "Q6": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        85.0,
+        58.333333333333336
+      ],
+      "model_sc_dq": [
+        85.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "Q1": [
+          2,
+          3
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "adr_madr_0005-use-dashes-in-filenames",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        60.0,
+        53.333333333333336
+      ],
+      "model_sc_dq": [
+        75.0,
+        66.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q2": [
+          2,
+          3
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q6": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_headless-argocd",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        75.0,
+        61.666666666666664
+      ],
+      "model_sc_dq": [
+        80.0,
+        70.0
+      ],
+      "criterion_differences": {
+        "C1": [
+          true,
+          false
+        ],
+        "C4": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        75.0,
+        36.666666666666664
+      ],
+      "model_sc_dq": [
+        75.0,
+        66.66666666666667
+      ],
+      "criterion_differences": {
+        "Q1": [
+          1,
+          2
+        ],
+        "Q2": [
+          1,
+          3
+        ],
+        "Q3": [
+          1,
+          2
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q6": [
+          0,
+          1
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        75.0,
+        61.666666666666664
+      ],
+      "model_sc_dq": [
+        90.0,
+        70.0
+      ],
+      "criterion_differences": {
+        "C4": [
+          false,
+          true
+        ],
+        "Q2": [
+          1,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0015-bulk-data-loading",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        70.0,
+        58.333333333333336
+      ],
+      "model_sc_dq": [
+        85.0,
+        81.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          0,
+          1
+        ],
+        "Q4": [
+          0,
+          2
+        ],
+        "Q5": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "adr_madr_0006-use-names-as-identifier",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        75.0,
+        40.0
+      ],
+      "model_sc_dq": [
+        75.0,
+        66.66666666666667
+      ],
+      "criterion_differences": {
+        "Q2": [
+          1,
+          3
+        ],
+        "Q3": [
+          1,
+          2
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q6": [
+          0,
+          1
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        70.0,
+        53.333333333333336
+      ],
+      "model_sc_dq": [
+        85.0,
+        81.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          2,
+          3
+        ],
+        "Q5": [
+          2,
+          3
+        ],
+        "Q6": [
+          0,
+          1
+        ],
+        "Q7": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_content-publisher_0014-political-and-government-tagging",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        70.0,
+        36.666666666666664
+      ],
+      "model_sc_dq": [
+        85.0,
+        65.0
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          0,
+          1
+        ],
+        "Q3": [
+          1,
+          2
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q5": [
+          1,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr001-add-adr-log",
+      "human_overall": "Not_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        60.0,
+        31.666666666666668
+      ],
+      "model_sc_dq": [
+        60.0,
+        45.0
+      ],
+      "criterion_differences": {
+        "Q5": [
+          1,
+          2
+        ],
+        "Q6": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "temporalio_temporal_history-service",
+      "human_overall": "Not_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        40.0,
+        35.0
+      ],
+      "model_sc_dq": [
+        40.0,
+        68.33333333333333
+      ],
+      "criterion_differences": {
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          0,
+          1
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q5": [
+          1,
+          3
+        ],
+        "Q6": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "temporalio_temporal_chasm",
+      "human_overall": "Not_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        40.0,
+        31.666666666666668
+      ],
+      "model_sc_dq": [
+        60.0,
+        60.0
+      ],
+      "criterion_differences": {
+        "C5": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          0,
+          1
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q5": [
+          1,
+          2
+        ],
+        "Q6": [
+          0,
+          1
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "temporalio_temporal_retry",
+      "human_overall": "Not_Compliant",
+      "predicted_overall": "Partially_Compliant",
+      "human_sc_dq": [
+        25.0,
+        15.0
+      ],
+      "model_sc_dq": [
+        75.0,
+        61.666666666666664
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "C5": [
+          false,
+          true
+        ],
+        "C6": [
+          false,
+          true
+        ],
+        "Q1": [
+          1,
+          2
+        ],
+        "Q2": [
+          0,
+          1
+        ],
+        "Q3": [
+          1,
+          2
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q5": [
+          0,
+          2
+        ],
+        "Q6": [
+          0,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "backstage_backstage_adr014-use-fetch",
+      "human_overall": "Fully_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        90.0,
+        91.66666666666667
+      ],
+      "model_sc_dq": [
+        75.0,
+        83.33333333333333
+      ],
+      "criterion_differences": {
+        "C4": [
+          true,
+          false
+        ],
+        "Q3": [
+          3,
+          2
+        ],
+        "Q4": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+      "human_overall": "Not_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        70.0,
+        23.333333333333332
+      ],
+      "model_sc_dq": [
+        85.0,
+        61.666666666666664
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          0,
+          1
+        ],
+        "Q3": [
+          0,
+          2
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q5": [
+          1,
+          2
+        ],
+        "Q6": [
+          1,
+          2
+        ],
+        "Q7": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+      "human_overall": "Partially_Compliant",
+      "predicted_overall": "Mostly_Compliant",
+      "human_sc_dq": [
+        70.0,
+        53.333333333333336
+      ],
+      "model_sc_dq": [
+        100.0,
+        71.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "C4": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q2": [
+          0,
+          2
+        ],
+        "Q3": [
+          1,
+          2
+        ],
+        "Q4": [
+          0,
+          1
+        ],
+        "Q7": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        83.33333333333333
+      ],
+      "model_sc_dq": [
+        100.0,
+        96.66666666666667
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q2": [
+          2,
+          3
+        ],
+        "Q6": [
+          2,
+          3
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+      "human_overall": "Mostly_Compliant",
+      "predicted_overall": "Fully_Compliant",
+      "human_sc_dq": [
+        85.0,
+        63.333333333333336
+      ],
+      "model_sc_dq": [
+        100.0,
+        83.33333333333333
+      ],
+      "criterion_differences": {
+        "C3": [
+          false,
+          true
+        ],
+        "Q1": [
+          2,
+          3
+        ],
+        "Q3": [
+          2,
+          3
+        ],
+        "Q4": [
+          1,
+          2
+        ],
+        "Q6": [
+          1,
+          2
+        ],
+        "Q7": [
+          2,
+          3
+        ]
+      }
+    }
+  ],
+  "second_review_formula_discrepancies": [
+    "alphagov_govuk-aws_0005-terraform-module-location",
+    "alphagov_govuk-aws_0010-terraform-directory-structure",
+    "alphagov_govuk-aws_0015-dns-infrastructure",
+    "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+    "argoproj_argo-cd_app-sync-using-impersonation",
+    "backstage_backstage_adr015-jsx-loader-structure",
+    "cortexproject_cortex_ruler-ha-new",
+    "loopdive_js2_0001-hybrid-compilation-strategy",
+    "npryce_adr-tools_0003-single-command-with-subcommands",
+    "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+    "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package"
+  ],
+  "second_review_dimension_discrepancies": {
+    "sc_class": [
+      "argoproj_argo-cd_app-sync-using-impersonation",
+      "argoproj_argo-cd_feature-bounties",
+      "backstage_backstage_adr006-avoid-react-fc",
+      "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+      "backstage_backstage_adr013-use-node-fetch",
+      "backstage_backstage_adr015-jsx-loader-structure",
+      "loopdive_js2_0001-hybrid-compilation-strategy"
+    ],
+    "dq_class": [
+      "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+      "adr_madr_0006-use-names-as-identifier",
+      "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+      "alphagov_content-publisher_0003-initial-domain-modelling",
+      "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+      "alphagov_content-publisher_0007-minimal-model",
+      "alphagov_content-publisher_0008-restricted-deletion",
+      "alphagov_govuk-aws_0005-terraform-module-location",
+      "alphagov_govuk-aws_0010-terraform-directory-structure",
+      "alphagov_govuk-aws_0015-dns-infrastructure",
+      "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+      "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+      "apache_airflow_0003-bootstrapping-virtual-environment",
+      "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+      "apache_airflow_0011-unified-communication-with-the-users",
+      "argoproj_argo-cd_002-ui-extensions",
+      "argoproj_argo-cd_app-sync-using-impersonation",
+      "argoproj_argo-cd_feature-bounties",
+      "backstage_backstage_adr006-avoid-react-fc",
+      "backstage_backstage_adr013-use-node-fetch",
+      "backstage_backstage_adr015-jsx-loader-structure",
+      "cortexproject_cortex_ruler-ha-new",
+      "loopdive_js2_0001-hybrid-compilation-strategy",
+      "npryce_adr-tools_0003-single-command-with-subcommands",
+      "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+      "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package"
+    ]
+  },
+  "reviewer_counts": {
+    "first": {
+      "P04": 44,
+      "P05": 23,
+      "P07": 23,
+      "P01": 36,
+      "P02": 13,
+      "P06": 7,
+      "P03": 16
+    },
+    "second": {
+      "S03": 13,
+      "S02": 14,
+      "S01": 14
+    }
+  },
+  "human_distributions": {
+    "overall": {
+      "Fully_Compliant": 63,
+      "Mostly_Compliant": 53,
+      "Partially_Compliant": 33,
+      "Not_Compliant": 13
+    },
+    "sc_class": {
+      "Fully_Compliant": 107,
+      "Mostly_Compliant": 37,
+      "Partially_Compliant": 8,
+      "Not_Compliant": 10
+    },
+    "dq_class": {
+      "Fully_Compliant": 56,
+      "Mostly_Compliant": 33,
+      "Partially_Compliant": 52,
+      "Not_Compliant": 21
+    }
+  },
+  "human_criteria_distributions": {
+    "C1": {
+      "True": 162
+    },
+    "C2": {
+      "True": 162
+    },
+    "C3": {
+      "True": 129,
+      "False": 33
+    },
+    "C4": {
+      "True": 90,
+      "False": 72
+    },
+    "C5": {
+      "True": 152,
+      "False": 10
+    },
+    "C6": {
+      "True": 133,
+      "False": 29
+    },
+    "C7": {
+      "False": 61,
+      "True": 101
+    },
+    "Q1": {
+      "3": 109,
+      "2": 43,
+      "1": 10
+    },
+    "Q2": {
+      "3": 48,
+      "2": 35,
+      "1": 60,
+      "0": 19
+    },
+    "Q3": {
+      "3": 72,
+      "2": 69,
+      "1": 16,
+      "0": 5
+    },
+    "Q4": {
+      "2": 61,
+      "3": 26,
+      "1": 49,
+      "0": 26
+    },
+    "Q5": {
+      "3": 85,
+      "2": 60,
+      "1": 14,
+      "0": 3
+    },
+    "Q6": {
+      "3": 61,
+      "2": 63,
+      "1": 19,
+      "0": 19
+    },
+    "Q7": {
+      "3": 91,
+      "2": 66,
+      "1": 5
+    }
+  },
+  "input_encoding_anomalies": {
+    "loopdive_js2_0001-hybrid-compilation-strategy": {
+      "utf8_characters": 2579,
+      "run_input_characters": 2593,
+      "utf8_text_sha256": "c24d3b1c4a465fca6b67afc6a85f250f4a69b533d7e13fa1a72cf26e73febb91",
+      "run_input_sha256": "ce2bafe2553dd38be78d35309432bc75fa2d4ced2fefcd5457f2080b32140cc7"
+    },
+    "loopdive_js2_0004-aot": {
+      "utf8_characters": 2458,
+      "run_input_characters": 2468,
+      "utf8_text_sha256": "c0fa87488918aa24c00bd81495ff0aa141dd0f8c60dfd3b137b9f54b0f875a78",
+      "run_input_sha256": "2b29eeb682f36713efa1322245554300f7fe65423a3bf4876caaea5bb71e8488"
+    }
+  },
+  "run_validation": {
+    "configurations": 12,
+    "rows": 5832,
+    "api_errors": 0,
+    "criterion_parse_failures": 0,
+    "truncated_rows": 0
+  },
+  "input_lengths": {
+    "max": 32230,
+    "over_3500": 65
+  },
+  "repository_block_bootstrap_top_pair": {
+    "a": "gpt-5.5/few_shot",
+    "b": "gemini-2.5-pro/few_shot",
+    "n_repositories": 14,
+    "ci95_macro_f1_kappa_accuracy": [
+      [
+        -0.0671033738479698,
+        0.10194734703852187
+      ],
+      [
+        -0.1038342879796114,
+        0.06546186327814692
+      ],
+      [
+        -0.08074840432699963,
+        0.06061529933481145
+      ]
+    ],
+    "caution": "Exploratory repository resampling; 14 repositories, not a population-random sample."
+  }
+}

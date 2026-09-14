@@ -1,0 +1,254 @@
+{
+  "written_at": "2026-09-11T08:30:18.638164",
+  "purpose": "Single-source central result values for manuscript text, tables, plots, captions, abstract, discussion, and conclusion. Generate after the complete rerun and merge so no stale performance values remain in the paper.",
+  "source_files": {
+    "all_results": "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\raw_results\\all_results.json",
+    "metrics_summary": "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\analysis\\metrics_summary.json",
+    "performance_details": "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\analysis\\performance_details.json",
+    "criterion_level_performance": "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\analysis\\criterion_level_performance.json",
+    "error_analysis": "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\analysis\\error_analysis.json",
+    "manuscript_dataset_summary": "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\analysis\\manuscript_dataset_summary.json"
+  },
+  "majority_class_baseline": {
+    "majority_class": "Fully_Compliant",
+    "macro_f1": 0.14,
+    "weighted_f1": 0.2178
+  },
+  "best_macro_f1_configurations": [
+    {
+      "config": "gpt-5.5/few_shot",
+      "model": "gpt-5.5",
+      "model_label": "GPT-5.5",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1_mean": 0.556,
+      "macro_f1_std": 0.007,
+      "weighted_f1_mean": 0.533,
+      "weighted_f1_std": 0.016,
+      "macro_precision_mean": 0.606,
+      "macro_precision_std": 0.014,
+      "macro_recall_mean": 0.537,
+      "macro_recall_std": 0.007,
+      "cohen_kappa_mean": 0.32,
+      "cohen_kappa_std": 0.021,
+      "parse_failure_rate": 0.0,
+      "total_responses": 486,
+      "parse_failures": 0
+    }
+  ],
+  "best_cohen_kappa_configurations": [
+    {
+      "config": "gemini-2.5-pro/few_shot",
+      "model": "gemini-2.5-pro",
+      "model_label": "Gemini 2.5 Pro",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1_mean": 0.546,
+      "macro_f1_std": 0.021,
+      "weighted_f1_mean": 0.532,
+      "weighted_f1_std": 0.017,
+      "macro_precision_mean": 0.533,
+      "macro_precision_std": 0.019,
+      "macro_recall_mean": 0.571,
+      "macro_recall_std": 0.021,
+      "cohen_kappa_mean": 0.34,
+      "cohen_kappa_std": 0.023,
+      "parse_failure_rate": 0.0,
+      "total_responses": 486,
+      "parse_failures": 0
+    }
+  ],
+  "table_ii_rows": [
+    {
+      "model": "Claude Sonnet 4.6",
+      "strategy": "CoT",
+      "macro_f1": "0.303 +/- 0.005",
+      "weighted_f1": "0.217 +/- 0.011",
+      "macro_precision": "0.459 +/- 0.035",
+      "macro_recall": "0.449 +/- 0.004",
+      "cohen_kappa": "0.090 +/- 0.010",
+      "parse_failure_rate": "0.0000",
+      "source_config": "claude-sonnet-4-6/chain_of_thought"
+    },
+    {
+      "model": "Claude Sonnet 4.6",
+      "strategy": "FS",
+      "macro_f1": "0.495 +/- 0.009",
+      "weighted_f1": "0.414 +/- 0.007",
+      "macro_precision": "0.544 +/- 0.014",
+      "macro_recall": "0.563 +/- 0.007",
+      "cohen_kappa": "0.238 +/- 0.010",
+      "parse_failure_rate": "0.0000",
+      "source_config": "claude-sonnet-4-6/few_shot"
+    },
+    {
+      "model": "Claude Sonnet 4.6",
+      "strategy": "ZS",
+      "macro_f1": "0.341 +/- 0.012",
+      "weighted_f1": "0.259 +/- 0.016",
+      "macro_precision": "0.486 +/- 0.037",
+      "macro_recall": "0.480 +/- 0.009",
+      "cohen_kappa": "0.131 +/- 0.015",
+      "parse_failure_rate": "0.0000",
+      "source_config": "claude-sonnet-4-6/zero_shot"
+    },
+    {
+      "model": "Gemini 2.5 Pro",
+      "strategy": "CoT",
+      "macro_f1": "0.494 +/- 0.031",
+      "weighted_f1": "0.480 +/- 0.032",
+      "macro_precision": "0.497 +/- 0.035",
+      "macro_recall": "0.558 +/- 0.031",
+      "cohen_kappa": "0.297 +/- 0.047",
+      "parse_failure_rate": "0.0000",
+      "source_config": "gemini-2.5-pro/chain_of_thought"
+    },
+    {
+      "model": "Gemini 2.5 Pro",
+      "strategy": "FS",
+      "macro_f1": "0.546 +/- 0.021",
+      "weighted_f1": "0.532 +/- 0.017",
+      "macro_precision": "0.533 +/- 0.019",
+      "macro_recall": "0.571 +/- 0.021",
+      "cohen_kappa": "0.340 +/- 0.023",
+      "parse_failure_rate": "0.0000",
+      "source_config": "gemini-2.5-pro/few_shot"
+    },
+    {
+      "model": "Gemini 2.5 Pro",
+      "strategy": "ZS",
+      "macro_f1": "0.499 +/- 0.005",
+      "weighted_f1": "0.486 +/- 0.016",
+      "macro_precision": "0.497 +/- 0.006",
+      "macro_recall": "0.575 +/- 0.003",
+      "cohen_kappa": "0.311 +/- 0.011",
+      "parse_failure_rate": "0.0000",
+      "source_config": "gemini-2.5-pro/zero_shot"
+    },
+    {
+      "model": "GPT-5.5",
+      "strategy": "CoT",
+      "macro_f1": "0.450 +/- 0.005",
+      "weighted_f1": "0.383 +/- 0.015",
+      "macro_precision": "0.508 +/- 0.006",
+      "macro_recall": "0.521 +/- 0.003",
+      "cohen_kappa": "0.206 +/- 0.017",
+      "parse_failure_rate": "0.0000",
+      "source_config": "gpt-5.5/chain_of_thought"
+    },
+    {
+      "model": "GPT-5.5",
+      "strategy": "FS",
+      "macro_f1": "0.556 +/- 0.007",
+      "weighted_f1": "0.533 +/- 0.016",
+      "macro_precision": "0.606 +/- 0.014",
+      "macro_recall": "0.537 +/- 0.007",
+      "cohen_kappa": "0.320 +/- 0.021",
+      "parse_failure_rate": "0.0000",
+      "source_config": "gpt-5.5/few_shot"
+    },
+    {
+      "model": "GPT-5.5",
+      "strategy": "ZS",
+      "macro_f1": "0.408 +/- 0.006",
+      "weighted_f1": "0.340 +/- 0.017",
+      "macro_precision": "0.469 +/- 0.020",
+      "macro_recall": "0.485 +/- 0.013",
+      "cohen_kappa": "0.165 +/- 0.014",
+      "parse_failure_rate": "0.0000",
+      "source_config": "gpt-5.5/zero_shot"
+    },
+    {
+      "model": "Ministral 3 8B",
+      "strategy": "CoT",
+      "macro_f1": "0.479 +/- 0.015",
+      "weighted_f1": "0.452 +/- 0.011",
+      "macro_precision": "0.453 +/- 0.016",
+      "macro_recall": "0.531 +/- 0.007",
+      "cohen_kappa": "0.239 +/- 0.011",
+      "parse_failure_rate": "0.0000",
+      "source_config": "ministral-3-8b/chain_of_thought"
+    },
+    {
+      "model": "Ministral 3 8B",
+      "strategy": "FS",
+      "macro_f1": "0.496 +/- 0.011",
+      "weighted_f1": "0.456 +/- 0.014",
+      "macro_precision": "0.473 +/- 0.015",
+      "macro_recall": "0.558 +/- 0.010",
+      "cohen_kappa": "0.271 +/- 0.015",
+      "parse_failure_rate": "0.0000",
+      "source_config": "ministral-3-8b/few_shot"
+    },
+    {
+      "model": "Ministral 3 8B",
+      "strategy": "ZS",
+      "macro_f1": "0.420 +/- 0.025",
+      "weighted_f1": "0.410 +/- 0.028",
+      "macro_precision": "0.398 +/- 0.027",
+      "macro_recall": "0.505 +/- 0.018",
+      "cohen_kappa": "0.210 +/- 0.030",
+      "parse_failure_rate": "0.0000",
+      "source_config": "ministral-3-8b/zero_shot"
+    },
+    {
+      "model": "Majority-class baseline",
+      "strategy": "--",
+      "macro_f1": "0.1400",
+      "weighted_f1": "0.2178",
+      "macro_precision": "--",
+      "macro_recall": "--",
+      "cohen_kappa": "--",
+      "parse_failure_rate": "--",
+      "source_config": "results\\runs\\v31_fulltext_gpt_medium_exact_scoring\\analysis\\manuscript_dataset_summary.json"
+    }
+  ],
+  "figure_caption_values": {
+    "fig_iii": "Macro-F1 by model and prompting strategy. Dashed line: majority-class baseline (macro-F1 = 0.1400).",
+    "fig_iv": "Macro-F1 versus Cohen's kappa divergence. The highest macro-F1 and highest Cohen's kappa occur in different configurations."
+  },
+  "copy_ready_manuscript_sentences": {
+    "main_results": "The strongest macro-F1 configuration is GPT-5.5 FS (0.556), while the strongest chance-corrected agreement is Gemini 2.5 Pro FS (0.340). The majority-class baseline has macro-F1 = 0.1400, which provides the reference point for interpreting model gains beyond class-prior prediction.",
+    "capability_gap": "We treat this as the calibration contribution of the paper: even the strongest configuration achieved macro-F1 = 0.556 and Cohen's kappa = 0.340, with the largest remaining errors concentrated in Fully_Compliant -> Mostly_Compliant errors, indicating that current LLMs remain below the reliability required for autonomous ADR compliance assessment.",
+    "prior_work_comparison": "Our best macro-F1 of 0.556 contextualizes the more optimistic results in the literature because this benchmark evaluates multi-dimensional compliance on real, heterogeneous ADRs rather than narrower violation-detection or generation-quality tasks.",
+    "conclusion": "Within this benchmark, across the evaluated model and prompting configurations, the strongest macro-F1 is 0.556 and the strongest Cohen's kappa is 0.340, supporting a human-in-the-loop deployment model rather than autonomous compliance decisions."
+  },
+  "claim_scope_notes": {
+    "scope_sentence": "Claims should be scoped to the frozen 162-ADR evaluation set, the C1-C7/Q1-Q7 rubric, the evaluated models, the three prompt conditions, and the human-reviewed reference labels.",
+    "avoid_unqualified_claims": [
+      "balanced synthetic datasets systematically overestimate LLM performance",
+      "incremental model improvements will not resolve ADR compliance checking",
+      "the observed performance ceiling applies to all LLMs or all ADR corpora",
+      "frontier or open-weight model conclusions beyond the tested configurations"
+    ],
+    "safe_claim_pattern": "The results suggest, within the tested benchmark, that evaluations limited to balanced, synthetic, or highly curated data may miss error patterns found in heterogeneous real-world ADRs."
+  },
+  "manuscript_locations_to_update": [
+    "Abstract result claims",
+    "Table II performance rows",
+    "Criterion-level C1-C7 and Q1-Q7 performance table",
+    "SC, DQ, and overall confusion matrices",
+    "Fig. III caption and baseline line",
+    "Fig. IV caption and kappa/F1 divergence claim",
+    "Results main performance paragraph",
+    "Best macro-F1 and best kappa observations",
+    "Prior-work comparison paragraph",
+    "Industry-practitioner implications",
+    "Discussion capability-gap sentence",
+    "Conclusion result claim"
+  ],
+  "stale_terms_to_audit": [
+    "macro-F1 = 0.31",
+    "F1=0.31",
+    "F1 = 0.57",
+    "Our F1 = 0.57",
+    "Claude achieves highest kappa",
+    "Claude achieves highest \u03ba",
+    "GPT-5.1",
+    "mistral-small-latest",
+    "systematically overestimate",
+    "performance ceiling",
+    "incremental model capability improvements alone",
+    "balanced synthetic datasets"
+  ]
+}

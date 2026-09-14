@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the article and the immutable replication-package release."
+title: "Can LLMs Check Your Architecture Decisions? Replication Package"
+type: software
+authors:
+  - family-names: Kesharwani
+    given-names: Avitesh
+  - family-names: Berg-Saether
+    given-names: Bjarne
+repository-code: "https://github.com/er-avitesh/adr-compliance-benchmark"
+license: MIT

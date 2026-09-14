@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-09-08T11:00:00.677659",
+  "run_id": "v31_fulltext_gpt_medium",
+  "protocol_version": "v31-fulltext-criterion-derived-1",
+  "result_schema_version": 4,
+  "input_policy": "full_text",
+  "evaluation_set_size": 162,
+  "repetitions": 3,
+  "evaluation_set_sha256": "4e9e16054c772183a4e1a0203190b12e3c710227cbd183932863af32b41cc89a",
+  "ground_truth_sha256": "eaa756e2ddc499241cee96ec9158df919881c00f62fc6ff171aa0b5e5fbbe00a",
+  "active_mistral_variant": "ministral-3-8b-api",
+  "protocol_fingerprints": {
+    "gpt-5.5/zero_shot": "2ebfdfc710ec616739a2d85335b8b945729435cc34c6152efbebb782801929df",
+    "gpt-5.5/few_shot": "0991e20b230f65d44a614bf713855d7b4869e73bdad6b5a2fa9a0f42776cc99b",
+    "gpt-5.5/chain_of_thought": "1257e011f20f4a4777e73b46d7d836e0238cb880d17601a9124ce739fb461591",
+    "claude-sonnet-4-6/zero_shot": "a38e1cc41f932faf659794d2ea4929b7994910f14a342830313b4e61ce717a4d",
+    "claude-sonnet-4-6/few_shot": "799207bf70f8a61de4066e6c657edd8ca0be92d67cc4636d5b5294c45f9427eb",
+    "claude-sonnet-4-6/chain_of_thought": "a4b8460219c5b493714d659b20f2fa187ef0f1f40b2f118bdd75af48d2a8ee37",
+    "ministral-3-8b/zero_shot": "9bd7438ef7ddd4ea08cb3361be085138f92eaf707d8c5ce3d9313adbe0d60c2c",
+    "ministral-3-8b/few_shot": "5632d210906e00d7eea3968b417ae0b58a7e1378fed0a522b10b68312fdfd601",
+    "ministral-3-8b/chain_of_thought": "75a916de43f1cab6dcab71651bd0bc76e09ca1a5d842447c9a786f820c9a244a",
+    "gemini-2.5-pro/zero_shot": "07afeb29bf3c2ff505eb9dafd3b406a70d7840601b951b75832165c5651b6bce",
+    "gemini-2.5-pro/few_shot": "4647cbc33e98be00c8d1cf90612c6b964a600ae9b561c3a19b423d99da16ccf2",
+    "gemini-2.5-pro/chain_of_thought": "ae90620eba28c56bae9673083df3563eb6cbaf26171975103d99dd2372dfce15"
+  }
+}

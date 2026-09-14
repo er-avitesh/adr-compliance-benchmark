@@ -1,0 +1,240 @@
+{
+  "written_at": "2026-09-08T11:53:37.745945",
+  "purpose": "Pre-flight API smoke test for the active model identifiers, prompt strategies, JSON schema, parser, token capture, and criterion-level C1-C7/Q1-Q7 output capture. This file is not used for benchmark scoring.",
+  "active_mistral_variant": "ministral-3-8b-api",
+  "result_schema_version": 4,
+  "active_model_reproducibility": [
+    {
+      "model_key": "gpt-5.5",
+      "paper_label": "GPT-5.5",
+      "provider": "OpenAI",
+      "exact_model_id": "gpt-5.5-2026-04-23",
+      "access_mode": "OpenAI Chat Completions API",
+      "api_version": "SDK default; no explicit API version parameter in request",
+      "endpoint_or_deployment": "OpenAI hosted endpoint",
+      "configured_base_url": null,
+      "context_window_tokens": 1050000,
+      "access_date": "Recorded per final API run in raw result metadata; manifest generated before rerun.",
+      "temperature": "provider default; temperature parameter not sent",
+      "top_p": "provider default; top_p parameter not sent",
+      "max_output": "max_completion_tokens=8192",
+      "structured_output_mode": "Prompt-enforced JSON only; no provider-native structured-output mode",
+      "reasoning_setting": "reasoning_effort=medium",
+      "system_prompt": "Shared SYSTEM_PROMPT in prompt manifest",
+      "prompt_strategies": [
+        "zero_shot",
+        "few_shot",
+        "chain_of_thought"
+      ],
+      "retry_policy": "Up to 3 total API attempts for transient provider/network errors, including 429/rate-limit, upstream reset, timeout, and overflow errors; waits 10 seconds, then 30 seconds on final API retry. The runner also retries incomplete model outputs that omit required C1-C7/Q1-Q7 fields or end because of output truncation.",
+      "rate_limit_delay_seconds": 1.0,
+      "cost_assumption_usd_per_million_input_tokens": 5.0,
+      "cost_assumption_usd_per_million_output_tokens": 30.0,
+      "cost_assumption_basis": "Configured study assumption",
+      "pricing_source": "Provider pricing page, to be verified on final rerun date",
+      "pricing_date": "Set at final rerun",
+      "subscription_or_tier": "API pay-as-you-go or configured project tier",
+      "cached_token_treatment": "No cached-token discount assumed unless raw billing export documents it",
+      "local_compute_assumption": "Not applicable"
+    },
+    {
+      "model_key": "claude-sonnet-4-6",
+      "paper_label": "Claude Sonnet 4.6",
+      "provider": "Anthropic",
+      "exact_model_id": "claude-sonnet-4-6",
+      "access_mode": "Anthropic Messages API",
+      "api_version": "SDK default; no explicit API version parameter in request",
+      "endpoint_or_deployment": "Anthropic hosted endpoint",
+      "configured_base_url": null,
+      "context_window_tokens": 1000000,
+      "access_date": "Recorded per final API run in raw result metadata; manifest generated before rerun.",
+      "temperature": "provider default; temperature parameter not sent",
+      "top_p": "provider default; top_p parameter not sent",
+      "max_output": "max_tokens=4096",
+      "structured_output_mode": "Prompt-enforced JSON only; no provider-native structured-output mode",
+      "reasoning_setting": "Provider default; no explicit thinking/reasoning parameter sent",
+      "system_prompt": "Shared SYSTEM_PROMPT in prompt manifest",
+      "prompt_strategies": [
+        "zero_shot",
+        "few_shot",
+        "chain_of_thought"
+      ],
+      "retry_policy": "Up to 3 total API attempts for transient provider/network errors, including 429/rate-limit, upstream reset, timeout, and overflow errors; waits 10 seconds, then 30 seconds on final API retry. The runner also retries incomplete model outputs that omit required C1-C7/Q1-Q7 fields or end because of output truncation.",
+      "rate_limit_delay_seconds": 1.0,
+      "cost_assumption_usd_per_million_input_tokens": 3.0,
+      "cost_assumption_usd_per_million_output_tokens": 15.0,
+      "cost_assumption_basis": "Configured study assumption",
+      "pricing_source": "Provider pricing page, to be verified on final rerun date",
+      "pricing_date": "Set at final rerun",
+      "subscription_or_tier": "API pay-as-you-go or configured project tier",
+      "cached_token_treatment": "No cached-token discount assumed unless raw billing export documents it",
+      "local_compute_assumption": "Not applicable"
+    },
+    {
+      "model_key": "ministral-3-8b",
+      "paper_label": "Ministral 3 8B",
+      "provider": "Mistral AI",
+      "exact_model_id": "ministral-8b-2512",
+      "access_mode": "Hosted Mistral Chat Completions API",
+      "api_version": "Mistral v1 chat completions API through OpenAI-compatible client",
+      "endpoint_or_deployment": "https://api.mistral.ai/v1/chat/completions, or MINISTRAL_BASE_URL override",
+      "configured_base_url": "https://api.mistral.ai/v1",
+      "context_window_tokens": 256000,
+      "access_date": "Recorded per final API run in raw result metadata; manifest generated before rerun.",
+      "temperature": "0",
+      "top_p": "provider default; top_p parameter not sent",
+      "max_output": "max_tokens=2048",
+      "structured_output_mode": "Prompt-enforced JSON only; provider-native structured-output mode not enabled",
+      "reasoning_setting": "None",
+      "system_prompt": "Shared SYSTEM_PROMPT in prompt manifest",
+      "prompt_strategies": [
+        "zero_shot",
+        "few_shot",
+        "chain_of_thought"
+      ],
+      "retry_policy": "Up to 3 total API attempts for transient provider/network errors, including 429/rate-limit, upstream reset, timeout, and overflow errors; waits 10 seconds, then 30 seconds on final API retry. The runner also retries incomplete model outputs that omit required C1-C7/Q1-Q7 fields or end because of output truncation.",
+      "rate_limit_delay_seconds": 1.0,
+      "cost_assumption_usd_per_million_input_tokens": 0.15,
+      "cost_assumption_usd_per_million_output_tokens": 0.15,
+      "cost_assumption_basis": "Hosted Mistral API pricing for Ministral 3 8B; verify on final rerun date",
+      "pricing_source": "Mistral Ministral 3 8B model page, to be verified on final rerun date",
+      "pricing_date": "Set at final rerun",
+      "subscription_or_tier": "Mistral API pay-as-you-go or configured workspace tier",
+      "cached_token_treatment": "No cached-token discount assumed unless raw billing export documents it",
+      "local_compute_assumption": "Not applicable"
+    },
+    {
+      "model_key": "gemini-2.5-pro",
+      "paper_label": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "exact_model_id": "gemini-2.5-pro",
+      "access_mode": "Google GenAI generate_content API",
+      "api_version": "SDK default; no explicit API version parameter in request",
+      "endpoint_or_deployment": "Google hosted endpoint",
+      "configured_base_url": null,
+      "context_window_tokens": 1048576,
+      "access_date": "Recorded per final API run in raw result metadata; manifest generated before rerun.",
+      "temperature": "provider default; temperature parameter not sent",
+      "top_p": "provider default; top_p parameter not sent",
+      "max_output": "max_output_tokens=8192",
+      "structured_output_mode": "Prompt-enforced JSON only; no provider-native structured-output mode",
+      "reasoning_setting": "Provider default; no explicit thinking/reasoning parameter sent",
+      "system_prompt": "Shared SYSTEM_PROMPT in prompt manifest",
+      "prompt_strategies": [
+        "zero_shot",
+        "few_shot",
+        "chain_of_thought"
+      ],
+      "retry_policy": "Up to 3 total API attempts for transient provider/network errors, including 429/rate-limit, upstream reset, timeout, and overflow errors; waits 10 seconds, then 30 seconds on final API retry. The runner also retries incomplete model outputs that omit required C1-C7/Q1-Q7 fields or end because of output truncation.",
+      "rate_limit_delay_seconds": 1.0,
+      "cost_assumption_usd_per_million_input_tokens": 1.25,
+      "cost_assumption_usd_per_million_output_tokens": 10.0,
+      "cost_assumption_basis": "Configured study assumption, standard tier",
+      "pricing_source": "Provider pricing page, to be verified on final rerun date",
+      "pricing_date": "Set at final rerun",
+      "subscription_or_tier": "API pay-as-you-go or configured project tier",
+      "cached_token_treatment": "No cached-token discount assumed unless raw billing export documents it",
+      "local_compute_assumption": "Not applicable"
+    }
+  ],
+  "smoke_adr": {
+    "id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+    "source_repo": "argoproj/argo-cd",
+    "variant": "LIGHTWEIGHT",
+    "domain": "DevOps",
+    "human_overall": "Fully_Compliant"
+  },
+  "summary": {
+    "total_targets": 12,
+    "passed": 0,
+    "skipped_missing_api_key": 12,
+    "failed": 0,
+    "all_passed": false
+  },
+  "results": [
+    {
+      "model": "gpt-5.5",
+      "strategy": "zero_shot",
+      "status": "missing_api_key",
+      "required_env_var": "OPENAI_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "gpt-5.5",
+      "strategy": "few_shot",
+      "status": "missing_api_key",
+      "required_env_var": "OPENAI_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "gpt-5.5",
+      "strategy": "chain_of_thought",
+      "status": "missing_api_key",
+      "required_env_var": "OPENAI_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "strategy": "zero_shot",
+      "status": "missing_api_key",
+      "required_env_var": "ANTHROPIC_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "strategy": "few_shot",
+      "status": "missing_api_key",
+      "required_env_var": "ANTHROPIC_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "strategy": "chain_of_thought",
+      "status": "missing_api_key",
+      "required_env_var": "ANTHROPIC_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "ministral-3-8b",
+      "strategy": "zero_shot",
+      "status": "missing_api_key",
+      "required_env_var": "MISTRAL_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "ministral-3-8b",
+      "strategy": "few_shot",
+      "status": "missing_api_key",
+      "required_env_var": "MISTRAL_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "ministral-3-8b",
+      "strategy": "chain_of_thought",
+      "status": "missing_api_key",
+      "required_env_var": "MISTRAL_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "strategy": "zero_shot",
+      "status": "missing_api_key",
+      "required_env_var": "GEMINI_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "strategy": "few_shot",
+      "status": "missing_api_key",
+      "required_env_var": "GEMINI_API_KEY",
+      "result_schema_version": 4
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "strategy": "chain_of_thought",
+      "status": "missing_api_key",
+      "required_env_var": "GEMINI_API_KEY",
+      "result_schema_version": 4
+    }
+  ]
+}

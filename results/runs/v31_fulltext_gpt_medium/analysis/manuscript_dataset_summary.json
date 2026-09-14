@@ -1,0 +1,173 @@
+{
+  "written_at": "2026-09-08T18:55:13.451499",
+  "purpose": "Single-source dataset statistics for manuscript text, tables, and figure captions. Use this file to avoid stale 100-ADR, 176-ADR, or old class-distribution claims.",
+  "source_files": {
+    "evaluation_manifest": "results\\eval_set.json",
+    "sampling_audit": "results\\runs\\v31_fulltext_gpt_medium\\analysis\\sampling_audit.json",
+    "human_labels": "results\\human_ground_truth.json"
+  },
+  "evaluation_set": {
+    "n": 162,
+    "class_distribution": {
+      "Fully_Compliant": {
+        "count": 63,
+        "percent": 38.9
+      },
+      "Mostly_Compliant": {
+        "count": 53,
+        "percent": 32.7
+      },
+      "Partially_Compliant": {
+        "count": 33,
+        "percent": 20.4
+      },
+      "Not_Compliant": {
+        "count": 13,
+        "percent": 8.0
+      }
+    },
+    "majority_class_baseline": {
+      "majority_class": "Fully_Compliant",
+      "macro_f1": 0.14,
+      "weighted_f1": 0.2178
+    },
+    "repository_distribution": {
+      "alphagov/govuk-aws": {
+        "count": 25,
+        "percent": 15.4
+      },
+      "argoproj/argo-cd": {
+        "count": 21,
+        "percent": 13.0
+      },
+      "cortexproject/cortex": {
+        "count": 20,
+        "percent": 12.3
+      },
+      "adr/madr": {
+        "count": 17,
+        "percent": 10.5
+      },
+      "alphagov/content-publisher": {
+        "count": 16,
+        "percent": 9.9
+      },
+      "apache/airflow": {
+        "count": 15,
+        "percent": 9.3
+      },
+      "backstage/backstage": {
+        "count": 15,
+        "percent": 9.3
+      },
+      "thomvaill/log4brains": {
+        "count": 10,
+        "percent": 6.2
+      },
+      "npryce/adr-tools": {
+        "count": 8,
+        "percent": 4.9
+      },
+      "temporalio/temporal": {
+        "count": 7,
+        "percent": 4.3
+      },
+      "aws/aws-cdk": {
+        "count": 3,
+        "percent": 1.9
+      },
+      "MITLibraries/timdex-ui": {
+        "count": 2,
+        "percent": 1.2
+      },
+      "loopdive/js2": {
+        "count": 2,
+        "percent": 1.2
+      },
+      "openfga/openfga": {
+        "count": 1,
+        "percent": 0.6
+      }
+    },
+    "template_variant_distribution": {
+      "NYGARD": {
+        "count": 80,
+        "percent": 49.4
+      },
+      "OTHER": {
+        "count": 50,
+        "percent": 30.9
+      },
+      "LIGHTWEIGHT": {
+        "count": 20,
+        "percent": 12.3
+      },
+      "MADR": {
+        "count": 12,
+        "percent": 7.4
+      }
+    },
+    "domain_distribution": {
+      "Government": {
+        "count": 41,
+        "percent": 25.3
+      },
+      "Platform": {
+        "count": 38,
+        "percent": 23.5
+      },
+      "Tooling": {
+        "count": 27,
+        "percent": 16.7
+      },
+      "DevOps": {
+        "count": 21,
+        "percent": 13.0
+      },
+      "Observability": {
+        "count": 20,
+        "percent": 12.3
+      },
+      "Infrastructure": {
+        "count": 11,
+        "percent": 6.8
+      },
+      "Compiler": {
+        "count": 2,
+        "percent": 1.2
+      },
+      "Library Discovery": {
+        "count": 2,
+        "percent": 1.2
+      }
+    },
+    "length_words": {
+      "mean": 758.8,
+      "min": 59,
+      "max": 4295
+    }
+  },
+  "plain_language_values_for_manuscript": {
+    "class_distribution_sentence": "The frozen 162-ADR evaluation set contains 63 Fully Compliant (38.9%), 53 Mostly Compliant (32.7%), 33 Partially Compliant (20.4%), and 13 Not Compliant (8.0%) ADRs.",
+    "repository_count_sentence": "The evaluation set spans 14 licensed source repositories, 4 ADR format categories, and 8 application domains.",
+    "majority_baseline_sentence": "For this four-class evaluation set, the majority-class baseline always predicts Fully Compliant and has macro-F1 = 0.14."
+  },
+  "stale_terms_to_audit": [
+    "100 ADRs",
+    "100-ADR",
+    "176 ADRs",
+    "194 ADRs",
+    "12% Compliant",
+    "86% Partially Compliant",
+    "2% Non-Compliant",
+    "60% Partially Compliant",
+    "7/60/33",
+    "Partially Compliant class dominates",
+    "majority-class baseline always predicting Partially Compliant",
+    "Non-Compliant class contains only two"
+  ],
+  "notes": [
+    "Dataset distributions do not require a model/API run once eval_set.json and human_ground_truth.json are frozen.",
+    "Performance values, best-model claims, and confusion matrices still require the final complete rerun and merge."
+  ]
+}

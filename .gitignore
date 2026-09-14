@@ -1,0 +1,41 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+pytest-cache-files-*/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# JavaScript dependencies and local tool bundles
+node_modules/
+**/node_modules/
+python_deps/
+**/python_deps/
+
+# Generated builds and temporary renders
+build/
+dist/
+tmp_*_render/
+**/render_temp/
+**/render_temp_*/
+
+# Legacy unscoped outputs
+results/smoke_tests/
+results/batch_jobs/
+
+# Reviewer smoke runs are disposable and never part of reported results
+results/runs/reviewer_smoke*/
+results/runs/*validation*/
+results/runs/codex_*/

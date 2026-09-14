@@ -1,0 +1,10 @@
+{
+  "id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+  "source_repo": "alphagov/govuk-aws",
+  "filename": "0026-remove-load-balancer-tier.md",
+  "url": "https://github.com/alphagov/govuk-aws/blob/HEAD/docs/architecture/decisions/0026-remove-load-balancer-tier.md",
+  "word_count": 211,
+  "variant": "NYGARD",
+  "text": "# 26. Remove load balancer tier\n\nDate: 2017-08-16\n\n## Status\n\nAccepted\n\n## Context\n\nWe currently have a dedicated tier of load balancers for the backend, frontend and api\nVDCs. In the Amazon world these are less useful as we also have ELBs in place to handle\nthe autoscaling of instances. We want to reduce the networking complexity and remove these machines.\n\n## Decision\n\nWe will not change the current vcloud based platforms.\n\nIn the AWS environment we will remove the load balancer hosts / ELBs and instead add external\nELBs to a number of other autoscaling groups (such as the frontend / backend hosts themselves) \nto make them directly available, but security group restricted.\n\nWe have also decided to split the domains we use to an internal and external one. That\nis discussed in ADR TODO: TBC.\n\n## Consequences\n\n3 classes of machines, and the instances running them, will be removed from our architecture\nin this environment. Some of the LBs processing, such as trace ids, will be pushed down\nthe stack to the application servers themselves. We will have more ELBs running for a period of time.\n\nAll traffic will go to the external domain names at this phase of the move. The ADR TODO: TBC will\nexplain the risks and remediations for this change.\n",
+  "fetched_at": "2026-08-28T00:00:00"
+}

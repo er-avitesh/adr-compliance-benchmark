@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "protocol_version": "v31-fulltext-criterion-derived-1",
+  "purpose": "Make the two platform-dependent text decodings in the original provider run explicit and reproducible",
+  "transform": "Encode the stored Unicode text as UTF-8 bytes, then decode those bytes as Windows-1252 before prompt construction",
+  "exceptions": [
+    {
+      "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+      "stored_text_chars": 2579,
+      "stored_text_sha256": "c24d3b1c4a465fca6b67afc6a85f250f4a69b533d7e13fa1a72cf26e73febb91",
+      "model_input_chars": 2593,
+      "model_input_sha256": "ce2bafe2553dd38be78d35309432bc75fa2d4ced2fefcd5457f2080b32140cc7"
+    },
+    {
+      "adr_id": "loopdive_js2_0004-aot",
+      "stored_text_chars": 2458,
+      "stored_text_sha256": "c0fa87488918aa24c00bd81495ff0aa141dd0f8c60dfd3b137b9f54b0f875a78",
+      "model_input_chars": 2468,
+      "model_input_sha256": "2b29eeb682f36713efa1322245554300f7fe65423a3bf4876caaea5bb71e8488"
+    }
+  ],
+  "scope": "The transform preserves the exact text sent in the reported run. It affects punctuation encoding in two ADRs and does not truncate either document.",
+  "analysis_note": "The manuscript evidence includes a 160-ADR exclusion check for these two records. No provider responses were regenerated."
+}

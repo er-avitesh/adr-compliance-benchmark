@@ -1,0 +1,30 @@
+name: Verify replication package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run unit and integration tests
+        run: python -B -m unittest discover -s tests -v
+      - name: Verify retained evidence
+        run: python -B scripts/verify_release.py
+      - name: Build reviewer package
+        run: python -B scripts/build_release.py --version v0.0.0-ci --no-zip
+      - name: Verify built reviewer package
+        run: python -B scripts/verify_release.py --root dist/adr-compliance-benchmark-v0.0.0-ci

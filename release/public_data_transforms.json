@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "purpose": "Remove personal reviewer identifiers and unpublished extra labels from public artifacts.",
+  "transforms": [
+    {
+      "path": "results/human_ground_truth.json",
+      "source_sha256": "eaa756e2ddc499241cee96ec9158df919881c00f62fc6ff171aa0b5e5fbbe00a",
+      "public_sha256": "e2ef95c6db5ed5c05e75c46719467cb9c5be4ef7dff9916b20f12c914eadd3dd",
+      "source_records": 177,
+      "public_records": 166,
+      "removed_records": 11,
+      "reviewer_codes": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "preserved_content_sha256_excluding_reviewer_id": "65c1a570c6ba81f5ffcb33bed6cddaddb211e9cac50eace9e93d3226a24d9505"
+    },
+    {
+      "path": "results/human_ground_truth_interrator.json",
+      "source_sha256": "c31c0b80bc70f039126f014f6f622a9a15488f52c0d58cea09513f3d2292d453",
+      "public_sha256": "a1778c551ec1eb8610b2d2bc19f95ba921c8b05cf12b9118c239b04cce623b19",
+      "source_records": 41,
+      "public_records": 41,
+      "removed_records": 0,
+      "reviewer_codes": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "preserved_content_sha256_excluding_reviewer_id": "706c6e6c91f2fde5ced4bc48ee02b89ad63ae1868a9f371601ee2b9eab244e0f"
+    },
+    {
+      "path": "results/runs/v31_fulltext_gpt_medium_exact_scoring/analysis/manuscript_evidence/evidence.json",
+      "source_sha256": "dd112418c5551effc74f0930cd794bb030675a6ca25283ccc73fb8c870873ad4",
+      "public_sha256": "c9c94563b4f76eec8e5bbd912784efea63f88db0abb4179aceeaca7ede9ef0dc",
+      "changed_field": "reviewer_counts object keys",
+      "primary_reviewer_codes": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "second_reviewer_codes": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    }
+  ]
+}

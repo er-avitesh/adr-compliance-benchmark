@@ -1,0 +1,2833 @@
+{
+  "generated_at": "2026-09-08T23:10:13.943440+00:00",
+  "purpose": "Performance sensitivity to alternative criterion weights, composite weights, and structural floors using saved criterion-level human and model outputs.",
+  "method": {
+    "api_calls": 0,
+    "n_adrs": 162,
+    "n_configurations": 12,
+    "repetitions_per_configuration": 3,
+    "labels_recomputed_for_both_sides": true,
+    "macro_f1_classes": [
+      "Fully_Compliant",
+      "Mostly_Compliant",
+      "Partially_Compliant",
+      "Not_Compliant"
+    ],
+    "cohen_kappa_weighting": "unweighted",
+    "standard_deviation": "sample SD across three repetitions"
+  },
+  "validation": {
+    "baseline_human_labels_matching_recorded": 162,
+    "baseline_model_predictions_different_from_saved": 0
+  },
+  "scenarios": [
+    {
+      "scenario": "Baseline 40/60",
+      "scenario_key": "baseline_40_60_floor_40",
+      "settings": {
+        "sc_weights": {
+          "C1": 0.1,
+          "C2": 0.15,
+          "C3": 0.15,
+          "C4": 0.15,
+          "C5": 0.2,
+          "C6": 0.15,
+          "C7": 0.1
+        },
+        "dq_weights": {
+          "Q1": 0.1,
+          "Q2": 0.15,
+          "Q3": 0.15,
+          "Q4": 0.1,
+          "Q5": 0.25,
+          "Q6": 0.15,
+          "Q7": 0.1
+        },
+        "sc_composite_weight": 0.4,
+        "dq_composite_weight": 0.6,
+        "structural_floor": 40.0
+      },
+      "human_class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 53,
+        "Partially_Compliant": 33,
+        "Not_Compliant": 13
+      },
+      "human_label_changes_vs_baseline": 0,
+      "top_macro_f1_configuration": "gpt-5.5/few_shot",
+      "top_macro_f1": 0.5563,
+      "top_cohen_kappa_configuration": "gemini-2.5-pro/few_shot",
+      "top_cohen_kappa": 0.3398,
+      "macro_f1_rank_correlation_vs_baseline": 1.0,
+      "cohen_kappa_rank_correlation_vs_baseline": 1.0,
+      "configuration_results": [
+        {
+          "configuration_key": "gpt-5.5/few_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5563,
+          "macro_f1_sample_sd": 0.0068,
+          "cohen_kappa_mean": 0.3201,
+          "cohen_kappa_sample_sd": 0.0211,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5487,
+              "cohen_kappa": 0.2971
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5617,
+              "cohen_kappa": 0.3246
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5585,
+              "cohen_kappa": 0.3385
+            }
+          ],
+          "macro_f1_rank": 1,
+          "cohen_kappa_rank": 2
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/few_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5457,
+          "macro_f1_sample_sd": 0.0214,
+          "cohen_kappa_mean": 0.3398,
+          "cohen_kappa_sample_sd": 0.0232,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5218,
+              "cohen_kappa": 0.3166
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.552,
+              "cohen_kappa": 0.3398
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5633,
+              "cohen_kappa": 0.3631
+            }
+          ],
+          "macro_f1_rank": 2,
+          "cohen_kappa_rank": 1
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/zero_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.5,
+          "macro_f1_sample_sd": 0.005,
+          "cohen_kappa_mean": 0.3118,
+          "cohen_kappa_sample_sd": 0.0089,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5047,
+              "cohen_kappa": 0.3187
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5005,
+              "cohen_kappa": 0.3148
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4948,
+              "cohen_kappa": 0.3017
+            }
+          ],
+          "macro_f1_rank": 3,
+          "cohen_kappa_rank": 3
+        },
+        {
+          "configuration_key": "ministral-3-8b/few_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4961,
+          "macro_f1_sample_sd": 0.0114,
+          "cohen_kappa_mean": 0.2707,
+          "cohen_kappa_sample_sd": 0.015,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5003,
+              "cohen_kappa": 0.2795
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5049,
+              "cohen_kappa": 0.2792
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4832,
+              "cohen_kappa": 0.2534
+            }
+          ],
+          "macro_f1_rank": 4,
+          "cohen_kappa_rank": 5
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/few_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4946,
+          "macro_f1_sample_sd": 0.0086,
+          "cohen_kappa_mean": 0.2384,
+          "cohen_kappa_sample_sd": 0.0101,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4894,
+              "cohen_kappa": 0.2324
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5046,
+              "cohen_kappa": 0.2501
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4898,
+              "cohen_kappa": 0.2328
+            }
+          ],
+          "macro_f1_rank": 5,
+          "cohen_kappa_rank": 7
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/chain_of_thought",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4927,
+          "macro_f1_sample_sd": 0.0305,
+          "cohen_kappa_mean": 0.2981,
+          "cohen_kappa_sample_sd": 0.0473,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4611,
+              "cohen_kappa": 0.2468
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5219,
+              "cohen_kappa": 0.3399
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.495,
+              "cohen_kappa": 0.3075
+            }
+          ],
+          "macro_f1_rank": 6,
+          "cohen_kappa_rank": 4
+        },
+        {
+          "configuration_key": "ministral-3-8b/chain_of_thought",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4677,
+          "macro_f1_sample_sd": 0.0105,
+          "cohen_kappa_mean": 0.2426,
+          "cohen_kappa_sample_sd": 0.0113,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.474,
+              "cohen_kappa": 0.2529
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4736,
+              "cohen_kappa": 0.2442
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4556,
+              "cohen_kappa": 0.2305
+            }
+          ],
+          "macro_f1_rank": 7,
+          "cohen_kappa_rank": 6
+        },
+        {
+          "configuration_key": "gpt-5.5/chain_of_thought",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4496,
+          "macro_f1_sample_sd": 0.0047,
+          "cohen_kappa_mean": 0.2062,
+          "cohen_kappa_sample_sd": 0.0172,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4448,
+              "cohen_kappa": 0.1879
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4541,
+              "cohen_kappa": 0.2089
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.45,
+              "cohen_kappa": 0.2219
+            }
+          ],
+          "macro_f1_rank": 8,
+          "cohen_kappa_rank": 9
+        },
+        {
+          "configuration_key": "ministral-3-8b/zero_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4143,
+          "macro_f1_sample_sd": 0.0239,
+          "cohen_kappa_mean": 0.2125,
+          "cohen_kappa_sample_sd": 0.03,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4055,
+              "cohen_kappa": 0.1975
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4414,
+              "cohen_kappa": 0.247
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.396,
+              "cohen_kappa": 0.1929
+            }
+          ],
+          "macro_f1_rank": 9,
+          "cohen_kappa_rank": 8
+        },
+        {
+          "configuration_key": "gpt-5.5/zero_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.412,
+          "macro_f1_sample_sd": 0.0114,
+          "cohen_kappa_mean": 0.1683,
+          "cohen_kappa_sample_sd": 0.0156,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4107,
+              "cohen_kappa": 0.1788
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4012,
+              "cohen_kappa": 0.1503
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.424,
+              "cohen_kappa": 0.1756
+            }
+          ],
+          "macro_f1_rank": 10,
+          "cohen_kappa_rank": 10
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/zero_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.3326,
+          "macro_f1_sample_sd": 0.0137,
+          "cohen_kappa_mean": 0.1244,
+          "cohen_kappa_sample_sd": 0.0146,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.3458,
+              "cohen_kappa": 0.1395
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3338,
+              "cohen_kappa": 0.1234
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.3184,
+              "cohen_kappa": 0.1103
+            }
+          ],
+          "macro_f1_rank": 11,
+          "cohen_kappa_rank": 11
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/chain_of_thought",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.2921,
+          "macro_f1_sample_sd": 0.0035,
+          "cohen_kappa_mean": 0.0842,
+          "cohen_kappa_sample_sd": 0.01,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.2883,
+              "cohen_kappa": 0.0726
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.2928,
+              "cohen_kappa": 0.0895
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.2951,
+              "cohen_kappa": 0.0904
+            }
+          ],
+          "macro_f1_rank": 12,
+          "cohen_kappa_rank": 12
+        }
+      ],
+      "model_family_results": [
+        {
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "macro_f1_mean_across_strategies": 0.5128,
+          "cohen_kappa_mean_across_strategies": 0.3166,
+          "macro_f1_family_rank": 1
+        },
+        {
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "macro_f1_mean_across_strategies": 0.4726,
+          "cohen_kappa_mean_across_strategies": 0.2315,
+          "macro_f1_family_rank": 2
+        },
+        {
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "macro_f1_mean_across_strategies": 0.4594,
+          "cohen_kappa_mean_across_strategies": 0.2419,
+          "macro_f1_family_rank": 3
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "macro_f1_mean_across_strategies": 0.3731,
+          "cohen_kappa_mean_across_strategies": 0.149,
+          "macro_f1_family_rank": 4
+        }
+      ]
+    },
+    {
+      "scenario": "Equal SC criteria",
+      "scenario_key": "equal_sc_criteria",
+      "settings": {
+        "sc_weights": {
+          "C1": 0.142857,
+          "C2": 0.142857,
+          "C3": 0.142857,
+          "C4": 0.142857,
+          "C5": 0.142857,
+          "C6": 0.142857,
+          "C7": 0.142857
+        },
+        "dq_weights": {
+          "Q1": 0.1,
+          "Q2": 0.15,
+          "Q3": 0.15,
+          "Q4": 0.1,
+          "Q5": 0.25,
+          "Q6": 0.15,
+          "Q7": 0.1
+        },
+        "sc_composite_weight": 0.4,
+        "dq_composite_weight": 0.6,
+        "structural_floor": 40.0
+      },
+      "human_class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 51,
+        "Partially_Compliant": 34,
+        "Not_Compliant": 14
+      },
+      "human_label_changes_vs_baseline": 3,
+      "top_macro_f1_configuration": "gpt-5.5/few_shot",
+      "top_macro_f1": 0.5506,
+      "top_cohen_kappa_configuration": "gemini-2.5-pro/few_shot",
+      "top_cohen_kappa": 0.3243,
+      "macro_f1_rank_correlation_vs_baseline": 0.951,
+      "cohen_kappa_rank_correlation_vs_baseline": 0.958,
+      "configuration_results": [
+        {
+          "configuration_key": "gpt-5.5/few_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5506,
+          "macro_f1_sample_sd": 0.0101,
+          "cohen_kappa_mean": 0.3235,
+          "cohen_kappa_sample_sd": 0.0169,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.544,
+              "cohen_kappa": 0.3051
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5622,
+              "cohen_kappa": 0.3383
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5456,
+              "cohen_kappa": 0.3271
+            }
+          ],
+          "macro_f1_rank": 1,
+          "cohen_kappa_rank": 2
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/few_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5298,
+          "macro_f1_sample_sd": 0.0156,
+          "cohen_kappa_mean": 0.3243,
+          "cohen_kappa_sample_sd": 0.0111,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5128,
+              "cohen_kappa": 0.3127
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5435,
+              "cohen_kappa": 0.3253
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.533,
+              "cohen_kappa": 0.3348
+            }
+          ],
+          "macro_f1_rank": 2,
+          "cohen_kappa_rank": 1
+        },
+        {
+          "configuration_key": "ministral-3-8b/few_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4931,
+          "macro_f1_sample_sd": 0.0042,
+          "cohen_kappa_mean": 0.2744,
+          "cohen_kappa_sample_sd": 0.0052,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4944,
+              "cohen_kappa": 0.2803
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4965,
+              "cohen_kappa": 0.2704
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4884,
+              "cohen_kappa": 0.2724
+            }
+          ],
+          "macro_f1_rank": 3,
+          "cohen_kappa_rank": 5
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/chain_of_thought",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4838,
+          "macro_f1_sample_sd": 0.0268,
+          "cohen_kappa_mean": 0.2878,
+          "cohen_kappa_sample_sd": 0.0376,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4557,
+              "cohen_kappa": 0.2478
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4868,
+              "cohen_kappa": 0.293
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.509,
+              "cohen_kappa": 0.3225
+            }
+          ],
+          "macro_f1_rank": 4,
+          "cohen_kappa_rank": 3
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/zero_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4824,
+          "macro_f1_sample_sd": 0.0118,
+          "cohen_kappa_mean": 0.2878,
+          "cohen_kappa_sample_sd": 0.0251,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4735,
+              "cohen_kappa": 0.2768
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4958,
+              "cohen_kappa": 0.3165
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4781,
+              "cohen_kappa": 0.2701
+            }
+          ],
+          "macro_f1_rank": 5,
+          "cohen_kappa_rank": 4
+        },
+        {
+          "configuration_key": "ministral-3-8b/chain_of_thought",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4591,
+          "macro_f1_sample_sd": 0.0158,
+          "cohen_kappa_mean": 0.2202,
+          "cohen_kappa_sample_sd": 0.0155,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4707,
+              "cohen_kappa": 0.2367
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4655,
+              "cohen_kappa": 0.2179
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4411,
+              "cohen_kappa": 0.2061
+            }
+          ],
+          "macro_f1_rank": 6,
+          "cohen_kappa_rank": 7
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/few_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4434,
+          "macro_f1_sample_sd": 0.0125,
+          "cohen_kappa_mean": 0.1815,
+          "cohen_kappa_sample_sd": 0.0162,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4298,
+              "cohen_kappa": 0.1653
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4459,
+              "cohen_kappa": 0.1814
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4545,
+              "cohen_kappa": 0.1977
+            }
+          ],
+          "macro_f1_rank": 7,
+          "cohen_kappa_rank": 9
+        },
+        {
+          "configuration_key": "gpt-5.5/chain_of_thought",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4417,
+          "macro_f1_sample_sd": 0.0053,
+          "cohen_kappa_mean": 0.2032,
+          "cohen_kappa_sample_sd": 0.011,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4418,
+              "cohen_kappa": 0.1989
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4364,
+              "cohen_kappa": 0.1951
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.447,
+              "cohen_kappa": 0.2157
+            }
+          ],
+          "macro_f1_rank": 8,
+          "cohen_kappa_rank": 8
+        },
+        {
+          "configuration_key": "ministral-3-8b/zero_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.441,
+          "macro_f1_sample_sd": 0.0227,
+          "cohen_kappa_mean": 0.2346,
+          "cohen_kappa_sample_sd": 0.0327,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4292,
+              "cohen_kappa": 0.2138
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4672,
+              "cohen_kappa": 0.2723
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4268,
+              "cohen_kappa": 0.2178
+            }
+          ],
+          "macro_f1_rank": 9,
+          "cohen_kappa_rank": 6
+        },
+        {
+          "configuration_key": "gpt-5.5/zero_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4016,
+          "macro_f1_sample_sd": 0.0109,
+          "cohen_kappa_mean": 0.1637,
+          "cohen_kappa_sample_sd": 0.0097,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.3996,
+              "cohen_kappa": 0.1714
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3918,
+              "cohen_kappa": 0.1528
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4134,
+              "cohen_kappa": 0.1671
+            }
+          ],
+          "macro_f1_rank": 10,
+          "cohen_kappa_rank": 10
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/zero_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.322,
+          "macro_f1_sample_sd": 0.0109,
+          "cohen_kappa_mean": 0.118,
+          "cohen_kappa_sample_sd": 0.0113,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.3334,
+              "cohen_kappa": 0.1306
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.321,
+              "cohen_kappa": 0.1145
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.3117,
+              "cohen_kappa": 0.1088
+            }
+          ],
+          "macro_f1_rank": 11,
+          "cohen_kappa_rank": 11
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/chain_of_thought",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.2927,
+          "macro_f1_sample_sd": 0.0068,
+          "cohen_kappa_mean": 0.0852,
+          "cohen_kappa_sample_sd": 0.0129,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.2851,
+              "cohen_kappa": 0.0717
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.2946,
+              "cohen_kappa": 0.0866
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.2983,
+              "cohen_kappa": 0.0974
+            }
+          ],
+          "macro_f1_rank": 12,
+          "cohen_kappa_rank": 12
+        }
+      ],
+      "model_family_results": [
+        {
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "macro_f1_mean_across_strategies": 0.4987,
+          "cohen_kappa_mean_across_strategies": 0.3,
+          "macro_f1_family_rank": 1
+        },
+        {
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "macro_f1_mean_across_strategies": 0.4647,
+          "cohen_kappa_mean_across_strategies": 0.2302,
+          "macro_f1_family_rank": 2
+        },
+        {
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "macro_f1_mean_across_strategies": 0.4644,
+          "cohen_kappa_mean_across_strategies": 0.2431,
+          "macro_f1_family_rank": 3
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "macro_f1_mean_across_strategies": 0.3527,
+          "cohen_kappa_mean_across_strategies": 0.1282,
+          "macro_f1_family_rank": 4
+        }
+      ]
+    },
+    {
+      "scenario": "Equal DQ criteria",
+      "scenario_key": "equal_dq_criteria",
+      "settings": {
+        "sc_weights": {
+          "C1": 0.1,
+          "C2": 0.15,
+          "C3": 0.15,
+          "C4": 0.15,
+          "C5": 0.2,
+          "C6": 0.15,
+          "C7": 0.1
+        },
+        "dq_weights": {
+          "Q1": 0.142857,
+          "Q2": 0.142857,
+          "Q3": 0.142857,
+          "Q4": 0.142857,
+          "Q5": 0.142857,
+          "Q6": 0.142857,
+          "Q7": 0.142857
+        },
+        "sc_composite_weight": 0.4,
+        "dq_composite_weight": 0.6,
+        "structural_floor": 40.0
+      },
+      "human_class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 54,
+        "Partially_Compliant": 31,
+        "Not_Compliant": 14
+      },
+      "human_label_changes_vs_baseline": 2,
+      "top_macro_f1_configuration": "gemini-2.5-pro/few_shot",
+      "top_macro_f1": 0.5475,
+      "top_cohen_kappa_configuration": "gemini-2.5-pro/few_shot",
+      "top_cohen_kappa": 0.3323,
+      "macro_f1_rank_correlation_vs_baseline": 0.958,
+      "cohen_kappa_rank_correlation_vs_baseline": 0.993,
+      "configuration_results": [
+        {
+          "configuration_key": "gemini-2.5-pro/few_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5475,
+          "macro_f1_sample_sd": 0.0181,
+          "cohen_kappa_mean": 0.3323,
+          "cohen_kappa_sample_sd": 0.0318,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5633,
+              "cohen_kappa": 0.3614
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5278,
+              "cohen_kappa": 0.2983
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5515,
+              "cohen_kappa": 0.3374
+            }
+          ],
+          "macro_f1_rank": 1,
+          "cohen_kappa_rank": 1
+        },
+        {
+          "configuration_key": "gpt-5.5/few_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5458,
+          "macro_f1_sample_sd": 0.0113,
+          "cohen_kappa_mean": 0.3166,
+          "cohen_kappa_sample_sd": 0.0263,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5332,
+              "cohen_kappa": 0.2866
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.555,
+              "cohen_kappa": 0.328
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5492,
+              "cohen_kappa": 0.3353
+            }
+          ],
+          "macro_f1_rank": 2,
+          "cohen_kappa_rank": 2
+        },
+        {
+          "configuration_key": "ministral-3-8b/few_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4863,
+          "macro_f1_sample_sd": 0.0076,
+          "cohen_kappa_mean": 0.2651,
+          "cohen_kappa_sample_sd": 0.0085,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4843,
+              "cohen_kappa": 0.2645
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4947,
+              "cohen_kappa": 0.2738
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4798,
+              "cohen_kappa": 0.2569
+            }
+          ],
+          "macro_f1_rank": 3,
+          "cohen_kappa_rank": 5
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/chain_of_thought",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4837,
+          "macro_f1_sample_sd": 0.0159,
+          "cohen_kappa_mean": 0.2819,
+          "cohen_kappa_sample_sd": 0.0239,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4656,
+              "cohen_kappa": 0.2548
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4904,
+              "cohen_kappa": 0.2916
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4952,
+              "cohen_kappa": 0.2995
+            }
+          ],
+          "macro_f1_rank": 4,
+          "cohen_kappa_rank": 4
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/zero_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4803,
+          "macro_f1_sample_sd": 0.0147,
+          "cohen_kappa_mean": 0.2889,
+          "cohen_kappa_sample_sd": 0.0099,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4639,
+              "cohen_kappa": 0.2776
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4848,
+              "cohen_kappa": 0.2928
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4923,
+              "cohen_kappa": 0.2962
+            }
+          ],
+          "macro_f1_rank": 5,
+          "cohen_kappa_rank": 3
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/few_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4684,
+          "macro_f1_sample_sd": 0.0085,
+          "cohen_kappa_mean": 0.2103,
+          "cohen_kappa_sample_sd": 0.0097,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4633,
+              "cohen_kappa": 0.2045
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4782,
+              "cohen_kappa": 0.2215
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4636,
+              "cohen_kappa": 0.2048
+            }
+          ],
+          "macro_f1_rank": 6,
+          "cohen_kappa_rank": 8
+        },
+        {
+          "configuration_key": "ministral-3-8b/chain_of_thought",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4534,
+          "macro_f1_sample_sd": 0.0122,
+          "cohen_kappa_mean": 0.2165,
+          "cohen_kappa_sample_sd": 0.0105,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4611,
+              "cohen_kappa": 0.2263
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4597,
+              "cohen_kappa": 0.2176
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4393,
+              "cohen_kappa": 0.2054
+            }
+          ],
+          "macro_f1_rank": 7,
+          "cohen_kappa_rank": 6
+        },
+        {
+          "configuration_key": "gpt-5.5/chain_of_thought",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.44,
+          "macro_f1_sample_sd": 0.0064,
+          "cohen_kappa_mean": 0.2038,
+          "cohen_kappa_sample_sd": 0.0066,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4474,
+              "cohen_kappa": 0.2064
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4359,
+              "cohen_kappa": 0.1963
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4366,
+              "cohen_kappa": 0.2086
+            }
+          ],
+          "macro_f1_rank": 8,
+          "cohen_kappa_rank": 9
+        },
+        {
+          "configuration_key": "ministral-3-8b/zero_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4197,
+          "macro_f1_sample_sd": 0.0226,
+          "cohen_kappa_mean": 0.2105,
+          "cohen_kappa_sample_sd": 0.0333,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4165,
+              "cohen_kappa": 0.1971
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4438,
+              "cohen_kappa": 0.2484
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.399,
+              "cohen_kappa": 0.186
+            }
+          ],
+          "macro_f1_rank": 9,
+          "cohen_kappa_rank": 7
+        },
+        {
+          "configuration_key": "gpt-5.5/zero_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4004,
+          "macro_f1_sample_sd": 0.0184,
+          "cohen_kappa_mean": 0.1596,
+          "cohen_kappa_sample_sd": 0.0299,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.409,
+              "cohen_kappa": 0.1898
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3793,
+              "cohen_kappa": 0.13
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4128,
+              "cohen_kappa": 0.1591
+            }
+          ],
+          "macro_f1_rank": 10,
+          "cohen_kappa_rank": 10
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/zero_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.3175,
+          "macro_f1_sample_sd": 0.0119,
+          "cohen_kappa_mean": 0.1173,
+          "cohen_kappa_sample_sd": 0.0121,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.3312,
+              "cohen_kappa": 0.1313
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3102,
+              "cohen_kappa": 0.1101
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.3109,
+              "cohen_kappa": 0.1106
+            }
+          ],
+          "macro_f1_rank": 11,
+          "cohen_kappa_rank": 11
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/chain_of_thought",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.2689,
+          "macro_f1_sample_sd": 0.0058,
+          "cohen_kappa_mean": 0.0694,
+          "cohen_kappa_sample_sd": 0.0077,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.266,
+              "cohen_kappa": 0.0613
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.265,
+              "cohen_kappa": 0.0704
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.2755,
+              "cohen_kappa": 0.0766
+            }
+          ],
+          "macro_f1_rank": 12,
+          "cohen_kappa_rank": 12
+        }
+      ],
+      "model_family_results": [
+        {
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "macro_f1_mean_across_strategies": 0.5039,
+          "cohen_kappa_mean_across_strategies": 0.301,
+          "macro_f1_family_rank": 1
+        },
+        {
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "macro_f1_mean_across_strategies": 0.462,
+          "cohen_kappa_mean_across_strategies": 0.2267,
+          "macro_f1_family_rank": 2
+        },
+        {
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "macro_f1_mean_across_strategies": 0.4531,
+          "cohen_kappa_mean_across_strategies": 0.2307,
+          "macro_f1_family_rank": 3
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "macro_f1_mean_across_strategies": 0.3516,
+          "cohen_kappa_mean_across_strategies": 0.1323,
+          "macro_f1_family_rank": 4
+        }
+      ]
+    },
+    {
+      "scenario": "Balanced 50/50",
+      "scenario_key": "balanced_50_50",
+      "settings": {
+        "sc_weights": {
+          "C1": 0.1,
+          "C2": 0.15,
+          "C3": 0.15,
+          "C4": 0.15,
+          "C5": 0.2,
+          "C6": 0.15,
+          "C7": 0.1
+        },
+        "dq_weights": {
+          "Q1": 0.1,
+          "Q2": 0.15,
+          "Q3": 0.15,
+          "Q4": 0.1,
+          "Q5": 0.25,
+          "Q6": 0.15,
+          "Q7": 0.1
+        },
+        "sc_composite_weight": 0.5,
+        "dq_composite_weight": 0.5,
+        "structural_floor": 40.0
+      },
+      "human_class_distribution": {
+        "Fully_Compliant": 64,
+        "Mostly_Compliant": 54,
+        "Partially_Compliant": 33,
+        "Not_Compliant": 11
+      },
+      "human_label_changes_vs_baseline": 5,
+      "top_macro_f1_configuration": "gpt-5.5/few_shot",
+      "top_macro_f1": 0.5701,
+      "top_cohen_kappa_configuration": "gemini-2.5-pro/few_shot",
+      "top_cohen_kappa": 0.3404,
+      "macro_f1_rank_correlation_vs_baseline": 0.9161,
+      "cohen_kappa_rank_correlation_vs_baseline": 0.965,
+      "configuration_results": [
+        {
+          "configuration_key": "gpt-5.5/few_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5701,
+          "macro_f1_sample_sd": 0.0023,
+          "cohen_kappa_mean": 0.3189,
+          "cohen_kappa_sample_sd": 0.0087,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5728,
+              "cohen_kappa": 0.3089
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5689,
+              "cohen_kappa": 0.325
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5687,
+              "cohen_kappa": 0.3227
+            }
+          ],
+          "macro_f1_rank": 1,
+          "cohen_kappa_rank": 2
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/few_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5621,
+          "macro_f1_sample_sd": 0.0059,
+          "cohen_kappa_mean": 0.3404,
+          "cohen_kappa_sample_sd": 0.0109,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5616,
+              "cohen_kappa": 0.3376
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5682,
+              "cohen_kappa": 0.3525
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5564,
+              "cohen_kappa": 0.3312
+            }
+          ],
+          "macro_f1_rank": 2,
+          "cohen_kappa_rank": 1
+        },
+        {
+          "configuration_key": "ministral-3-8b/few_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5035,
+          "macro_f1_sample_sd": 0.0109,
+          "cohen_kappa_mean": 0.2836,
+          "cohen_kappa_sample_sd": 0.0131,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5038,
+              "cohen_kappa": 0.2862
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5142,
+              "cohen_kappa": 0.2952
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4924,
+              "cohen_kappa": 0.2695
+            }
+          ],
+          "macro_f1_rank": 3,
+          "cohen_kappa_rank": 4
+        },
+        {
+          "configuration_key": "ministral-3-8b/chain_of_thought",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4966,
+          "macro_f1_sample_sd": 0.0123,
+          "cohen_kappa_mean": 0.2334,
+          "cohen_kappa_sample_sd": 0.0117,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5023,
+              "cohen_kappa": 0.2444
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5049,
+              "cohen_kappa": 0.2346
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4824,
+              "cohen_kappa": 0.2212
+            }
+          ],
+          "macro_f1_rank": 4,
+          "cohen_kappa_rank": 6
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/zero_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4877,
+          "macro_f1_sample_sd": 0.0354,
+          "cohen_kappa_mean": 0.2948,
+          "cohen_kappa_sample_sd": 0.045,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4513,
+              "cohen_kappa": 0.2526
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.522,
+              "cohen_kappa": 0.3421
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4897,
+              "cohen_kappa": 0.2897
+            }
+          ],
+          "macro_f1_rank": 5,
+          "cohen_kappa_rank": 3
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/chain_of_thought",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4816,
+          "macro_f1_sample_sd": 0.0187,
+          "cohen_kappa_mean": 0.2697,
+          "cohen_kappa_sample_sd": 0.0332,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4602,
+              "cohen_kappa": 0.2316
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4945,
+              "cohen_kappa": 0.2925
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4902,
+              "cohen_kappa": 0.2849
+            }
+          ],
+          "macro_f1_rank": 6,
+          "cohen_kappa_rank": 5
+        },
+        {
+          "configuration_key": "gpt-5.5/chain_of_thought",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4626,
+          "macro_f1_sample_sd": 0.0032,
+          "cohen_kappa_mean": 0.2035,
+          "cohen_kappa_sample_sd": 0.0107,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4662,
+              "cohen_kappa": 0.1935
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4613,
+              "cohen_kappa": 0.2148
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4602,
+              "cohen_kappa": 0.2021
+            }
+          ],
+          "macro_f1_rank": 7,
+          "cohen_kappa_rank": 7
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/few_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4402,
+          "macro_f1_sample_sd": 0.0085,
+          "cohen_kappa_mean": 0.1847,
+          "cohen_kappa_sample_sd": 0.0102,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.435,
+              "cohen_kappa": 0.1786
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.45,
+              "cohen_kappa": 0.1965
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4355,
+              "cohen_kappa": 0.1791
+            }
+          ],
+          "macro_f1_rank": 8,
+          "cohen_kappa_rank": 9
+        },
+        {
+          "configuration_key": "ministral-3-8b/zero_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4338,
+          "macro_f1_sample_sd": 0.0187,
+          "cohen_kappa_mean": 0.1973,
+          "cohen_kappa_sample_sd": 0.0287,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4215,
+              "cohen_kappa": 0.1796
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4553,
+              "cohen_kappa": 0.2304
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4245,
+              "cohen_kappa": 0.1818
+            }
+          ],
+          "macro_f1_rank": 9,
+          "cohen_kappa_rank": 8
+        },
+        {
+          "configuration_key": "gpt-5.5/zero_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4253,
+          "macro_f1_sample_sd": 0.0211,
+          "cohen_kappa_mean": 0.1587,
+          "cohen_kappa_sample_sd": 0.0163,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4208,
+              "cohen_kappa": 0.166
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4069,
+              "cohen_kappa": 0.14
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4483,
+              "cohen_kappa": 0.1701
+            }
+          ],
+          "macro_f1_rank": 10,
+          "cohen_kappa_rank": 10
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/zero_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.3315,
+          "macro_f1_sample_sd": 0.0158,
+          "cohen_kappa_mean": 0.1153,
+          "cohen_kappa_sample_sd": 0.014,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.3472,
+              "cohen_kappa": 0.1297
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3316,
+              "cohen_kappa": 0.1145
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.3157,
+              "cohen_kappa": 0.1016
+            }
+          ],
+          "macro_f1_rank": 11,
+          "cohen_kappa_rank": 11
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/chain_of_thought",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.3003,
+          "macro_f1_sample_sd": 0.0091,
+          "cohen_kappa_mean": 0.0776,
+          "cohen_kappa_sample_sd": 0.0153,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.29,
+              "cohen_kappa": 0.06
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3039,
+              "cohen_kappa": 0.086
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.3071,
+              "cohen_kappa": 0.0869
+            }
+          ],
+          "macro_f1_rank": 12,
+          "cohen_kappa_rank": 12
+        }
+      ],
+      "model_family_results": [
+        {
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "macro_f1_mean_across_strategies": 0.5105,
+          "cohen_kappa_mean_across_strategies": 0.3016,
+          "macro_f1_family_rank": 1
+        },
+        {
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "macro_f1_mean_across_strategies": 0.486,
+          "cohen_kappa_mean_across_strategies": 0.227,
+          "macro_f1_family_rank": 2
+        },
+        {
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "macro_f1_mean_across_strategies": 0.4779,
+          "cohen_kappa_mean_across_strategies": 0.2381,
+          "macro_f1_family_rank": 3
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "macro_f1_mean_across_strategies": 0.3573,
+          "cohen_kappa_mean_across_strategies": 0.1259,
+          "macro_f1_family_rank": 4
+        }
+      ]
+    },
+    {
+      "scenario": "No SC floor",
+      "scenario_key": "no_structural_floor",
+      "settings": {
+        "sc_weights": {
+          "C1": 0.1,
+          "C2": 0.15,
+          "C3": 0.15,
+          "C4": 0.15,
+          "C5": 0.2,
+          "C6": 0.15,
+          "C7": 0.1
+        },
+        "dq_weights": {
+          "Q1": 0.1,
+          "Q2": 0.15,
+          "Q3": 0.15,
+          "Q4": 0.1,
+          "Q5": 0.25,
+          "Q6": 0.15,
+          "Q7": 0.1
+        },
+        "sc_composite_weight": 0.4,
+        "dq_composite_weight": 0.6,
+        "structural_floor": 0.0
+      },
+      "human_class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 53,
+        "Partially_Compliant": 33,
+        "Not_Compliant": 13
+      },
+      "human_label_changes_vs_baseline": 0,
+      "top_macro_f1_configuration": "gpt-5.5/few_shot",
+      "top_macro_f1": 0.5563,
+      "top_cohen_kappa_configuration": "gemini-2.5-pro/few_shot",
+      "top_cohen_kappa": 0.3398,
+      "macro_f1_rank_correlation_vs_baseline": 1.0,
+      "cohen_kappa_rank_correlation_vs_baseline": 1.0,
+      "configuration_results": [
+        {
+          "configuration_key": "gpt-5.5/few_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5563,
+          "macro_f1_sample_sd": 0.0068,
+          "cohen_kappa_mean": 0.3201,
+          "cohen_kappa_sample_sd": 0.0211,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5487,
+              "cohen_kappa": 0.2971
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5617,
+              "cohen_kappa": 0.3246
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5585,
+              "cohen_kappa": 0.3385
+            }
+          ],
+          "macro_f1_rank": 1,
+          "cohen_kappa_rank": 2
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/few_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5457,
+          "macro_f1_sample_sd": 0.0214,
+          "cohen_kappa_mean": 0.3398,
+          "cohen_kappa_sample_sd": 0.0232,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5218,
+              "cohen_kappa": 0.3166
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.552,
+              "cohen_kappa": 0.3398
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5633,
+              "cohen_kappa": 0.3631
+            }
+          ],
+          "macro_f1_rank": 2,
+          "cohen_kappa_rank": 1
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/zero_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.5,
+          "macro_f1_sample_sd": 0.005,
+          "cohen_kappa_mean": 0.3118,
+          "cohen_kappa_sample_sd": 0.0089,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5047,
+              "cohen_kappa": 0.3187
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5005,
+              "cohen_kappa": 0.3148
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4948,
+              "cohen_kappa": 0.3017
+            }
+          ],
+          "macro_f1_rank": 3,
+          "cohen_kappa_rank": 3
+        },
+        {
+          "configuration_key": "ministral-3-8b/few_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4977,
+          "macro_f1_sample_sd": 0.0135,
+          "cohen_kappa_mean": 0.2705,
+          "cohen_kappa_sample_sd": 0.0148,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5003,
+              "cohen_kappa": 0.2795
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5098,
+              "cohen_kappa": 0.2784
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4832,
+              "cohen_kappa": 0.2534
+            }
+          ],
+          "macro_f1_rank": 4,
+          "cohen_kappa_rank": 5
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/few_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4946,
+          "macro_f1_sample_sd": 0.0086,
+          "cohen_kappa_mean": 0.2384,
+          "cohen_kappa_sample_sd": 0.0101,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4894,
+              "cohen_kappa": 0.2324
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5046,
+              "cohen_kappa": 0.2501
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4898,
+              "cohen_kappa": 0.2328
+            }
+          ],
+          "macro_f1_rank": 5,
+          "cohen_kappa_rank": 7
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/chain_of_thought",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4927,
+          "macro_f1_sample_sd": 0.0305,
+          "cohen_kappa_mean": 0.2981,
+          "cohen_kappa_sample_sd": 0.0473,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4611,
+              "cohen_kappa": 0.2468
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5219,
+              "cohen_kappa": 0.3399
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.495,
+              "cohen_kappa": 0.3075
+            }
+          ],
+          "macro_f1_rank": 6,
+          "cohen_kappa_rank": 4
+        },
+        {
+          "configuration_key": "ministral-3-8b/chain_of_thought",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4677,
+          "macro_f1_sample_sd": 0.0105,
+          "cohen_kappa_mean": 0.2426,
+          "cohen_kappa_sample_sd": 0.0113,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.474,
+              "cohen_kappa": 0.2529
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4736,
+              "cohen_kappa": 0.2442
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4556,
+              "cohen_kappa": 0.2305
+            }
+          ],
+          "macro_f1_rank": 7,
+          "cohen_kappa_rank": 6
+        },
+        {
+          "configuration_key": "gpt-5.5/chain_of_thought",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4496,
+          "macro_f1_sample_sd": 0.0047,
+          "cohen_kappa_mean": 0.2062,
+          "cohen_kappa_sample_sd": 0.0172,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4448,
+              "cohen_kappa": 0.1879
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4541,
+              "cohen_kappa": 0.2089
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.45,
+              "cohen_kappa": 0.2219
+            }
+          ],
+          "macro_f1_rank": 8,
+          "cohen_kappa_rank": 9
+        },
+        {
+          "configuration_key": "ministral-3-8b/zero_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4143,
+          "macro_f1_sample_sd": 0.0239,
+          "cohen_kappa_mean": 0.2125,
+          "cohen_kappa_sample_sd": 0.03,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4055,
+              "cohen_kappa": 0.1975
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4414,
+              "cohen_kappa": 0.247
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.396,
+              "cohen_kappa": 0.1929
+            }
+          ],
+          "macro_f1_rank": 9,
+          "cohen_kappa_rank": 8
+        },
+        {
+          "configuration_key": "gpt-5.5/zero_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.412,
+          "macro_f1_sample_sd": 0.0114,
+          "cohen_kappa_mean": 0.1683,
+          "cohen_kappa_sample_sd": 0.0156,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4107,
+              "cohen_kappa": 0.1788
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4012,
+              "cohen_kappa": 0.1503
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.424,
+              "cohen_kappa": 0.1756
+            }
+          ],
+          "macro_f1_rank": 10,
+          "cohen_kappa_rank": 10
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/zero_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.3326,
+          "macro_f1_sample_sd": 0.0137,
+          "cohen_kappa_mean": 0.1244,
+          "cohen_kappa_sample_sd": 0.0146,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.3458,
+              "cohen_kappa": 0.1395
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3338,
+              "cohen_kappa": 0.1234
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.3184,
+              "cohen_kappa": 0.1103
+            }
+          ],
+          "macro_f1_rank": 11,
+          "cohen_kappa_rank": 11
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/chain_of_thought",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.2921,
+          "macro_f1_sample_sd": 0.0035,
+          "cohen_kappa_mean": 0.0842,
+          "cohen_kappa_sample_sd": 0.01,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.2883,
+              "cohen_kappa": 0.0726
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.2928,
+              "cohen_kappa": 0.0895
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.2951,
+              "cohen_kappa": 0.0904
+            }
+          ],
+          "macro_f1_rank": 12,
+          "cohen_kappa_rank": 12
+        }
+      ],
+      "model_family_results": [
+        {
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "macro_f1_mean_across_strategies": 0.5128,
+          "cohen_kappa_mean_across_strategies": 0.3166,
+          "macro_f1_family_rank": 1
+        },
+        {
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "macro_f1_mean_across_strategies": 0.4726,
+          "cohen_kappa_mean_across_strategies": 0.2315,
+          "macro_f1_family_rank": 2
+        },
+        {
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "macro_f1_mean_across_strategies": 0.4599,
+          "cohen_kappa_mean_across_strategies": 0.2418,
+          "macro_f1_family_rank": 3
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "macro_f1_mean_across_strategies": 0.3731,
+          "cohen_kappa_mean_across_strategies": 0.149,
+          "macro_f1_family_rank": 4
+        }
+      ]
+    },
+    {
+      "scenario": "SC floor 50",
+      "scenario_key": "structural_floor_50",
+      "settings": {
+        "sc_weights": {
+          "C1": 0.1,
+          "C2": 0.15,
+          "C3": 0.15,
+          "C4": 0.15,
+          "C5": 0.2,
+          "C6": 0.15,
+          "C7": 0.1
+        },
+        "dq_weights": {
+          "Q1": 0.1,
+          "Q2": 0.15,
+          "Q3": 0.15,
+          "Q4": 0.1,
+          "Q5": 0.25,
+          "Q6": 0.15,
+          "Q7": 0.1
+        },
+        "sc_composite_weight": 0.4,
+        "dq_composite_weight": 0.6,
+        "structural_floor": 50.0
+      },
+      "human_class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 53,
+        "Partially_Compliant": 33,
+        "Not_Compliant": 13
+      },
+      "human_label_changes_vs_baseline": 0,
+      "top_macro_f1_configuration": "gpt-5.5/few_shot",
+      "top_macro_f1": 0.5711,
+      "top_cohen_kappa_configuration": "gemini-2.5-pro/few_shot",
+      "top_cohen_kappa": 0.341,
+      "macro_f1_rank_correlation_vs_baseline": 0.979,
+      "cohen_kappa_rank_correlation_vs_baseline": 1.0,
+      "configuration_results": [
+        {
+          "configuration_key": "gpt-5.5/few_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5711,
+          "macro_f1_sample_sd": 0.026,
+          "cohen_kappa_mean": 0.3407,
+          "cohen_kappa_sample_sd": 0.0287,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5463,
+              "cohen_kappa": 0.3089
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5982,
+              "cohen_kappa": 0.3645
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5689,
+              "cohen_kappa": 0.3488
+            }
+          ],
+          "macro_f1_rank": 1,
+          "cohen_kappa_rank": 2
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/few_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.5459,
+          "macro_f1_sample_sd": 0.0266,
+          "cohen_kappa_mean": 0.341,
+          "cohen_kappa_sample_sd": 0.0282,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5245,
+              "cohen_kappa": 0.3181
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5375,
+              "cohen_kappa": 0.3325
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.5758,
+              "cohen_kappa": 0.3725
+            }
+          ],
+          "macro_f1_rank": 2,
+          "cohen_kappa_rank": 1
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/zero_shot",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4999,
+          "macro_f1_sample_sd": 0.0129,
+          "cohen_kappa_mean": 0.3124,
+          "cohen_kappa_sample_sd": 0.0136,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.5146,
+              "cohen_kappa": 0.3277
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4904,
+              "cohen_kappa": 0.3079
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4948,
+              "cohen_kappa": 0.3017
+            }
+          ],
+          "macro_f1_rank": 3,
+          "cohen_kappa_rank": 3
+        },
+        {
+          "configuration_key": "gemini-2.5-pro/chain_of_thought",
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4918,
+          "macro_f1_sample_sd": 0.0304,
+          "cohen_kappa_mean": 0.2983,
+          "cohen_kappa_sample_sd": 0.0473,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4611,
+              "cohen_kappa": 0.2468
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.5219,
+              "cohen_kappa": 0.3399
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4923,
+              "cohen_kappa": 0.3083
+            }
+          ],
+          "macro_f1_rank": 4,
+          "cohen_kappa_rank": 4
+        },
+        {
+          "configuration_key": "ministral-3-8b/few_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4775,
+          "macro_f1_sample_sd": 0.0089,
+          "cohen_kappa_mean": 0.2613,
+          "cohen_kappa_sample_sd": 0.0135,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4764,
+              "cohen_kappa": 0.2647
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4868,
+              "cohen_kappa": 0.2729
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4692,
+              "cohen_kappa": 0.2464
+            }
+          ],
+          "macro_f1_rank": 5,
+          "cohen_kappa_rank": 5
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/few_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "few_shot",
+          "strategy_label": "FS",
+          "macro_f1_mean": 0.4654,
+          "macro_f1_sample_sd": 0.0079,
+          "cohen_kappa_mean": 0.2251,
+          "cohen_kappa_sample_sd": 0.0101,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4607,
+              "cohen_kappa": 0.2191
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4745,
+              "cohen_kappa": 0.2367
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4611,
+              "cohen_kappa": 0.2195
+            }
+          ],
+          "macro_f1_rank": 6,
+          "cohen_kappa_rank": 7
+        },
+        {
+          "configuration_key": "ministral-3-8b/chain_of_thought",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.465,
+          "macro_f1_sample_sd": 0.0103,
+          "cohen_kappa_mean": 0.2434,
+          "cohen_kappa_sample_sd": 0.0113,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4713,
+              "cohen_kappa": 0.2537
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4706,
+              "cohen_kappa": 0.245
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.4531,
+              "cohen_kappa": 0.2314
+            }
+          ],
+          "macro_f1_rank": 7,
+          "cohen_kappa_rank": 6
+        },
+        {
+          "configuration_key": "gpt-5.5/chain_of_thought",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.4289,
+          "macro_f1_sample_sd": 0.0178,
+          "cohen_kappa_mean": 0.2036,
+          "cohen_kappa_sample_sd": 0.0237,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4111,
+              "cohen_kappa": 0.1765
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4467,
+              "cohen_kappa": 0.2145
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.429,
+              "cohen_kappa": 0.22
+            }
+          ],
+          "macro_f1_rank": 8,
+          "cohen_kappa_rank": 9
+        },
+        {
+          "configuration_key": "ministral-3-8b/zero_shot",
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.4085,
+          "macro_f1_sample_sd": 0.0227,
+          "cohen_kappa_mean": 0.2074,
+          "cohen_kappa_sample_sd": 0.0284,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4055,
+              "cohen_kappa": 0.1975
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.4326,
+              "cohen_kappa": 0.2394
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.3875,
+              "cohen_kappa": 0.1853
+            }
+          ],
+          "macro_f1_rank": 9,
+          "cohen_kappa_rank": 8
+        },
+        {
+          "configuration_key": "gpt-5.5/zero_shot",
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.3974,
+          "macro_f1_sample_sd": 0.0169,
+          "cohen_kappa_mean": 0.169,
+          "cohen_kappa_sample_sd": 0.0238,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.4168,
+              "cohen_kappa": 0.1944
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3855,
+              "cohen_kappa": 0.1473
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.39,
+              "cohen_kappa": 0.1652
+            }
+          ],
+          "macro_f1_rank": 10,
+          "cohen_kappa_rank": 10
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/zero_shot",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "zero_shot",
+          "strategy_label": "ZS",
+          "macro_f1_mean": 0.3235,
+          "macro_f1_sample_sd": 0.0103,
+          "cohen_kappa_mean": 0.1212,
+          "cohen_kappa_sample_sd": 0.0116,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.3334,
+              "cohen_kappa": 0.1341
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.3242,
+              "cohen_kappa": 0.1173
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.3129,
+              "cohen_kappa": 0.112
+            }
+          ],
+          "macro_f1_rank": 11,
+          "cohen_kappa_rank": 11
+        },
+        {
+          "configuration_key": "claude-sonnet-4-6/chain_of_thought",
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "strategy": "chain_of_thought",
+          "strategy_label": "CoT",
+          "macro_f1_mean": 0.284,
+          "macro_f1_sample_sd": 0.0103,
+          "cohen_kappa_mean": 0.0779,
+          "cohen_kappa_sample_sd": 0.0163,
+          "repetitions": [
+            {
+              "repetition": 1,
+              "n": 162,
+              "macro_f1": 0.2726,
+              "cohen_kappa": 0.0598
+            },
+            {
+              "repetition": 2,
+              "n": 162,
+              "macro_f1": 0.2866,
+              "cohen_kappa": 0.0826
+            },
+            {
+              "repetition": 3,
+              "n": 162,
+              "macro_f1": 0.2927,
+              "cohen_kappa": 0.0913
+            }
+          ],
+          "macro_f1_rank": 12,
+          "cohen_kappa_rank": 12
+        }
+      ],
+      "model_family_results": [
+        {
+          "model": "gemini-2.5-pro",
+          "model_label": "Gemini 2.5 Pro",
+          "macro_f1_mean_across_strategies": 0.5125,
+          "cohen_kappa_mean_across_strategies": 0.3173,
+          "macro_f1_family_rank": 1
+        },
+        {
+          "model": "gpt-5.5",
+          "model_label": "GPT-5.5",
+          "macro_f1_mean_across_strategies": 0.4658,
+          "cohen_kappa_mean_across_strategies": 0.2378,
+          "macro_f1_family_rank": 2
+        },
+        {
+          "model": "ministral-3-8b",
+          "model_label": "Ministral 3 8B",
+          "macro_f1_mean_across_strategies": 0.4503,
+          "cohen_kappa_mean_across_strategies": 0.2374,
+          "macro_f1_family_rank": 3
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "model_label": "Claude Sonnet 4.6",
+          "macro_f1_mean_across_strategies": 0.3576,
+          "cohen_kappa_mean_across_strategies": 0.1414,
+          "macro_f1_family_rank": 4
+        }
+      ]
+    }
+  ]
+}

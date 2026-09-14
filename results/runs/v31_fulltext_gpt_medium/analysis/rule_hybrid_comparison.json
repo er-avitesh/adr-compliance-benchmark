@@ -1,0 +1,545 @@
+{
+  "generated_at": "2026-09-08T23:10:14.367147+00:00",
+  "purpose": "Comparable rule-only, LLM-only, and hybrid baseline analysis.",
+  "method": {
+    "api_calls": 0,
+    "n_adrs": 162,
+    "rule_only_target": "Structural Completeness class",
+    "overall_target": "Four-class overall compliance",
+    "hybrid_definition": "Rule-derived SC score plus LLM criterion-derived DQ score, combined using CS = 0.40 * SC + 0.60 * DQ and the benchmark structural floors.",
+    "standard_deviation": "sample SD across three repetitions",
+    "important_comparability_note": "The rule-only baseline does not produce a Decision Quality score and is therefore not reported as an overall-compliance classifier."
+  },
+  "rule_only_structural_completeness": {
+    "accuracy": 0.247,
+    "macro_precision": 0.382,
+    "macro_recall": 0.375,
+    "macro_f1": 0.246,
+    "cohen_kappa": 0.09,
+    "class_distribution_predicted": {
+      "Not_Compliant": 24,
+      "Mostly_Compliant": 45,
+      "Fully_Compliant": 19,
+      "Partially_Compliant": 74
+    },
+    "class_distribution_human_sc": {
+      "Fully_Compliant": 107,
+      "Mostly_Compliant": 37,
+      "Partially_Compliant": 8,
+      "Not_Compliant": 10
+    }
+  },
+  "best_llm_structural_macro_f1": {
+    "configuration_key": "gpt-5.5/few_shot",
+    "macro_f1": 0.6238,
+    "cohen_kappa": 0.4947
+  },
+  "best_llm_structural_kappa": {
+    "configuration_key": "gpt-5.5/few_shot",
+    "macro_f1": 0.6238,
+    "cohen_kappa": 0.4947
+  },
+  "best_llm_overall_macro_f1": {
+    "configuration_key": "gpt-5.5/few_shot",
+    "macro_f1": 0.5563,
+    "cohen_kappa": 0.3201
+  },
+  "best_llm_overall_kappa": {
+    "configuration_key": "gemini-2.5-pro/few_shot",
+    "macro_f1": 0.5457,
+    "cohen_kappa": 0.3398
+  },
+  "best_hybrid_overall_macro_f1": {
+    "configuration_key": "ministral-3-8b/few_shot",
+    "model": "ministral-3-8b",
+    "model_label": "Ministral 3 8B",
+    "strategy": "few_shot",
+    "strategy_label": "FS",
+    "macro_f1": {
+      "mean": 0.4636,
+      "sample_sd": 0.0163
+    },
+    "cohen_kappa": {
+      "mean": 0.2381,
+      "sample_sd": 0.0152
+    },
+    "repetitions": [
+      {
+        "repetition": 1,
+        "n": 162,
+        "macro_f1": 0.4474,
+        "cohen_kappa": 0.2266
+      },
+      {
+        "repetition": 2,
+        "n": 162,
+        "macro_f1": 0.4634,
+        "cohen_kappa": 0.2324
+      },
+      {
+        "repetition": 3,
+        "n": 162,
+        "macro_f1": 0.4799,
+        "cohen_kappa": 0.2554
+      }
+    ]
+  },
+  "best_hybrid_overall_kappa": {
+    "configuration_key": "gemini-2.5-pro/few_shot",
+    "model": "gemini-2.5-pro",
+    "model_label": "Gemini 2.5 Pro",
+    "strategy": "few_shot",
+    "strategy_label": "FS",
+    "macro_f1": {
+      "mean": 0.4577,
+      "sample_sd": 0.0058
+    },
+    "cohen_kappa": {
+      "mean": 0.255,
+      "sample_sd": 0.0084
+    },
+    "repetitions": [
+      {
+        "repetition": 1,
+        "n": 162,
+        "macro_f1": 0.4585,
+        "cohen_kappa": 0.2639
+      },
+      {
+        "repetition": 2,
+        "n": 162,
+        "macro_f1": 0.4631,
+        "cohen_kappa": 0.2539
+      },
+      {
+        "repetition": 3,
+        "n": 162,
+        "macro_f1": 0.4516,
+        "cohen_kappa": 0.2472
+      }
+    ]
+  },
+  "all_hybrid_configurations": [
+    {
+      "configuration_key": "ministral-3-8b/few_shot",
+      "model": "ministral-3-8b",
+      "model_label": "Ministral 3 8B",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1": {
+        "mean": 0.4636,
+        "sample_sd": 0.0163
+      },
+      "cohen_kappa": {
+        "mean": 0.2381,
+        "sample_sd": 0.0152
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.4474,
+          "cohen_kappa": 0.2266
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.4634,
+          "cohen_kappa": 0.2324
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.4799,
+          "cohen_kappa": 0.2554
+        }
+      ]
+    },
+    {
+      "configuration_key": "gemini-2.5-pro/few_shot",
+      "model": "gemini-2.5-pro",
+      "model_label": "Gemini 2.5 Pro",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1": {
+        "mean": 0.4577,
+        "sample_sd": 0.0058
+      },
+      "cohen_kappa": {
+        "mean": 0.255,
+        "sample_sd": 0.0084
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.4585,
+          "cohen_kappa": 0.2639
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.4631,
+          "cohen_kappa": 0.2539
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.4516,
+          "cohen_kappa": 0.2472
+        }
+      ]
+    },
+    {
+      "configuration_key": "gpt-5.5/few_shot",
+      "model": "gpt-5.5",
+      "model_label": "GPT-5.5",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1": {
+        "mean": 0.452,
+        "sample_sd": 0.0066
+      },
+      "cohen_kappa": {
+        "mean": 0.2197,
+        "sample_sd": 0.0035
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.4444,
+          "cohen_kappa": 0.2179
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.4559,
+          "cohen_kappa": 0.2238
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.4557,
+          "cohen_kappa": 0.2175
+        }
+      ]
+    },
+    {
+      "configuration_key": "claude-sonnet-4-6/few_shot",
+      "model": "claude-sonnet-4-6",
+      "model_label": "Claude Sonnet 4.6",
+      "strategy": "few_shot",
+      "strategy_label": "FS",
+      "macro_f1": {
+        "mean": 0.4057,
+        "sample_sd": 0.0098
+      },
+      "cohen_kappa": {
+        "mean": 0.1765,
+        "sample_sd": 0.0119
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3947,
+          "cohen_kappa": 0.1636
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.4087,
+          "cohen_kappa": 0.1788
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.4137,
+          "cohen_kappa": 0.1871
+        }
+      ]
+    },
+    {
+      "configuration_key": "ministral-3-8b/chain_of_thought",
+      "model": "ministral-3-8b",
+      "model_label": "Ministral 3 8B",
+      "strategy": "chain_of_thought",
+      "strategy_label": "CoT",
+      "macro_f1": {
+        "mean": 0.4041,
+        "sample_sd": 0.0094
+      },
+      "cohen_kappa": {
+        "mean": 0.2011,
+        "sample_sd": 0.0059
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3987,
+          "cohen_kappa": 0.2042
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.415,
+          "cohen_kappa": 0.2048
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.3987,
+          "cohen_kappa": 0.1943
+        }
+      ]
+    },
+    {
+      "configuration_key": "gemini-2.5-pro/zero_shot",
+      "model": "gemini-2.5-pro",
+      "model_label": "Gemini 2.5 Pro",
+      "strategy": "zero_shot",
+      "strategy_label": "ZS",
+      "macro_f1": {
+        "mean": 0.3799,
+        "sample_sd": 0.0179
+      },
+      "cohen_kappa": {
+        "mean": 0.1865,
+        "sample_sd": 0.0212
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3981,
+          "cohen_kappa": 0.2107
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.3792,
+          "cohen_kappa": 0.1775
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.3623,
+          "cohen_kappa": 0.1714
+        }
+      ]
+    },
+    {
+      "configuration_key": "gpt-5.5/chain_of_thought",
+      "model": "gpt-5.5",
+      "model_label": "GPT-5.5",
+      "strategy": "chain_of_thought",
+      "strategy_label": "CoT",
+      "macro_f1": {
+        "mean": 0.365,
+        "sample_sd": 0.0054
+      },
+      "cohen_kappa": {
+        "mean": 0.1652,
+        "sample_sd": 0.0039
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3703,
+          "cohen_kappa": 0.1675
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.3651,
+          "cohen_kappa": 0.1675
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.3596,
+          "cohen_kappa": 0.1607
+        }
+      ]
+    },
+    {
+      "configuration_key": "gemini-2.5-pro/chain_of_thought",
+      "model": "gemini-2.5-pro",
+      "model_label": "Gemini 2.5 Pro",
+      "strategy": "chain_of_thought",
+      "strategy_label": "CoT",
+      "macro_f1": {
+        "mean": 0.3611,
+        "sample_sd": 0.0303
+      },
+      "cohen_kappa": {
+        "mean": 0.1652,
+        "sample_sd": 0.0459
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3288,
+          "cohen_kappa": 0.1158
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.3656,
+          "cohen_kappa": 0.1732
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.3889,
+          "cohen_kappa": 0.2066
+        }
+      ]
+    },
+    {
+      "configuration_key": "ministral-3-8b/zero_shot",
+      "model": "ministral-3-8b",
+      "model_label": "Ministral 3 8B",
+      "strategy": "zero_shot",
+      "strategy_label": "ZS",
+      "macro_f1": {
+        "mean": 0.3502,
+        "sample_sd": 0.0065
+      },
+      "cohen_kappa": {
+        "mean": 0.1541,
+        "sample_sd": 0.0154
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3575,
+          "cohen_kappa": 0.1718
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.348,
+          "cohen_kappa": 0.1444
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.345,
+          "cohen_kappa": 0.146
+        }
+      ]
+    },
+    {
+      "configuration_key": "gpt-5.5/zero_shot",
+      "model": "gpt-5.5",
+      "model_label": "GPT-5.5",
+      "strategy": "zero_shot",
+      "strategy_label": "ZS",
+      "macro_f1": {
+        "mean": 0.3459,
+        "sample_sd": 0.0182
+      },
+      "cohen_kappa": {
+        "mean": 0.1484,
+        "sample_sd": 0.0193
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.3472,
+          "cohen_kappa": 0.1439
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.327,
+          "cohen_kappa": 0.1318
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.3634,
+          "cohen_kappa": 0.1696
+        }
+      ]
+    },
+    {
+      "configuration_key": "claude-sonnet-4-6/zero_shot",
+      "model": "claude-sonnet-4-6",
+      "model_label": "Claude Sonnet 4.6",
+      "strategy": "zero_shot",
+      "strategy_label": "ZS",
+      "macro_f1": {
+        "mean": 0.2531,
+        "sample_sd": 0.0074
+      },
+      "cohen_kappa": {
+        "mean": 0.0865,
+        "sample_sd": 0.0094
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.2445,
+          "cohen_kappa": 0.0757
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.2574,
+          "cohen_kappa": 0.0919
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.2574,
+          "cohen_kappa": 0.0919
+        }
+      ]
+    },
+    {
+      "configuration_key": "claude-sonnet-4-6/chain_of_thought",
+      "model": "claude-sonnet-4-6",
+      "model_label": "Claude Sonnet 4.6",
+      "strategy": "chain_of_thought",
+      "strategy_label": "CoT",
+      "macro_f1": {
+        "mean": 0.2351,
+        "sample_sd": 0.009
+      },
+      "cohen_kappa": {
+        "mean": 0.0656,
+        "sample_sd": 0.008
+      },
+      "repetitions": [
+        {
+          "repetition": 1,
+          "n": 162,
+          "macro_f1": 0.2247,
+          "cohen_kappa": 0.0564
+        },
+        {
+          "repetition": 2,
+          "n": 162,
+          "macro_f1": 0.2403,
+          "cohen_kappa": 0.0698
+        },
+        {
+          "repetition": 3,
+          "n": 162,
+          "macro_f1": 0.2402,
+          "cohen_kappa": 0.0707
+        }
+      ]
+    }
+  ],
+  "legacy_hybrid_note": "The older hybrid_rule_sc_plus_llm_dq section in rule_based_baseline.json combines dimension classes by selecting the lower class. It is retained for audit history but is not used here because it does not apply the benchmark composite formula."
+}

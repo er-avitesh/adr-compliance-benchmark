@@ -1,0 +1,79 @@
+{
+  "written_at": "2026-09-08T18:55:13.394730",
+  "purpose": "Frozen ADR compliance rubric for manuscript and replication-package alignment.",
+  "structural_completeness": {
+    "description": "Binary C1-C7 checks for the presence of required ADR evidence.",
+    "criteria": {
+      "C1": "Title present and descriptive",
+      "C2": "Context or problem statement articulated",
+      "C3": "Decision drivers listed",
+      "C4": "At least two considered options",
+      "C5": "Decision outcome with justification",
+      "C6": "Consequences documented",
+      "C7": "Status field present and valid"
+    },
+    "weights": {
+      "C1": 0.1,
+      "C2": 0.15,
+      "C3": 0.15,
+      "C4": 0.15,
+      "C5": 0.2,
+      "C6": 0.15,
+      "C7": 0.1
+    },
+    "score_formula": "SC = sum(W_i * C_i) * 100, where C_i is 1 when present and 0 otherwise.",
+    "weighting_rationale": "SC checks are binary but not equally weighted. Context/problem, options, decision justification, and consequences receive higher weight because they carry more architectural knowledge than title/status metadata."
+  },
+  "decision_quality": {
+    "description": "Q1-Q7 semantic-quality criteria scored on a 0-3 evidence scale.",
+    "criteria": {
+      "Q1": "Problem relevance",
+      "Q2": "Option viability, not strawmen",
+      "Q3": "Criteria completeness",
+      "Q4": "Criteria prioritization",
+      "Q5": "Rationale soundness",
+      "Q6": "Consequence objectivity",
+      "Q7": "Actionability"
+    },
+    "weights": {
+      "Q1": 0.1,
+      "Q2": 0.15,
+      "Q3": 0.15,
+      "Q4": 0.1,
+      "Q5": 0.25,
+      "Q6": 0.15,
+      "Q7": 0.1
+    },
+    "anchors": {
+      "0": {
+        "label": "Absent",
+        "meaning": "No document evidence supports the criterion."
+      },
+      "1": {
+        "label": "Weak",
+        "meaning": "The criterion is mentioned but is generic, superficial, or unsupported."
+      },
+      "2": {
+        "label": "Adequate",
+        "meaning": "The criterion is addressed with project-specific reasoning, with some omissions or limited depth."
+      },
+      "3": {
+        "label": "Strong",
+        "meaning": "The criterion is addressed clearly, specifically, and with defensible architectural reasoning."
+      }
+    },
+    "score_formula": "DQ = (sum(V_j * Q_j) / 3) * 100, where Q_j is scored 0-3.",
+    "anchor_note": "The same 0-3 scale is applied to every DQ criterion, with criterion-specific interpretation. For example, strong Q5 requires a rationale that connects the selected option to constraints and trade-offs, while weak Q5 merely asserts a preference without defensible reasoning."
+  },
+  "composite_classification": {
+    "formula": "CS = 0.40 * SC + 0.60 * DQ",
+    "rules": {
+      "Fully_Compliant": "CS >= 85 with SC >= 80 and DQ >= 80",
+      "Mostly_Compliant": "70 <= CS < 85 with SC >= 60 and DQ >= 60",
+      "Partially_Compliant": "45 <= CS < 70, or SC < 60 while DQ >= 60",
+      "Not_Compliant": "CS < 45, or SC < 40"
+    },
+    "structural_floor_rationale": "The SC floor prevents ADRs with missing core structural evidence from being classified as fully compliant solely because the available rationale text is strong."
+  },
+  "construct_validity_note": "The rubric operationalizes MADR and Zimmermann-derived criteria for this benchmark. Alternative weights or thresholds may change class distributions, so threshold sensitivity is reported separately."
+}

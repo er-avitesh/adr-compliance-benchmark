@@ -1,0 +1,10 @@
+{
+  "id": "adr_madr_0015-include-consulting-informed-of-raci",
+  "source_repo": "adr/madr",
+  "filename": "0015-include-consulting-informed-of-raci.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0015-include-consulting-informed-of-raci.md",
+  "word_count": 225,
+  "variant": "MADR",
+  "text": "---\nparent: Decisions\nnav_order: 15\n---\n# Include \"Consulted\" and \"Informed\" of RACI\n\n## Context and Problem Statement\n\nWe noticed an intersection between MADR and [RACI](https://en.wikipedia.org/wiki/Responsibility_assignment_matrix), and felt the need to add a \"consulted\" and \"informed\" field in addition to \"decision maker(s)\".\nWould it be beneficial to \"upstream\" these fields to MADR?\n\nMADR Issue: [#62](https://github.com/adr/madr/issues/62).\n\n## Decision Drivers\n\n* MADR should contain fields important to the ADR decision process\n* MADR template should be easy to understand\n* MADR should be lightweight\n\n## Considered Options\n\n* Include \"Consulted\" and \"Informed\" of RACI\n* Include all fields of RACI\n* Do not include anything of RACI\n\n## Decision Outcome\n\nChosen option: \"Include 'Consulted' and 'Informed' of RACI\", because comes out best (see below).\n\n## Pros and Cons of the Options\n\n### Include \"Consulted\" and \"Informed\" of RACI\n\n* Good, because these two roles of RACI are well understood.\n* Good, because we make these fields optional, thus it keeps MADR still lightweight.\n* Bad, because it adds two additional fields\n\n### Include all fields of RACI\n\nThis would add \"Responsible\", \"Accountable\", \"Consulted\", and \"Informed\"\n\n* Good, because complete RACI would be included\n* Bad, because get confused about who is \"accountable\" and who is \"responsible\".\n* Bad, because if decisions are mostly taken by consensus in small committees, then there might not be an \"accountable\" person.\n",
+  "fetched_at": "2026-04-26T00:45:51.704378"
+}

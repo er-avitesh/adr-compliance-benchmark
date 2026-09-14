@@ -1,0 +1,19 @@
+{
+  "job_key": "gemini-2.5-pro_few_shot_4647cbc33e98",
+  "provider": "gemini",
+  "model": "gemini-2.5-pro",
+  "strategy": "few_shot",
+  "output_file": "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gemini-2.5-pro_few_shot_4647cbc33e98.jsonl",
+  "raw_result_file": "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gemini-2.5-pro_few_shot.json",
+  "missing_output_count": 0,
+  "row_conversion_errors": [],
+  "batch_output_valid_for_merge": true,
+  "valid_for_merge": true,
+  "validation_reason": "ok",
+  "shape_valid_for_repair": true,
+  "shape_validation_reason": "ok",
+  "repair_needed_count": 0,
+  "repair_needed_preview": [],
+  "partial_raw_result_written": false,
+  "existing_valid_result_retained": true
+}

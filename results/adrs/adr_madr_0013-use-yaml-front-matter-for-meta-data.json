@@ -1,0 +1,10 @@
+{
+  "id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+  "source_repo": "adr/madr",
+  "filename": "0013-use-yaml-front-matter-for-meta-data.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0013-use-yaml-front-matter-for-meta-data.md",
+  "word_count": 244,
+  "variant": "MADR",
+  "text": "---\nparent: Decisions\nnav_order: 13\n---\n# Use YAML front matter for metadata\n\n## Context and Problem Statement\n\nMADR offers the fields \"Status\", \"Decision Maker(s)\", and \"Date\".\nThese are a kind of metadata fields.\nShould this data be included in the ADR directly, or should it be separated somehow?\n\n## Decision Drivers\n\n* Easy to read\n* Easy to write\n\n## Considered Options\n\n* Use YAML front matter\n* Use plain Markdown everywhere\n\n## Decision Outcome\n\nChosen option: \"Use YAML front matter\", because comes out best (see below).\n\n## Pros and Cons of the Options\n\n### Use YAML front matter\n\nExample:\n\n```markdown\n---\nstatus: accepted\ndecision-makers:\ndate:\n---\n\n### Context and problem statement\n\nWe want to record architectural decisions made in this project.\nWhich format and structure should these records follow?\n```\n\nRendered output:\n\n![adr-013 rendered output](0013-example.png)\n\n* Good, because it shortens the body (essence of the ADR)\n* Good, because tools can handle it more easily\n* Good, because indicates the lower importance of the data\n* Bad, because pretends to be more accurate than it can be (e.g., possible status values)\n* Bad, because rendering not standardized\n* Bad, because not all Markdown parsers can parse it\n\n### Use plain Markdown everywhere\n\n* Good, because all parsers can handle it\n* Bad, because special markdown parsing tooling is needed\n* Bad, because metadata is handled the same way as the content\n\n## More Information\n\n[ADR-0008](0008-add-status-field.md) reasons on adding metadata (such as status).\n",
+  "fetched_at": "2026-04-26T00:45:50.572308"
+}

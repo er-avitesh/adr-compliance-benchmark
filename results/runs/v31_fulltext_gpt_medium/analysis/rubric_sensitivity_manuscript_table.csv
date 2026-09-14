@@ -1,0 +1,7 @@
+Scenario,Human distribution F/M/P/N,Changed human labels,Best macro-F1 configuration,Macro-F1,Best kappa configuration,Kappa,Macro-F1 rank rho,Kappa rank rho
+Baseline 40/60,63/53/33/13,0,gpt-5.5/few_shot,0.556,gemini-2.5-pro/few_shot,0.340,1.000,1.000
+Equal SC criteria,63/51/34/14,3,gpt-5.5/few_shot,0.551,gemini-2.5-pro/few_shot,0.324,0.951,0.958
+Equal DQ criteria,63/54/31/14,2,gemini-2.5-pro/few_shot,0.547,gemini-2.5-pro/few_shot,0.332,0.958,0.993
+Balanced 50/50,64/54/33/11,5,gpt-5.5/few_shot,0.570,gemini-2.5-pro/few_shot,0.340,0.916,0.965
+No SC floor,63/53/33/13,0,gpt-5.5/few_shot,0.556,gemini-2.5-pro/few_shot,0.340,1.000,1.000
+SC floor 50,63/53/33/13,0,gpt-5.5/few_shot,0.571,gemini-2.5-pro/few_shot,0.341,0.979,1.000

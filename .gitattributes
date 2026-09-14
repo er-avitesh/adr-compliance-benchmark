@@ -1,0 +1,3 @@
+# Retained experiment evidence has recorded byte-level SHA-256 provenance.
+# Disable Git line-ending conversion so each file keeps its original bytes.
+results/** -text

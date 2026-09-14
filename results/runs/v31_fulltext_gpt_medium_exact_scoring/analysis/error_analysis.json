@@ -1,0 +1,1330 @@
+{
+  "written_at": "2026-09-11T08:30:18.400584",
+  "purpose": "Error-visualization data for reviewer-requested confusion matrices, per-class error analysis, and representative misclassified ADR examples.",
+  "generated_after_final_run": true,
+  "selection_rule": "Top 3 model-strategy configurations by mean macro-F1 across completed repetitions.",
+  "best_configurations": [
+    {
+      "config": "gpt-5.5/few_shot",
+      "model": "gpt-5.5",
+      "strategy": "few_shot",
+      "macro_f1_mean": 0.5563,
+      "macro_f1_std": 0.0068
+    },
+    {
+      "config": "gemini-2.5-pro/few_shot",
+      "model": "gemini-2.5-pro",
+      "strategy": "few_shot",
+      "macro_f1_mean": 0.5457,
+      "macro_f1_std": 0.0214
+    },
+    {
+      "config": "gemini-2.5-pro/zero_shot",
+      "model": "gemini-2.5-pro",
+      "strategy": "zero_shot",
+      "macro_f1_mean": 0.4988,
+      "macro_f1_std": 0.0053
+    }
+  ],
+  "visualizations_to_prepare_for_manuscript": [
+    "confusion-matrix heatmaps for the best configurations",
+    "per-class error-rate bar chart",
+    "representative misclassification table",
+    "focused examples for Compliant/Partially Compliant confusion",
+    "focused examples where weak or superficial rationale was missed"
+  ],
+  "by_best_configuration": {
+    "gemini-2.5-pro/few_shot": {
+      "model": "gemini-2.5-pro",
+      "strategy": "few_shot",
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            110,
+            50,
+            16,
+            13
+          ],
+          [
+            43,
+            64,
+            49,
+            3
+          ],
+          [
+            8,
+            31,
+            55,
+            5
+          ],
+          [
+            0,
+            1,
+            9,
+            29
+          ]
+        ]
+      },
+      "per_class_error_analysis": {
+        "Fully_Compliant": {
+          "support_across_repetitions": 189,
+          "misclassified": 79,
+          "error_rate": 0.418
+        },
+        "Mostly_Compliant": {
+          "support_across_repetitions": 159,
+          "misclassified": 95,
+          "error_rate": 0.5975
+        },
+        "Partially_Compliant": {
+          "support_across_repetitions": 99,
+          "misclassified": 44,
+          "error_rate": 0.4444
+        },
+        "Not_Compliant": {
+          "support_across_repetitions": 39,
+          "misclassified": 10,
+          "error_rate": 0.2564
+        }
+      },
+      "most_common_confusions": [
+        {
+          "confusion": "Fully_Compliant -> Mostly_Compliant",
+          "count": 50
+        },
+        {
+          "confusion": "Mostly_Compliant -> Partially_Compliant",
+          "count": 49
+        },
+        {
+          "confusion": "Mostly_Compliant -> Fully_Compliant",
+          "count": 43
+        },
+        {
+          "confusion": "Partially_Compliant -> Mostly_Compliant",
+          "count": 31
+        },
+        {
+          "confusion": "Fully_Compliant -> Partially_Compliant",
+          "count": 16
+        },
+        {
+          "confusion": "Fully_Compliant -> Not_Compliant",
+          "count": 13
+        },
+        {
+          "confusion": "Not_Compliant -> Partially_Compliant",
+          "count": 9
+        },
+        {
+          "confusion": "Partially_Compliant -> Fully_Compliant",
+          "count": 8
+        },
+        {
+          "confusion": "Partially_Compliant -> Not_Compliant",
+          "count": 5
+        },
+        {
+          "confusion": "Mostly_Compliant -> Not_Compliant",
+          "count": 3
+        },
+        {
+          "confusion": "Not_Compliant -> Mostly_Compliant",
+          "count": 1
+        }
+      ],
+      "false_negative_actual_classes": {
+        "Fully_Compliant": 79,
+        "Mostly_Compliant": 95,
+        "Partially_Compliant": 44,
+        "Not_Compliant": 10
+      },
+      "false_positive_predicted_classes": {
+        "Not_Compliant": 21,
+        "Mostly_Compliant": 82,
+        "Partially_Compliant": 74,
+        "Fully_Compliant": 51
+      }
+    },
+    "gemini-2.5-pro/zero_shot": {
+      "model": "gemini-2.5-pro",
+      "strategy": "zero_shot",
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            91,
+            49,
+            36,
+            13
+          ],
+          [
+            29,
+            47,
+            70,
+            13
+          ],
+          [
+            1,
+            15,
+            67,
+            16
+          ],
+          [
+            0,
+            1,
+            5,
+            33
+          ]
+        ]
+      },
+      "per_class_error_analysis": {
+        "Fully_Compliant": {
+          "support_across_repetitions": 189,
+          "misclassified": 98,
+          "error_rate": 0.5185
+        },
+        "Mostly_Compliant": {
+          "support_across_repetitions": 159,
+          "misclassified": 112,
+          "error_rate": 0.7044
+        },
+        "Partially_Compliant": {
+          "support_across_repetitions": 99,
+          "misclassified": 32,
+          "error_rate": 0.3232
+        },
+        "Not_Compliant": {
+          "support_across_repetitions": 39,
+          "misclassified": 6,
+          "error_rate": 0.1538
+        }
+      },
+      "most_common_confusions": [
+        {
+          "confusion": "Mostly_Compliant -> Partially_Compliant",
+          "count": 70
+        },
+        {
+          "confusion": "Fully_Compliant -> Mostly_Compliant",
+          "count": 49
+        },
+        {
+          "confusion": "Fully_Compliant -> Partially_Compliant",
+          "count": 36
+        },
+        {
+          "confusion": "Mostly_Compliant -> Fully_Compliant",
+          "count": 29
+        },
+        {
+          "confusion": "Partially_Compliant -> Not_Compliant",
+          "count": 16
+        },
+        {
+          "confusion": "Partially_Compliant -> Mostly_Compliant",
+          "count": 15
+        },
+        {
+          "confusion": "Fully_Compliant -> Not_Compliant",
+          "count": 13
+        },
+        {
+          "confusion": "Mostly_Compliant -> Not_Compliant",
+          "count": 13
+        },
+        {
+          "confusion": "Not_Compliant -> Partially_Compliant",
+          "count": 5
+        },
+        {
+          "confusion": "Partially_Compliant -> Fully_Compliant",
+          "count": 1
+        },
+        {
+          "confusion": "Not_Compliant -> Mostly_Compliant",
+          "count": 1
+        }
+      ],
+      "false_negative_actual_classes": {
+        "Fully_Compliant": 98,
+        "Mostly_Compliant": 112,
+        "Partially_Compliant": 32,
+        "Not_Compliant": 6
+      },
+      "false_positive_predicted_classes": {
+        "Not_Compliant": 42,
+        "Partially_Compliant": 111,
+        "Mostly_Compliant": 65,
+        "Fully_Compliant": 30
+      }
+    },
+    "gpt-5.5/few_shot": {
+      "model": "gpt-5.5",
+      "strategy": "few_shot",
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            95,
+            65,
+            26,
+            3
+          ],
+          [
+            38,
+            83,
+            38,
+            0
+          ],
+          [
+            1,
+            45,
+            53,
+            0
+          ],
+          [
+            0,
+            3,
+            13,
+            23
+          ]
+        ]
+      },
+      "per_class_error_analysis": {
+        "Fully_Compliant": {
+          "support_across_repetitions": 189,
+          "misclassified": 94,
+          "error_rate": 0.4974
+        },
+        "Mostly_Compliant": {
+          "support_across_repetitions": 159,
+          "misclassified": 76,
+          "error_rate": 0.478
+        },
+        "Partially_Compliant": {
+          "support_across_repetitions": 99,
+          "misclassified": 46,
+          "error_rate": 0.4646
+        },
+        "Not_Compliant": {
+          "support_across_repetitions": 39,
+          "misclassified": 16,
+          "error_rate": 0.4103
+        }
+      },
+      "most_common_confusions": [
+        {
+          "confusion": "Fully_Compliant -> Mostly_Compliant",
+          "count": 65
+        },
+        {
+          "confusion": "Partially_Compliant -> Mostly_Compliant",
+          "count": 45
+        },
+        {
+          "confusion": "Mostly_Compliant -> Partially_Compliant",
+          "count": 38
+        },
+        {
+          "confusion": "Mostly_Compliant -> Fully_Compliant",
+          "count": 38
+        },
+        {
+          "confusion": "Fully_Compliant -> Partially_Compliant",
+          "count": 26
+        },
+        {
+          "confusion": "Not_Compliant -> Partially_Compliant",
+          "count": 13
+        },
+        {
+          "confusion": "Fully_Compliant -> Not_Compliant",
+          "count": 3
+        },
+        {
+          "confusion": "Not_Compliant -> Mostly_Compliant",
+          "count": 3
+        },
+        {
+          "confusion": "Partially_Compliant -> Fully_Compliant",
+          "count": 1
+        }
+      ],
+      "false_negative_actual_classes": {
+        "Fully_Compliant": 94,
+        "Mostly_Compliant": 76,
+        "Partially_Compliant": 46,
+        "Not_Compliant": 16
+      },
+      "false_positive_predicted_classes": {
+        "Partially_Compliant": 77,
+        "Mostly_Compliant": 113,
+        "Not_Compliant": 3,
+        "Fully_Compliant": 39
+      }
+    }
+  },
+  "representative_misclassifications": {
+    "other_misclassification": [
+      {
+        "category": "other_misclassification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+        "source_repo": "MITLibraries/timdex-ui",
+        "variant": "NYGARD",
+        "domain": "Library Discovery",
+        "actual": "Mostly_Compliant",
+        "predicted": "Fully_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 2,
+          "Q5": 3,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "human_sc_score": 85.0,
+        "human_dq_score": 63.33,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 1,
+        "human_notes": "Five options are well analyzed with specific limitations, including flipflop maintenance concerns, direct-link breakage for search params, and the header-only limitation of the theme gem. Q6=1 because consequences are comparatively vague; overabstraction risk and unforeseeable use cases are not concrete negatives. C3 fails because drivers are embedded in prose.",
+        "adr_snippet": "# 2. Extend TIMDEX UI for GIS data Date: 2024-01-24 ## Status Accepted ## Context The [GIS Data Tool (GDT) project](https://mitlibraries.atlassian.net/jira/software/c/projects/GDT/boards/225) requires a discovery interface for GIS data. The project team has made the decision to extend TIMDEX UI for this purpose. This approach necessarily adds some complexity to the TIMDEX UI codebase. Generally, the UI design changes proposed for GDT fall into three categories: * Changes that are unique to the GDT app (e.g., app name in the header, 'Ask GIS' sidebar widget); * Changes that should apply to all TIMDEX UI apps (e.g., filter sidebar redesign, IA enhancements); and * Changes that are currenty uni..."
+      },
+      {
+        "category": "other_misclassification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "adr_madr_0008-add-status-field",
+        "source_repo": "adr/madr",
+        "variant": "LIGHTWEIGHT",
+        "domain": "Tooling",
+        "actual": "Mostly_Compliant",
+        "predicted": "Fully_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 3,
+          "Q4": 2,
+          "Q5": 3,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "human_sc_score": 75.0,
+        "human_dq_score": 73.33,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 3,
+        "human_notes": "Best Q6 in batch: extensive good/bad for all 6 options with examples. 6 realistic options well-researched. No explicit drivers section. No status (ironic). Outcome line thin but pros/cons are comprehensive.",
+        "adr_snippet": "--- parent: Decisions nav_order: 8 --- # Add Status Field ## Context and Problem Statement Technical Story: <https://github.com/adr/madr/issues/2> ADRs have a status. Should this be tracked? And if it should, how should we track it? ## Considered Options * Use YAML front matter * Use badge * Use text line * Use separate heading * Use table * Do not add status ## Decision Outcome Chosen option: \"Use YAML front matter\", because comes out best (see below). ## Pros and Cons of the Options ### Use YAML front matter Example: ```markdown --- parent: Decisions nav_order: 3 status: on hold --- # Write own MADR tooling ``` * Good, because YAML front matter is supported by most Markdown parsers ### Use..."
+      },
+      {
+        "category": "other_misclassification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+        "source_repo": "adr/madr",
+        "variant": "MADR",
+        "domain": "Tooling",
+        "actual": "Mostly_Compliant",
+        "predicted": "Fully_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 3,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 68.33,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 3,
+        "human_notes": "Q6=3: 3 explicit Bads for chosen option including rendering not standardized and parser compatibility. Remarkably honest consequence section. ADR about status fields has no status field (C7 fail).",
+        "adr_snippet": "--- parent: Decisions nav_order: 13 --- # Use YAML front matter for metadata ## Context and Problem Statement MADR offers the fields \"Status\", \"Decision Maker(s)\", and \"Date\". These are a kind of metadata fields. Should this data be included in the ADR directly, or should it be separated somehow? ## Decision Drivers * Easy to read * Easy to write ## Considered Options * Use YAML front matter * Use plain Markdown everywhere ## Decision Outcome Chosen option: \"Use YAML front matter\", because comes out best (see below). ## Pros and Cons of the Options ### Use YAML front matter Example: ```markdown --- status: accepted decision-makers: date: --- ### Context and problem statement We want to recor..."
+      },
+      {
+        "category": "other_misclassification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+        "source_repo": "adr/madr",
+        "variant": "MADR",
+        "domain": "Tooling",
+        "actual": "Mostly_Compliant",
+        "predicted": "Fully_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Mostly_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 3,
+          "Q6": 2,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 70.0,
+        "human_q5_rationale_soundness": 3,
+        "human_q6_consequence_objectivity": 2,
+        "human_notes": "Q5=3: best rationale in batch \u00e2\u20ac\u201d appendix analogy, above-the-fold principle, logical flow all clearly chained. Q4=2: priority explicitly stated. Q2=1: only 2 options is real gap. Duplicate bullet in not-chosen option (copy-paste).",
+        "adr_snippet": "--- parent: Decisions nav_order: 16 --- # Outcome before Detailed Pros and Cons ## Context and Problem Statement MADR aims to list pros and cons of each option. Where should that list be placed? ## Decision Drivers * Most important information should be above the fold. * MADR should be easy to write. * MADR should be easy to read. ## Considered Options * Section \"Pros and Cons of the Options\" after \"Decision Outcome\" * Section \"Pros and Cons of the Options\" before \"Decision Outcome\" ## Decision Outcome Chosen option: \"Section 'Pros and Cons of the Options' after 'Decision Outcome'\", because this keeps the available options and the decision outcome close together. One gets the decision outcom..."
+      },
+      {
+        "category": "other_misclassification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+        "source_repo": "alphagov/content-publisher",
+        "variant": "NYGARD",
+        "domain": "Government",
+        "actual": "Mostly_Compliant",
+        "predicted": "Fully_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 3,
+          "Q4": 2,
+          "Q5": 3,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "human_sc_score": 85.0,
+        "human_dq_score": 66.67,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 2,
+        "human_notes": "High word count (1088). C3 fails: no explicit driver list. Q7=3: 7 specific extraction rules with code paths. Q4=1: option 3 chosen by trial not formal criteria weighting. Positive: non-developer empowerment consequence specific and measurable.",
+        "adr_snippet": "# 4. Editing Microcopy Date: 2018-09-11 Revised: 2020-01-21 ## Context Every feature we add to the app comes with its own static text, which is either embedded in the code (Ruby or JavaScript) or in the HTML. Static text can be anything from the page title, to the text of a button, to an entire page of guidance. Writing text 'inline' makes it hard for us to audit all of strings in our application, some of which can only be seen under special conditions e.g. error messages. It also makes it hard to change strings consistently across the application - a task which has to be done by a developer. Finally, using inline strings in code distracts from the logical flow of that code. [Rails Internati..."
+      },
+      {
+        "category": "other_misclassification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+        "source_repo": "alphagov/content-publisher",
+        "variant": "NYGARD",
+        "domain": "Government",
+        "actual": "Mostly_Compliant",
+        "predicted": "Fully_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Fully_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 3,
+          "Q5": 3,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "human_sc_score": 85.0,
+        "human_dq_score": 61.67,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 2,
+        "human_notes": "Interim decision explicitly labeled \u00e2\u20ac\u201d intellectual honesty point. Q7=3: code snippets for Options 2 and 3. Q3=1: only UX dimension covered; accessibility and broader browser support not assessed. Specific users affected (JS-enabled but JS-failed) in consequences.",
+        "adr_snippet": "# 5. Avoiding initialisation flickering in HTML Date: 2018-11-27 ## Context A common problem with website initialisation is that there can be elements of the page that you want to be hidden until a user performs an action via JavaScript. However if a user does not have JavaScript you want the item to always be visible. When the page loads this can cause a distracting flash as it quickly hides or replaces content and can appear like the page has a loading issue to a user. On content publisher there have been a number of issues flagged in testing relating to these flashes, with different ad-hoc fixes applied. This ADR is intended to define a route forward for them to be handled consistently. T..."
+      }
+    ],
+    "compliant_partially_confusion": [
+      {
+        "category": "compliant_partially_confusion",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "adr_madr_0003-provide-own-madr-tools",
+        "source_repo": "adr/madr",
+        "variant": "LIGHTWEIGHT",
+        "domain": "Tooling",
+        "actual": "Mostly_Compliant",
+        "predicted": "Partially_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": false,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 2,
+          "Q2": 3,
+          "Q3": 1,
+          "Q4": 0,
+          "Q5": 2,
+          "Q6": 1,
+          "Q7": 2
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 63.33,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 1,
+        "human_notes": "Highest SC of the batch. 5 options with star-count evidence. Explicit negative consequence (maintenance cost). Non-standard status on hold fails C7. Q6 rated 1 \u00e2\u20ac\u201d only one consequence stated with no explicit positives.",
+        "adr_snippet": "--- parent: Decisions nav_order: 3 status: on hold --- # Write Own MADR Tooling ## Context and Problem Statement Developers seem to like tooling to create ADRs. That tooling should support MADR. The tooling should be easy to install. ## Considered Options * Include in [adr-tools](https://github.com/npryce/adr-tools), 924 stars as of 2018-06-14 * Include in [adr-j](https://github.com/adoble/adr-j), 2 stars as of 2018-06-14 * Include in [adr](https://github.com/phodal/adr), 72 stars as of 2018-06-14 * Write own MADR tooling * No tool support ## Decision Outcome Chosen option: \"Write own MADR tooling\", because * adding MADR support to `adr-tools` [was rejected](https://github.com/npryce/adr-too..."
+      },
+      {
+        "category": "compliant_partially_confusion",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "adr_madr_0004-write-own-toc-tool",
+        "source_repo": "adr/madr",
+        "variant": "NYGARD",
+        "domain": "Tooling",
+        "actual": "Partially_Compliant",
+        "predicted": "Mostly_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Mostly_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 1,
+          "Q4": 1,
+          "Q5": 2,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "human_sc_score": 75.0,
+        "human_dq_score": 45.0,
+        "human_q5_rationale_soundness": 1,
+        "human_q6_consequence_objectivity": 2,
+        "human_notes": "Good consequence objectivity (explicit good/bad) and strong actionability (exact npm command). Rationale weakened by acknowledging extending adr-tools is also possible. Only 2 options. No drivers. No status.",
+        "adr_snippet": "--- parent: Decisions nav_order: 4 --- # Write Own TOC Tool ## Context and Problem Statement ADRs have to be indexed somehow. E.g., for offering a website showing all ADRs. ## Considered Options * Write own tool `adr-log` * Use `adr-tools`' TOC functionality ## Decision Outcome Chosen option: \"Write own tool `adr-log`\", because * we want to have the format `ADR-0001 - Title` in the TOC. * `adr-tools` offers `title` only. We accept that changing `adr-tools` would also be possible. It is prepared to included header and footer: <https://github.com/npryce/adr-tools/blob/master/tests/generate-contents-with-header-and-footer.sh>. ### Consequences * Good, because `adr-log` is installable using `npm..."
+      },
+      {
+        "category": "compliant_partially_confusion",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+        "source_repo": "adr/madr",
+        "variant": "MADR",
+        "domain": "Tooling",
+        "actual": "Partially_Compliant",
+        "predicted": "Mostly_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": false,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 1,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 3,
+          "Q6": 0,
+          "Q7": 3
+        },
+        "human_sc_score": 75.0,
+        "human_dq_score": 36.67,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 0,
+        "human_notes": "Minor formatting decision with limited architectural significance (Q1=1). Two solid rationale bullets. No consequences, no trade-off analysis. No status field.",
+        "adr_snippet": "--- parent: Decisions nav_order: 7 --- # Do Not Emphasize Line Headings ## Context and Problem Statement MADR contains lines such as `Chosen option: \"[option 1]\"`. Should \"Chosen option\" be emphasized? ## Decision Drivers * MADR should be easy to read * MADR should be easy to write ## Considered Options * Do not emphasize line headings * Emphasize line headings ## Decision Outcome Chosen option: \"Do not emphasize line headings\", because 1) these headings always are put at the beginning of a line and followed by a colon. Thus, they are already easy to identified as line heading. 2) Readers not familiar with Markdown might be confused by stars in the text."
+      },
+      {
+        "category": "compliant_partially_confusion",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+        "source_repo": "adr/madr",
+        "variant": "MADR",
+        "domain": "Tooling",
+        "actual": "Partially_Compliant",
+        "predicted": "Mostly_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Mostly_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": true,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 2,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 2,
+          "Q6": 2,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 58.33,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 1,
+        "human_notes": "High SC. Q6=1: Do Not Include option has no pros/cons despite being viable. Q5=2: Accountable/Responsible confusion and consensus-team scenario are specific and convincing. No status.",
+        "adr_snippet": "--- parent: Decisions nav_order: 15 --- # Include \"Consulted\" and \"Informed\" of RACI ## Context and Problem Statement We noticed an intersection between MADR and [RACI](https://en.wikipedia.org/wiki/Responsibility_assignment_matrix), and felt the need to add a \"consulted\" and \"informed\" field in addition to \"decision maker(s)\". Would it be beneficial to \"upstream\" these fields to MADR? MADR Issue: [#62](https://github.com/adr/madr/issues/62). ## Decision Drivers * MADR should contain fields important to the ADR decision process * MADR template should be easy to understand * MADR should be lightweight ## Considered Options * Include \"Consulted\" and \"Informed\" of RACI * Include all fields of R..."
+      },
+      {
+        "category": "compliant_partially_confusion",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+        "source_repo": "adr/madr",
+        "variant": "MADR",
+        "domain": "Tooling",
+        "actual": "Partially_Compliant",
+        "predicted": "Mostly_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": false,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 1,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 3,
+          "Q6": 0,
+          "Q7": 3
+        },
+        "human_sc_score": 75.0,
+        "human_dq_score": 65.0,
+        "human_q5_rationale_soundness": 3,
+        "human_q6_consequence_objectivity": 0,
+        "human_notes": "Q5=3: sharpest semantic reasoning in full batch \u00e2\u20ac\u201d validation/verification/confirmation distinction expertly argued. Q7=3: timed actionable steps. Q6=0: Confirmation section is implementation steps not decision consequences \u00e2\u20ac\u201d rubric distinction matters. 1pt below Mostly Compliant.",
+        "adr_snippet": "--- parent: Decisions nav_order: 18 --- # Use \"Confirmation\" as Heading ## Context and Problem Statement In MADR, we want to include some sort of check that the decision was implemented. How to name the heading for the explanation? ## Decision Drivers * Consistent with terms used in IT * Common word ## Considered Options * \"Confirmation\" * \"Validation\" * \"Verification\" ## Decision Outcome Chosen option: \"Confirmation\", because \"validation\" is out of scope of the template. There is a process leading to a \"valid\" ADR. The other term \"verification\" is often bound to a formal tool or formal procedure. We wanted to enable also less formal checks. ### Confirmation * Before next release; check that..."
+      },
+      {
+        "category": "compliant_partially_confusion",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+        "source_repo": "alphagov/content-publisher",
+        "variant": "NYGARD",
+        "domain": "Government",
+        "actual": "Partially_Compliant",
+        "predicted": "Mostly_Compliant",
+        "predicted_sc_class": "Fully_Compliant",
+        "predicted_dq_class": "Mostly_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": true,
+          "C5": true,
+          "C6": false,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 3,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 3,
+          "Q6": 0,
+          "Q7": 3
+        },
+        "human_sc_score": 70.0,
+        "human_dq_score": 53.33,
+        "human_q5_rationale_soundness": 2,
+        "human_q6_consequence_objectivity": 0,
+        "human_notes": "Consequences section is entirely reference links \u00e2\u20ac\u201d zero prose. Q6=0: most significant gap. Decision rationale (4 specific Whitehall flaws) is well-argued but no consequences documented. Superseded status correctly captured (C7 PASS).",
+        "adr_snippet": "# 6. Tagging Content to Governments Date: 2018-12-12 Superseded: 2019-12-19 by [ADR 14](0014-political-and-government-tagging.md) ## Context Content published by Whitehall can be marked as 'political' and associated with a government (based on it's publication date). This is used to help indicate the content may no longer accurate as governments change over time. Marking content as a political is a semi-automated process, which has the effect of adding two extra attributes to the payload we send to the Publishing API. Both attributes are required for them to be used by the frontends. ``` { ..., \"details\": { \"government\": { \"title\": \"My Current Government\", \"slug\": \"/my-current-government\", \"..."
+      }
+    ],
+    "non_compliant_miss": [
+      {
+        "category": "non_compliant_miss",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "alphagov_content-publisher_0001-record-architecture-decisions",
+        "source_repo": "alphagov/content-publisher",
+        "variant": "OTHER",
+        "domain": "Government",
+        "actual": "Not_Compliant",
+        "predicted": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": true,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 1,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 1,
+          "Q6": 1,
+          "Q7": 3
+        },
+        "human_sc_score": 35.0,
+        "human_dq_score": 15.0,
+        "human_q5_rationale_soundness": 1,
+        "human_q6_consequence_objectivity": 0,
+        "human_notes": "Identical to govuk-aws meta-ADR. 59 words. No options, no drivers, consequences deferred to Nygard article. Lowest possible score for a structurally-present ADR.",
+        "adr_snippet": "# 1. Record architecture decisions Date: 2018-07-17 ## Context We need to record the architectural decisions made on this project. ## Decision We will use Architecture Decision Records, as described by Michael Nygard in this article: http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions ## Status Accepted ## Consequences See Michael Nygard's article, linked above. For a lightweight ADR toolset, see Nat Pryce's _adr-tools_ at https://github.com/npryce/adr-tools."
+      },
+      {
+        "category": "non_compliant_miss",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+        "source_repo": "alphagov/govuk-aws",
+        "variant": "NYGARD",
+        "domain": "Government",
+        "actual": "Not_Compliant",
+        "predicted": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": true,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 1,
+          "Q3": 1,
+          "Q4": 0,
+          "Q5": 2,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "human_sc_score": 70.0,
+        "human_dq_score": 23.33,
+        "human_q5_rationale_soundness": 1,
+        "human_q6_consequence_objectivity": 1,
+        "human_notes": "Incomplete ADR. Two ADR TODO: TBC references defer risks and the domain split to an unwritten future ADR. The record is very short at 211 words. It has no options and no criteria. Q5, Q6, and Q7 are low because important rationale and consequences are deferred. This is a real-world example of a structurally present but substantively incomplete ADR.",
+        "adr_snippet": "# 26. Remove load balancer tier Date: 2017-08-16 ## Status Accepted ## Context We currently have a dedicated tier of load balancers for the backend, frontend and api VDCs. In the Amazon world these are less useful as we also have ELBs in place to handle the autoscaling of instances. We want to reduce the networking complexity and remove these machines. ## Decision We will not change the current vcloud based platforms. In the AWS environment we will remove the load balancer hosts / ELBs and instead add external ELBs to a number of other autoscaling groups (such as the frontend / backend hosts themselves) to make them directly available, but security group restricted. We have also decided to s..."
+      },
+      {
+        "category": "non_compliant_miss",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "backstage_backstage_adr001-add-adr-log",
+        "source_repo": "backstage/backstage",
+        "variant": "LIGHTWEIGHT",
+        "domain": "Platform",
+        "actual": "Not_Compliant",
+        "predicted": "Partially_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": true,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 0,
+          "Q3": 1,
+          "Q4": 0,
+          "Q5": 1,
+          "Q6": 2,
+          "Q7": 3
+        },
+        "human_sc_score": 60.0,
+        "human_dq_score": 31.67,
+        "human_q5_rationale_soundness": 1,
+        "human_q6_consequence_objectivity": 1,
+        "human_notes": "Very short ADR-log decision. It records the existence of ADRs but does not provide drivers, alternatives, status, or detailed rationale.",
+        "adr_snippet": "--- id: adrs-adr001 title: 'ADR001: Architecture Decision Record (ADR) log' description: Architecture Decision Record (ADR) logs as a reference point for the team --- ## Decision A decision was made to store ADRs in a log in the project repository. ## Discussion There is a need to store big decisions made in a log as a reference point for the team, help with onboarding new members, and give context to others interested in the project. ## Risks People stop adding ADRs to the log and context gets lost."
+      },
+      {
+        "category": "non_compliant_miss",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "temporalio_temporal_history-service",
+        "source_repo": "temporalio/temporal",
+        "variant": "OTHER",
+        "domain": "Platform",
+        "actual": "Not_Compliant",
+        "predicted": "Partially_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": false,
+          "C5": false,
+          "C6": false,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 0,
+          "Q3": 2,
+          "Q4": 1,
+          "Q5": 3,
+          "Q6": 0,
+          "Q7": 2
+        },
+        "human_sc_score": 40.0,
+        "human_dq_score": 35.0,
+        "human_q5_rationale_soundness": 1,
+        "human_q6_consequence_objectivity": 0,
+        "human_notes": "This is internal architecture documentation for the History Service. It is detailed and useful, but it does not record a single decision with options, rationale, status, and consequences.",
+        "adr_snippet": "# History Service This page is an introduction to the History Service architecture and internal implementation. See [Temporal overview](./README.md) for a system architecture overview placing this in context. <!-- https://lucid.app/lucidchart/0202e4b8-5258-4cd6-a6a0-67159300532b/edit --> <img src=\"../_assets/temporal-high-level.svg\"> The History Service handles two main types of request (gRPC) relating to an individual Workflow Execution: 1. **Requests originating from the User Application** (Start / Cancel / Query / Update / Signal / Reset etc). 2. **Requests originating from Temporal Workers**, on completion of a Workflow Task or Activity Task. A simplistic description of what the History..."
+      },
+      {
+        "category": "non_compliant_miss",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 2,
+        "adr_id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+        "source_repo": "MITLibraries/timdex-ui",
+        "variant": "NYGARD",
+        "domain": "Library Discovery",
+        "actual": "Not_Compliant",
+        "predicted": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": true,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 2,
+          "Q2": 0,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 1,
+          "Q6": 1,
+          "Q7": 3
+        },
+        "human_sc_score": 35.0,
+        "human_dq_score": 15.0,
+        "human_q5_rationale_soundness": 1,
+        "human_q6_consequence_objectivity": 0,
+        "human_notes": "Fourth instance of the classic meta-ADR pattern in the dataset. It has the same profile as govuk-aws-0001 and content-publisher-0001. Consequences are deferred to the Nygard article. This is useful as a systematic real-world pattern of structurally present but substantively weak ADRs.",
+        "adr_snippet": "# 1. Record architecture decisions Date: 2024-01-22 ## Status Accepted ## Context We need to record the architectural decisions made on this project. ## Decision We will use Architecture Decision Records, as [described by Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions). ## Consequences See Michael Nygard's article, linked above. For a lightweight ADR toolset, see Nat Pryce's [adr-tools](https://github.com/npryce/adr-tools)."
+      },
+      {
+        "category": "non_compliant_miss",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 2,
+        "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+        "source_repo": "alphagov/govuk-aws",
+        "variant": "NYGARD",
+        "domain": "Government",
+        "actual": "Not_Compliant",
+        "predicted": "Partially_Compliant",
+        "predicted_sc_class": "Mostly_Compliant",
+        "predicted_dq_class": "Partially_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": true,
+          "C7": true
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 0,
+          "Q3": 1,
+          "Q4": 0,
+          "Q5": 2,
+          "Q6": 3,
+          "Q7": 3
+        },
+        "human_sc_score": 70.0,
+        "human_dq_score": 23.33,
+        "human_q5_rationale_soundness": 1,
+        "human_q6_consequence_objectivity": 1,
+        "human_notes": "Incomplete ADR. Two ADR TODO: TBC references defer risks and the domain split to an unwritten future ADR. The record is very short at 211 words. It has no options and no criteria. Q5, Q6, and Q7 are low because important rationale and consequences are deferred. This is a real-world example of a structurally present but substantively incomplete ADR.",
+        "adr_snippet": "# 26. Remove load balancer tier Date: 2017-08-16 ## Status Accepted ## Context We currently have a dedicated tier of load balancers for the backend, frontend and api VDCs. In the Amazon world these are less useful as we also have ELBs in place to handle the autoscaling of instances. We want to reduce the networking complexity and remove these machines. ## Decision We will not change the current vcloud based platforms. In the AWS environment we will remove the load balancer hosts / ELBs and instead add external ELBs to a number of other autoscaling groups (such as the frontend / backend hosts themselves) to make them directly available, but security group restricted. We have also decided to s..."
+      }
+    ],
+    "overly_strict_classification": [
+      {
+        "category": "overly_strict_classification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+        "source_repo": "backstage/backstage",
+        "variant": "LIGHTWEIGHT",
+        "domain": "Platform",
+        "actual": "Fully_Compliant",
+        "predicted": "Not_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": false,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 0,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 2,
+          "Q6": 0,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 96.67,
+        "human_q5_rationale_soundness": 3,
+        "human_q6_consequence_objectivity": 3,
+        "human_notes": "Strong catalog file format decision. It gives context, selected default, meaningful considerations, and consequences, although status is not separately recorded in the body.",
+        "adr_snippet": "--- id: adrs-adr002 title: 'ADR002: Default Software Catalog File Format' description: Architecture Decision Record (ADR) log on Default Software Catalog File Format --- ## Background Backstage comes with software catalog functionality that you can use to track all your software components and more. It can be powered by data from various sources, and one of them that is included with the package is a custom database backed catalog. It has the ability to keep itself updated automatically based on the contents of little descriptor files in your version control system of choice. Developers create these files and maintain them side by side with their code, and the catalog system reacts according..."
+      },
+      {
+        "category": "overly_strict_classification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+        "source_repo": "backstage/backstage",
+        "variant": "NYGARD",
+        "domain": "Platform",
+        "actual": "Fully_Compliant",
+        "predicted": "Not_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": true,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 0,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 1,
+          "Q6": 1,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 96.67,
+        "human_q5_rationale_soundness": 3,
+        "human_q6_consequence_objectivity": 3,
+        "human_notes": "Strong catalog entity model ADR. It records core entity choices, useful context, trade-offs, and consequences for the catalog model. Status is not explicit.",
+        "adr_snippet": "--- id: adrs-adr005 title: 'ADR005: Catalog Core Entities' description: Architecture Decision Record (ADR) log on Catalog Core Entities --- ## Context We want to standardize on a few core entities that we are tracking in the Backstage catalog. This allows us to build specific plugins around them. ## Decision Backstage should eventually support the following core entities: - **Components** are individual pieces of software - **APIs** are the boundaries between different components - **Resources** are physical or virtual infrastructure needed to operate a component ![Catalog Core Entities](../assets/architecture-decisions/catalog-core-entities.png) For now, we'll start by only implementing sup..."
+      },
+      {
+        "category": "overly_strict_classification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+        "source_repo": "backstage/backstage",
+        "variant": "NYGARD",
+        "domain": "Platform",
+        "actual": "Fully_Compliant",
+        "predicted": "Not_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": true,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 0,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 1,
+          "Q6": 1,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 96.67,
+        "human_q5_rationale_soundness": 3,
+        "human_q6_consequence_objectivity": 3,
+        "human_notes": "Strong testing ADR choosing MSW for service request mocking. It gives problem context, decision, practical implications, and enough trade-off reasoning to support the choice.",
+        "adr_snippet": "--- id: adrs-adr007 title: 'ADR007: Use MSW to mock http requests' description: Architecture Decision Record (ADR) log on Use MSW to mock http requests --- ## Context Network request mocking can be a total pain sometimes, in all different types of tests, unit tests to e2e tests always have their own implementation of mocking these requests. There's been traction in the outer community towards using this library to mock network requests by using an express style declaration for routes. react-testing-library suggests using this library instead of mocking fetch directly whether this be in a browser or in node. https://github.com/mswjs/msw ## Decision Moving forward, we have decided that any `fe..."
+      },
+      {
+        "category": "overly_strict_classification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+        "source_repo": "backstage/backstage",
+        "variant": "LIGHTWEIGHT",
+        "domain": "Platform",
+        "actual": "Fully_Compliant",
+        "predicted": "Not_Compliant",
+        "predicted_sc_class": "Not_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": false,
+          "C6": false,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 2,
+          "Q2": 0,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 0,
+          "Q6": 0,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 86.67,
+        "human_q5_rationale_soundness": 3,
+        "human_q6_consequence_objectivity": 2,
+        "human_notes": "Good catalog file naming ADR with clear default-name decision, ecosystem rationale, and consequences. Status is not explicit but the decision is clear.",
+        "adr_snippet": "--- id: adrs-adr008 title: 'ADR008: Default Catalog File Name' description: Architecture Decision Record (ADR) log on Default Catalog File Name --- ## Background While the spec for the catalog file format is well described in [ADR002](./adr002-default-catalog-file-format.md), guidance was not provided as to the name of the catalog file. Following discussion in [Issue 1822](https://github.com/backstage/backstage/pull/1822#pullrequestreview-461253670), a decision was made. ## Name The catalog file should be named ```shell catalog-info.yaml ``` This name is a default, **not a requirement**. The catalog file will work with Backstage regardless of its name."
+      },
+      {
+        "category": "overly_strict_classification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 1,
+        "adr_id": "backstage_backstage_adr009-entity-references",
+        "source_repo": "backstage/backstage",
+        "variant": "LIGHTWEIGHT",
+        "domain": "Platform",
+        "actual": "Fully_Compliant",
+        "predicted": "Not_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": false,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 0,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 2,
+          "Q6": 0,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 100.0,
+        "human_q5_rationale_soundness": 3,
+        "human_q6_consequence_objectivity": 3,
+        "human_notes": "Excellent ADR for entity reference syntax. It defines the reference format, optionality, rationale, constraints, and downstream consequences.",
+        "adr_snippet": "--- id: adrs-adr009 title: 'ADR009: Entity References' description: Architecture Decision Record (ADR) log on Entity References --- ## Background While the spec for the catalog file format is well described in [ADR002](./adr002-default-catalog-file-format.md), guidance was not provided as to how one is expected to express references to other entities in the catalog. There was also some confusion on how to reference entities in URLs in the Backstage frontend. Following discussion in [Issue 1947](https://github.com/backstage/backstage/issues/1947), a decision was made. ## Entity References in YAML files The textual format, as written by humans, to reference entities by name is on the following..."
+      },
+      {
+        "category": "overly_strict_classification",
+        "config": "gemini-2.5-pro/few_shot",
+        "model": "gemini-2.5-pro",
+        "strategy": "few_shot",
+        "rep": 2,
+        "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+        "source_repo": "backstage/backstage",
+        "variant": "NYGARD",
+        "domain": "Platform",
+        "actual": "Fully_Compliant",
+        "predicted": "Not_Compliant",
+        "predicted_sc_class": "Partially_Compliant",
+        "predicted_dq_class": "Not_Compliant",
+        "predicted_sc_checks": {
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "C5": true,
+          "C6": false,
+          "C7": false
+        },
+        "predicted_dq_scores": {
+          "Q1": 3,
+          "Q2": 0,
+          "Q3": 0,
+          "Q4": 0,
+          "Q5": 1,
+          "Q6": 0,
+          "Q7": 3
+        },
+        "human_sc_score": 90.0,
+        "human_dq_score": 96.67,
+        "human_q5_rationale_soundness": 3,
+        "human_q6_consequence_objectivity": 3,
+        "human_notes": "Strong catalog entity model ADR. It records core entity choices, useful context, trade-offs, and consequences for the catalog model. Status is not explicit.",
+        "adr_snippet": "--- id: adrs-adr005 title: 'ADR005: Catalog Core Entities' description: Architecture Decision Record (ADR) log on Catalog Core Entities --- ## Context We want to standardize on a few core entities that we are tracking in the Backstage catalog. This allows us to build specific plugins around them. ## Decision Backstage should eventually support the following core entities: - **Components** are individual pieces of software - **APIs** are the boundaries between different components - **Resources** are physical or virtual infrastructure needed to operate a component ![Catalog Core Entities](../assets/architecture-decisions/catalog-core-entities.png) For now, we'll start by only implementing sup..."
+      }
+    ]
+  }
+}

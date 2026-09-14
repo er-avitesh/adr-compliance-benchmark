@@ -1,0 +1,1191 @@
+{
+  "selected_at": "2026-08-26T06:43:43.617851",
+  "n": 162,
+  "seed": 42,
+  "method": "stratified (compliance_class x template_variant x domain)",
+  "per_repo_cap": 20,
+  "repository_diversity": {
+    "per_repo_cap": 20,
+    "per_repo_cap_type": "soft diversity cap; relaxed only if needed to reach the target sample size after stratification and few-shot holdout",
+    "soft_cap_exceeded": true,
+    "cap_exceptions": {
+      "alphagov/govuk-aws": 22,
+      "argoproj/argo-cd": 21
+    }
+  },
+  "heldout_few_shot_exemplar_ids": [
+    "alphagov_govuk-aws_0012-security-groups-in-terraform",
+    "adr_madr_0001-use-CC0-or-MIT-as-license",
+    "argoproj_argo-cd_deep-links",
+    "alphagov_govuk-aws_0001-record-architecture-decisions"
+  ],
+  "class_distribution": {
+    "Fully_Compliant": 63,
+    "Mostly_Compliant": 53,
+    "Partially_Compliant": 33,
+    "Not_Compliant": 13
+  },
+  "full_pool_class_distribution": {
+    "Mostly_Compliant": 52,
+    "Partially_Compliant": 33,
+    "Not_Compliant": 22,
+    "Fully_Compliant": 64
+  },
+  "adrs": [
+    {
+      "id": "backstage_backstage_adr002-default-catalog-file-format",
+      "source_repo": "backstage/backstage",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0011-migration-strategy",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_receiving_metadata",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_parameterized-config-management-plugins",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "LIGHTWEIGHT",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_002-ui-extensions",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "npryce_adr-tools_0004-markdown-format",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "aws_aws-cdk_acknowledge-warnings",
+      "source_repo": "aws/aws-cdk",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Infrastructure",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_blocks-storage-sharding",
+      "source_repo": "cortexproject/cortex",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Observability",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "NYGARD",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr008-default-catalog-file-name",
+      "source_repo": "backstage/backstage",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0006-puppet-architecture",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_block-storage-time-series-deletion",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "LIGHTWEIGHT",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "apache_airflow_0003-bootstrapping-virtual-environment",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "NYGARD",
+      "domain": "Tooling",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr009-entity-references",
+      "source_repo": "backstage/backstage",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0019-centralise-mysql-databases",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_parallel-compaction",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_native-oci-support",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "apache_airflow_0008-fixing-group-permissions-before-build",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "aws_aws-cdk_aurora-serverless-v2",
+      "source_repo": "aws/aws-cdk",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0009-modelling-history",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_tenant-deletion",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0016-publishing-times-and-change-history",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_ruler-ha",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_application-name-identifier",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr011-plugin-package-structure",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "aws_aws-cdk_cross-region-stack-references",
+      "source_repo": "aws/aws-cdk",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_timeseries-partitioning-in-compactor",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_applicationset-plugin-generator",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr010-luxon-date-library",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0003-initial-domain-modelling",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_shuffle-sharding-on-the-read-path",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_sync-timeout",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr005-catalog-core-entities",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_shuffle-sharding-and-zone-awareness",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_backend-support-appset",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0011-moving-business-logic-out-of-controllers",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_config-management-plugin-v2",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "apache_airflow_0010-use-pipx-to-install-breeze",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0024-ami-lookups",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_004-scalability-benchmarking",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "apache_airflow_0013-get-rid-of-submodules",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0002-use-local-datastore",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "apache_airflow_0009-exclude-all-files-from-dockerignore-by-default",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "apache_airflow_0012-asking-user-for-confirmation",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_scalable-alertmanager",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0015-dns-infrastructure",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "OTHER",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_project-repos-and-clusters",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "apache_airflow_0016-use-uv-tool-to-install-breeze",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0013-userdata-provisioning-snippets",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_partition-ring-multi-az-replication",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0005-terraform-module-location",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "OTHER",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_proxy-extensions",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "adr_madr_0015-include-consulting-informed-of-raci",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_distributed-query-execution",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "OTHER",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_server-side-pagination",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "npryce_adr-tools_0005-help-comments",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "adr_madr_0003-provide-own-madr-tools",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr004-module-export-structure",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_per-tenant-cardinality-api",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_app-sync-using-impersonation",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "adr_madr_0010-support-categories",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "npryce_adr-tools_0003-single-command-with-subcommands",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+      "source_repo": "thomvaill/log4brains",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "apache_airflow_0011-unified-communication-with-the-users",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0003-aws-networking-outline",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_ruler-ha-new",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "adr_madr_0008-add-status-field",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr006-avoid-react-fc",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0007-puppet-cert-management",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_parquet-storage",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "temporalio_temporal_workflow-update",
+      "source_repo": "temporalio/temporal",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "apache_airflow_0002-implement-standalone-python-command",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0004-editing-microcopy",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "apache_airflow_0007-using-database-volumes-for-backends",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "apache_airflow_0015-handling-rootless-docker",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0010-sending-email-notifications",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr003-avoid-default-exports",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0008-restricted-deletion",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr013-use-node-fetch",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0012-file-attachment-rendering",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr015-jsx-loader-structure",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0013-permitted-deletion",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0007-minimal-model",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_version-documentation",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0004-write-own-toc-tool",
+      "source_repo": "adr/madr",
+      "variant": "NYGARD",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "temporalio_temporal_effect-package",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0011-use-asterisk-as-list-marker",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "npryce_adr-tools_0009-help-scripts",
+      "source_repo": "npryce/adr-tools",
+      "variant": "NYGARD",
+      "domain": "Infrastructure",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_argocd-cli-pluin",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0018-use-confirmation-as-heading",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_user-overrides-api",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0005-use-dashes-in-filenames",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_headless-argocd",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0007-do-not-emphasize-line-headings",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0017-terraform-data-structure",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_auth-gateway",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0014-allow-neutral-arguments",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0015-bulk-data-loading",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_tenant_retention",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0002-do-not-use-numbers-in-headings",
+      "source_repo": "adr/madr",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_feature-bounties",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "adr_madr_0006-use-names-as-identifier",
+      "source_repo": "adr/madr",
+      "variant": "MADR",
+      "domain": "Tooling",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0006-tagging-governments",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "cortexproject_cortex_ring-multikey",
+      "source_repo": "cortexproject/cortex",
+      "variant": "OTHER",
+      "domain": "Observability",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0014-political-and-government-tagging",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "apache_airflow_0001-record-architecture-decisions",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "temporalio_temporal_nexus",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr001-add-adr-log",
+      "source_repo": "backstage/backstage",
+      "variant": "LIGHTWEIGHT",
+      "domain": "Platform",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "OTHER",
+      "domain": "Government",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "temporalio_temporal_history-service",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "alphagov_content-publisher_0001-record-architecture-decisions",
+      "source_repo": "alphagov/content-publisher",
+      "variant": "OTHER",
+      "domain": "Government",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "temporalio_temporal_chasm",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "openfga_openfga_architecture",
+      "source_repo": "openfga/openfga",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "temporalio_temporal_matching-service",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "temporalio_temporal_retry",
+      "source_repo": "temporalio/temporal",
+      "variant": "OTHER",
+      "domain": "Platform",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+      "source_repo": "apache/airflow",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "backstage_backstage_adr014-use-fetch",
+      "source_repo": "backstage/backstage",
+      "variant": "NYGARD",
+      "domain": "Platform",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0016-internal-dns-zones",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "argoproj_argo-cd_2_5-2_6",
+      "source_repo": "argoproj/argo-cd",
+      "variant": "OTHER",
+      "domain": "DevOps",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0002-hosting-platforms",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+      "source_repo": "alphagov/govuk-aws",
+      "variant": "NYGARD",
+      "domain": "Government",
+      "ground_truth": "Partially_Compliant"
+    },
+    {
+      "id": "loopdive_js2_0001-hybrid-compilation-strategy",
+      "source_repo": "loopdive/js2",
+      "variant": "NYGARD",
+      "domain": "Compiler",
+      "ground_truth": "Mostly_Compliant"
+    },
+    {
+      "id": "loopdive_js2_0004-aot",
+      "source_repo": "loopdive/js2",
+      "variant": "NYGARD",
+      "domain": "Compiler",
+      "ground_truth": "Fully_Compliant"
+    },
+    {
+      "id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+      "source_repo": "MITLibraries/timdex-ui",
+      "variant": "NYGARD",
+      "domain": "Library Discovery",
+      "ground_truth": "Not_Compliant"
+    },
+    {
+      "id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+      "source_repo": "MITLibraries/timdex-ui",
+      "variant": "NYGARD",
+      "domain": "Library Discovery",
+      "ground_truth": "Mostly_Compliant"
+    }
+  ],
+  "label_rule": "overall labels derived deterministically from human-reviewed C1-C7 and Q1-Q7 scores using frozen SC/DQ/composite thresholds",
+  "label_repaired_at": "2026-08-28T06:10:09.565265",
+  "restored_paid_run_manifest_from": "results\\_archive\\formula_label_repair_20260828_060812\\eval_set.before.json",
+  "removed_non_substantive_ids": [
+    "aws_aws-cdk_index",
+    "thomvaill_log4brains_index",
+    "thomvaill_log4brains_template",
+    "thomvaill_log4brains_README",
+    "adr_madr_adr-template",
+    "backstage_backstage_adr000-template",
+    "backstage_backstage_index"
+  ],
+  "replacement_ids_added_after_non_substantive_removal": [
+    "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+    "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+    "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+    "loopdive_js2_0001-hybrid-compilation-strategy",
+    "loopdive_js2_0004-aot",
+    "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+    "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data"
+  ]
+}

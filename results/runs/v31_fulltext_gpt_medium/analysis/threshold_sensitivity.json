@@ -1,0 +1,5941 @@
+{
+  "written_at": "2026-09-08T18:55:13.411761",
+  "purpose": "Sensitivity of human-label class distributions to alternative SC/DQ weights and structural-floor settings. This does not call any model API.",
+  "n_labels": 162,
+  "baseline_recorded_human_distribution": {
+    "Fully_Compliant": 63,
+    "Mostly_Compliant": 53,
+    "Partially_Compliant": 33,
+    "Not_Compliant": 13
+  },
+  "scenarios": [
+    {
+      "name": "current_weighted_40_60_structural_floor_40",
+      "n": 162,
+      "class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 53,
+        "Partially_Compliant": 33,
+        "Not_Compliant": 13
+      },
+      "changes_vs_current_weighted_rule": 0,
+      "sc_composite_weight": 0.4,
+      "dq_composite_weight": 0.6,
+      "structural_floor": 40.0,
+      "score_rows": [
+        {
+          "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0011-migration-strategy",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_receiving_metadata",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_parameterized-config-management-plugins",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_002-ui-extensions",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0004-markdown-format",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_acknowledge-warnings",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_blocks-storage-sharding",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+          "sc_score": 100.0,
+          "dq_score": 75.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+          "sc_score": 90.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0006-puppet-architecture",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0003-bootstrapping-virtual-environment",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr009-entity-references",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0019-centralise-mysql-databases",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parallel-compaction",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_native-oci-support",
+          "sc_score": 90.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0008-fixing-group-permissions-before-build",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_aurora-serverless-v2",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0009-modelling-history",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant-deletion",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+          "sc_score": 100.0,
+          "dq_score": 81.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0016-publishing-times-and-change-history",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_application-name-identifier",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr011-plugin-package-structure",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_cross-region-stack-references",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_timeseries-partitioning-in-compactor",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_applicationset-plugin-generator",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr010-luxon-date-library",
+          "sc_score": 90.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0003-initial-domain-modelling",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-on-the-read-path",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_sync-timeout",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-and-zone-awareness",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_backend-support-appset",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0011-moving-business-logic-out-of-controllers",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_config-management-plugin-v2",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0010-use-pipx-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0002-use-local-datastore",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0009-exclude-all-files-from-dockerignore-by-default",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0012-asking-user-for-confirmation",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+          "sc_score": 100.0,
+          "dq_score": 93.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_scalable-alertmanager",
+          "sc_score": 85.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+          "sc_score": 90.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+          "sc_score": 75.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0016-use-uv-tool-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0013-userdata-provisioning-snippets",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_partition-ring-multi-az-replication",
+          "sc_score": 70.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+          "sc_score": 100.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_proxy-extensions",
+          "sc_score": 75.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+          "sc_score": 90.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+          "sc_score": 75.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+          "sc_score": 75.0,
+          "dq_score": 65.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+          "sc_score": 85.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_distributed-query-execution",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_server-side-pagination",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+          "sc_score": 90.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0005-help-comments",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0003-provide-own-madr-tools",
+          "sc_score": 90.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr004-module-export-structure",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_per-tenant-cardinality-api",
+          "sc_score": 70.0,
+          "dq_score": 76.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_app-sync-using-impersonation",
+          "sc_score": 75.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0010-support-categories",
+          "sc_score": 90.0,
+          "dq_score": 80.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+          "sc_score": 85.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0003-aws-networking-outline",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha-new",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0008-add-status-field",
+          "sc_score": 75.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr006-avoid-react-fc",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0007-puppet-cert-management",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parquet-storage",
+          "sc_score": 70.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_workflow-update",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0002-implement-standalone-python-command",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0007-using-database-volumes-for-backends",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0015-handling-rootless-docker",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0010-sending-email-notifications",
+          "sc_score": 70.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0008-restricted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr013-use-node-fetch",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0012-file-attachment-rendering",
+          "sc_score": 85.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr015-jsx-loader-structure",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0013-permitted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0007-minimal-model",
+          "sc_score": 70.0,
+          "dq_score": 43.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_version-documentation",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0004-write-own-toc-tool",
+          "sc_score": 75.0,
+          "dq_score": 45.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_effect-package",
+          "sc_score": 60.0,
+          "dq_score": 46.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0011-use-asterisk-as-list-marker",
+          "sc_score": 60.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0009-help-scripts",
+          "sc_score": 85.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_argocd-cli-pluin",
+          "sc_score": 60.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+          "sc_score": 75.0,
+          "dq_score": 65.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+          "sc_score": 85.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_user-overrides-api",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0005-use-dashes-in-filenames",
+          "sc_score": 60.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_headless-argocd",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+          "sc_score": 75.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0017-terraform-data-structure",
+          "sc_score": 85.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_auth-gateway",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0014-allow-neutral-arguments",
+          "sc_score": 75.0,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+          "sc_score": 75.0,
+          "dq_score": 31.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0015-bulk-data-loading",
+          "sc_score": 70.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant_retention",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0002-do-not-use-numbers-in-headings",
+          "sc_score": 60.0,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_feature-bounties",
+          "sc_score": 60.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0006-use-names-as-identifier",
+          "sc_score": 75.0,
+          "dq_score": 40.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ring-multikey",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0014-political-and-government-tagging",
+          "sc_score": 70.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_nexus",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr001-add-adr-log",
+          "sc_score": 60.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services",
+          "sc_score": 55.0,
+          "dq_score": 21.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_history-service",
+          "sc_score": 40.0,
+          "dq_score": 35.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_chasm",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "openfga_openfga_architecture",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_matching-service",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_retry",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr014-use-fetch",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2_5-2_6",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0002-hosting-platforms",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+          "sc_score": 100.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+          "sc_score": 70.0,
+          "dq_score": 23.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0004-aot",
+          "sc_score": 85.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        }
+      ]
+    },
+    {
+      "name": "equal_sc_weights_current_dq_weights",
+      "n": 162,
+      "class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 51,
+        "Partially_Compliant": 34,
+        "Not_Compliant": 14
+      },
+      "changes_vs_current_weighted_rule": 3,
+      "sc_composite_weight": 0.4,
+      "dq_composite_weight": 0.6,
+      "structural_floor": 40.0,
+      "score_rows": [
+        {
+          "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+          "sc_score": 85.71,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0011-migration-strategy",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_receiving_metadata",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_parameterized-config-management-plugins",
+          "sc_score": 85.71,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_002-ui-extensions",
+          "sc_score": 85.71,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+          "sc_score": 85.71,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0004-markdown-format",
+          "sc_score": 85.71,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_acknowledge-warnings",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_blocks-storage-sharding",
+          "sc_score": 85.71,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+          "sc_score": 100.0,
+          "dq_score": 75.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+          "sc_score": 85.71,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0006-puppet-architecture",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+          "sc_score": 85.71,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy",
+          "sc_score": 85.71,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0003-bootstrapping-virtual-environment",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr009-entity-references",
+          "sc_score": 85.71,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0019-centralise-mysql-databases",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parallel-compaction",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_native-oci-support",
+          "sc_score": 85.71,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0008-fixing-group-permissions-before-build",
+          "sc_score": 85.71,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_aurora-serverless-v2",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0009-modelling-history",
+          "sc_score": 85.71,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant-deletion",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+          "sc_score": 85.71,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+          "sc_score": 100.0,
+          "dq_score": 81.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0016-publishing-times-and-change-history",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_application-name-identifier",
+          "sc_score": 85.71,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr011-plugin-package-structure",
+          "sc_score": 85.71,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_cross-region-stack-references",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_timeseries-partitioning-in-compactor",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_applicationset-plugin-generator",
+          "sc_score": 85.71,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr010-luxon-date-library",
+          "sc_score": 85.71,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0003-initial-domain-modelling",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-on-the-read-path",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_sync-timeout",
+          "sc_score": 85.71,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+          "sc_score": 85.71,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-and-zone-awareness",
+          "sc_score": 85.71,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_backend-support-appset",
+          "sc_score": 85.71,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0011-moving-business-logic-out-of-controllers",
+          "sc_score": 85.71,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_config-management-plugin-v2",
+          "sc_score": 85.71,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0010-use-pipx-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+          "sc_score": 85.71,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0002-use-local-datastore",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0009-exclude-all-files-from-dockerignore-by-default",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0012-asking-user-for-confirmation",
+          "sc_score": 85.71,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+          "sc_score": 100.0,
+          "dq_score": 93.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_scalable-alertmanager",
+          "sc_score": 85.71,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+          "sc_score": 85.71,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+          "sc_score": 71.43,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+          "sc_score": 85.71,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+          "sc_score": 71.43,
+          "dq_score": 66.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0016-use-uv-tool-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0013-userdata-provisioning-snippets",
+          "sc_score": 85.71,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_partition-ring-multi-az-replication",
+          "sc_score": 71.43,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+          "sc_score": 100.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_proxy-extensions",
+          "sc_score": 71.43,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+          "sc_score": 85.71,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+          "sc_score": 71.43,
+          "dq_score": 68.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+          "sc_score": 71.43,
+          "dq_score": 65.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+          "sc_score": 85.71,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_distributed-query-execution",
+          "sc_score": 85.71,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+          "sc_score": 85.71,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_server-side-pagination",
+          "sc_score": 71.43,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+          "sc_score": 85.71,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0005-help-comments",
+          "sc_score": 85.71,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0003-provide-own-madr-tools",
+          "sc_score": 85.71,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr004-module-export-structure",
+          "sc_score": 71.43,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_per-tenant-cardinality-api",
+          "sc_score": 71.43,
+          "dq_score": 76.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_app-sync-using-impersonation",
+          "sc_score": 71.43,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0010-support-categories",
+          "sc_score": 85.71,
+          "dq_score": 80.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+          "sc_score": 85.71,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+          "sc_score": 85.71,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+          "sc_score": 85.71,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0003-aws-networking-outline",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha-new",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0008-add-status-field",
+          "sc_score": 71.43,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr006-avoid-react-fc",
+          "sc_score": 71.43,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0007-puppet-cert-management",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parquet-storage",
+          "sc_score": 71.43,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_workflow-update",
+          "sc_score": 71.43,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0002-implement-standalone-python-command",
+          "sc_score": 85.71,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+          "sc_score": 85.71,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0007-using-database-volumes-for-backends",
+          "sc_score": 85.71,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0015-handling-rootless-docker",
+          "sc_score": 85.71,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0010-sending-email-notifications",
+          "sc_score": 71.43,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+          "sc_score": 71.43,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0008-restricted-deletion",
+          "sc_score": 85.71,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr013-use-node-fetch",
+          "sc_score": 71.43,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0012-file-attachment-rendering",
+          "sc_score": 85.71,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr015-jsx-loader-structure",
+          "sc_score": 71.43,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0013-permitted-deletion",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0007-minimal-model",
+          "sc_score": 71.43,
+          "dq_score": 43.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_version-documentation",
+          "sc_score": 71.43,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0004-write-own-toc-tool",
+          "sc_score": 71.43,
+          "dq_score": 45.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_effect-package",
+          "sc_score": 57.14,
+          "dq_score": 46.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0011-use-asterisk-as-list-marker",
+          "sc_score": 57.14,
+          "dq_score": 36.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0009-help-scripts",
+          "sc_score": 85.71,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_argocd-cli-pluin",
+          "sc_score": 57.14,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+          "sc_score": 71.43,
+          "dq_score": 65.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+          "sc_score": 85.71,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_user-overrides-api",
+          "sc_score": 71.43,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0005-use-dashes-in-filenames",
+          "sc_score": 57.14,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_headless-argocd",
+          "sc_score": 71.43,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+          "sc_score": 71.43,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0017-terraform-data-structure",
+          "sc_score": 85.71,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_auth-gateway",
+          "sc_score": 71.43,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0014-allow-neutral-arguments",
+          "sc_score": 71.43,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+          "sc_score": 71.43,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+          "sc_score": 71.43,
+          "dq_score": 31.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0015-bulk-data-loading",
+          "sc_score": 71.43,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant_retention",
+          "sc_score": 71.43,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0002-do-not-use-numbers-in-headings",
+          "sc_score": 57.14,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_feature-bounties",
+          "sc_score": 57.14,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0006-use-names-as-identifier",
+          "sc_score": 71.43,
+          "dq_score": 40.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+          "sc_score": 71.43,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ring-multikey",
+          "sc_score": 71.43,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0014-political-and-government-tagging",
+          "sc_score": 71.43,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0001-record-architecture-decisions",
+          "sc_score": 42.86,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_nexus",
+          "sc_score": 42.86,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr001-add-adr-log",
+          "sc_score": 57.14,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services",
+          "sc_score": 57.14,
+          "dq_score": 21.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_history-service",
+          "sc_score": 42.86,
+          "dq_score": 35.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0001-record-architecture-decisions",
+          "sc_score": 42.86,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_chasm",
+          "sc_score": 42.86,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "openfga_openfga_architecture",
+          "sc_score": 28.57,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_matching-service",
+          "sc_score": 28.57,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_retry",
+          "sc_score": 28.57,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr014-use-fetch",
+          "sc_score": 85.71,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+          "sc_score": 85.71,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2_5-2_6",
+          "sc_score": 42.86,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0002-hosting-platforms",
+          "sc_score": 85.71,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+          "sc_score": 100.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+          "sc_score": 71.43,
+          "dq_score": 23.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+          "sc_score": 71.43,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+          "sc_score": 85.71,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0004-aot",
+          "sc_score": 85.71,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+          "sc_score": 42.86,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+          "sc_score": 85.71,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        }
+      ]
+    },
+    {
+      "name": "current_sc_weights_equal_dq_weights",
+      "n": 162,
+      "class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 54,
+        "Partially_Compliant": 31,
+        "Not_Compliant": 14
+      },
+      "changes_vs_current_weighted_rule": 2,
+      "sc_composite_weight": 0.4,
+      "dq_composite_weight": 0.6,
+      "structural_floor": 40.0,
+      "score_rows": [
+        {
+          "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+          "sc_score": 90.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+          "sc_score": 100.0,
+          "dq_score": 90.48,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0011-migration-strategy",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+          "sc_score": 100.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_receiving_metadata",
+          "sc_score": 100.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_parameterized-config-management-plugins",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_002-ui-extensions",
+          "sc_score": 90.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+          "sc_score": 90.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0004-markdown-format",
+          "sc_score": 85.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_acknowledge-warnings",
+          "sc_score": 100.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_blocks-storage-sharding",
+          "sc_score": 85.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+          "sc_score": 100.0,
+          "dq_score": 76.19,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+          "sc_score": 90.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+          "sc_score": 100.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0006-puppet-architecture",
+          "sc_score": 100.0,
+          "dq_score": 80.95,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+          "sc_score": 100.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0003-bootstrapping-virtual-environment",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+          "sc_score": 100.0,
+          "dq_score": 90.48,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+          "sc_score": 100.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr009-entity-references",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+          "sc_score": 100.0,
+          "dq_score": 80.95,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0019-centralise-mysql-databases",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parallel-compaction",
+          "sc_score": 100.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_native-oci-support",
+          "sc_score": 90.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0008-fixing-group-permissions-before-build",
+          "sc_score": 85.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_aurora-serverless-v2",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0009-modelling-history",
+          "sc_score": 85.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+          "sc_score": 100.0,
+          "dq_score": 80.95,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant-deletion",
+          "sc_score": 100.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+          "sc_score": 100.0,
+          "dq_score": 80.95,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0016-publishing-times-and-change-history",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha",
+          "sc_score": 100.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_application-name-identifier",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr011-plugin-package-structure",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_cross-region-stack-references",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+          "sc_score": 100.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_timeseries-partitioning-in-compactor",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_applicationset-plugin-generator",
+          "sc_score": 90.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr010-luxon-date-library",
+          "sc_score": 90.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0003-initial-domain-modelling",
+          "sc_score": 100.0,
+          "dq_score": 80.95,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-on-the-read-path",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_sync-timeout",
+          "sc_score": 90.0,
+          "dq_score": 90.48,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+          "sc_score": 90.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+          "sc_score": 100.0,
+          "dq_score": 80.95,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-and-zone-awareness",
+          "sc_score": 85.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_backend-support-appset",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container",
+          "sc_score": 100.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0011-moving-business-logic-out-of-controllers",
+          "sc_score": 85.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_config-management-plugin-v2",
+          "sc_score": 90.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0010-use-pipx-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+          "sc_score": 100.0,
+          "dq_score": 95.24,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+          "sc_score": 90.0,
+          "dq_score": 90.48,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0002-use-local-datastore",
+          "sc_score": 100.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0009-exclude-all-files-from-dockerignore-by-default",
+          "sc_score": 100.0,
+          "dq_score": 90.48,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+          "sc_score": 100.0,
+          "dq_score": 80.95,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0012-asking-user-for-confirmation",
+          "sc_score": 85.0,
+          "dq_score": 85.71,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+          "sc_score": 100.0,
+          "dq_score": 90.48,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_scalable-alertmanager",
+          "sc_score": 85.0,
+          "dq_score": 76.19,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+          "sc_score": 85.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+          "sc_score": 75.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+          "sc_score": 90.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+          "sc_score": 75.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0016-use-uv-tool-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0013-userdata-provisioning-snippets",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_partition-ring-multi-az-replication",
+          "sc_score": 70.0,
+          "dq_score": 71.43,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+          "sc_score": 100.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_proxy-extensions",
+          "sc_score": 75.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+          "sc_score": 90.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+          "sc_score": 75.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+          "sc_score": 75.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+          "sc_score": 85.0,
+          "dq_score": 71.43,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_distributed-query-execution",
+          "sc_score": 85.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+          "sc_score": 85.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_server-side-pagination",
+          "sc_score": 75.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+          "sc_score": 90.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0005-help-comments",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0003-provide-own-madr-tools",
+          "sc_score": 90.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr004-module-export-structure",
+          "sc_score": 75.0,
+          "dq_score": 61.9,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_per-tenant-cardinality-api",
+          "sc_score": 70.0,
+          "dq_score": 76.19,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_app-sync-using-impersonation",
+          "sc_score": 75.0,
+          "dq_score": 71.43,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0010-support-categories",
+          "sc_score": 90.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+          "sc_score": 85.0,
+          "dq_score": 71.43,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+          "sc_score": 85.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0003-aws-networking-outline",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha-new",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0008-add-status-field",
+          "sc_score": 75.0,
+          "dq_score": 71.43,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr006-avoid-react-fc",
+          "sc_score": 75.0,
+          "dq_score": 61.9,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0007-puppet-cert-management",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parquet-storage",
+          "sc_score": 70.0,
+          "dq_score": 71.43,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_workflow-update",
+          "sc_score": 75.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0002-implement-standalone-python-command",
+          "sc_score": 85.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0007-using-database-volumes-for-backends",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0015-handling-rootless-docker",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0010-sending-email-notifications",
+          "sc_score": 70.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+          "sc_score": 75.0,
+          "dq_score": 61.9,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0008-restricted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr013-use-node-fetch",
+          "sc_score": 75.0,
+          "dq_score": 61.9,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0012-file-attachment-rendering",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr015-jsx-loader-structure",
+          "sc_score": 75.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0013-permitted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0007-minimal-model",
+          "sc_score": 70.0,
+          "dq_score": 42.86,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_version-documentation",
+          "sc_score": 70.0,
+          "dq_score": 52.38,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0004-write-own-toc-tool",
+          "sc_score": 75.0,
+          "dq_score": 47.62,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_effect-package",
+          "sc_score": 60.0,
+          "dq_score": 47.62,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0011-use-asterisk-as-list-marker",
+          "sc_score": 60.0,
+          "dq_score": 33.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0009-help-scripts",
+          "sc_score": 85.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_argocd-cli-pluin",
+          "sc_score": 60.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+          "sc_score": 75.0,
+          "dq_score": 61.9,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+          "sc_score": 85.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_user-overrides-api",
+          "sc_score": 70.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0005-use-dashes-in-filenames",
+          "sc_score": 60.0,
+          "dq_score": 52.38,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_headless-argocd",
+          "sc_score": 75.0,
+          "dq_score": 61.9,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+          "sc_score": 75.0,
+          "dq_score": 33.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0017-terraform-data-structure",
+          "sc_score": 85.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_auth-gateway",
+          "sc_score": 70.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0014-allow-neutral-arguments",
+          "sc_score": 75.0,
+          "dq_score": 42.86,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+          "sc_score": 75.0,
+          "dq_score": 61.9,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+          "sc_score": 75.0,
+          "dq_score": 33.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0015-bulk-data-loading",
+          "sc_score": 70.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant_retention",
+          "sc_score": 70.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0002-do-not-use-numbers-in-headings",
+          "sc_score": 60.0,
+          "dq_score": 38.1,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_feature-bounties",
+          "sc_score": 60.0,
+          "dq_score": 52.38,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0006-use-names-as-identifier",
+          "sc_score": 75.0,
+          "dq_score": 38.1,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+          "sc_score": 70.0,
+          "dq_score": 52.38,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ring-multikey",
+          "sc_score": 70.0,
+          "dq_score": 57.14,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0014-political-and-government-tagging",
+          "sc_score": 70.0,
+          "dq_score": 38.1,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 14.29,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_nexus",
+          "sc_score": 40.0,
+          "dq_score": 33.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr001-add-adr-log",
+          "sc_score": 60.0,
+          "dq_score": 33.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services",
+          "sc_score": 55.0,
+          "dq_score": 23.81,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_history-service",
+          "sc_score": 40.0,
+          "dq_score": 38.1,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 14.29,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_chasm",
+          "sc_score": 40.0,
+          "dq_score": 33.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "openfga_openfga_architecture",
+          "sc_score": 25.0,
+          "dq_score": 19.05,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_matching-service",
+          "sc_score": 25.0,
+          "dq_score": 19.05,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_retry",
+          "sc_score": 25.0,
+          "dq_score": 19.05,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr014-use-fetch",
+          "sc_score": 90.0,
+          "dq_score": 90.48,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2_5-2_6",
+          "sc_score": 40.0,
+          "dq_score": 33.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0002-hosting-platforms",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+          "sc_score": 100.0,
+          "dq_score": 76.19,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+          "sc_score": 70.0,
+          "dq_score": 23.81,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+          "sc_score": 70.0,
+          "dq_score": 52.38,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+          "sc_score": 85.0,
+          "dq_score": 80.95,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0004-aot",
+          "sc_score": 85.0,
+          "dq_score": 90.48,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 14.29,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+          "sc_score": 85.0,
+          "dq_score": 61.9,
+          "overall": "Mostly_Compliant"
+        }
+      ]
+    },
+    {
+      "name": "balanced_sc_dq_50_50",
+      "n": 162,
+      "class_distribution": {
+        "Fully_Compliant": 64,
+        "Mostly_Compliant": 54,
+        "Partially_Compliant": 33,
+        "Not_Compliant": 11
+      },
+      "changes_vs_current_weighted_rule": 5,
+      "sc_composite_weight": 0.5,
+      "dq_composite_weight": 0.5,
+      "structural_floor": 40.0,
+      "score_rows": [
+        {
+          "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0011-migration-strategy",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_receiving_metadata",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_parameterized-config-management-plugins",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_002-ui-extensions",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0004-markdown-format",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_acknowledge-warnings",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_blocks-storage-sharding",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+          "sc_score": 100.0,
+          "dq_score": 75.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+          "sc_score": 90.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0006-puppet-architecture",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0003-bootstrapping-virtual-environment",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr009-entity-references",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0019-centralise-mysql-databases",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parallel-compaction",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_native-oci-support",
+          "sc_score": 90.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0008-fixing-group-permissions-before-build",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_aurora-serverless-v2",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0009-modelling-history",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant-deletion",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+          "sc_score": 100.0,
+          "dq_score": 81.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0016-publishing-times-and-change-history",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_application-name-identifier",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr011-plugin-package-structure",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_cross-region-stack-references",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_timeseries-partitioning-in-compactor",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_applicationset-plugin-generator",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr010-luxon-date-library",
+          "sc_score": 90.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0003-initial-domain-modelling",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-on-the-read-path",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_sync-timeout",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-and-zone-awareness",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_backend-support-appset",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0011-moving-business-logic-out-of-controllers",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_config-management-plugin-v2",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0010-use-pipx-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0002-use-local-datastore",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0009-exclude-all-files-from-dockerignore-by-default",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0012-asking-user-for-confirmation",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+          "sc_score": 100.0,
+          "dq_score": 93.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_scalable-alertmanager",
+          "sc_score": 85.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+          "sc_score": 90.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+          "sc_score": 75.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0016-use-uv-tool-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0013-userdata-provisioning-snippets",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_partition-ring-multi-az-replication",
+          "sc_score": 70.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+          "sc_score": 100.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_proxy-extensions",
+          "sc_score": 75.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+          "sc_score": 90.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+          "sc_score": 75.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+          "sc_score": 75.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+          "sc_score": 85.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_distributed-query-execution",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_server-side-pagination",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+          "sc_score": 90.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0005-help-comments",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0003-provide-own-madr-tools",
+          "sc_score": 90.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr004-module-export-structure",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_per-tenant-cardinality-api",
+          "sc_score": 70.0,
+          "dq_score": 76.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_app-sync-using-impersonation",
+          "sc_score": 75.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0010-support-categories",
+          "sc_score": 90.0,
+          "dq_score": 80.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+          "sc_score": 85.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0003-aws-networking-outline",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha-new",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0008-add-status-field",
+          "sc_score": 75.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr006-avoid-react-fc",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0007-puppet-cert-management",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parquet-storage",
+          "sc_score": 70.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_workflow-update",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0002-implement-standalone-python-command",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0007-using-database-volumes-for-backends",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0015-handling-rootless-docker",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0010-sending-email-notifications",
+          "sc_score": 70.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0008-restricted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr013-use-node-fetch",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0012-file-attachment-rendering",
+          "sc_score": 85.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr015-jsx-loader-structure",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0013-permitted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0007-minimal-model",
+          "sc_score": 70.0,
+          "dq_score": 43.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_version-documentation",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0004-write-own-toc-tool",
+          "sc_score": 75.0,
+          "dq_score": 45.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_effect-package",
+          "sc_score": 60.0,
+          "dq_score": 46.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0011-use-asterisk-as-list-marker",
+          "sc_score": 60.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0009-help-scripts",
+          "sc_score": 85.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_argocd-cli-pluin",
+          "sc_score": 60.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+          "sc_score": 75.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+          "sc_score": 85.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_user-overrides-api",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0005-use-dashes-in-filenames",
+          "sc_score": 60.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_headless-argocd",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+          "sc_score": 75.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0017-terraform-data-structure",
+          "sc_score": 85.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_auth-gateway",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0014-allow-neutral-arguments",
+          "sc_score": 75.0,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+          "sc_score": 75.0,
+          "dq_score": 31.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0015-bulk-data-loading",
+          "sc_score": 70.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant_retention",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0002-do-not-use-numbers-in-headings",
+          "sc_score": 60.0,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_feature-bounties",
+          "sc_score": 60.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0006-use-names-as-identifier",
+          "sc_score": 75.0,
+          "dq_score": 40.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ring-multikey",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0014-political-and-government-tagging",
+          "sc_score": 70.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_nexus",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr001-add-adr-log",
+          "sc_score": 60.0,
+          "dq_score": 31.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services",
+          "sc_score": 55.0,
+          "dq_score": 21.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_history-service",
+          "sc_score": 40.0,
+          "dq_score": 35.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_chasm",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "openfga_openfga_architecture",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_matching-service",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_retry",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr014-use-fetch",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2_5-2_6",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0002-hosting-platforms",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+          "sc_score": 100.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+          "sc_score": 70.0,
+          "dq_score": 23.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0004-aot",
+          "sc_score": 85.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        }
+      ]
+    },
+    {
+      "name": "no_structural_floor",
+      "n": 162,
+      "class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 53,
+        "Partially_Compliant": 33,
+        "Not_Compliant": 13
+      },
+      "changes_vs_current_weighted_rule": 0,
+      "sc_composite_weight": 0.4,
+      "dq_composite_weight": 0.6,
+      "structural_floor": 0.0,
+      "score_rows": [
+        {
+          "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0011-migration-strategy",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_receiving_metadata",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_parameterized-config-management-plugins",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_002-ui-extensions",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0004-markdown-format",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_acknowledge-warnings",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_blocks-storage-sharding",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+          "sc_score": 100.0,
+          "dq_score": 75.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+          "sc_score": 90.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0006-puppet-architecture",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0003-bootstrapping-virtual-environment",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr009-entity-references",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0019-centralise-mysql-databases",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parallel-compaction",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_native-oci-support",
+          "sc_score": 90.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0008-fixing-group-permissions-before-build",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_aurora-serverless-v2",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0009-modelling-history",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant-deletion",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+          "sc_score": 100.0,
+          "dq_score": 81.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0016-publishing-times-and-change-history",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_application-name-identifier",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr011-plugin-package-structure",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_cross-region-stack-references",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_timeseries-partitioning-in-compactor",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_applicationset-plugin-generator",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr010-luxon-date-library",
+          "sc_score": 90.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0003-initial-domain-modelling",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-on-the-read-path",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_sync-timeout",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-and-zone-awareness",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_backend-support-appset",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0011-moving-business-logic-out-of-controllers",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_config-management-plugin-v2",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0010-use-pipx-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0002-use-local-datastore",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0009-exclude-all-files-from-dockerignore-by-default",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0012-asking-user-for-confirmation",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+          "sc_score": 100.0,
+          "dq_score": 93.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_scalable-alertmanager",
+          "sc_score": 85.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+          "sc_score": 90.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+          "sc_score": 75.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0016-use-uv-tool-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0013-userdata-provisioning-snippets",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_partition-ring-multi-az-replication",
+          "sc_score": 70.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+          "sc_score": 100.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_proxy-extensions",
+          "sc_score": 75.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+          "sc_score": 90.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+          "sc_score": 75.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+          "sc_score": 75.0,
+          "dq_score": 65.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+          "sc_score": 85.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_distributed-query-execution",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_server-side-pagination",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+          "sc_score": 90.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0005-help-comments",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0003-provide-own-madr-tools",
+          "sc_score": 90.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr004-module-export-structure",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_per-tenant-cardinality-api",
+          "sc_score": 70.0,
+          "dq_score": 76.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_app-sync-using-impersonation",
+          "sc_score": 75.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0010-support-categories",
+          "sc_score": 90.0,
+          "dq_score": 80.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+          "sc_score": 85.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0003-aws-networking-outline",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha-new",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0008-add-status-field",
+          "sc_score": 75.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr006-avoid-react-fc",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0007-puppet-cert-management",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parquet-storage",
+          "sc_score": 70.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_workflow-update",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0002-implement-standalone-python-command",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0007-using-database-volumes-for-backends",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0015-handling-rootless-docker",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0010-sending-email-notifications",
+          "sc_score": 70.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0008-restricted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr013-use-node-fetch",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0012-file-attachment-rendering",
+          "sc_score": 85.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr015-jsx-loader-structure",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0013-permitted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0007-minimal-model",
+          "sc_score": 70.0,
+          "dq_score": 43.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_version-documentation",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0004-write-own-toc-tool",
+          "sc_score": 75.0,
+          "dq_score": 45.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_effect-package",
+          "sc_score": 60.0,
+          "dq_score": 46.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0011-use-asterisk-as-list-marker",
+          "sc_score": 60.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0009-help-scripts",
+          "sc_score": 85.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_argocd-cli-pluin",
+          "sc_score": 60.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+          "sc_score": 75.0,
+          "dq_score": 65.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+          "sc_score": 85.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_user-overrides-api",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0005-use-dashes-in-filenames",
+          "sc_score": 60.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_headless-argocd",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+          "sc_score": 75.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0017-terraform-data-structure",
+          "sc_score": 85.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_auth-gateway",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0014-allow-neutral-arguments",
+          "sc_score": 75.0,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+          "sc_score": 75.0,
+          "dq_score": 31.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0015-bulk-data-loading",
+          "sc_score": 70.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant_retention",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0002-do-not-use-numbers-in-headings",
+          "sc_score": 60.0,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_feature-bounties",
+          "sc_score": 60.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0006-use-names-as-identifier",
+          "sc_score": 75.0,
+          "dq_score": 40.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ring-multikey",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0014-political-and-government-tagging",
+          "sc_score": 70.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_nexus",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr001-add-adr-log",
+          "sc_score": 60.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services",
+          "sc_score": 55.0,
+          "dq_score": 21.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_history-service",
+          "sc_score": 40.0,
+          "dq_score": 35.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_chasm",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "openfga_openfga_architecture",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_matching-service",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_retry",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr014-use-fetch",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2_5-2_6",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0002-hosting-platforms",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+          "sc_score": 100.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+          "sc_score": 70.0,
+          "dq_score": 23.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0004-aot",
+          "sc_score": 85.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        }
+      ]
+    },
+    {
+      "name": "stricter_structural_floor_50",
+      "n": 162,
+      "class_distribution": {
+        "Fully_Compliant": 63,
+        "Mostly_Compliant": 53,
+        "Partially_Compliant": 33,
+        "Not_Compliant": 13
+      },
+      "changes_vs_current_weighted_rule": 0,
+      "sc_composite_weight": 0.4,
+      "dq_composite_weight": 0.6,
+      "structural_floor": 50.0,
+      "score_rows": [
+        {
+          "adr_id": "backstage_backstage_adr002-default-catalog-file-format",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200924-use-markdown-architectural-decision-records",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0011-migration-strategy",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_receiving_metadata",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_parameterized-config-management-plugins",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_002-ui-extensions",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr007-use-msw-to-mock-service-requests",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0004-markdown-format",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_acknowledge-warnings",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_blocks-storage-sharding",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-use-prettier-eslint-airbnb-for-the-code-style",
+          "sc_score": 100.0,
+          "dq_score": 75.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr008-default-catalog-file-name",
+          "sc_score": 90.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200925-multi-packages-architecture-in-a-monorepo-with-yarn-and-lerna",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0006-puppet-architecture",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20241217-switch-back-to-github-flow",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_decouple-application-sync-user-using-impersonation",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2022-07-13-appset-progressive-rollout-strategy",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0003-bootstrapping-virtual-environment",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0008-use-iso-8601-format-for-dates",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20210113-distribute-log4brains-as-a-global-npm-package",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr009-entity-references",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20200926-use-the-adr-number-as-its-unique-id",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0019-centralise-mysql-databases",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parallel-compaction",
+          "sc_score": 100.0,
+          "dq_score": 95.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_native-oci-support",
+          "sc_score": 90.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0008-fixing-group-permissions-before-build",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_aurora-serverless-v2",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0009-modelling-history",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201026-the-core-api-is-responsible-for-enhancing-the-adr-markdown-body-with-mdx",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant-deletion",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+          "sc_score": 100.0,
+          "dq_score": 81.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0016-publishing-times-and-change-history",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_application-name-identifier",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr011-plugin-package-structure",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "aws_aws-cdk_cross-region-stack-references",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0021-use-acm-for-ssl-purchases-and-terminate-certificates-on-elbs",
+          "sc_score": 100.0,
+          "dq_score": 88.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_timeseries-partitioning-in-compactor",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_applicationset-plugin-generator",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr010-luxon-date-library",
+          "sc_score": 90.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0003-initial-domain-modelling",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-on-the-read-path",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_sync-timeout",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr005-catalog-core-entities",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0008-postgres-on-puppetmaster",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_shuffle-sharding-and-zone-awareness",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_backend-support-appset",
+          "sc_score": 90.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0006-using-root-user-and-fixing-ownership-for-ci-container",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0011-moving-business-logic-out-of-controllers",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_config-management-plugin-v2",
+          "sc_score": 90.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0010-use-pipx-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+          "sc_score": 100.0,
+          "dq_score": 96.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0002-use-local-datastore",
+          "sc_score": 100.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0009-exclude-all-files-from-dockerignore-by-default",
+          "sc_score": 100.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+          "sc_score": 100.0,
+          "dq_score": 83.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0012-asking-user-for-confirmation",
+          "sc_score": 85.0,
+          "dq_score": 86.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0014-launch-config-change-propagation-process",
+          "sc_score": 100.0,
+          "dq_score": 93.33,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_scalable-alertmanager",
+          "sc_score": 85.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_project-repos-and-clusters",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0013-use-yaml-front-matter-for-meta-data",
+          "sc_score": 90.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0006-packaging-and-distribution-in-other-version-control-repositories",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0012-use-curly-braces-to-denote-placeholder",
+          "sc_score": 75.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0016-use-uv-tool-to-install-breeze",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0013-userdata-provisioning-snippets",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_partition-ring-multi-az-replication",
+          "sc_score": 70.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0005-terraform-module-location",
+          "sc_score": 100.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_proxy-extensions",
+          "sc_score": 75.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+          "sc_score": 90.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0009-support-links-between-adrs-inside-an-adrs",
+          "sc_score": 75.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr012-use-luxon-locale-and-date-presets",
+          "sc_score": 75.0,
+          "dq_score": 65.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0009-environment-bootstrapping-process",
+          "sc_score": 85.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_distributed-query-execution",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_server-side-pagination",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0016-outcome-before-detailed-pros-cons",
+          "sc_score": 90.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0005-help-comments",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0003-provide-own-madr-tools",
+          "sc_score": 90.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr004-module-export-structure",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_per-tenant-cardinality-api",
+          "sc_score": 70.0,
+          "dq_score": 76.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_app-sync-using-impersonation",
+          "sc_score": 75.0,
+          "dq_score": 70.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0010-support-categories",
+          "sc_score": 90.0,
+          "dq_score": 80.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "thomvaill_log4brains_20201016-use-the-adr-slug-as-its-unique-id",
+          "sc_score": 85.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0003-aws-networking-outline",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ruler-ha-new",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0002-implement-as-shell-scripts",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0008-add-status-field",
+          "sc_score": 75.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr006-avoid-react-fc",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0007-puppet-cert-management",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_parquet-storage",
+          "sc_score": 70.0,
+          "dq_score": 73.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_workflow-update",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0023-use-separate-data-repository",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0002-implement-standalone-python-command",
+          "sc_score": 85.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0004-editing-microcopy",
+          "sc_score": 85.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0007-using-database-volumes-for-backends",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0030-change-in-architecture-to-asset-master",
+          "sc_score": 100.0,
+          "dq_score": 66.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0015-handling-rootless-docker",
+          "sc_score": 85.0,
+          "dq_score": 65.0,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0010-sending-email-notifications",
+          "sc_score": 70.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0008-restricted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr013-use-node-fetch",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0012-file-attachment-rendering",
+          "sc_score": 85.0,
+          "dq_score": 68.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr015-jsx-loader-structure",
+          "sc_score": 75.0,
+          "dq_score": 81.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0013-permitted-deletion",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0007-minimal-model",
+          "sc_score": 70.0,
+          "dq_score": 43.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_version-documentation",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0004-write-own-toc-tool",
+          "sc_score": 75.0,
+          "dq_score": 45.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_effect-package",
+          "sc_score": 60.0,
+          "dq_score": 46.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0011-use-asterisk-as-list-marker",
+          "sc_score": 60.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "npryce_adr-tools_0009-help-scripts",
+          "sc_score": 85.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_argocd-cli-pluin",
+          "sc_score": 60.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+          "sc_score": 75.0,
+          "dq_score": 65.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0020-merge-api-postgresql-instance-into-main-postgresql-instance",
+          "sc_score": 85.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_user-overrides-api",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0005-use-dashes-in-filenames",
+          "sc_score": 60.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_headless-argocd",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0007-do-not-emphasize-line-headings",
+          "sc_score": 75.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0017-terraform-data-structure",
+          "sc_score": 85.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_auth-gateway",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0014-allow-neutral-arguments",
+          "sc_score": 75.0,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_deletion-strategy-progressive-sync",
+          "sc_score": 75.0,
+          "dq_score": 61.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+          "sc_score": 75.0,
+          "dq_score": 31.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0015-bulk-data-loading",
+          "sc_score": 70.0,
+          "dq_score": 58.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_tenant_retention",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0002-do-not-use-numbers-in-headings",
+          "sc_score": 60.0,
+          "dq_score": 41.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_feature-bounties",
+          "sc_score": 60.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "adr_madr_0006-use-names-as-identifier",
+          "sc_score": 75.0,
+          "dq_score": 40.0,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0006-tagging-governments",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "cortexproject_cortex_ring-multikey",
+          "sc_score": 70.0,
+          "dq_score": 56.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0014-political-and-government-tagging",
+          "sc_score": 70.0,
+          "dq_score": 36.67,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_nexus",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr001-add-adr-log",
+          "sc_score": 60.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0004-dns-definitions-for-hosts-and-services",
+          "sc_score": 55.0,
+          "dq_score": 21.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_history-service",
+          "sc_score": 40.0,
+          "dq_score": 35.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_content-publisher_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_chasm",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "openfga_openfga_architecture",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_matching-service",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "temporalio_temporal_retry",
+          "sc_score": 25.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+          "sc_score": 100.0,
+          "dq_score": 100.0,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "backstage_backstage_adr014-use-fetch",
+          "sc_score": 90.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0016-internal-dns-zones",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "argoproj_argo-cd_2_5-2_6",
+          "sc_score": 40.0,
+          "dq_score": 31.67,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0002-hosting-platforms",
+          "sc_score": 85.0,
+          "dq_score": 61.67,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0022-remove-the-elasticsearch-proxy",
+          "sc_score": 100.0,
+          "dq_score": 78.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0026-remove-load-balancer-tier",
+          "sc_score": 70.0,
+          "dq_score": 23.33,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+          "sc_score": 70.0,
+          "dq_score": 53.33,
+          "overall": "Partially_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0001-hybrid-compilation-strategy",
+          "sc_score": 85.0,
+          "dq_score": 83.33,
+          "overall": "Mostly_Compliant"
+        },
+        {
+          "adr_id": "loopdive_js2_0004-aot",
+          "sc_score": 85.0,
+          "dq_score": 91.67,
+          "overall": "Fully_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0001-record-architecture-decisions",
+          "sc_score": 35.0,
+          "dq_score": 15.0,
+          "overall": "Not_Compliant"
+        },
+        {
+          "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+          "sc_score": 85.0,
+          "dq_score": 63.33,
+          "overall": "Mostly_Compliant"
+        }
+      ]
+    }
+  ]
+}

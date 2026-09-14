@@ -1,0 +1,5053 @@
+{
+  "written_at": "2026-09-08T19:09:58.267356",
+  "purpose": "Detailed model-performance report for manuscript tables: per-class precision, recall, F1, repetition summaries, 95% confidence intervals, and confusion matrices.",
+  "confidence_interval_method": "95% t interval across completed repetitions for metrics with more than one repetition; null when only one repetition is available.",
+  "labels": [
+    "Fully_Compliant",
+    "Mostly_Compliant",
+    "Partially_Compliant",
+    "Not_Compliant"
+  ],
+  "configurations": {
+    "claude-sonnet-4-6/chain_of_thought": {
+      "model": "claude-sonnet-4-6",
+      "strategy": "chain_of_thought",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.2737,
+          "std": 0.0071,
+          "ci95_low": 0.256,
+          "ci95_high": 0.2914
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.4483,
+          "std": 0.0345,
+          "ci95_low": 0.3626,
+          "ci95_high": 0.5341
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.4413,
+          "std": 0.0038,
+          "ci95_low": 0.4318,
+          "ci95_high": 0.4507
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.2921,
+          "std": 0.0035,
+          "ci95_low": 0.2834,
+          "ci95_high": 0.3007
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.2128,
+          "std": 0.011,
+          "ci95_low": 0.1854,
+          "ci95_high": 0.2402
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.0842,
+          "std": 0.01,
+          "ci95_low": 0.0593,
+          "ci95_high": 0.1091
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.9333,
+            "std": 0.1155,
+            "ci95_low": 0.6465,
+            "ci95_high": 1.2202
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.0635,
+            "std": 0.0,
+            "ci95_low": 0.0635,
+            "ci95_high": 0.0635
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.1188,
+            "std": 0.001,
+            "ci95_low": 0.1163,
+            "ci95_high": 0.1213
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.2482,
+            "std": 0.0494,
+            "ci95_low": 0.1256,
+            "ci95_high": 0.3708
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.1321,
+            "std": 0.0327,
+            "ci95_low": 0.0509,
+            "ci95_high": 0.2133
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.1723,
+            "std": 0.0397,
+            "ci95_low": 0.0738,
+            "ci95_high": 0.2708
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.2148,
+            "std": 0.0035,
+            "ci95_low": 0.2062,
+            "ci95_high": 0.2235
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.6465,
+            "std": 0.0175,
+            "ci95_low": 0.603,
+            "ci95_high": 0.6899
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.3224,
+            "std": 0.0038,
+            "ci95_low": 0.3129,
+            "ci95_high": 0.3319
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3969,
+            "std": 0.0281,
+            "ci95_low": 0.3271,
+            "ci95_high": 0.4667
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.9231,
+            "std": 0.0,
+            "ci95_low": 0.9231,
+            "ci95_high": 0.9231
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5547,
+            "std": 0.0272,
+            "ci95_low": 0.4871,
+            "ci95_high": 0.6223
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            12,
+            58,
+            101,
+            18
+          ],
+          [
+            1,
+            21,
+            130,
+            7
+          ],
+          [
+            0,
+            5,
+            64,
+            30
+          ],
+          [
+            0,
+            0,
+            3,
+            36
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.2654,
+          "macro_precision": 0.4086,
+          "macro_recall": 0.4369,
+          "macro_f1": 0.2883,
+          "weighted_f1": 0.2,
+          "cohen_kappa": 0.0726,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.8,
+              "recall": 0.0635,
+              "f1": 0.1176,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.1923,
+              "recall": 0.0943,
+              "f1": 0.1266,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.2136,
+              "recall": 0.6667,
+              "f1": 0.3235,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4286,
+              "recall": 0.9231,
+              "f1": 0.5854,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                4,
+                19,
+                35,
+                5
+              ],
+              [
+                1,
+                5,
+                45,
+                2
+              ],
+              [
+                0,
+                2,
+                22,
+                9
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.2778,
+          "macro_precision": 0.4651,
+          "macro_recall": 0.4435,
+          "macro_f1": 0.2928,
+          "weighted_f1": 0.2186,
+          "cohen_kappa": 0.0895,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 1.0,
+              "recall": 0.0635,
+              "f1": 0.1194,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.2667,
+              "recall": 0.1509,
+              "f1": 0.1928,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.2188,
+              "recall": 0.6364,
+              "f1": 0.3256,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.375,
+              "recall": 0.9231,
+              "f1": 0.5333,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                4,
+                20,
+                32,
+                7
+              ],
+              [
+                0,
+                8,
+                42,
+                3
+              ],
+              [
+                0,
+                2,
+                21,
+                10
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.2778,
+          "macro_precision": 0.4712,
+          "macro_recall": 0.4435,
+          "macro_f1": 0.2951,
+          "weighted_f1": 0.2196,
+          "cohen_kappa": 0.0904,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 1.0,
+              "recall": 0.0635,
+              "f1": 0.1194,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.2857,
+              "recall": 0.1509,
+              "f1": 0.1975,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.2121,
+              "recall": 0.6364,
+              "f1": 0.3182,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.3871,
+              "recall": 0.9231,
+              "f1": 0.5455,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                4,
+                19,
+                34,
+                6
+              ],
+              [
+                0,
+                8,
+                43,
+                2
+              ],
+              [
+                0,
+                1,
+                21,
+                11
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "claude-sonnet-4-6/few_shot": {
+      "model": "claude-sonnet-4-6",
+      "strategy": "few_shot",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.43,
+          "std": 0.0071,
+          "ci95_low": 0.4123,
+          "ci95_high": 0.4477
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.5437,
+          "std": 0.0141,
+          "ci95_low": 0.5086,
+          "ci95_high": 0.5788
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.5632,
+          "std": 0.0071,
+          "ci95_low": 0.5456,
+          "ci95_high": 0.5809
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.4946,
+          "std": 0.0086,
+          "ci95_low": 0.4731,
+          "ci95_high": 0.516
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.4138,
+          "std": 0.0071,
+          "ci95_low": 0.3962,
+          "ci95_high": 0.4313
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.2384,
+          "std": 0.0101,
+          "ci95_low": 0.2134,
+          "ci95_high": 0.2635
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.7873,
+            "std": 0.022,
+            "ci95_low": 0.7327,
+            "ci95_high": 0.8419
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.254,
+            "std": 0.0,
+            "ci95_low": 0.254,
+            "ci95_high": 0.254
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.384,
+            "std": 0.0026,
+            "ci95_low": 0.3774,
+            "ci95_high": 0.3906
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3336,
+            "std": 0.0181,
+            "ci95_low": 0.2885,
+            "ci95_high": 0.3786
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.3082,
+            "std": 0.0109,
+            "ci95_low": 0.2811,
+            "ci95_high": 0.3352
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.3203,
+            "std": 0.0142,
+            "ci95_low": 0.2851,
+            "ci95_high": 0.3556
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3333,
+            "std": 0.0,
+            "ci95_low": 0.3333,
+            "ci95_high": 0.3333
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.7677,
+            "std": 0.0175,
+            "ci95_low": 0.7242,
+            "ci95_high": 0.8111
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4648,
+            "std": 0.0032,
+            "ci95_low": 0.4569,
+            "ci95_high": 0.4727
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.7206,
+            "std": 0.0255,
+            "ci95_low": 0.6573,
+            "ci95_high": 0.7839
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.9231,
+            "std": 0.0,
+            "ci95_low": 0.9231,
+            "ci95_high": 0.9231
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.8092,
+            "std": 0.0159,
+            "ci95_low": 0.7696,
+            "ci95_high": 0.8488
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            48,
+            81,
+            54,
+            6
+          ],
+          [
+            13,
+            49,
+            95,
+            2
+          ],
+          [
+            0,
+            17,
+            76,
+            6
+          ],
+          [
+            0,
+            0,
+            3,
+            36
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4259,
+          "macro_precision": 0.5319,
+          "macro_recall": 0.5591,
+          "macro_f1": 0.4894,
+          "weighted_f1": 0.4093,
+          "cohen_kappa": 0.2324,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7619,
+              "recall": 0.254,
+              "f1": 0.381,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3265,
+              "recall": 0.3019,
+              "f1": 0.3137,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3333,
+              "recall": 0.7576,
+              "f1": 0.463,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.7059,
+              "recall": 0.9231,
+              "f1": 0.8,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                16,
+                27,
+                18,
+                2
+              ],
+              [
+                5,
+                16,
+                31,
+                1
+              ],
+              [
+                0,
+                6,
+                25,
+                2
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4383,
+          "macro_precision": 0.5594,
+          "macro_recall": 0.5714,
+          "macro_f1": 0.5046,
+          "weighted_f1": 0.4219,
+          "cohen_kappa": 0.2501,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.8,
+              "recall": 0.254,
+              "f1": 0.3855,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3542,
+              "recall": 0.3208,
+              "f1": 0.3366,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3333,
+              "recall": 0.7879,
+              "f1": 0.4685,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.75,
+              "recall": 0.9231,
+              "f1": 0.8276,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                16,
+                26,
+                19,
+                2
+              ],
+              [
+                4,
+                17,
+                32,
+                0
+              ],
+              [
+                0,
+                5,
+                26,
+                2
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4259,
+          "macro_precision": 0.5398,
+          "macro_recall": 0.5591,
+          "macro_f1": 0.4898,
+          "weighted_f1": 0.4101,
+          "cohen_kappa": 0.2328,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.8,
+              "recall": 0.254,
+              "f1": 0.3855,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.32,
+              "recall": 0.3019,
+              "f1": 0.3107,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3333,
+              "recall": 0.7576,
+              "f1": 0.463,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.7059,
+              "recall": 0.9231,
+              "f1": 0.8,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                16,
+                28,
+                17,
+                2
+              ],
+              [
+                4,
+                16,
+                32,
+                1
+              ],
+              [
+                0,
+                6,
+                25,
+                2
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "claude-sonnet-4-6/zero_shot": {
+      "model": "claude-sonnet-4-6",
+      "strategy": "zero_shot",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.3086,
+          "std": 0.0123,
+          "ci95_low": 0.278,
+          "ci95_high": 0.3393
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.4786,
+          "std": 0.0381,
+          "ci95_low": 0.3841,
+          "ci95_high": 0.5732
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.472,
+          "std": 0.0094,
+          "ci95_low": 0.4486,
+          "ci95_high": 0.4955
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.3326,
+          "std": 0.0137,
+          "ci95_low": 0.2986,
+          "ci95_high": 0.3667
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.2551,
+          "std": 0.016,
+          "ci95_low": 0.2153,
+          "ci95_high": 0.2948
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.1244,
+          "std": 0.0146,
+          "ci95_low": 0.0881,
+          "ci95_high": 0.1607
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.8889,
+            "std": 0.0962,
+            "ci95_low": 0.6499,
+            "ci95_high": 1.1279
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.0794,
+            "std": 0.0,
+            "ci95_low": 0.0794,
+            "ci95_high": 0.0794
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.1456,
+            "std": 0.0012,
+            "ci95_low": 0.1426,
+            "ci95_high": 0.1487
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3595,
+            "std": 0.0531,
+            "ci95_low": 0.2277,
+            "ci95_high": 0.4914
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.1887,
+            "std": 0.0377,
+            "ci95_low": 0.0949,
+            "ci95_high": 0.2824
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.2474,
+            "std": 0.0451,
+            "ci95_low": 0.1354,
+            "ci95_high": 0.3594
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.227,
+            "std": 0.0013,
+            "ci95_low": 0.2238,
+            "ci95_high": 0.2302
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.697,
+            "std": 0.0,
+            "ci95_low": 0.697,
+            "ci95_high": 0.697
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.3424,
+            "std": 0.0015,
+            "ci95_low": 0.3388,
+            "ci95_high": 0.3461
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.4392,
+            "std": 0.0092,
+            "ci95_low": 0.4164,
+            "ci95_high": 0.4619
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.9231,
+            "std": 0.0,
+            "ci95_low": 0.9231,
+            "ci95_high": 0.9231
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5951,
+            "std": 0.0084,
+            "ci95_low": 0.5741,
+            "ci95_high": 0.6161
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            15,
+            48,
+            111,
+            15
+          ],
+          [
+            2,
+            30,
+            121,
+            6
+          ],
+          [
+            0,
+            5,
+            69,
+            25
+          ],
+          [
+            0,
+            0,
+            3,
+            36
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.321,
+          "macro_precision": 0.5215,
+          "macro_recall": 0.4815,
+          "macro_f1": 0.3458,
+          "weighted_f1": 0.271,
+          "cohen_kappa": 0.1395,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 1.0,
+              "recall": 0.0794,
+              "f1": 0.1471,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.4138,
+              "recall": 0.2264,
+              "f1": 0.2927,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.2277,
+              "recall": 0.697,
+              "f1": 0.3433,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4444,
+              "recall": 0.9231,
+              "f1": 0.6,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                5,
+                15,
+                38,
+                5
+              ],
+              [
+                0,
+                12,
+                39,
+                2
+              ],
+              [
+                0,
+                2,
+                23,
+                8
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.3086,
+          "macro_precision": 0.4657,
+          "macro_recall": 0.472,
+          "macro_f1": 0.3338,
+          "weighted_f1": 0.2552,
+          "cohen_kappa": 0.1234,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.8333,
+              "recall": 0.0794,
+              "f1": 0.1449,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3571,
+              "recall": 0.1887,
+              "f1": 0.2469,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.2277,
+              "recall": 0.697,
+              "f1": 0.3433,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4444,
+              "recall": 0.9231,
+              "f1": 0.6,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                5,
+                16,
+                37,
+                5
+              ],
+              [
+                1,
+                10,
+                40,
+                2
+              ],
+              [
+                0,
+                2,
+                23,
+                8
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.2963,
+          "macro_precision": 0.4488,
+          "macro_recall": 0.4626,
+          "macro_f1": 0.3184,
+          "weighted_f1": 0.239,
+          "cohen_kappa": 0.1103,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.8333,
+              "recall": 0.0794,
+              "f1": 0.1449,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3077,
+              "recall": 0.1509,
+              "f1": 0.2025,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.2255,
+              "recall": 0.697,
+              "f1": 0.3407,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4286,
+              "recall": 0.9231,
+              "f1": 0.5854,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                5,
+                17,
+                36,
+                5
+              ],
+              [
+                1,
+                8,
+                42,
+                2
+              ],
+              [
+                0,
+                1,
+                23,
+                9
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "gemini-2.5-pro/chain_of_thought": {
+      "model": "gemini-2.5-pro",
+      "strategy": "chain_of_thought",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.4815,
+          "std": 0.0344,
+          "ci95_low": 0.3961,
+          "ci95_high": 0.5669
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.4952,
+          "std": 0.035,
+          "ci95_low": 0.4082,
+          "ci95_high": 0.5822
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.5569,
+          "std": 0.0306,
+          "ci95_low": 0.4808,
+          "ci95_high": 0.633
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.4927,
+          "std": 0.0305,
+          "ci95_low": 0.417,
+          "ci95_high": 0.5683
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.4808,
+          "std": 0.032,
+          "ci95_low": 0.4015,
+          "ci95_high": 0.5602
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.2981,
+          "std": 0.0473,
+          "ci95_low": 0.1807,
+          "ci95_high": 0.4155
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.7485,
+            "std": 0.018,
+            "ci95_low": 0.7038,
+            "ci95_high": 0.7931
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.4868,
+            "std": 0.0092,
+            "ci95_low": 0.464,
+            "ci95_high": 0.5095
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5897,
+            "std": 0.0013,
+            "ci95_low": 0.5865,
+            "ci95_high": 0.5929
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.4234,
+            "std": 0.0711,
+            "ci95_low": 0.2468,
+            "ci95_high": 0.6
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.2893,
+            "std": 0.0475,
+            "ci95_low": 0.1714,
+            "ci95_high": 0.4073
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.3434,
+            "std": 0.0551,
+            "ci95_low": 0.2064,
+            "ci95_high": 0.4804
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3459,
+            "std": 0.0492,
+            "ci95_low": 0.2235,
+            "ci95_high": 0.4682
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.6566,
+            "std": 0.1262,
+            "ci95_low": 0.3432,
+            "ci95_high": 0.97
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4528,
+            "std": 0.0724,
+            "ci95_low": 0.2731,
+            "ci95_high": 0.6326
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.463,
+            "std": 0.0116,
+            "ci95_low": 0.4343,
+            "ci95_high": 0.4917
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.7949,
+            "std": 0.0444,
+            "ci95_low": 0.6845,
+            "ci95_high": 0.9052
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5848,
+            "std": 0.012,
+            "ci95_low": 0.555,
+            "ci95_high": 0.6145
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            92,
+            45,
+            43,
+            9
+          ],
+          [
+            31,
+            46,
+            71,
+            11
+          ],
+          [
+            0,
+            18,
+            65,
+            16
+          ],
+          [
+            0,
+            0,
+            8,
+            31
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4444,
+          "macro_precision": 0.4579,
+          "macro_recall": 0.5247,
+          "macro_f1": 0.4611,
+          "weighted_f1": 0.4469,
+          "cohen_kappa": 0.2468,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7381,
+              "recall": 0.4921,
+              "f1": 0.5905,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3421,
+              "recall": 0.2453,
+              "f1": 0.2857,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.2931,
+              "recall": 0.5152,
+              "f1": 0.3736,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4583,
+              "recall": 0.8462,
+              "f1": 0.5946,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                31,
+                17,
+                13,
+                2
+              ],
+              [
+                11,
+                13,
+                26,
+                3
+              ],
+              [
+                0,
+                8,
+                17,
+                8
+              ],
+              [
+                0,
+                0,
+                2,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.5123,
+          "macro_precision": 0.5274,
+          "macro_recall": 0.5857,
+          "macro_f1": 0.5219,
+          "weighted_f1": 0.5104,
+          "cohen_kappa": 0.3399,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7692,
+              "recall": 0.4762,
+              "f1": 0.5882,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.4737,
+              "recall": 0.3396,
+              "f1": 0.3956,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3906,
+              "recall": 0.7576,
+              "f1": 0.5155,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4762,
+              "recall": 0.7692,
+              "f1": 0.5882,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                30,
+                15,
+                14,
+                4
+              ],
+              [
+                9,
+                18,
+                22,
+                4
+              ],
+              [
+                0,
+                5,
+                25,
+                3
+              ],
+              [
+                0,
+                0,
+                3,
+                10
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4877,
+          "macro_precision": 0.5003,
+          "macro_recall": 0.5603,
+          "macro_f1": 0.495,
+          "weighted_f1": 0.4852,
+          "cohen_kappa": 0.3075,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7381,
+              "recall": 0.4921,
+              "f1": 0.5905,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.4545,
+              "recall": 0.283,
+              "f1": 0.3488,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3538,
+              "recall": 0.697,
+              "f1": 0.4694,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4545,
+              "recall": 0.7692,
+              "f1": 0.5714,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                31,
+                13,
+                16,
+                3
+              ],
+              [
+                11,
+                15,
+                23,
+                4
+              ],
+              [
+                0,
+                5,
+                23,
+                5
+              ],
+              [
+                0,
+                0,
+                3,
+                10
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "gemini-2.5-pro/few_shot": {
+      "model": "gemini-2.5-pro",
+      "strategy": "few_shot",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.5309,
+          "std": 0.0185,
+          "ci95_low": 0.4849,
+          "ci95_high": 0.5769
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.5326,
+          "std": 0.0192,
+          "ci95_low": 0.4849,
+          "ci95_high": 0.5802
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.5709,
+          "std": 0.021,
+          "ci95_low": 0.5186,
+          "ci95_high": 0.6232
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.5457,
+          "std": 0.0214,
+          "ci95_low": 0.4925,
+          "ci95_high": 0.5989
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.5323,
+          "std": 0.0175,
+          "ci95_low": 0.4888,
+          "ci95_high": 0.5757
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.3398,
+          "std": 0.0232,
+          "ci95_low": 0.2821,
+          "ci95_high": 0.3975
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.6833,
+            "std": 0.0094,
+            "ci95_low": 0.6598,
+            "ci95_high": 0.7068
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.582,
+            "std": 0.0242,
+            "ci95_low": 0.5218,
+            "ci95_high": 0.6422
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.6284,
+            "std": 0.0151,
+            "ci95_low": 0.591,
+            "ci95_high": 0.6658
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.4381,
+            "std": 0.0116,
+            "ci95_low": 0.4094,
+            "ci95_high": 0.4669
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.4025,
+            "std": 0.0288,
+            "ci95_low": 0.3309,
+            "ci95_high": 0.4741
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4194,
+            "std": 0.0202,
+            "ci95_low": 0.3691,
+            "ci95_high": 0.4696
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.4279,
+            "std": 0.0312,
+            "ci95_low": 0.3505,
+            "ci95_high": 0.5053
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.5556,
+            "std": 0.0175,
+            "ci95_low": 0.5121,
+            "ci95_high": 0.599
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4829,
+            "std": 0.0196,
+            "ci95_low": 0.4343,
+            "ci95_high": 0.5316
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.5809,
+            "std": 0.0482,
+            "ci95_low": 0.4611,
+            "ci95_high": 0.7007
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.7436,
+            "std": 0.0444,
+            "ci95_low": 0.6333,
+            "ci95_high": 0.8539
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.6521,
+            "std": 0.0466,
+            "ci95_low": 0.5364,
+            "ci95_high": 0.7678
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            110,
+            50,
+            16,
+            13
+          ],
+          [
+            43,
+            64,
+            49,
+            3
+          ],
+          [
+            8,
+            31,
+            55,
+            5
+          ],
+          [
+            0,
+            1,
+            9,
+            29
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.5123,
+          "macro_precision": 0.5111,
+          "macro_recall": 0.5474,
+          "macro_f1": 0.5218,
+          "weighted_f1": 0.5157,
+          "cohen_kappa": 0.3166,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6863,
+              "recall": 0.5556,
+              "f1": 0.614,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.4286,
+              "recall": 0.3962,
+              "f1": 0.4118,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.4,
+              "recall": 0.5455,
+              "f1": 0.4615,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.5294,
+              "recall": 0.6923,
+              "f1": 0.6,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                35,
+                17,
+                6,
+                5
+              ],
+              [
+                15,
+                21,
+                17,
+                0
+              ],
+              [
+                1,
+                11,
+                18,
+                3
+              ],
+              [
+                0,
+                0,
+                4,
+                9
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.5309,
+          "macro_precision": 0.5387,
+          "macro_recall": 0.5774,
+          "macro_f1": 0.552,
+          "weighted_f1": 0.5306,
+          "cohen_kappa": 0.3398,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6727,
+              "recall": 0.5873,
+              "f1": 0.6271,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.4348,
+              "recall": 0.3774,
+              "f1": 0.404,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.4222,
+              "recall": 0.5758,
+              "f1": 0.4872,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.625,
+              "recall": 0.7692,
+              "f1": 0.6897,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                37,
+                17,
+                5,
+                4
+              ],
+              [
+                14,
+                20,
+                18,
+                1
+              ],
+              [
+                4,
+                9,
+                19,
+                1
+              ],
+              [
+                0,
+                0,
+                3,
+                10
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.5494,
+          "macro_precision": 0.5479,
+          "macro_recall": 0.588,
+          "macro_f1": 0.5633,
+          "weighted_f1": 0.5505,
+          "cohen_kappa": 0.3631,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6909,
+              "recall": 0.6032,
+              "f1": 0.6441,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.451,
+              "recall": 0.434,
+              "f1": 0.4423,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.4615,
+              "recall": 0.5455,
+              "f1": 0.5,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.5882,
+              "recall": 0.7692,
+              "f1": 0.6667,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                38,
+                16,
+                5,
+                4
+              ],
+              [
+                14,
+                23,
+                14,
+                2
+              ],
+              [
+                3,
+                11,
+                18,
+                1
+              ],
+              [
+                0,
+                1,
+                2,
+                10
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "gemini-2.5-pro/zero_shot": {
+      "model": "gemini-2.5-pro",
+      "strategy": "zero_shot",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.4897,
+          "std": 0.0071,
+          "ci95_low": 0.472,
+          "ci95_high": 0.5074
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.4966,
+          "std": 0.0055,
+          "ci95_low": 0.483,
+          "ci95_high": 0.5101
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.5801,
+          "std": 0.0103,
+          "ci95_low": 0.5546,
+          "ci95_high": 0.6056
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.5,
+          "std": 0.005,
+          "ci95_low": 0.4876,
+          "ci95_high": 0.5124
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.4855,
+          "std": 0.0136,
+          "ci95_low": 0.4517,
+          "ci95_high": 0.5192
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.3118,
+          "std": 0.0089,
+          "ci95_low": 0.2897,
+          "ci95_high": 0.3339
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.7497,
+            "std": 0.0291,
+            "ci95_low": 0.6775,
+            "ci95_high": 0.8219
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.4762,
+            "std": 0.0275,
+            "ci95_low": 0.4079,
+            "ci95_high": 0.5445
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5824,
+            "std": 0.029,
+            "ci95_low": 0.5103,
+            "ci95_high": 0.6545
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.4148,
+            "std": 0.0316,
+            "ci95_low": 0.3362,
+            "ci95_high": 0.4933
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.2956,
+            "std": 0.0393,
+            "ci95_low": 0.198,
+            "ci95_high": 0.3932
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.345,
+            "std": 0.0376,
+            "ci95_low": 0.2515,
+            "ci95_high": 0.4385
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3799,
+            "std": 0.0166,
+            "ci95_low": 0.3387,
+            "ci95_high": 0.4212
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.6768,
+            "std": 0.0763,
+            "ci95_low": 0.4873,
+            "ci95_high": 0.8662
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4863,
+            "std": 0.0332,
+            "ci95_low": 0.4037,
+            "ci95_high": 0.5688
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.442,
+            "std": 0.0178,
+            "ci95_low": 0.3978,
+            "ci95_high": 0.4861
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.8718,
+            "std": 0.0444,
+            "ci95_low": 0.7615,
+            "ci95_high": 0.9821
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5862,
+            "std": 0.0194,
+            "ci95_low": 0.5382,
+            "ci95_high": 0.6343
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            90,
+            50,
+            36,
+            13
+          ],
+          [
+            29,
+            47,
+            69,
+            14
+          ],
+          [
+            1,
+            15,
+            67,
+            16
+          ],
+          [
+            0,
+            1,
+            4,
+            34
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4938,
+          "macro_precision": 0.501,
+          "macro_recall": 0.5912,
+          "macro_f1": 0.5047,
+          "weighted_f1": 0.4898,
+          "cohen_kappa": 0.3187,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.775,
+              "recall": 0.4921,
+              "f1": 0.6019,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.4054,
+              "recall": 0.283,
+              "f1": 0.3333,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3793,
+              "recall": 0.6667,
+              "f1": 0.4835,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4444,
+              "recall": 0.9231,
+              "f1": 0.6,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                31,
+                16,
+                12,
+                4
+              ],
+              [
+                9,
+                15,
+                23,
+                6
+              ],
+              [
+                0,
+                6,
+                22,
+                5
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4938,
+          "macro_precision": 0.4982,
+          "macro_recall": 0.571,
+          "macro_f1": 0.5005,
+          "weighted_f1": 0.4963,
+          "cohen_kappa": 0.3148,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7561,
+              "recall": 0.4921,
+              "f1": 0.5962,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.45,
+              "recall": 0.3396,
+              "f1": 0.3871,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3636,
+              "recall": 0.6061,
+              "f1": 0.4545,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4231,
+              "recall": 0.8462,
+              "f1": 0.5641,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                31,
+                16,
+                12,
+                4
+              ],
+              [
+                9,
+                18,
+                22,
+                4
+              ],
+              [
+                1,
+                5,
+                20,
+                7
+              ],
+              [
+                0,
+                1,
+                1,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4815,
+          "macro_precision": 0.4905,
+          "macro_recall": 0.5781,
+          "macro_f1": 0.4948,
+          "weighted_f1": 0.4702,
+          "cohen_kappa": 0.3017,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7179,
+              "recall": 0.4444,
+              "f1": 0.549,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3889,
+              "recall": 0.2642,
+              "f1": 0.3146,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3968,
+              "recall": 0.7576,
+              "f1": 0.5208,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4583,
+              "recall": 0.8462,
+              "f1": 0.5946,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                28,
+                18,
+                12,
+                5
+              ],
+              [
+                11,
+                14,
+                24,
+                4
+              ],
+              [
+                0,
+                4,
+                25,
+                4
+              ],
+              [
+                0,
+                0,
+                2,
+                11
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "gpt-5.5/chain_of_thought": {
+      "model": "gpt-5.5",
+      "strategy": "chain_of_thought",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.4033,
+          "std": 0.0128,
+          "ci95_low": 0.3714,
+          "ci95_high": 0.4352
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.5078,
+          "std": 0.006,
+          "ci95_low": 0.4929,
+          "ci95_high": 0.5226
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.5208,
+          "std": 0.0031,
+          "ci95_low": 0.5132,
+          "ci95_high": 0.5284
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.4496,
+          "std": 0.0047,
+          "ci95_low": 0.438,
+          "ci95_high": 0.4613
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.3832,
+          "std": 0.0153,
+          "ci95_low": 0.3453,
+          "ci95_high": 0.4211
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.2062,
+          "std": 0.0172,
+          "ci95_low": 0.1636,
+          "ci95_high": 0.2488
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.7827,
+            "std": 0.0445,
+            "ci95_low": 0.6722,
+            "ci95_high": 0.8932
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.2275,
+            "std": 0.0183,
+            "ci95_low": 0.182,
+            "ci95_high": 0.273
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.3523,
+            "std": 0.024,
+            "ci95_low": 0.2926,
+            "ci95_high": 0.412
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3129,
+            "std": 0.0274,
+            "ci95_low": 0.2449,
+            "ci95_high": 0.3808
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.283,
+            "std": 0.0189,
+            "ci95_low": 0.2361,
+            "ci95_high": 0.3299
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.2972,
+            "std": 0.0227,
+            "ci95_low": 0.2407,
+            "ci95_high": 0.3537
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3263,
+            "std": 0.0088,
+            "ci95_low": 0.3045,
+            "ci95_high": 0.3481
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.7778,
+            "std": 0.0175,
+            "ci95_low": 0.7343,
+            "ci95_high": 0.8212
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4597,
+            "std": 0.0117,
+            "ci95_low": 0.4306,
+            "ci95_high": 0.4888
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.6092,
+            "std": 0.0478,
+            "ci95_low": 0.4906,
+            "ci95_high": 0.7278
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.7949,
+            "std": 0.0444,
+            "ci95_low": 0.6845,
+            "ci95_high": 0.9052
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.6894,
+            "std": 0.0441,
+            "ci95_low": 0.5799,
+            "ci95_high": 0.7989
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            43,
+            84,
+            52,
+            10
+          ],
+          [
+            12,
+            45,
+            99,
+            3
+          ],
+          [
+            0,
+            15,
+            77,
+            7
+          ],
+          [
+            0,
+            0,
+            8,
+            31
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.3889,
+          "macro_precision": 0.5035,
+          "macro_recall": 0.5186,
+          "macro_f1": 0.4448,
+          "weighted_f1": 0.366,
+          "cohen_kappa": 0.1879,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7647,
+              "recall": 0.2063,
+              "f1": 0.325,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.2857,
+              "recall": 0.2642,
+              "f1": 0.2745,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3165,
+              "recall": 0.7576,
+              "f1": 0.4464,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.6471,
+              "recall": 0.8462,
+              "f1": 0.7333,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                13,
+                29,
+                18,
+                3
+              ],
+              [
+                4,
+                14,
+                34,
+                1
+              ],
+              [
+                0,
+                6,
+                25,
+                2
+              ],
+              [
+                0,
+                0,
+                2,
+                11
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4074,
+          "macro_precision": 0.5052,
+          "macro_recall": 0.5196,
+          "macro_f1": 0.4541,
+          "weighted_f1": 0.3885,
+          "cohen_kappa": 0.2089,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.75,
+              "recall": 0.2381,
+              "f1": 0.3614,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3125,
+              "recall": 0.283,
+              "f1": 0.297,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3333,
+              "recall": 0.7879,
+              "f1": 0.4685,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.625,
+              "recall": 0.7692,
+              "f1": 0.6897,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                15,
+                28,
+                16,
+                4
+              ],
+              [
+                5,
+                15,
+                33,
+                0
+              ],
+              [
+                0,
+                5,
+                26,
+                2
+              ],
+              [
+                0,
+                0,
+                3,
+                10
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4136,
+          "macro_precision": 0.5146,
+          "macro_recall": 0.5243,
+          "macro_f1": 0.45,
+          "weighted_f1": 0.3951,
+          "cohen_kappa": 0.2219,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.8333,
+              "recall": 0.2381,
+              "f1": 0.3704,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3404,
+              "recall": 0.3019,
+              "f1": 0.32,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3291,
+              "recall": 0.7879,
+              "f1": 0.4643,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.5556,
+              "recall": 0.7692,
+              "f1": 0.6452,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                15,
+                27,
+                18,
+                3
+              ],
+              [
+                3,
+                16,
+                32,
+                2
+              ],
+              [
+                0,
+                4,
+                26,
+                3
+              ],
+              [
+                0,
+                0,
+                3,
+                10
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "gpt-5.5/few_shot": {
+      "model": "gpt-5.5",
+      "strategy": "few_shot",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.5226,
+          "std": 0.0155,
+          "ci95_low": 0.484,
+          "ci95_high": 0.5612
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.6062,
+          "std": 0.0135,
+          "ci95_low": 0.5726,
+          "ci95_high": 0.6398
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.5374,
+          "std": 0.0067,
+          "ci95_low": 0.5207,
+          "ci95_high": 0.5542
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.5563,
+          "std": 0.0068,
+          "ci95_low": 0.5394,
+          "ci95_high": 0.5732
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.5326,
+          "std": 0.0156,
+          "ci95_low": 0.4937,
+          "ci95_high": 0.5715
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.3201,
+          "std": 0.0211,
+          "ci95_low": 0.2677,
+          "ci95_high": 0.3724
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.7097,
+            "std": 0.0352,
+            "ci95_low": 0.6224,
+            "ci95_high": 0.7971
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.5026,
+            "std": 0.0092,
+            "ci95_low": 0.4799,
+            "ci95_high": 0.5254
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5884,
+            "std": 0.0179,
+            "ci95_low": 0.544,
+            "ci95_high": 0.6328
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.4228,
+            "std": 0.0236,
+            "ci95_low": 0.3642,
+            "ci95_high": 0.4813
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.522,
+            "std": 0.0576,
+            "ci95_low": 0.3788,
+            "ci95_high": 0.6652
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4669,
+            "std": 0.0365,
+            "ci95_low": 0.3761,
+            "ci95_high": 0.5576
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.4079,
+            "std": 0.0074,
+            "ci95_low": 0.3896,
+            "ci95_high": 0.4263
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.5354,
+            "std": 0.0175,
+            "ci95_low": 0.4919,
+            "ci95_high": 0.5788
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4628,
+            "std": 0.0042,
+            "ci95_low": 0.4524,
+            "ci95_high": 0.4733
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.8843,
+            "std": 0.008,
+            "ci95_low": 0.8643,
+            "ci95_high": 0.9042
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.5897,
+            "std": 0.0444,
+            "ci95_low": 0.4794,
+            "ci95_high": 0.7001
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.7071,
+            "std": 0.035,
+            "ci95_low": 0.6201,
+            "ci95_high": 0.794
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            95,
+            65,
+            26,
+            3
+          ],
+          [
+            38,
+            83,
+            38,
+            0
+          ],
+          [
+            1,
+            45,
+            53,
+            0
+          ],
+          [
+            0,
+            3,
+            13,
+            23
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.5062,
+          "macro_precision": 0.5922,
+          "macro_recall": 0.5312,
+          "macro_f1": 0.5487,
+          "weighted_f1": 0.5158,
+          "cohen_kappa": 0.2971,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6739,
+              "recall": 0.4921,
+              "f1": 0.5688,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3968,
+              "recall": 0.4717,
+              "f1": 0.431,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.4091,
+              "recall": 0.5455,
+              "f1": 0.4675,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.8889,
+              "recall": 0.6154,
+              "f1": 0.7273,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                31,
+                22,
+                9,
+                1
+              ],
+              [
+                15,
+                25,
+                13,
+                0
+              ],
+              [
+                0,
+                15,
+                18,
+                0
+              ],
+              [
+                0,
+                1,
+                4,
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.5247,
+          "macro_precision": 0.6071,
+          "macro_recall": 0.5446,
+          "macro_f1": 0.5617,
+          "weighted_f1": 0.5351,
+          "cohen_kappa": 0.3246,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7111,
+              "recall": 0.5079,
+              "f1": 0.5926,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.4286,
+              "recall": 0.5094,
+              "f1": 0.4655,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.4,
+              "recall": 0.5455,
+              "f1": 0.4615,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.8889,
+              "recall": 0.6154,
+              "f1": 0.7273,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                32,
+                21,
+                9,
+                1
+              ],
+              [
+                12,
+                27,
+                14,
+                0
+              ],
+              [
+                1,
+                14,
+                18,
+                0
+              ],
+              [
+                0,
+                1,
+                4,
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.537,
+          "macro_precision": 0.6192,
+          "macro_recall": 0.5366,
+          "macro_f1": 0.5585,
+          "weighted_f1": 0.5468,
+          "cohen_kappa": 0.3385,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7442,
+              "recall": 0.5079,
+              "f1": 0.6038,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.4429,
+              "recall": 0.5849,
+              "f1": 0.5041,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.4146,
+              "recall": 0.5152,
+              "f1": 0.4595,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.875,
+              "recall": 0.5385,
+              "f1": 0.6667,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                32,
+                22,
+                8,
+                1
+              ],
+              [
+                11,
+                31,
+                11,
+                0
+              ],
+              [
+                0,
+                16,
+                17,
+                0
+              ],
+              [
+                0,
+                1,
+                5,
+                7
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "gpt-5.5/zero_shot": {
+      "model": "gpt-5.5",
+      "strategy": "zero_shot",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.3724,
+          "std": 0.0128,
+          "ci95_low": 0.3405,
+          "ci95_high": 0.4043
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.4715,
+          "std": 0.0177,
+          "ci95_low": 0.4275,
+          "ci95_high": 0.5156
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.4917,
+          "std": 0.0242,
+          "ci95_low": 0.4317,
+          "ci95_high": 0.5517
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.412,
+          "std": 0.0114,
+          "ci95_low": 0.3836,
+          "ci95_high": 0.4404
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.3414,
+          "std": 0.0158,
+          "ci95_low": 0.3021,
+          "ci95_high": 0.3807
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.1683,
+          "std": 0.0156,
+          "ci95_low": 0.1294,
+          "ci95_high": 0.2071
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.7268,
+            "std": 0.0767,
+            "ci95_low": 0.5363,
+            "ci95_high": 0.9173
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.1799,
+            "std": 0.0092,
+            "ci95_low": 0.1571,
+            "ci95_high": 0.2027
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.2882,
+            "std": 0.0172,
+            "ci95_low": 0.2455,
+            "ci95_high": 0.331
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.2677,
+            "std": 0.0399,
+            "ci95_low": 0.1686,
+            "ci95_high": 0.3667
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.2453,
+            "std": 0.0499,
+            "ci95_low": 0.1213,
+            "ci95_high": 0.3693
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.2558,
+            "std": 0.0452,
+            "ci95_low": 0.1434,
+            "ci95_high": 0.3682
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.325,
+            "std": 0.0149,
+            "ci95_low": 0.288,
+            "ci95_high": 0.362
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.798,
+            "std": 0.0463,
+            "ci95_low": 0.683,
+            "ci95_high": 0.913
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4619,
+            "std": 0.0228,
+            "ci95_low": 0.4053,
+            "ci95_high": 0.5185
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.5667,
+            "std": 0.0401,
+            "ci95_low": 0.4671,
+            "ci95_high": 0.6662
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.7436,
+            "std": 0.1175,
+            "ci95_low": 0.4517,
+            "ci95_high": 1.0355
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.6421,
+            "std": 0.0692,
+            "ci95_low": 0.4702,
+            "ci95_high": 0.8139
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            34,
+            95,
+            51,
+            9
+          ],
+          [
+            13,
+            39,
+            103,
+            4
+          ],
+          [
+            0,
+            11,
+            79,
+            9
+          ],
+          [
+            0,
+            0,
+            10,
+            29
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.3827,
+          "macro_precision": 0.492,
+          "macro_recall": 0.4739,
+          "macro_f1": 0.4107,
+          "weighted_f1": 0.3591,
+          "cohen_kappa": 0.1788,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.8,
+              "recall": 0.1905,
+              "f1": 0.3077,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3137,
+              "recall": 0.3019,
+              "f1": 0.3077,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.321,
+              "recall": 0.7879,
+              "f1": 0.4561,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.5333,
+              "recall": 0.6154,
+              "f1": 0.5714,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                12,
+                31,
+                17,
+                3
+              ],
+              [
+                3,
+                16,
+                33,
+                1
+              ],
+              [
+                0,
+                4,
+                26,
+                3
+              ],
+              [
+                0,
+                0,
+                5,
+                8
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.358,
+          "macro_precision": 0.4616,
+          "macro_recall": 0.482,
+          "macro_f1": 0.4012,
+          "weighted_f1": 0.3286,
+          "cohen_kappa": 0.1503,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.7333,
+              "recall": 0.1746,
+              "f1": 0.2821,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.2449,
+              "recall": 0.2264,
+              "f1": 0.2353,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3125,
+              "recall": 0.7576,
+              "f1": 0.4425,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.5556,
+              "recall": 0.7692,
+              "f1": 0.6452,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                11,
+                33,
+                16,
+                3
+              ],
+              [
+                4,
+                12,
+                36,
+                1
+              ],
+              [
+                0,
+                4,
+                25,
+                4
+              ],
+              [
+                0,
+                0,
+                3,
+                10
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.3765,
+          "macro_precision": 0.461,
+          "macro_recall": 0.5192,
+          "macro_f1": 0.424,
+          "weighted_f1": 0.3365,
+          "cohen_kappa": 0.1756,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6471,
+              "recall": 0.1746,
+              "f1": 0.275,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.2444,
+              "recall": 0.2075,
+              "f1": 0.2245,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3415,
+              "recall": 0.8485,
+              "f1": 0.487,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.6111,
+              "recall": 0.8462,
+              "f1": 0.7097,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                11,
+                31,
+                18,
+                3
+              ],
+              [
+                6,
+                11,
+                34,
+                2
+              ],
+              [
+                0,
+                3,
+                28,
+                2
+              ],
+              [
+                0,
+                0,
+                2,
+                11
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "ministral-3-8b/chain_of_thought": {
+      "model": "ministral-3-8b",
+      "strategy": "chain_of_thought",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.4609,
+          "std": 0.0094,
+          "ci95_low": 0.4375,
+          "ci95_high": 0.4843
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.4417,
+          "std": 0.0108,
+          "ci95_low": 0.4148,
+          "ci95_high": 0.4686
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.5306,
+          "std": 0.0069,
+          "ci95_low": 0.5135,
+          "ci95_high": 0.5477
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.4677,
+          "std": 0.0105,
+          "ci95_low": 0.4417,
+          "ci95_high": 0.4937
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.4502,
+          "std": 0.0102,
+          "ci95_low": 0.4249,
+          "ci95_high": 0.4754
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.2426,
+          "std": 0.0113,
+          "ci95_low": 0.2146,
+          "ci95_high": 0.2705
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.586,
+            "std": 0.0049,
+            "ci95_low": 0.5739,
+            "ci95_high": 0.5982
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.5767,
+            "std": 0.0092,
+            "ci95_low": 0.554,
+            "ci95_high": 0.5995
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5813,
+            "std": 0.0057,
+            "ci95_low": 0.5672,
+            "ci95_high": 0.5954
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3564,
+            "std": 0.0153,
+            "ci95_low": 0.3183,
+            "ci95_high": 0.3945
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.2893,
+            "std": 0.0218,
+            "ci95_low": 0.2352,
+            "ci95_high": 0.3434
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.3192,
+            "std": 0.0188,
+            "ci95_low": 0.2725,
+            "ci95_high": 0.366
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.344,
+            "std": 0.0108,
+            "ci95_low": 0.3173,
+            "ci95_high": 0.3707
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.3333,
+            "std": 0.0,
+            "ci95_low": 0.3333,
+            "ci95_high": 0.3333
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.3385,
+            "std": 0.0052,
+            "ci95_low": 0.3256,
+            "ci95_high": 0.3515
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.4805,
+            "std": 0.0192,
+            "ci95_low": 0.4327,
+            "ci95_high": 0.5283
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.9231,
+            "std": 0.0,
+            "ci95_low": 0.9231,
+            "ci95_high": 0.9231
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.6319,
+            "std": 0.0166,
+            "ci95_low": 0.5905,
+            "ci95_high": 0.6732
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            109,
+            49,
+            21,
+            10
+          ],
+          [
+            58,
+            46,
+            39,
+            16
+          ],
+          [
+            19,
+            34,
+            33,
+            13
+          ],
+          [
+            0,
+            0,
+            3,
+            36
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4691,
+          "macro_precision": 0.4486,
+          "macro_recall": 0.5364,
+          "macro_f1": 0.474,
+          "weighted_f1": 0.4582,
+          "cohen_kappa": 0.2529,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.5873,
+              "recall": 0.5873,
+              "f1": 0.5873,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3721,
+              "recall": 0.3019,
+              "f1": 0.3333,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3548,
+              "recall": 0.3333,
+              "f1": 0.3438,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.48,
+              "recall": 0.9231,
+              "f1": 0.6316,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                37,
+                16,
+                5,
+                5
+              ],
+              [
+                19,
+                16,
+                14,
+                4
+              ],
+              [
+                7,
+                11,
+                11,
+                4
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.463,
+          "macro_precision": 0.4474,
+          "macro_recall": 0.5324,
+          "macro_f1": 0.4736,
+          "weighted_f1": 0.4536,
+          "cohen_kappa": 0.2442,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.5902,
+              "recall": 0.5714,
+              "f1": 0.5806,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3556,
+              "recall": 0.3019,
+              "f1": 0.3265,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3438,
+              "recall": 0.3333,
+              "f1": 0.3385,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.5,
+              "recall": 0.9231,
+              "f1": 0.6486,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                36,
+                17,
+                8,
+                2
+              ],
+              [
+                19,
+                16,
+                12,
+                6
+              ],
+              [
+                6,
+                12,
+                11,
+                4
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4506,
+          "macro_precision": 0.4292,
+          "macro_recall": 0.523,
+          "macro_f1": 0.4556,
+          "weighted_f1": 0.4387,
+          "cohen_kappa": 0.2305,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.5806,
+              "recall": 0.5714,
+              "f1": 0.576,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3415,
+              "recall": 0.2642,
+              "f1": 0.2979,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3333,
+              "recall": 0.3333,
+              "f1": 0.3333,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.4615,
+              "recall": 0.9231,
+              "f1": 0.6154,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                36,
+                16,
+                8,
+                3
+              ],
+              [
+                20,
+                14,
+                13,
+                6
+              ],
+              [
+                6,
+                11,
+                11,
+                5
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "ministral-3-8b/few_shot": {
+      "model": "ministral-3-8b",
+      "strategy": "few_shot",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.4753,
+          "std": 0.0107,
+          "ci95_low": 0.4487,
+          "ci95_high": 0.5019
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.4735,
+          "std": 0.0148,
+          "ci95_low": 0.4367,
+          "ci95_high": 0.5102
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.5582,
+          "std": 0.0099,
+          "ci95_low": 0.5335,
+          "ci95_high": 0.5829
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.4961,
+          "std": 0.0114,
+          "ci95_low": 0.4677,
+          "ci95_high": 0.5246
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.4559,
+          "std": 0.0136,
+          "ci95_low": 0.4221,
+          "ci95_high": 0.4896
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.2707,
+          "std": 0.015,
+          "ci95_low": 0.2335,
+          "ci95_high": 0.3079
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.6217,
+            "std": 0.0153,
+            "ci95_low": 0.5838,
+            "ci95_high": 0.6596
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.6085,
+            "std": 0.0092,
+            "ci95_low": 0.5857,
+            "ci95_high": 0.6312
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.615,
+            "std": 0.0121,
+            "ci95_low": 0.5848,
+            "ci95_high": 0.6452
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3328,
+            "std": 0.0468,
+            "ci95_low": 0.2165,
+            "ci95_high": 0.449
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.1761,
+            "std": 0.0288,
+            "ci95_low": 0.1045,
+            "ci95_high": 0.2477
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.2303,
+            "std": 0.0357,
+            "ci95_low": 0.1417,
+            "ci95_high": 0.3189
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3288,
+            "std": 0.0221,
+            "ci95_low": 0.2738,
+            "ci95_high": 0.3838
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.5253,
+            "std": 0.0463,
+            "ci95_low": 0.4103,
+            "ci95_high": 0.6402
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.4044,
+            "std": 0.0304,
+            "ci95_low": 0.3289,
+            "ci95_high": 0.4799
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.6105,
+            "std": 0.0182,
+            "ci95_low": 0.5652,
+            "ci95_high": 0.6558
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.9231,
+            "std": 0.0,
+            "ci95_low": 0.9231,
+            "ci95_high": 0.9231
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.7348,
+            "std": 0.0131,
+            "ci95_low": 0.7023,
+            "ci95_high": 0.7674
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            115,
+            27,
+            38,
+            9
+          ],
+          [
+            63,
+            28,
+            65,
+            3
+          ],
+          [
+            7,
+            29,
+            52,
+            11
+          ],
+          [
+            0,
+            0,
+            3,
+            36
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4815,
+          "macro_precision": 0.4816,
+          "macro_recall": 0.5586,
+          "macro_f1": 0.5003,
+          "weighted_f1": 0.4674,
+          "cohen_kappa": 0.2795,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6393,
+              "recall": 0.619,
+              "f1": 0.629,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3793,
+              "recall": 0.2075,
+              "f1": 0.2683,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3077,
+              "recall": 0.4848,
+              "f1": 0.3765,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.6,
+              "recall": 0.9231,
+              "f1": 0.7273,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                39,
+                8,
+                13,
+                3
+              ],
+              [
+                19,
+                11,
+                22,
+                1
+              ],
+              [
+                3,
+                10,
+                16,
+                4
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4815,
+          "macro_precision": 0.4824,
+          "macro_recall": 0.568,
+          "macro_f1": 0.5049,
+          "weighted_f1": 0.4592,
+          "cohen_kappa": 0.2792,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6129,
+              "recall": 0.6032,
+              "f1": 0.608,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3333,
+              "recall": 0.1698,
+              "f1": 0.225,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3519,
+              "recall": 0.5758,
+              "f1": 0.4368,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.6316,
+              "recall": 0.9231,
+              "f1": 0.75,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                38,
+                9,
+                13,
+                3
+              ],
+              [
+                22,
+                9,
+                21,
+                1
+              ],
+              [
+                2,
+                9,
+                19,
+                3
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.463,
+          "macro_precision": 0.4564,
+          "macro_recall": 0.5481,
+          "macro_f1": 0.4832,
+          "weighted_f1": 0.4409,
+          "cohen_kappa": 0.2534,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6129,
+              "recall": 0.6032,
+              "f1": 0.608,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.2857,
+              "recall": 0.1509,
+              "f1": 0.1975,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3269,
+              "recall": 0.5152,
+              "f1": 0.4,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.6,
+              "recall": 0.9231,
+              "f1": 0.7273,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                38,
+                10,
+                12,
+                3
+              ],
+              [
+                22,
+                8,
+                22,
+                1
+              ],
+              [
+                2,
+                10,
+                17,
+                4
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "ministral-3-8b/zero_shot": {
+      "model": "ministral-3-8b",
+      "strategy": "zero_shot",
+      "repetitions": 3,
+      "overall_summary": {
+        "accuracy": {
+          "n": 3,
+          "mean": 0.4239,
+          "std": 0.0234,
+          "ci95_low": 0.3658,
+          "ci95_high": 0.4819
+        },
+        "macro_precision": {
+          "n": 3,
+          "mean": 0.3936,
+          "std": 0.0266,
+          "ci95_low": 0.3275,
+          "ci95_high": 0.4597
+        },
+        "macro_recall": {
+          "n": 3,
+          "mean": 0.505,
+          "std": 0.0185,
+          "ci95_low": 0.459,
+          "ci95_high": 0.5509
+        },
+        "macro_f1": {
+          "n": 3,
+          "mean": 0.4143,
+          "std": 0.0239,
+          "ci95_low": 0.3548,
+          "ci95_high": 0.4737
+        },
+        "weighted_f1": {
+          "n": 3,
+          "mean": 0.4099,
+          "std": 0.0278,
+          "ci95_low": 0.3409,
+          "ci95_high": 0.4788
+        },
+        "cohen_kappa": {
+          "n": 3,
+          "mean": 0.2125,
+          "std": 0.03,
+          "ci95_low": 0.1379,
+          "ci95_high": 0.287
+        }
+      },
+      "per_class_summary": {
+        "Fully_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.6164,
+            "std": 0.0142,
+            "ci95_low": 0.5811,
+            "ci95_high": 0.6516
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.5608,
+            "std": 0.0092,
+            "ci95_low": 0.5381,
+            "ci95_high": 0.5836
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5873,
+            "std": 0.0113,
+            "ci95_low": 0.5593,
+            "ci95_high": 0.6153
+          },
+          "support": {
+            "n": 3,
+            "mean": 63.0,
+            "std": 0.0,
+            "ci95_low": 63.0,
+            "ci95_high": 63.0
+          }
+        },
+        "Mostly_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.2997,
+            "std": 0.0721,
+            "ci95_low": 0.1206,
+            "ci95_high": 0.4787
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.1824,
+            "std": 0.0545,
+            "ci95_low": 0.0471,
+            "ci95_high": 0.3177
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.2266,
+            "std": 0.0626,
+            "ci95_low": 0.0711,
+            "ci95_high": 0.3821
+          },
+          "support": {
+            "n": 3,
+            "mean": 53.0,
+            "std": 0.0,
+            "ci95_low": 53.0,
+            "ci95_high": 53.0
+          }
+        },
+        "Partially_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.2946,
+            "std": 0.0227,
+            "ci95_low": 0.2381,
+            "ci95_high": 0.3511
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.3535,
+            "std": 0.0175,
+            "ci95_low": 0.3101,
+            "ci95_high": 0.397
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.3213,
+            "std": 0.0208,
+            "ci95_low": 0.2696,
+            "ci95_high": 0.373
+          },
+          "support": {
+            "n": 3,
+            "mean": 33.0,
+            "std": 0.0,
+            "ci95_low": 33.0,
+            "ci95_high": 33.0
+          }
+        },
+        "Not_Compliant": {
+          "precision": {
+            "n": 3,
+            "mean": 0.3639,
+            "std": 0.011,
+            "ci95_low": 0.3365,
+            "ci95_high": 0.3913
+          },
+          "recall": {
+            "n": 3,
+            "mean": 0.9231,
+            "std": 0.0,
+            "ci95_low": 0.9231,
+            "ci95_high": 0.9231
+          },
+          "f1": {
+            "n": 3,
+            "mean": 0.5219,
+            "std": 0.0113,
+            "ci95_low": 0.4937,
+            "ci95_high": 0.5501
+          },
+          "support": {
+            "n": 3,
+            "mean": 13.0,
+            "std": 0.0,
+            "ci95_low": 13.0,
+            "ci95_high": 13.0
+          }
+        }
+      },
+      "summed_confusion_matrix": {
+        "labels": [
+          "Fully_Compliant",
+          "Mostly_Compliant",
+          "Partially_Compliant",
+          "Not_Compliant"
+        ],
+        "matrix": [
+          [
+            106,
+            43,
+            20,
+            20
+          ],
+          [
+            51,
+            29,
+            61,
+            18
+          ],
+          [
+            15,
+            24,
+            35,
+            25
+          ],
+          [
+            0,
+            0,
+            3,
+            36
+          ]
+        ]
+      },
+      "per_repetition": [
+        {
+          "rep": 1,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4136,
+          "macro_precision": 0.3812,
+          "macro_recall": 0.4983,
+          "macro_f1": 0.4055,
+          "weighted_f1": 0.3963,
+          "cohen_kappa": 0.1975,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6034,
+              "recall": 0.5556,
+              "f1": 0.5785,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.25,
+              "recall": 0.1509,
+              "f1": 0.1882,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3077,
+              "recall": 0.3636,
+              "f1": 0.3333,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.3636,
+              "recall": 0.9231,
+              "f1": 0.5217,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                35,
+                16,
+                5,
+                7
+              ],
+              [
+                18,
+                8,
+                21,
+                6
+              ],
+              [
+                5,
+                8,
+                12,
+                8
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4506,
+          "macro_precision": 0.4242,
+          "macro_recall": 0.5259,
+          "macro_f1": 0.4414,
+          "weighted_f1": 0.4418,
+          "cohen_kappa": 0.247,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.6316,
+              "recall": 0.5714,
+              "f1": 0.6,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.3824,
+              "recall": 0.2453,
+              "f1": 0.2989,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.3077,
+              "recall": 0.3636,
+              "f1": 0.3333,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.375,
+              "recall": 0.9231,
+              "f1": 0.5333,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                36,
+                13,
+                8,
+                6
+              ],
+              [
+                16,
+                13,
+                18,
+                6
+              ],
+              [
+                5,
+                8,
+                12,
+                8
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        },
+        {
+          "rep": 3,
+          "n_parsed": 162,
+          "parse_failures": 0,
+          "accuracy": 0.4074,
+          "macro_precision": 0.3755,
+          "macro_recall": 0.4907,
+          "macro_f1": 0.396,
+          "weighted_f1": 0.3915,
+          "cohen_kappa": 0.1929,
+          "per_class": {
+            "Fully_Compliant": {
+              "precision": 0.614,
+              "recall": 0.5556,
+              "f1": 0.5833,
+              "support": 63
+            },
+            "Mostly_Compliant": {
+              "precision": 0.2667,
+              "recall": 0.1509,
+              "f1": 0.1928,
+              "support": 53
+            },
+            "Partially_Compliant": {
+              "precision": 0.2683,
+              "recall": 0.3333,
+              "f1": 0.2973,
+              "support": 33
+            },
+            "Not_Compliant": {
+              "precision": 0.3529,
+              "recall": 0.9231,
+              "f1": 0.5106,
+              "support": 13
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Fully_Compliant",
+              "Mostly_Compliant",
+              "Partially_Compliant",
+              "Not_Compliant"
+            ],
+            "matrix": [
+              [
+                35,
+                14,
+                7,
+                7
+              ],
+              [
+                17,
+                8,
+                22,
+                6
+              ],
+              [
+                5,
+                8,
+                11,
+                9
+              ],
+              [
+                0,
+                0,
+                1,
+                12
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

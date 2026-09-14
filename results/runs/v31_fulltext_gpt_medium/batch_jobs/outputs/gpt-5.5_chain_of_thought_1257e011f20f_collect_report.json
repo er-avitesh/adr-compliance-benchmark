@@ -1,0 +1,104 @@
+{
+  "job_key": "gpt-5.5_chain_of_thought_1257e011f20f",
+  "provider": "openai",
+  "model": "gpt-5.5",
+  "strategy": "chain_of_thought",
+  "output_file": "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gpt-5.5_chain_of_thought_1257e011f20f.jsonl",
+  "raw_result_file": "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gpt-5.5_chain_of_thought.json",
+  "missing_output_count": 14,
+  "missing_outputs_represented_by_repair_placeholders": 14,
+  "row_conversion_errors": [],
+  "batch_output_valid_for_merge": false,
+  "valid_for_merge": false,
+  "validation_reason": "rep 1 row 34 has API error",
+  "shape_valid_for_repair": true,
+  "shape_validation_reason": "ok",
+  "repair_needed_count": 14,
+  "repair_needed_preview": [
+    {
+      "rep": 1,
+      "row": 34,
+      "adr_id": "argoproj_argo-cd_003-applications-outside-argocd-namespace",
+      "reason": "rep 1 row 34 has API error"
+    },
+    {
+      "rep": 1,
+      "row": 35,
+      "adr_id": "apache_airflow_0014-fix-root-ownership-after-exiting-docker-command",
+      "reason": "rep 1 row 35 has API error"
+    },
+    {
+      "rep": 1,
+      "row": 56,
+      "adr_id": "alphagov_govuk-aws_0024-ami-lookups",
+      "reason": "rep 1 row 56 has API error"
+    },
+    {
+      "rep": 1,
+      "row": 57,
+      "adr_id": "argoproj_argo-cd_004-scalability-benchmarking",
+      "reason": "rep 1 row 57 has API error"
+    },
+    {
+      "rep": 1,
+      "row": 81,
+      "adr_id": "alphagov_govuk-aws_0010-terraform-directory-structure",
+      "reason": "rep 1 row 81 has API error"
+    },
+    {
+      "rep": 2,
+      "row": 4,
+      "adr_id": "thomvaill_log4brains_20201103-use-lunr-for-search",
+      "reason": "rep 2 row 4 has API error"
+    },
+    {
+      "rep": 2,
+      "row": 122,
+      "adr_id": "adr_madr_0018-use-confirmation-as-heading",
+      "reason": "rep 2 row 122 has API error"
+    },
+    {
+      "rep": 2,
+      "row": 143,
+      "adr_id": "backstage_backstage_adr001-add-adr-log",
+      "reason": "rep 2 row 143 has API error"
+    },
+    {
+      "rep": 2,
+      "row": 145,
+      "adr_id": "temporalio_temporal_history-service",
+      "reason": "rep 2 row 145 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 65,
+      "adr_id": "alphagov_govuk-aws_0015-dns-infrastructure",
+      "reason": "rep 3 row 65 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 86,
+      "adr_id": "backstage_backstage_adr004-module-export-structure",
+      "reason": "rep 3 row 86 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 109,
+      "adr_id": "backstage_backstage_adr003-avoid-default-exports",
+      "reason": "rep 3 row 109 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 134,
+      "adr_id": "cortexproject_cortex_tenant_retention",
+      "reason": "rep 3 row 134 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 142,
+      "adr_id": "temporalio_temporal_nexus",
+      "reason": "rep 3 row 142 has API error"
+    }
+  ],
+  "partial_raw_result_written": true
+}

@@ -1,0 +1,10 @@
+{
+  "id": "adr_madr_0018-use-confirmation-as-heading",
+  "source_repo": "adr/madr",
+  "filename": "0018-use-confirmation-as-heading.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0018-use-confirmation-as-heading.md",
+  "word_count": 158,
+  "variant": "MADR",
+  "text": "---\nparent: Decisions\nnav_order: 18\n---\n# Use \"Confirmation\" as Heading\n\n## Context and Problem Statement\n\nIn MADR, we want to include some sort of check that the decision was implemented.\nHow to name the heading for the explanation?\n\n## Decision Drivers\n\n* Consistent with terms used in IT\n* Common word\n\n## Considered Options\n\n* \"Confirmation\"\n* \"Validation\"\n* \"Verification\"\n\n## Decision Outcome\n\nChosen option: \"Confirmation\", because \"validation\" is out of scope of the template.\nThere is a process leading to a \"valid\" ADR.\nThe other term \"verification\" is often bound to a formal tool or formal procedure.\nWe wanted to enable also less formal checks.\n\n### Confirmation\n\n* Before next release; check that there is at least one example that has a \"Confirmation\" section.\n* Before each release: check that templates and examples are still consistent with this decision (or update AD).\n* Continuously: Monitor [GitHub issues](https://github.com/adr/madr/issues) for feedback on examples and template/tool change requests periodically.\n",
+  "fetched_at": "2026-04-26T00:45:52.958209"
+}

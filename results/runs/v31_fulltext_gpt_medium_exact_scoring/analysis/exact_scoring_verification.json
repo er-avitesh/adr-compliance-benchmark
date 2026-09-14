@@ -1,0 +1,105 @@
+{
+  "run_id": "v31_fulltext_gpt_medium_exact_scoring",
+  "evaluations": 5832,
+  "overall_changes": 40,
+  "source_files_checked": 239,
+  "failures": [],
+  "independent_check": "Integer-numerator classifier and independent per-repetition metric calculation",
+  "configurations": [
+    {
+      "configuration": "gpt-5.5/zero_shot",
+      "changed_predictions": 1,
+      "old_macro_f1": 0.41200515340248606,
+      "new_macro_f1": 0.4080710989243488,
+      "new_kappa": 0.16525255886757498
+    },
+    {
+      "configuration": "gpt-5.5/few_shot",
+      "changed_predictions": 0,
+      "old_macro_f1": 0.5562943992898868,
+      "new_macro_f1": 0.5562943992898868,
+      "new_kappa": 0.3200629100089706
+    },
+    {
+      "configuration": "gpt-5.5/chain_of_thought",
+      "changed_predictions": 0,
+      "old_macro_f1": 0.44964068422060227,
+      "new_macro_f1": 0.44964068422060227,
+      "new_kappa": 0.2062005025535885
+    },
+    {
+      "configuration": "claude-sonnet-4-6/zero_shot",
+      "changed_predictions": 4,
+      "old_macro_f1": 0.3326429839347803,
+      "new_macro_f1": 0.3405559974506324,
+      "new_kappa": 0.131087444992653
+    },
+    {
+      "configuration": "claude-sonnet-4-6/few_shot",
+      "changed_predictions": 0,
+      "old_macro_f1": 0.4945880070671354,
+      "new_macro_f1": 0.4945880070671354,
+      "new_kappa": 0.23843776868986324
+    },
+    {
+      "configuration": "claude-sonnet-4-6/chain_of_thought",
+      "changed_predictions": 8,
+      "old_macro_f1": 0.2920653011442044,
+      "new_macro_f1": 0.30316957553484414,
+      "new_kappa": 0.08964905524878337
+    },
+    {
+      "configuration": "ministral-3-8b/zero_shot",
+      "changed_predictions": 9,
+      "old_macro_f1": 0.41428145073330075,
+      "new_macro_f1": 0.42026302644003344,
+      "new_kappa": 0.2099974382030411
+    },
+    {
+      "configuration": "ministral-3-8b/few_shot",
+      "changed_predictions": 0,
+      "old_macro_f1": 0.4961377880970856,
+      "new_macro_f1": 0.4961377880970856,
+      "new_kappa": 0.2707067234229069
+    },
+    {
+      "configuration": "ministral-3-8b/chain_of_thought",
+      "changed_predictions": 12,
+      "old_macro_f1": 0.46773667648268585,
+      "new_macro_f1": 0.4793725007175015,
+      "new_kappa": 0.2392954605579519
+    },
+    {
+      "configuration": "gemini-2.5-pro/zero_shot",
+      "changed_predictions": 3,
+      "old_macro_f1": 0.4999787067301787,
+      "new_macro_f1": 0.49882259851992566,
+      "new_kappa": 0.31117921510628116
+    },
+    {
+      "configuration": "gemini-2.5-pro/few_shot",
+      "changed_predictions": 0,
+      "old_macro_f1": 0.5456978432021768,
+      "new_macro_f1": 0.5456978432021768,
+      "new_kappa": 0.3398347770826013
+    },
+    {
+      "configuration": "gemini-2.5-pro/chain_of_thought",
+      "changed_predictions": 3,
+      "old_macro_f1": 0.492673339340503,
+      "new_macro_f1": 0.49436069807672955,
+      "new_kappa": 0.29749535678775346
+    }
+  ],
+  "code_sha256": {
+    "adr_scoring.py": "befb124de6ae0ef00b90ef31727fab06c37f81b182ff769013577ea60035df43",
+    "adr_benchmark.py": "9eaf90d8126164a31130605428c86963380e809dfa36bd70edbaa080c1da46a8",
+    "scripts\\rescore_saved_results.py": "1a6f4e6307eb755586f1dcb5f024636af82f6e9fdca2f10f0c241af4c4a6690d",
+    "scripts\\verify_exact_scoring_backup.py": "9bf3b1d9452ae507fdf4b3d49c4e505b9fd93010ebbafc055e8e4fa7e245f64c",
+    "scripts\\verify_exact_scoring_revision.py": "5caa48804e3ab21fe21faf118040736dd8629e283991be6a987770c25354522b",
+    "scripts\\analyze_rubric_sensitivity.py": "8667e44380862a575e27c06c3e01c8e47e1e47c112b043f1fe7f295096911643",
+    "scripts\\analyze_rule_hybrid_comparison.py": "500b2a219ad038bf5aec604855938532cfba208c24b477494f9bd90233aeee24",
+    "scripts\\prepare_manuscript_v31_evidence.py": "41398df2a003ecdde24cac57e6e79174220a6fd116bd5510c1339c33b8f5f1ad",
+    "scripts\\build_manuscript_v32.py": "b201e81a7e22385b8ae0f7a8ce19fa9d9a529225ef3bcb8228cafa68e271b28f"
+  }
+}

@@ -1,0 +1,442 @@
+{
+  "gpt-5.5": {
+    "zero_shot": {
+      "f1_mean": 0.412,
+      "f1_std": 0.011,
+      "f1_ci95": {
+        "low": 0.3836,
+        "high": 0.4404
+      },
+      "weighted_f1_mean": 0.341,
+      "weighted_f1_std": 0.016,
+      "weighted_f1_ci95": {
+        "low": 0.3021,
+        "high": 0.3807
+      },
+      "kappa_mean": 0.168,
+      "kappa_std": 0.016,
+      "kappa_ci95": {
+        "low": 0.1294,
+        "high": 0.2071
+      },
+      "prec_mean": 0.472,
+      "prec_std": 0.018,
+      "prec_ci95": {
+        "low": 0.4275,
+        "high": 0.5156
+      },
+      "rec_mean": 0.492,
+      "rec_std": 0.024,
+      "rec_ci95": {
+        "low": 0.4317,
+        "high": 0.5517
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 305
+    },
+    "few_shot": {
+      "f1_mean": 0.556,
+      "f1_std": 0.007,
+      "f1_ci95": {
+        "low": 0.5394,
+        "high": 0.5732
+      },
+      "weighted_f1_mean": 0.533,
+      "weighted_f1_std": 0.016,
+      "weighted_f1_ci95": {
+        "low": 0.4937,
+        "high": 0.5715
+      },
+      "kappa_mean": 0.32,
+      "kappa_std": 0.021,
+      "kappa_ci95": {
+        "low": 0.2677,
+        "high": 0.3724
+      },
+      "prec_mean": 0.606,
+      "prec_std": 0.014,
+      "prec_ci95": {
+        "low": 0.5726,
+        "high": 0.6398
+      },
+      "rec_mean": 0.537,
+      "rec_std": 0.007,
+      "rec_ci95": {
+        "low": 0.5207,
+        "high": 0.5542
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 232
+    },
+    "chain_of_thought": {
+      "f1_mean": 0.45,
+      "f1_std": 0.005,
+      "f1_ci95": {
+        "low": 0.438,
+        "high": 0.4613
+      },
+      "weighted_f1_mean": 0.383,
+      "weighted_f1_std": 0.015,
+      "weighted_f1_ci95": {
+        "low": 0.3453,
+        "high": 0.4211
+      },
+      "kappa_mean": 0.206,
+      "kappa_std": 0.017,
+      "kappa_ci95": {
+        "low": 0.1636,
+        "high": 0.2488
+      },
+      "prec_mean": 0.508,
+      "prec_std": 0.006,
+      "prec_ci95": {
+        "low": 0.4929,
+        "high": 0.5226
+      },
+      "rec_mean": 0.521,
+      "rec_std": 0.003,
+      "rec_ci95": {
+        "low": 0.5132,
+        "high": 0.5284
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 290
+    }
+  },
+  "claude-sonnet-4-6": {
+    "zero_shot": {
+      "f1_mean": 0.333,
+      "f1_std": 0.014,
+      "f1_ci95": {
+        "low": 0.2986,
+        "high": 0.3667
+      },
+      "weighted_f1_mean": 0.255,
+      "weighted_f1_std": 0.016,
+      "weighted_f1_ci95": {
+        "low": 0.2153,
+        "high": 0.2948
+      },
+      "kappa_mean": 0.124,
+      "kappa_std": 0.015,
+      "kappa_ci95": {
+        "low": 0.0881,
+        "high": 0.1607
+      },
+      "prec_mean": 0.479,
+      "prec_std": 0.038,
+      "prec_ci95": {
+        "low": 0.3841,
+        "high": 0.5732
+      },
+      "rec_mean": 0.472,
+      "rec_std": 0.009,
+      "rec_ci95": {
+        "low": 0.4486,
+        "high": 0.4955
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 336
+    },
+    "few_shot": {
+      "f1_mean": 0.495,
+      "f1_std": 0.009,
+      "f1_ci95": {
+        "low": 0.4731,
+        "high": 0.516
+      },
+      "weighted_f1_mean": 0.414,
+      "weighted_f1_std": 0.007,
+      "weighted_f1_ci95": {
+        "low": 0.3962,
+        "high": 0.4313
+      },
+      "kappa_mean": 0.238,
+      "kappa_std": 0.01,
+      "kappa_ci95": {
+        "low": 0.2134,
+        "high": 0.2635
+      },
+      "prec_mean": 0.544,
+      "prec_std": 0.014,
+      "prec_ci95": {
+        "low": 0.5086,
+        "high": 0.5788
+      },
+      "rec_mean": 0.563,
+      "rec_std": 0.007,
+      "rec_ci95": {
+        "low": 0.5456,
+        "high": 0.5809
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 277
+    },
+    "chain_of_thought": {
+      "f1_mean": 0.292,
+      "f1_std": 0.003,
+      "f1_ci95": {
+        "low": 0.2834,
+        "high": 0.3007
+      },
+      "weighted_f1_mean": 0.213,
+      "weighted_f1_std": 0.011,
+      "weighted_f1_ci95": {
+        "low": 0.1854,
+        "high": 0.2402
+      },
+      "kappa_mean": 0.084,
+      "kappa_std": 0.01,
+      "kappa_ci95": {
+        "low": 0.0593,
+        "high": 0.1091
+      },
+      "prec_mean": 0.448,
+      "prec_std": 0.035,
+      "prec_ci95": {
+        "low": 0.3626,
+        "high": 0.5341
+      },
+      "rec_mean": 0.441,
+      "rec_std": 0.004,
+      "rec_ci95": {
+        "low": 0.4318,
+        "high": 0.4507
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 353
+    }
+  },
+  "ministral-3-8b": {
+    "zero_shot": {
+      "f1_mean": 0.414,
+      "f1_std": 0.024,
+      "f1_ci95": {
+        "low": 0.3548,
+        "high": 0.4737
+      },
+      "weighted_f1_mean": 0.41,
+      "weighted_f1_std": 0.028,
+      "weighted_f1_ci95": {
+        "low": 0.3409,
+        "high": 0.4788
+      },
+      "kappa_mean": 0.212,
+      "kappa_std": 0.03,
+      "kappa_ci95": {
+        "low": 0.1379,
+        "high": 0.287
+      },
+      "prec_mean": 0.394,
+      "prec_std": 0.027,
+      "prec_ci95": {
+        "low": 0.3275,
+        "high": 0.4597
+      },
+      "rec_mean": 0.505,
+      "rec_std": 0.018,
+      "rec_ci95": {
+        "low": 0.459,
+        "high": 0.5509
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 280
+    },
+    "few_shot": {
+      "f1_mean": 0.496,
+      "f1_std": 0.011,
+      "f1_ci95": {
+        "low": 0.4677,
+        "high": 0.5246
+      },
+      "weighted_f1_mean": 0.456,
+      "weighted_f1_std": 0.014,
+      "weighted_f1_ci95": {
+        "low": 0.4221,
+        "high": 0.4896
+      },
+      "kappa_mean": 0.271,
+      "kappa_std": 0.015,
+      "kappa_ci95": {
+        "low": 0.2335,
+        "high": 0.3079
+      },
+      "prec_mean": 0.473,
+      "prec_std": 0.015,
+      "prec_ci95": {
+        "low": 0.4367,
+        "high": 0.5102
+      },
+      "rec_mean": 0.558,
+      "rec_std": 0.01,
+      "rec_ci95": {
+        "low": 0.5335,
+        "high": 0.5829
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 255
+    },
+    "chain_of_thought": {
+      "f1_mean": 0.468,
+      "f1_std": 0.01,
+      "f1_ci95": {
+        "low": 0.4417,
+        "high": 0.4937
+      },
+      "weighted_f1_mean": 0.45,
+      "weighted_f1_std": 0.01,
+      "weighted_f1_ci95": {
+        "low": 0.4249,
+        "high": 0.4754
+      },
+      "kappa_mean": 0.243,
+      "kappa_std": 0.011,
+      "kappa_ci95": {
+        "low": 0.2146,
+        "high": 0.2705
+      },
+      "prec_mean": 0.442,
+      "prec_std": 0.011,
+      "prec_ci95": {
+        "low": 0.4148,
+        "high": 0.4686
+      },
+      "rec_mean": 0.531,
+      "rec_std": 0.007,
+      "rec_ci95": {
+        "low": 0.5135,
+        "high": 0.5477
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 262
+    }
+  },
+  "gemini-2.5-pro": {
+    "zero_shot": {
+      "f1_mean": 0.5,
+      "f1_std": 0.005,
+      "f1_ci95": {
+        "low": 0.4876,
+        "high": 0.5124
+      },
+      "weighted_f1_mean": 0.485,
+      "weighted_f1_std": 0.014,
+      "weighted_f1_ci95": {
+        "low": 0.4517,
+        "high": 0.5192
+      },
+      "kappa_mean": 0.312,
+      "kappa_std": 0.009,
+      "kappa_ci95": {
+        "low": 0.2897,
+        "high": 0.3339
+      },
+      "prec_mean": 0.497,
+      "prec_std": 0.005,
+      "prec_ci95": {
+        "low": 0.483,
+        "high": 0.5101
+      },
+      "rec_mean": 0.58,
+      "rec_std": 0.01,
+      "rec_ci95": {
+        "low": 0.5546,
+        "high": 0.6056
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 248
+    },
+    "few_shot": {
+      "f1_mean": 0.546,
+      "f1_std": 0.021,
+      "f1_ci95": {
+        "low": 0.4925,
+        "high": 0.5989
+      },
+      "weighted_f1_mean": 0.532,
+      "weighted_f1_std": 0.017,
+      "weighted_f1_ci95": {
+        "low": 0.4888,
+        "high": 0.5757
+      },
+      "kappa_mean": 0.34,
+      "kappa_std": 0.023,
+      "kappa_ci95": {
+        "low": 0.2821,
+        "high": 0.3975
+      },
+      "prec_mean": 0.533,
+      "prec_std": 0.019,
+      "prec_ci95": {
+        "low": 0.4849,
+        "high": 0.5802
+      },
+      "rec_mean": 0.571,
+      "rec_std": 0.021,
+      "rec_ci95": {
+        "low": 0.5186,
+        "high": 0.6232
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 228
+    },
+    "chain_of_thought": {
+      "f1_mean": 0.493,
+      "f1_std": 0.03,
+      "f1_ci95": {
+        "low": 0.417,
+        "high": 0.5683
+      },
+      "weighted_f1_mean": 0.481,
+      "weighted_f1_std": 0.032,
+      "weighted_f1_ci95": {
+        "low": 0.4015,
+        "high": 0.5602
+      },
+      "kappa_mean": 0.298,
+      "kappa_std": 0.047,
+      "kappa_ci95": {
+        "low": 0.1807,
+        "high": 0.4155
+      },
+      "prec_mean": 0.495,
+      "prec_std": 0.035,
+      "prec_ci95": {
+        "low": 0.4082,
+        "high": 0.5822
+      },
+      "rec_mean": 0.557,
+      "rec_std": 0.031,
+      "rec_ci95": {
+        "low": 0.4808,
+        "high": 0.633
+      },
+      "total_responses": 486,
+      "parse_failures": 0,
+      "parse_failure_rate": 0.0,
+      "classification_errors_excluding_parse_failures": 252
+    }
+  }
+}

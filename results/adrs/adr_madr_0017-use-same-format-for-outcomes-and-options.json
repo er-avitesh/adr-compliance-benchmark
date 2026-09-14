@@ -1,0 +1,10 @@
+{
+  "id": "adr_madr_0017-use-same-format-for-outcomes-and-options",
+  "source_repo": "adr/madr",
+  "filename": "0017-use-same-format-for-outcomes-and-options.md",
+  "url": "https://github.com/adr/madr/blob/HEAD/docs/decisions/0017-use-same-format-for-outcomes-and-options.md",
+  "word_count": 116,
+  "variant": "MADR",
+  "text": "---\nparent: Decisions\nnav_order: 17\n---\n# Use Same Format for Outcomes and Options\n\n## Context and Problem Statement\n\n\"Outcome\" has \"Positive Consequences\" and \"Negative Consequences\" sections. \"Options\" just have a single list with \"Good\" and \"Bad\" prefixes.\n\nTicket: [issue#75](https://github.com/adr/madr/issues/75)\n\n## Decision Drivers\n\n* Consistent design of MADR\n* Allow easy copy and paste\n\n## Considered Options\n\n* Section \"Consequences\" listing positive and negative consequences as \"Good, because\" and \"Bad, because\"\n* Section \"Consequences\" listing positive and negative consequences as \"Positive, because\" and \"Negative, because\"\n* No sections \"Consequences\", \"Positive Consequences\", and \"Negative Consequences\"\n\n## Decision Outcome\n\nChosen option: 'Section \"Consequences\" listing positive and negative consequences as \"Good, because\" and \"Bad, because\"', because resolves all forces.\n",
+  "fetched_at": "2026-04-26T00:45:35.689971"
+}

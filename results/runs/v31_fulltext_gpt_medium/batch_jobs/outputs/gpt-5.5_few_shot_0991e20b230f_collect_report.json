@@ -1,0 +1,111 @@
+{
+  "job_key": "gpt-5.5_few_shot_0991e20b230f",
+  "provider": "openai",
+  "model": "gpt-5.5",
+  "strategy": "few_shot",
+  "output_file": "results\\runs\\v31_fulltext_gpt_medium\\batch_jobs\\outputs\\gpt-5.5_few_shot_0991e20b230f.jsonl",
+  "raw_result_file": "results\\runs\\v31_fulltext_gpt_medium\\raw_results\\gpt-5.5_few_shot.json",
+  "missing_output_count": 17,
+  "missing_outputs_represented_by_repair_placeholders": 17,
+  "row_conversion_errors": [],
+  "batch_output_valid_for_merge": false,
+  "valid_for_merge": false,
+  "validation_reason": "rep 1 row 26 has API error",
+  "shape_valid_for_repair": true,
+  "shape_validation_reason": "ok",
+  "repair_needed_count": 15,
+  "repair_needed_preview": [
+    {
+      "rep": 1,
+      "row": 26,
+      "adr_id": "thomvaill_log4brains_20240926-transition-to-simplified-git-flow",
+      "reason": "rep 1 row 26 has API error"
+    },
+    {
+      "rep": 1,
+      "row": 75,
+      "adr_id": "adr_madr_0015-include-consulting-informed-of-raci",
+      "reason": "rep 1 row 75 has API error"
+    },
+    {
+      "rep": 1,
+      "row": 76,
+      "adr_id": "npryce_adr-tools_0007-invoke-adr-config-executable-to-get-configuration",
+      "reason": "rep 1 row 76 has API error"
+    },
+    {
+      "rep": 1,
+      "row": 147,
+      "adr_id": "temporalio_temporal_chasm",
+      "reason": "rep 1 row 147 has API error"
+    },
+    {
+      "rep": 2,
+      "row": 17,
+      "adr_id": "cortexproject_cortex_block-storage-time-series-deletion",
+      "reason": "rep 2 row 17 has API error"
+    },
+    {
+      "rep": 2,
+      "row": 58,
+      "adr_id": "apache_airflow_0013-get-rid-of-submodules",
+      "reason": "rep 2 row 58 has API error"
+    },
+    {
+      "rep": 2,
+      "row": 87,
+      "adr_id": "alphagov_content-publisher_0005-avoiding-initialisation-flickers",
+      "reason": "rep 2 row 87 has API error"
+    },
+    {
+      "rep": 2,
+      "row": 116,
+      "adr_id": "cortexproject_cortex_version-documentation",
+      "reason": "rep 2 row 116 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 44,
+      "adr_id": "backstage_backstage_adr010-luxon-date-library",
+      "reason": "rep 3 row 44 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 61,
+      "adr_id": "alphagov_govuk-aws_0018-use-rds-instead-of-provisioned-ec2-databases",
+      "reason": "rep 3 row 61 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 91,
+      "adr_id": "npryce_adr-tools_0003-single-command-with-subcommands",
+      "reason": "rep 3 row 91 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 93,
+      "adr_id": "apache_airflow_0011-unified-communication-with-the-users",
+      "reason": "rep 3 row 93 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 151,
+      "adr_id": "apache_airflow_0005-preventing-using-contributed-code-when-building-images",
+      "reason": "rep 3 row 151 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 158,
+      "adr_id": "alphagov_govuk-aws_0038-mongo_replacement_by_documentdb",
+      "reason": "rep 3 row 158 has API error"
+    },
+    {
+      "rep": 3,
+      "row": 162,
+      "adr_id": "MITLibraries_timdex-ui_0002-extend-timdex-ui-for-gis-data",
+      "reason": "rep 3 row 162 has API error"
+    }
+  ],
+  "partial_raw_result_written": false,
+  "existing_partial_result_retained": true
+}
